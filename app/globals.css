@@ -87,3 +87,8 @@ html[data-theme="dark"] ::selection {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}

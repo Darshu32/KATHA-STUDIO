@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteFooter, PageHeader } from "@/components/page-shell";
 import { FadeUp } from "@/components/animations";
+import { CountUp } from "@/components/count-up";
 
 export const metadata = {
   title: "About — KATHA Studio",
@@ -44,6 +45,35 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
+
+      {/* ── Stats strip ── */}
+      <div className="border-t border-[var(--border)]">
+        <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
+          <FadeUp>
+            <div className="grid grid-cols-3 divide-x divide-[var(--border)] py-14 md:py-16">
+              {[
+                { to: 12, suffix: "+", label: "Projects Completed" },
+                { to: 4,  suffix: "",  label: "Years of Practice"  },
+                { to: 3,  suffix: "",  label: "Design Disciplines" },
+              ].map(({ to, suffix, label }) => (
+                <div key={label} className="px-6 first:pl-0 last:pr-0 md:px-10 space-y-3">
+                  <p
+                    className="font-[var(--font-avenir-heavy)] font-extrabold text-[var(--text)]"
+                    style={{ fontSize: "clamp(2.2rem,5vw,4rem)", lineHeight: 1, letterSpacing: "-0.02em" }}
+                  >
+                    <CountUp to={to} suffix={suffix} />
+                  </p>
+                  <p
+                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}
+                  >
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+      </div>
 
       <SiteFooter />
     </div>

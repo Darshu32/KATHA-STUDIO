@@ -24,6 +24,7 @@ export default function ProjectsPage() {
                 <FadeUp key={project.slug} delay={i * 0.1}>
                 <Link
                   href={`/projects/${project.slug}`}
+                  data-cursor="View"
                   className="group block space-y-4 transition-opacity hover:opacity-75"
                 >
                   {/* Image */}

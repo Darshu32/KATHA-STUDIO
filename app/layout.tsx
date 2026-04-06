@@ -9,6 +9,7 @@ import "@fontsource/playfair-display/latin-800.css";
 import { CustomCursor } from "@/components/cursor";
 import { PersistentNavbar } from "@/components/persistent-navbar";
 import { PageTransitionOverlay } from "@/components/page-transition";
+import { FloatingCTA } from "@/components/floating-cta";
 
 export const metadata: Metadata = {
   title: "KATHA STUDIO - Architecture & Interior Design",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <CustomCursor />
         <PageTransitionOverlay />
         <PersistentNavbar />
+        <FloatingCTA />
         {children}
       </body>
     </html>

@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { SplitReveal } from "@/components/animations";
+import { LineReveal } from "@/components/line-reveal";
+import { MarqueeStrip } from "@/components/marquee-strip";
 
 /* ── Shared Footer ─────────────────────────────────────────── */
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--border)]">
+    <footer>
+      <MarqueeStrip />
+      <div className="border-t border-[var(--border)]">
       <div className="mx-auto flex max-w-[88rem] items-center justify-between px-5 py-6 md:px-12 lg:px-20">
         <Link
           href="/"
@@ -47,6 +51,7 @@ export function SiteFooter() {
           &copy; {new Date().getFullYear()} Katha Studio
         </p>
       </div>
+      </div>
     </footer>
   );
 }
@@ -82,6 +87,7 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
           color: "var(--text)",
         }}
       />
+      <LineReveal className="mt-8 h-[1px] w-16 bg-[var(--text)] opacity-20" />
     </div>
   );
 }

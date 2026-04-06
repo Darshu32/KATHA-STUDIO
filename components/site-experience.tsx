@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
 import Lenis from "lenis";
+import { MarqueeStrip } from "@/components/marquee-strip";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
@@ -45,10 +46,10 @@ const navCards = [
 export function BrandWordmark({ compact = false, className }: { compact?: boolean; className?: string }) {
   return (
     <span className={`inline-flex items-end gap-2 leading-none text-[var(--text)] ${className ?? ""}`}>
-      <span className={`font-[var(--font-avenir-heavy)] font-extrabold uppercase tracking-[0.04em] ${compact ? "" : "text-[clamp(3rem,8vw,7rem)]"}`} style={compact ? { fontSize: "clamp(1rem,1.4vw,1.4rem)" } : undefined}>
+      <span className={`font-[var(--font-avenir-heavy)] font-extrabold uppercase tracking-[0.04em] ${compact ? "" : "text-[clamp(1.6rem,8vw,7rem)]"}`} style={compact ? { fontSize: "clamp(1rem,1.4vw,1.4rem)" } : undefined}>
         KATHA
       </span>
-      <span className={`font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.08em] ${compact ? "" : "text-[clamp(3rem,8vw,7rem)]"}`} style={compact ? { fontSize: "clamp(1rem,1.4vw,1.4rem)" } : undefined}>
+      <span className={`font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.08em] ${compact ? "" : "text-[clamp(1.6rem,8vw,7rem)]"}`} style={compact ? { fontSize: "clamp(1rem,1.4vw,1.4rem)" } : undefined}>
         Studio
       </span>
     </span>
@@ -84,8 +85,8 @@ function IntroBrandSequence({ visible, onSettled }: { visible: boolean; onSettle
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
           className="pointer-events-auto fixed inset-0 z-[65] flex items-center justify-center bg-[var(--background)] transition-colors duration-500"
         >
-          <div className="flex max-w-[92rem] flex-col px-6 md:px-12 lg:px-20">
-            <div className="flex items-end gap-x-5">
+          <div className="flex w-full max-w-[92rem] flex-col px-6 md:px-12 lg:px-20">
+            <div className="flex flex-wrap items-end gap-x-4 gap-y-1">
               <div className="flex">
                 {brandLetters.map((letter, index) => (
                   <motion.span
@@ -95,7 +96,7 @@ function IntroBrandSequence({ visible, onSettled }: { visible: boolean; onSettle
                     transition={{ delay: reduceMotion ? 0 : 0.3 + index * 0.42, duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
                     whileHover={reduceMotion ? undefined : { y: -12, scale: 1.06, transition: { duration: 0.35 } }}
                     whileTap={reduceMotion ? undefined : { scale: 0.94, transition: { duration: 0.12 } }}
-                    className="cursor-pointer select-none font-[var(--font-avenir-heavy)] text-[clamp(3.5rem,10vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
+                    className="cursor-pointer select-none font-[var(--font-avenir-heavy)] text-[clamp(2rem,10vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
                     style={{ perspective: "600px" }}
                   >
                     {letter}
@@ -107,7 +108,7 @@ function IntroBrandSequence({ visible, onSettled }: { visible: boolean; onSettle
                 animate={reduceMotion ? { opacity: 1 } : { opacity: 1, x: 0, filter: "blur(0px)" }}
                 transition={{ delay: reduceMotion ? 0.2 : 2.6, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={reduceMotion ? undefined : { x: 10, letterSpacing: "0.14em", transition: { duration: 0.45 } }}
-                className="cursor-pointer select-none font-[var(--font-avenir-book)] text-[clamp(3.5rem,10vw,8.5rem)] font-medium uppercase leading-[0.9] tracking-[0.06em] text-[var(--text-muted)]"
+                className="cursor-pointer select-none font-[var(--font-avenir-book)] text-[clamp(2rem,10vw,8.5rem)] font-medium uppercase leading-[0.9] tracking-[0.06em] text-[var(--text-muted)]"
               >
                 Studio
               </motion.span>
@@ -154,7 +155,18 @@ export function SiteExperience() {
       <IntroBrandSequence visible={!introComplete} onSettled={handleIntroSettled} />
 
       {/* ── 4 NAV CARDS ── */}
-      <main className="pt-[4.5rem]">
+      <main className="relative overflow-hidden pt-[4.5rem]">
+
+        {/* KATHA watermark — sits behind the cards */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
+          <span
+            className="font-[var(--font-avenir-heavy)] font-extrabold uppercase text-[var(--text)]"
+            style={{ fontSize: "clamp(6rem,22vw,20rem)", opacity: 0.03, letterSpacing: "-0.02em", lineHeight: 1 }}
+          >
+            KATHA
+          </span>
+        </div>
+
         <motion.div
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
@@ -171,10 +183,17 @@ export function SiteExperience() {
             >
               <Link
                 href={card.href}
-                className="group flex min-h-[30vh] flex-col justify-between border-b border-r border-[var(--border)] p-8 transition-colors duration-300 hover:bg-[var(--surface-light)] sm:min-h-[40vh] lg:h-full lg:min-h-0 lg:border-b-0 lg:p-10 last:border-r-0"
+                data-cursor="Enter"
+                className="group relative flex min-h-[30vh] flex-col justify-between overflow-hidden border-b border-r border-[var(--border)] p-8 transition-colors duration-300 hover:bg-[var(--surface-light)] sm:min-h-[40vh] lg:h-full lg:min-h-0 lg:border-b-0 lg:p-10 last:border-r-0"
               >
+                {/* Hover gradient bleed */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ background: "radial-gradient(ellipse at 20% 100%, var(--surface-light) 0%, transparent 65%)" }}
+                />
+
                 {/* Top */}
-                <div className="flex items-start justify-between">
+                <div className="relative flex items-start justify-between">
                   <span className="font-[var(--font-inter)] font-medium uppercase tracking-[0.3em] text-[var(--text-dim)]" style={{ fontSize: "clamp(0.55rem,0.75vw,0.65rem)" }}>
                     {card.id}
                   </span>
@@ -184,7 +203,7 @@ export function SiteExperience() {
                 </div>
 
                 {/* Bottom */}
-                <div className="space-y-2">
+                <div className="relative space-y-2">
                   <p className="font-[var(--font-avenir-heavy)] font-extrabold uppercase tracking-[0.02em] text-[var(--text)]" style={{ fontSize: "clamp(1.4rem,2.2vw,2.2rem)" }}>
                     {card.label}
                   </p>
@@ -197,6 +216,9 @@ export function SiteExperience() {
           ))}
         </motion.div>
       </main>
+
+      {/* ── MARQUEE ── */}
+      <MarqueeStrip />
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-[var(--border)]">

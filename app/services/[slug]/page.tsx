@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { services, projects } from "@/lib/data";
 import { SiteFooter } from "@/components/page-shell";
 import { FadeUp, SplitReveal } from "@/components/animations";
+import { ParallaxHero } from "@/components/parallax-hero";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -31,12 +32,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)]">
       <main className="pt-[4.5rem]">
         {/* Hero */}
-        <div className={`w-full ${bg} aspect-[16/9] md:aspect-[16/7] relative`}>
-          <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.18),rgba(0,0,0,0.05))]" />
-          <div className="absolute bottom-4 left-5" style={{ fontFamily: "var(--font-inter)", fontSize: "0.52rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
-            {service.category}
-          </div>
-        </div>
+        <ParallaxHero
+          bgClass={bg}
+          outerClass="w-full aspect-[16/9] md:aspect-[16/7]"
+          label={service.category}
+        />
 
         {/* Header */}
         <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
