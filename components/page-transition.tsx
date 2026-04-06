@@ -42,7 +42,7 @@ export function PageTransitionOverlay() {
         position: "fixed",
         inset: 0,
         zIndex: 60,
-        backgroundColor: "#111111",
+        backgroundColor: "var(--text)",
         pointerEvents: "none",
       }}
     />
