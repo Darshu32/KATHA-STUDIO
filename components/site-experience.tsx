@@ -7,6 +7,10 @@ import Lenis from "lenis";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
+// Module-level flag — survives client-side navigations so the intro
+// never replays when the user returns to the home page.
+let introHasPlayed = false;
+
 const brandLetters = ["K", "A", "T", "H", "A"];
 
 const navCards = [
@@ -131,9 +135,12 @@ function useLenisScroll() {
 
 export function SiteExperience() {
   useLenisScroll();
-  const [introComplete, setIntroComplete] = useState(false);
+  const [introComplete, setIntroComplete] = useState(introHasPlayed);
   const reduceMotion = useReducedMotion();
-  const handleIntroSettled = useCallback(() => setIntroComplete(true), []);
+  const handleIntroSettled = useCallback(() => {
+    introHasPlayed = true;
+    setIntroComplete(true);
+  }, []);
 
   useEffect(() => {
     if (!introComplete) {
