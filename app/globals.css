@@ -5,6 +5,8 @@
   --surface: #ffffff;
   --surface-light: #f3f3f3;
   --border: rgba(17, 17, 17, 0.1);
+  --border-medium: rgba(17, 17, 17, 0.45);
+  --navbar-bg: rgba(255, 255, 255, 0.92);
   --text: #111111;
   --text-muted: rgba(17, 17, 17, 0.58);
   --text-dim: rgba(17, 17, 17, 0.28);
@@ -20,6 +22,8 @@ html[data-theme="dark"] {
   --surface: #242424;
   --surface-light: #2e2e2e;
   --border: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.4);
+  --navbar-bg: rgba(28, 28, 28, 0.92);
   --text: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.55);
   --text-dim: rgba(255, 255, 255, 0.25);

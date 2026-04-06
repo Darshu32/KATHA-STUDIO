@@ -33,7 +33,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         {/* Hero */}
         <div className={`w-full ${bg} aspect-[16/9] md:aspect-[16/7] relative`}>
           <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.18),rgba(0,0,0,0.05))]" />
-          <div className="absolute bottom-4 left-5" style={{ fontFamily: "var(--font-inter)", fontSize: "0.52rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "rgba(17,17,17,0.3)" }}>
+          <div className="absolute bottom-4 left-5" style={{ fontFamily: "var(--font-inter)", fontSize: "0.52rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
             {service.category}
           </div>
         </div>
@@ -42,27 +42,27 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
           <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-[0.55fr_0.45fr] lg:gap-24 lg:py-28">
             <FadeUp delay={0} className="space-y-4">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.3em", color: "rgba(17,17,17,0.28)" }}>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.3em", color: "var(--text-dim)" }}>
                 {service.id} — Services
               </p>
               <SplitReveal
                 text={service.title}
                 tag="h1"
                 delay={0.08}
-                style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(1.8rem,4.8vw,4.5rem)", fontWeight: 800, lineHeight: 1.05, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}
+                style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(1.8rem,4.8vw,4.5rem)", fontWeight: 800, lineHeight: 1.05, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}
               />
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(17,17,17,0.35)" }}>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
                 {service.category}
               </p>
             </FadeUp>
             <FadeUp delay={0.18} className="space-y-7">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "rgba(17,17,17,0.58)" }}>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                 {service.desc}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border px-7 py-4 transition-all duration-300 hover:bg-[#111] hover:text-white"
-                style={{ borderColor: "rgba(17,17,17,0.5)", fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "#111" }}
+                className="inline-flex items-center justify-center border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
+                style={{ borderColor: "var(--border-medium)", fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text)" }}
               >
                 Book a Consultation
               </Link>
@@ -70,10 +70,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Related Projects */}
-          <FadeUp delay={0} className="border-t border-[rgba(17,17,17,0.1)] py-14 md:py-20 lg:py-24">
+          <FadeUp delay={0} className="border-t border-[var(--border)] py-14 md:py-20 lg:py-24">
             <div className="mb-10 flex items-center gap-3">
-              <div className="h-5 w-[2px] bg-[#111]" />
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "#111" }}>
+              <div className="h-5 w-[2px] bg-[var(--text)]" />
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "var(--text)" }}>
                 Related Projects
               </p>
             </div>
@@ -86,19 +86,19 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                   <Link href={`/projects/${project.slug}`} className="group block space-y-3 transition-opacity hover:opacity-75">
                     <div className={`${projBg} aspect-[4/3] w-full relative overflow-hidden`}>
                       <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.18),rgba(0,0,0,0.04))]" />
-                      <div className="absolute bottom-3 left-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(17,17,17,0.3)" }}>
+                      <div className="absolute bottom-3 left-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
                         {project.id}
                       </div>
                     </div>
                     <div className="space-y-1">
-                      <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.82rem,1.1vw,0.95rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}>
+                      <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.82rem,1.1vw,0.95rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>
                         {project.title}
                       </p>
-                      <div className="flex flex-wrap gap-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.56rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(17,17,17,0.28)" }}>
+                      <div className="flex flex-wrap gap-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.56rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-dim)" }}>
                         <span>{project.type}</span>
                         <span>{project.year}</span>
                       </div>
-                      <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "#111", borderBottom: "1px solid rgba(17,17,17,0.25)", paddingBottom: "2px", display: "inline-block" }}>
+                      <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text)", borderBottom: "1px solid var(--border-medium)", paddingBottom: "2px", display: "inline-block" }}>
                         Read More &rarr;
                       </span>
                     </div>
@@ -111,21 +111,21 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </div>
 
         {/* Prev / Next */}
-        <div className="border-t border-[rgba(17,17,17,0.1)]">
-          <div className="mx-auto max-w-[88rem] grid grid-cols-2 divide-x divide-[rgba(17,17,17,0.1)]">
+        <div className="border-t border-[var(--border)]">
+          <div className="mx-auto max-w-[88rem] grid grid-cols-2 divide-x divide-[var(--border)]">
             <div>
               {prev ? (
                 <Link href={`/services/${prev.slug}`} className="flex flex-col gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
-                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "rgba(17,17,17,0.28)" }}>&larr; Previous</span>
-                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}>{prev.title}</span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>&larr; Previous</span>
+                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{prev.title}</span>
                 </Link>
               ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
             </div>
             <div className="text-right">
               {next ? (
                 <Link href={`/services/${next.slug}`} className="flex flex-col items-end gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
-                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "rgba(17,17,17,0.28)" }}>Next &rarr;</span>
-                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}>{next.title}</span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>Next &rarr;</span>
+                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{next.title}</span>
                 </Link>
               ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
             </div>

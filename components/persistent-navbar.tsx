@@ -22,12 +22,13 @@ export function PersistentNavbar() {
   }, [isDark]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[rgba(17,17,17,0.1)] bg-[rgba(255,255,255,0.92)] backdrop-blur-md transition-colors duration-500">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] backdrop-blur-md transition-colors duration-500" style={{ backgroundColor: "var(--navbar-bg)" }}>
       <div className="mx-auto flex max-w-[88rem] items-center justify-between px-5 py-4 md:px-12 md:py-5 lg:px-20">
         {/* Brand */}
         <Link
           href="/"
-          className="inline-flex items-end gap-2 leading-none text-[#111] transition-opacity hover:opacity-60"
+          className="inline-flex items-end gap-2 leading-none transition-opacity hover:opacity-60"
+          style={{ color: "var(--text)" }}
         >
           <span
             style={{
@@ -64,7 +65,7 @@ export function PersistentNavbar() {
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.26em",
-                color: "#111",
+                color: "var(--text)",
               }}
               className="transition-opacity hover:opacity-55"
             >

@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <main className="pt-[4.5rem]">
         <PageHeader index="02 — Selected Work" title="Projects" />
 
-        <div className="border-t border-[rgba(17,17,17,0.1)]">
+        <div className="border-t border-[var(--border)]">
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
             <div className="grid gap-x-6 gap-y-14 py-14 sm:grid-cols-2 md:gap-x-10 md:gap-y-16 md:py-20 lg:gap-x-12 lg:gap-y-20 lg:py-20">
               {projects.map((project, i) => (
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
                   {/* Image */}
                   <div className={`${toneClass(project.tone)} aspect-[4/3] w-full relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.2),rgba(0,0,0,0.04))]" />
-                    <div className="absolute bottom-3 left-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.52rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "rgba(17,17,17,0.3)" }}>
+                    <div className="absolute bottom-3 left-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.52rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
                       Project {project.id}
                     </div>
                   </div>
@@ -37,21 +37,21 @@ export default function ProjectsPage() {
                   {/* Info */}
                   <div className="space-y-2">
                     <div className="flex items-start justify-between gap-3">
-                      <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.95rem,1.5vw,1.05rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}>
+                      <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.95rem,1.5vw,1.05rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>
                         {project.title}
                       </p>
-                      <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.56rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "rgba(17,17,17,0.28)" }} className="shrink-0 mt-[3px]">
+                      <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.56rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }} className="shrink-0 mt-[3px]">
                         {project.year}
                       </span>
                     </div>
-                    <div className="flex flex-wrap gap-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(17,17,17,0.28)" }}>
+                    <div className="flex flex-wrap gap-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-dim)" }}>
                       <span>{project.type}</span>
                       <span>{project.location}</span>
                     </div>
                     <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.78rem,1.1vw,0.9rem)", lineHeight: 1.8, color: "var(--text-muted)" }}>
                       {project.philosophy}
                     </p>
-                    <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "#111", borderBottom: "1px solid rgba(17,17,17,0.3)", paddingBottom: "2px", display: "inline-block" }}>
+                    <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text)", borderBottom: "1px solid var(--border-medium)", paddingBottom: "2px", display: "inline-block" }}>
                       Read More &rarr;
                     </span>
                   </div>

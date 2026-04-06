@@ -13,7 +13,7 @@ export default function AboutPage() {
       <main className="pt-[4.5rem]">
         <PageHeader index="01 — About" title="Katha Studio" />
 
-        <div className="border-t border-[rgba(17,17,17,0.1)]">
+        <div className="border-t border-[var(--border)]">
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
             <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-2 lg:gap-24 lg:py-28">
               <FadeUp delay={0} className="space-y-5">
@@ -34,8 +34,8 @@ export default function AboutPage() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
-                  style={{ borderColor: "rgba(17,17,17,0.5)", fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "#111" }}
+                  className="inline-flex items-center justify-center border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)] hover:border-[var(--text)]"
+                  style={{ borderColor: "var(--border-medium)", fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text)" }}
                 >
                   Get in Touch
                 </Link>

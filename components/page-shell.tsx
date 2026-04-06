@@ -4,11 +4,12 @@ import { SplitReveal } from "@/components/animations";
 /* ── Shared Footer ─────────────────────────────────────────── */
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[rgba(17,17,17,0.1)]">
+    <footer className="border-t border-[var(--border)]">
       <div className="mx-auto flex max-w-[88rem] items-center justify-between px-5 py-6 md:px-12 lg:px-20">
         <Link
           href="/"
-          className="inline-flex items-end gap-2 leading-none text-[#111] transition-opacity hover:opacity-60"
+          className="inline-flex items-end gap-2 leading-none transition-opacity hover:opacity-60"
+          style={{ color: "var(--text)" }}
         >
           <span
             style={{
@@ -40,7 +41,7 @@ export function SiteFooter() {
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.22em",
-            color: "rgba(17,17,17,0.28)",
+            color: "var(--text-dim)",
           }}
         >
           &copy; {new Date().getFullYear()} Katha Studio
@@ -61,7 +62,7 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
           fontWeight: 500,
           textTransform: "uppercase",
           letterSpacing: "0.3em",
-          color: "rgba(17,17,17,0.28)",
+          color: "var(--text-dim)",
         }}
         className="mb-5"
       >
@@ -78,7 +79,7 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
           textTransform: "uppercase",
           letterSpacing: "0.01em",
           lineHeight: 1.05,
-          color: "#111",
+          color: "var(--text)",
         }}
       />
     </div>
