@@ -1,0 +1,32 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/manrope/latin-800.css";
+import "@fontsource/playfair-display/latin-700.css";
+import "@fontsource/playfair-display/latin-800.css";
+import { CustomCursor } from "@/components/cursor";
+import { PersistentNavbar } from "@/components/persistent-navbar";
+
+export const metadata: Metadata = {
+  title: "KATHA STUDIO - Architecture & Interior Design",
+  description:
+    "A premium architecture and interior design studio. Residential design, interiors, renovation, and consultation.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>
+        <CustomCursor />
+        <PersistentNavbar />
+        {children}
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-light: #f3f3f3;
+  --border: rgba(17, 17, 17, 0.1);
+  --text: #111111;
+  --text-muted: rgba(17, 17, 17, 0.58);
+  --text-dim: rgba(17, 17, 17, 0.28);
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-inter: "Inter", "Segoe UI", sans-serif;
+  --font-brand: "Manrope", "Inter", "Segoe UI", sans-serif;
+  --font-avenir-heavy: "Avenir Next Heavy", "Avenir Next", "Avenir", "Manrope", "Segoe UI", sans-serif;
+  --font-avenir-book: "Avenir Next", "Avenir Book", "Avenir Medium", "Inter", "Segoe UI", sans-serif;
+}
+
+html[data-theme="dark"] {
+  --background: #1c1c1c;
+  --surface: #242424;
+  --surface-light: #2e2e2e;
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-dim: rgba(255, 255, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+a, button, [role="button"] {
+  cursor: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  line-height: 1.6;
+  background: var(--background);
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(17, 17, 17, 0.12);
+}
+
+html[data-theme="dark"] ::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* Hide scrollbar for carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
