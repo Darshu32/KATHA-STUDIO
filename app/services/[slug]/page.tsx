@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, projects } from "@/lib/data";
 import { SiteFooter } from "@/components/page-shell";
+import { FadeUp, SplitReveal } from "@/components/animations";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -40,18 +41,21 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         {/* Header */}
         <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
           <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-[0.55fr_0.45fr] lg:gap-24 lg:py-28">
-            <div className="space-y-4">
+            <FadeUp delay={0} className="space-y-4">
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.3em", color: "rgba(17,17,17,0.28)" }}>
                 {service.id} — Services
               </p>
-              <h1 style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(1.8rem,4.8vw,4.5rem)", fontWeight: 800, lineHeight: 1.0, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}>
-                {service.title}
-              </h1>
+              <SplitReveal
+                text={service.title}
+                tag="h1"
+                delay={0.08}
+                style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(1.8rem,4.8vw,4.5rem)", fontWeight: 800, lineHeight: 1.05, textTransform: "uppercase", letterSpacing: "0.02em", color: "#111" }}
+              />
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(17,17,17,0.35)" }}>
                 {service.category}
               </p>
-            </div>
-            <div className="space-y-7">
+            </FadeUp>
+            <FadeUp delay={0.18} className="space-y-7">
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "rgba(17,17,17,0.58)" }}>
                 {service.desc}
               </p>
@@ -62,11 +66,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               >
                 Book a Consultation
               </Link>
-            </div>
+            </FadeUp>
           </div>
 
           {/* Related Projects */}
-          <div className="border-t border-[rgba(17,17,17,0.1)] py-14 md:py-20 lg:py-24">
+          <FadeUp delay={0} className="border-t border-[rgba(17,17,17,0.1)] py-14 md:py-20 lg:py-24">
             <div className="mb-10 flex items-center gap-3">
               <div className="h-5 w-[2px] bg-[#111]" />
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "#111" }}>
@@ -74,11 +78,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               </p>
             </div>
             <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-x-10 lg:grid-cols-3 lg:gap-x-12">
-              {projects.map((project) => {
+              {projects.map((project, pi) => {
                 const projBg =
                   project.tone === "warm" ? "bg-[#eeeae6]" : project.tone === "cool" ? "bg-[#e8eaec]" : "bg-[#f3f3f3]";
                 return (
-                  <Link key={project.slug} href={`/projects/${project.slug}`} className="group block space-y-3 transition-opacity hover:opacity-75">
+                  <FadeUp key={project.slug} delay={pi * 0.1}>
+                  <Link href={`/projects/${project.slug}`} className="group block space-y-3 transition-opacity hover:opacity-75">
                     <div className={`${projBg} aspect-[4/3] w-full relative overflow-hidden`}>
                       <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.18),rgba(0,0,0,0.04))]" />
                       <div className="absolute bottom-3 left-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(17,17,17,0.3)" }}>
@@ -98,10 +103,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                       </span>
                     </div>
                   </Link>
+                  </FadeUp>
                 );
               })}
             </div>
-          </div>
+          </FadeUp>
         </div>
 
         {/* Prev / Next */}

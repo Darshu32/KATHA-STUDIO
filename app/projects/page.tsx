@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/lib/data";
 import { SiteFooter, PageHeader } from "@/components/page-shell";
+import { FadeUp } from "@/components/animations";
 
 export const metadata = {
   title: "Projects — KATHA Studio",
@@ -19,9 +20,9 @@ export default function ProjectsPage() {
         <div className="border-t border-[rgba(17,17,17,0.1)]">
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
             <div className="grid gap-x-6 gap-y-14 py-14 sm:grid-cols-2 md:gap-x-10 md:gap-y-16 md:py-20 lg:gap-x-12 lg:gap-y-20 lg:py-20">
-              {projects.map((project) => (
+              {projects.map((project, i) => (
+                <FadeUp key={project.slug} delay={i * 0.1}>
                 <Link
-                  key={project.slug}
                   href={`/projects/${project.slug}`}
                   className="group block space-y-4 transition-opacity hover:opacity-75"
                 >
@@ -55,6 +56,7 @@ export default function ProjectsPage() {
                     </span>
                   </div>
                 </Link>
+                </FadeUp>
               ))}
             </div>
           </div>

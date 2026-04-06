@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteFooter, PageHeader } from "@/components/page-shell";
+import { FadeUp } from "@/components/animations";
 
 export const metadata = {
   title: "About — KATHA Studio",
@@ -15,7 +16,7 @@ export default function AboutPage() {
         <div className="border-t border-[rgba(17,17,17,0.1)]">
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
             <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-2 lg:gap-24 lg:py-28">
-              <div className="space-y-5">
+              <FadeUp delay={0} className="space-y-5">
                 <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   KATHA unfolds deliberately — a quieter architectural language, slower reveals,
                   and interiors shaped through proportion, restraint, and material calm.
@@ -24,8 +25,8 @@ export default function AboutPage() {
                   A premium studio building residential and interior work through stronger
                   proportion, calmer materiality, and fewer but better decisions.
                 </p>
-              </div>
-              <div className="space-y-6">
+              </FadeUp>
+              <FadeUp delay={0.12} className="space-y-6">
                 <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   Based in Ahmedabad, India — we work across residential architecture,
                   interior design, renovation, and architectural consultation.
@@ -38,7 +39,7 @@ export default function AboutPage() {
                 >
                   Get in Touch
                 </Link>
-              </div>
+              </FadeUp>
             </div>
           </div>
         </div>

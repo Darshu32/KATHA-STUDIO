@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data";
 import { SiteFooter } from "@/components/page-shell";
+import { FadeUp, SplitReveal } from "@/components/animations";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -42,20 +43,23 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         {/* Header */}
         <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
           <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-[0.55fr_0.45fr] lg:gap-24 lg:py-28">
-            <div className="space-y-5">
+            <FadeUp delay={0} className="space-y-5">
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.3em", color: "rgba(17,17,17,0.28)" }}>
                 Chapter {project.id}
               </p>
-              <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem,4.8vw,4.5rem)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", color: "#111" }}>
-                {project.title}
-              </h1>
+              <SplitReveal
+                text={project.title}
+                tag="h1"
+                delay={0.08}
+                style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem,4.8vw,4.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: "#111" }}
+              />
               <div className="flex flex-wrap gap-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(17,17,17,0.28)" }}>
                 <span>{project.type}</span>
                 <span>{project.location}</span>
                 <span>{project.year}</span>
               </div>
-            </div>
-            <div className="space-y-6">
+            </FadeUp>
+            <FadeUp delay={0.18} className="space-y-6">
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "rgba(17,17,17,0.58)" }}>
                 {project.philosophy}
               </p>
@@ -66,23 +70,25 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               >
                 Enquire About This Project
               </Link>
-            </div>
+            </FadeUp>
           </div>
 
           {/* Gallery */}
-          <div className="grid gap-4 pb-14 sm:grid-cols-2 md:gap-5 md:pb-20 lg:pb-24">
+          <FadeUp delay={0} className="grid gap-4 pb-14 sm:grid-cols-2 md:gap-5 md:pb-20 lg:pb-24">
             <div className={`${bg} aspect-[4/3] relative`}>
               <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(0,0,0,0.04))]" />
             </div>
             <div className={`${bg2} aspect-[4/3] relative`}>
               <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(0,0,0,0.04))]" />
             </div>
-          </div>
+          </FadeUp>
 
           {/* Full-width image */}
-          <div className={`${bg} aspect-[4/3] w-full relative mb-14 sm:aspect-[21/9] md:mb-20 lg:mb-24`}>
-            <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(0,0,0,0.06))]" />
-          </div>
+          <FadeUp delay={0.1}>
+            <div className={`${bg} aspect-[4/3] w-full relative mb-14 sm:aspect-[21/9] md:mb-20 lg:mb-24`}>
+              <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(0,0,0,0.06))]" />
+            </div>
+          </FadeUp>
         </div>
 
         {/* Prev / Next */}

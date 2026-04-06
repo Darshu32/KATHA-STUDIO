@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteFooter, PageHeader } from "@/components/page-shell";
+import { FadeUp } from "@/components/animations";
 
 export const metadata = {
   title: "Contact — KATHA Studio",
@@ -16,7 +17,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
             <div className="grid gap-12 py-14 md:gap-16 md:py-20 lg:grid-cols-2 lg:gap-24 lg:py-28">
               {/* Left */}
-              <div className="space-y-7">
+              <FadeUp delay={0} className="space-y-7">
                 <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.6rem,3.8vw,3.4rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: "#111" }}>
                   Begin with a clear architectural conversation.
                 </h2>
@@ -31,10 +32,10 @@ export default function ContactPage() {
                 >
                   Book Consultation
                 </Link>
-              </div>
+              </FadeUp>
 
               {/* Right — contact details */}
-              <div className="grid gap-8 border-t border-[rgba(17,17,17,0.1)] pt-10 sm:grid-cols-3 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
+              <FadeUp delay={0.14} className="grid gap-8 border-t border-[rgba(17,17,17,0.1)] pt-10 sm:grid-cols-3 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
                 {[
                   { label: "Email", value: "hello@kathastudio.com", href: "mailto:hello@kathastudio.com" },
                   { label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
@@ -53,7 +54,7 @@ export default function ContactPage() {
                     )}
                   </div>
                 ))}
-              </div>
+              </FadeUp>
             </div>
           </div>
         </div>

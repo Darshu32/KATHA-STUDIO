@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SplitReveal } from "@/components/animations";
 
 /* ── Shared Footer ─────────────────────────────────────────── */
 export function SiteFooter() {
@@ -66,19 +67,20 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
       >
         {index}
       </p>
-      <h1
+      <SplitReveal
+        text={title}
+        tag="h1"
+        delay={0.1}
         style={{
           fontFamily: "var(--font-avenir-heavy)",
           fontSize: "clamp(2.2rem,6vw,5.5rem)",
           fontWeight: 800,
           textTransform: "uppercase",
           letterSpacing: "0.01em",
-          lineHeight: 1.0,
+          lineHeight: 1.05,
           color: "#111",
         }}
-      >
-        {title}
-      </h1>
+      />
     </div>
   );
 }
