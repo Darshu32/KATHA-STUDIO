@@ -178,7 +178,7 @@ function IntroBrandSequence({
             }
             className="flex w-full items-center justify-center px-6 md:px-12 lg:px-20"
           >
-            <div className="flex flex-wrap items-end justify-center gap-x-4 gap-y-1">
+            <div className="flex flex-wrap items-end justify-center gap-x-3 gap-y-1 sm:gap-x-4">
               <div className="flex">
                 {brandLetters.map((letter, index) => (
                   <motion.span
@@ -213,7 +213,7 @@ function IntroBrandSequence({
                         ? undefined
                         : { scale: 0.92, transition: { duration: 0.12 } }
                     }
-                    className="cursor-pointer select-none font-[var(--font-avenir-heavy)] text-[clamp(2rem,10vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
+                    className="cursor-pointer select-none font-[var(--font-avenir-heavy)] text-[clamp(2.2rem,11vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
                     style={{ perspective: "600px" }}
                   >
                     {letter}
@@ -245,7 +245,7 @@ function IntroBrandSequence({
                         transition: { duration: 0.45 },
                       }
                 }
-                className="cursor-pointer select-none font-[var(--font-avenir-book)] text-[clamp(2rem,10vw,8.5rem)] font-medium uppercase leading-[0.9] tracking-[0.06em] text-[var(--text-muted)]"
+                className="cursor-pointer select-none font-[var(--font-playfair)] italic text-[clamp(2rem,10vw,7.8rem)] font-medium normal-case leading-[0.9] tracking-[0.01em] text-[var(--text-muted)]"
               >
                 Studio
               </motion.span>
@@ -275,6 +275,124 @@ function useLenisScroll() {
   }, []);
 }
 
+/* ─────────────────────── CARD CONTENT ─────────────────────── */
+
+function NavCardContent({
+  card,
+  isActive,
+  isDragging,
+}: {
+  card: (typeof navCards)[number];
+  isActive: boolean;
+  isDragging: boolean;
+}) {
+  return (
+    <Link
+      href={card.href}
+      data-cursor="Enter"
+      draggable={false}
+      onClick={(e) => {
+        if (isDragging) e.preventDefault();
+      }}
+      className="relative flex h-full flex-col justify-between overflow-hidden p-6 md:p-7"
+    >
+      {/* Accent line — top */}
+      <motion.div
+        animate={{
+          opacity: isActive ? 1 : 0.3,
+          scaleX: isActive ? 1 : 0.4,
+        }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 left-0 right-0 origin-center"
+        style={{ height: "2px", backgroundColor: card.accent }}
+      />
+
+      {/* Radial top glow */}
+      <motion.div
+        animate={{ opacity: isActive ? 1 : 0.4 }}
+        transition={{ duration: 0.5 }}
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `radial-gradient(ellipse at 50% 0%, ${card.accent}22 0%, transparent 60%)`,
+        }}
+      />
+
+      {/* Ambient center glow */}
+      <motion.div
+        animate={{ opacity: isActive ? 0.7 : 0 }}
+        transition={{ duration: 0.6 }}
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `radial-gradient(circle at 50% 55%, ${card.accent}18 0%, transparent 70%)`,
+        }}
+      />
+
+      {/* Bottom vignette */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.42) 0%, transparent 52%)",
+        }}
+      />
+
+      {/* Top row: number + arrow */}
+      <div className="relative flex items-start justify-between">
+        <span
+          className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em]"
+          style={{
+            fontSize: "clamp(0.56rem, 0.8vw, 0.62rem)",
+            color: `${card.accent}88`,
+          }}
+        >
+          {card.id}
+        </span>
+        <motion.span
+          animate={{
+            x: isActive ? 4 : 0,
+            y: isActive ? -4 : 0,
+            scale: isActive ? 1.22 : 1,
+          }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            fontSize: "clamp(0.8rem, 1vw, 0.92rem)",
+            color: isActive ? card.accent : `${card.accent}70`,
+          }}
+        >
+          ↗
+        </motion.span>
+      </div>
+
+      {/* Bottom: label + tagline */}
+      <motion.div
+        animate={{ y: isActive ? -2 : 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="relative"
+      >
+        <p
+          className="font-[var(--font-playfair)] italic font-medium normal-case leading-[0.95]"
+          style={{
+            fontSize: "clamp(0.72rem, 1vw, 0.88rem)",
+            color: `${card.accent}90`,
+            marginBottom: "4px",
+          }}
+        >
+          {card.tagline}
+        </p>
+        <p
+          className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-none tracking-[0.01em]"
+          style={{
+            fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
+            color: card.accent,
+          }}
+        >
+          {card.label}
+        </p>
+      </motion.div>
+    </Link>
+  );
+}
+
 /* ═══════════════════════ MAIN COMPONENT ══════════════════════ */
 
 export function SiteExperience() {
@@ -284,9 +402,11 @@ export function SiteExperience() {
   const reduceMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
+  const mobileCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
 
   const handleIntroSettled = useCallback(() => {
@@ -304,9 +424,18 @@ export function SiteExperience() {
     }
   }, [introComplete]);
 
-  /* Compute horizontal drag constraints */
+  /* Detect mobile viewport */
   useEffect(() => {
-    if (!introComplete) return;
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  /* Compute horizontal drag constraints (desktop only) */
+  useEffect(() => {
+    if (!introComplete || isMobile) return;
     const calc = () => {
       if (innerRef.current && outerRef.current) {
         const maxDrag = Math.max(
@@ -316,14 +445,46 @@ export function SiteExperience() {
         setDragConstraints({ left: -maxDrag, right: 0 });
       }
     };
-    // Small timeout to allow layout to settle after intro
     const timer = setTimeout(calc, 100);
     window.addEventListener("resize", calc);
     return () => {
       clearTimeout(timer);
       window.removeEventListener("resize", calc);
     };
-  }, [introComplete]);
+  }, [introComplete, isMobile]);
+
+  /* IntersectionObserver — mobile scroll-based active detection */
+  useEffect(() => {
+    if (!isMobile || !introComplete) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let bestRatio = 0;
+        let bestIndex = -1;
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > bestRatio) {
+            bestRatio = entry.intersectionRatio;
+            const idx = Number(entry.target.getAttribute("data-index"));
+            if (!Number.isNaN(idx)) bestIndex = idx;
+          }
+        });
+        if (bestIndex >= 0 && bestRatio > 0.35) {
+          setActiveIndex(bestIndex);
+        }
+      },
+      {
+        rootMargin: "-28% 0px -28% 0px",
+        threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
+      }
+    );
+
+    const refs = mobileCardRefs.current;
+    refs.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [isMobile, introComplete]);
 
   return (
     <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500">
@@ -336,9 +497,9 @@ export function SiteExperience() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="px-8 pt-14 pb-10 md:px-12 md:pt-16 md:pb-12 lg:px-20 lg:pt-20 lg:pb-16"
+          className="px-6 pt-10 pb-8 sm:px-8 sm:pt-14 sm:pb-10 md:px-12 md:pt-16 md:pb-12 lg:px-20 lg:pt-20 lg:pb-16"
         >
-          <div className="flex items-end justify-between gap-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
 
             {/* Left: Headline */}
             <div className="flex-shrink-0">
@@ -354,8 +515,8 @@ export function SiteExperience() {
                   delay: reduceMotion ? 0 : 0.3,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="mb-2 font-[var(--font-avenir-book)] uppercase tracking-[0.2em] text-[var(--text-muted)]"
-                style={{ fontSize: "clamp(0.6rem, 0.95vw, 0.82rem)" }}
+                className="mb-1 font-[var(--font-playfair)] italic text-[var(--text-muted)]"
+                style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.35rem)" }}
               >
                 For the
               </motion.p>
@@ -372,15 +533,17 @@ export function SiteExperience() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.88] tracking-[0.01em] text-[var(--text)]"
-                style={{ fontSize: "clamp(2.8rem, 5.8vw, 5.8rem)" }}
+                style={{ fontSize: "clamp(2.2rem, 8vw, 6rem)" }}
               >
                 Architecture
                 <br />
-                That Breathes
+                <span className="font-[var(--font-playfair)] italic font-medium normal-case tracking-normal">
+                  that breathes
+                </span>
               </motion.h1>
             </div>
 
-            {/* Right: Tagline — hidden on mobile */}
+            {/* Right: Tagline — visible on all screens */}
             <motion.p
               initial={reduceMotion ? false : { opacity: 0, y: 16 }}
               animate={
@@ -393,8 +556,8 @@ export function SiteExperience() {
                 delay: reduceMotion ? 0 : 0.62,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="hidden max-w-[240px] font-[var(--font-inter)] leading-[1.75] text-[var(--text-muted)] md:block lg:max-w-[300px]"
-              style={{ fontSize: "clamp(0.66rem, 0.9vw, 0.8rem)" }}
+              className="max-w-full font-[var(--font-inter)] leading-[1.75] text-[var(--text-muted)] md:max-w-[240px] lg:max-w-[300px]"
+              style={{ fontSize: "clamp(0.78rem, 1vw, 0.88rem)" }}
             >
               We design spaces that mirror your vision, your calm, and your
               story — because architecture is not just built, it&apos;s lived.
@@ -402,181 +565,162 @@ export function SiteExperience() {
           </div>
         </motion.section>
 
-        {/* ── CARD CAROUSEL ── */}
-        <section className="pb-20 md:pb-28">
-          <div ref={outerRef} className="overflow-hidden">
+        {/* ── CARD CAROUSEL / STACK ── */}
+        <section className="pb-16 md:pb-28">
+          {isMobile ? (
+            /* ── Mobile: Vertical Stack with scroll-triggered active ── */
             <motion.div
-              ref={innerRef}
-              drag="x"
-              dragConstraints={dragConstraints}
-              dragElastic={0.06}
-              dragMomentum
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={() => setTimeout(() => setIsDragging(false), 80)}
-              initial="hidden"
-              animate={introComplete ? "visible" : "hidden"}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: reduceMotion ? 0 : 0.14,
-                    delayChildren: reduceMotion ? 0 : 0.75,
-                  },
-                },
-              }}
-              className="flex gap-3 px-8 md:gap-4 md:px-12 lg:justify-center lg:px-20 cursor-grab active:cursor-grabbing select-none"
+              initial={reduceMotion ? false : { opacity: 0 }}
+              animate={
+                introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }
+              }
+              transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.6 }}
+              className="flex flex-col gap-5 px-6 pb-4"
             >
               {navCards.map((card, i) => {
                 const isActive = activeIndex === i;
-
                 return (
-                  <motion.div
+                  <div
                     key={card.id}
-                    variants={{
-                      hidden: reduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 120, rotateX: -12, filter: "blur(10px)" },
-                      visible: reduceMotion
-                        ? { opacity: 1 }
-                        : {
-                            opacity: 1,
-                            y: 0,
-                            rotateX: 0,
-                            filter: "blur(0px)",
-                            transition: {
-                              duration: 1,
-                              ease: [0.22, 1, 0.36, 1],
-                            },
-                          },
+                    ref={(el) => {
+                      mobileCardRefs.current[i] = el;
                     }}
-                    className="flex-shrink-0"
-                    style={{ perspective: "900px" }}
+                    data-index={i}
+                    className="flex w-full justify-center"
                   >
                     <motion.div
-                      animate={{
-                        scale: isActive ? 1.06 : 0.9,
-                        y: isActive ? -26 : 0,
-                        opacity: isActive ? 1 : 0.52,
-                        boxShadow: isActive
-                          ? `0 30px 70px -18px ${card.accent}4d, 0 0 90px -28px ${card.accent}40, 0 0 0 1px ${card.accent}22`
-                          : "0 0 0 0 rgba(0,0,0,0)",
-                      }}
+                      initial={reduceMotion ? false : { opacity: 0, y: 60 }}
+                      animate={
+                        introComplete || reduceMotion
+                          ? { opacity: 1, y: 0 }
+                          : { opacity: 0, y: 60 }
+                      }
                       transition={{
-                        scale: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-                        y: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-                        opacity: { duration: 0.4 },
-                        boxShadow: { duration: 0.55 },
+                        duration: 0.9,
+                        delay: reduceMotion ? 0 : 0.75 + i * 0.1,
+                        ease: [0.22, 1, 0.36, 1],
                       }}
-                      onHoverStart={() => setActiveIndex(i)}
-                      whileTap={{ scale: isActive ? 1.03 : 0.87 }}
-                      className="overflow-hidden rounded-2xl"
-                      style={{
-                        width: "clamp(188px, 21.5vw, 278px)",
-                        height: "clamp(340px, 58vh, 520px)",
-                        backgroundColor: card.darkBg,
-                      }}
+                      className="w-full"
                     >
-                      <Link
-                        href={card.href}
-                        data-cursor="Enter"
-                        draggable={false}
-                        onClick={(e) => {
-                          if (isDragging) e.preventDefault();
+                      <motion.div
+                        animate={{
+                          scale: isActive ? 1 : 0.94,
+                          y: isActive ? -6 : 0,
+                          opacity: isActive ? 1 : 0.45,
+                          boxShadow: isActive
+                            ? `0 30px 70px -18px ${card.accent}4d, 0 0 90px -28px ${card.accent}40, 0 0 0 1px ${card.accent}22`
+                            : "0 0 0 0 rgba(0,0,0,0)",
                         }}
-                        className="relative flex h-full flex-col justify-between overflow-hidden p-6 md:p-7"
+                        transition={{
+                          scale: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                          y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                          opacity: { duration: 0.45 },
+                          boxShadow: { duration: 0.55 },
+                        }}
+                        whileTap={{ scale: 0.97 }}
+                        className="relative mx-auto w-full max-w-[26rem] overflow-hidden rounded-2xl"
+                        style={{
+                          height: "min(62vh, 30rem)",
+                          backgroundColor: card.darkBg,
+                        }}
                       >
-                        {/* Accent line — top */}
-                        <motion.div
-                          animate={{
-                            opacity: isActive ? 1 : 0.3,
-                            scaleX: isActive ? 1 : 0.4,
-                          }}
-                          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                          className="absolute top-0 left-0 right-0 origin-center"
-                          style={{
-                            height: "2px",
-                            backgroundColor: card.accent,
-                          }}
+                        <NavCardContent
+                          card={card}
+                          isActive={isActive}
+                          isDragging={false}
                         />
-
-                        {/* Radial top glow */}
-                        <motion.div
-                          animate={{ opacity: isActive ? 1 : 0.4 }}
-                          transition={{ duration: 0.5 }}
-                          className="pointer-events-none absolute inset-0"
-                          style={{
-                            background: `radial-gradient(ellipse at 50% 0%, ${card.accent}22 0%, transparent 60%)`,
-                          }}
-                        />
-
-                        {/* Subtle bottom vignette */}
-                        <div
-                          className="pointer-events-none absolute inset-0"
-                          style={{
-                            background:
-                              "linear-gradient(to top, rgba(0,0,0,0.38) 0%, transparent 52%)",
-                          }}
-                        />
-
-                        {/* Top row: number + arrow */}
-                        <div className="relative flex items-start justify-between">
-                          <span
-                            className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em]"
-                            style={{
-                              fontSize: "0.56rem",
-                              color: `${card.accent}80`,
-                            }}
-                          >
-                            {card.id}
-                          </span>
-                          <motion.span
-                            animate={{
-                              x: isActive ? 4 : 0,
-                              y: isActive ? -4 : 0,
-                              scale: isActive ? 1.2 : 1,
-                            }}
-                            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                            style={{
-                              fontSize: "0.82rem",
-                              color: isActive ? card.accent : `${card.accent}70`,
-                            }}
-                          >
-                            ↗
-                          </motion.span>
-                        </div>
-
-                        {/* Bottom: label + tagline */}
-                        <motion.div
-                          animate={{ y: isActive ? -2 : 0 }}
-                          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                          className="relative space-y-[6px]"
-                        >
-                          <p
-                            className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-none tracking-[0.01em]"
-                            style={{
-                              fontSize: "clamp(1.3rem, 1.9vw, 2rem)",
-                              color: card.accent,
-                            }}
-                          >
-                            {card.label}
-                          </p>
-                          <p
-                            className="font-[var(--font-inter)] font-medium uppercase tracking-[0.22em]"
-                            style={{
-                              fontSize: "0.56rem",
-                              color: `${card.accent}70`,
-                            }}
-                          >
-                            {card.tagline}
-                          </p>
-                        </motion.div>
-                      </Link>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </motion.div>
-          </div>
+          ) : (
+            /* ── Desktop: Horizontal Carousel (drag-enabled) ── */
+            <div ref={outerRef} className="overflow-hidden">
+              <motion.div
+                ref={innerRef}
+                drag="x"
+                dragConstraints={dragConstraints}
+                dragElastic={0.06}
+                dragMomentum
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={() => setTimeout(() => setIsDragging(false), 80)}
+                initial="hidden"
+                animate={introComplete ? "visible" : "hidden"}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: reduceMotion ? 0 : 0.14,
+                      delayChildren: reduceMotion ? 0 : 0.75,
+                    },
+                  },
+                }}
+                className="flex gap-3 px-8 md:gap-4 md:px-12 lg:justify-center lg:px-20 cursor-grab active:cursor-grabbing select-none"
+              >
+                {navCards.map((card, i) => {
+                  const isActive = activeIndex === i;
+
+                  return (
+                    <motion.div
+                      key={card.id}
+                      variants={{
+                        hidden: reduceMotion
+                          ? { opacity: 1 }
+                          : { opacity: 0, y: 120, rotateX: -12, filter: "blur(10px)" },
+                        visible: reduceMotion
+                          ? { opacity: 1 }
+                          : {
+                              opacity: 1,
+                              y: 0,
+                              rotateX: 0,
+                              filter: "blur(0px)",
+                              transition: {
+                                duration: 1,
+                                ease: [0.22, 1, 0.36, 1],
+                              },
+                            },
+                      }}
+                      className="flex-shrink-0"
+                      style={{ perspective: "900px" }}
+                    >
+                      <motion.div
+                        animate={{
+                          scale: isActive ? 1.06 : 0.9,
+                          y: isActive ? -26 : 0,
+                          opacity: isActive ? 1 : 0.52,
+                          boxShadow: isActive
+                            ? `0 30px 70px -18px ${card.accent}4d, 0 0 90px -28px ${card.accent}40, 0 0 0 1px ${card.accent}22`
+                            : "0 0 0 0 rgba(0,0,0,0)",
+                        }}
+                        transition={{
+                          scale: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                          y: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                          opacity: { duration: 0.4 },
+                          boxShadow: { duration: 0.55 },
+                        }}
+                        onHoverStart={() => setActiveIndex(i)}
+                        whileTap={{ scale: isActive ? 1.03 : 0.87 }}
+                        className="overflow-hidden rounded-2xl"
+                        style={{
+                          width: "clamp(200px, 22vw, 290px)",
+                          height: "clamp(360px, 60vh, 540px)",
+                          backgroundColor: card.darkBg,
+                        }}
+                      >
+                        <NavCardContent
+                          card={card}
+                          isActive={isActive}
+                          isDragging={isDragging}
+                        />
+                      </motion.div>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </div>
+          )}
         </section>
       </main>
 
@@ -588,7 +732,7 @@ export function SiteExperience() {
         <div className="mx-auto max-w-[88rem] px-6 py-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between">
             <BrandWordmark compact />
-            <p className="font-[var(--font-inter)] text-[0.6rem] font-medium uppercase tracking-[0.22em] text-[var(--text-dim)]">
+            <p className="font-[var(--font-inter)] text-[0.58rem] font-medium uppercase tracking-[0.22em] text-[var(--text-dim)] sm:text-[0.6rem]">
               &copy; {new Date().getFullYear()} Katha Studio
             </p>
           </div>
