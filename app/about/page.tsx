@@ -18,17 +18,17 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
             <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-2 lg:gap-24 lg:py-28">
               <FadeUp delay={0} className="space-y-5">
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem,1.35vw,1.22rem)", lineHeight: 1.65, color: "var(--text-muted)" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   KATHA unfolds deliberately — a quieter architectural language, slower reveals,
                   and interiors shaped through proportion, restraint, and material calm.
                 </p>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem,1.35vw,1.22rem)", lineHeight: 1.65, color: "var(--text-muted)" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   A premium studio building residential and interior work through stronger
                   proportion, calmer materiality, and fewer but better decisions.
                 </p>
               </FadeUp>
               <FadeUp delay={0.12} className="space-y-6">
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem,1.35vw,1.22rem)", lineHeight: 1.65, color: "var(--text-muted)" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   Based in Ahmedabad, India — we work across residential architecture,
                   interior design, renovation, and architectural consultation.
                   Every project begins with listening.
@@ -58,15 +58,8 @@ export default function AboutPage() {
               ].map(({ to, suffix, label }) => (
                 <div key={label} className="px-6 first:pl-0 last:pr-0 md:px-10 space-y-3">
                   <p
-                    className="text-[var(--text)]"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: "clamp(2.6rem,6vw,4.8rem)",
-                      fontWeight: 600,
-                      fontStyle: "italic",
-                      lineHeight: 1,
-                      letterSpacing: "-0.02em",
-                    }}
+                    className="font-[var(--font-avenir-heavy)] font-extrabold text-[var(--text)]"
+                    style={{ fontSize: "clamp(2.2rem,5vw,4rem)", lineHeight: 1, letterSpacing: "-0.02em" }}
                   >
                     <CountUp to={to} suffix={suffix} />
                   </p>

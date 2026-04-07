@@ -9,8 +9,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@fontsource/bodoni-moda": "^5.2.7",
-    "@fontsource/eb-garamond": "^5.2.7",
     "@fontsource/inter": "latest",
     "@fontsource/manrope": "latest",
     "@fontsource/playfair-display": "latest",

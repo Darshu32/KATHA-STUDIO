@@ -51,7 +51,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 text={project.title}
                 tag="h1"
                 delay={0.08}
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem,5.2vw,5rem)", fontWeight: 600, fontStyle: "italic", lineHeight: 1.02, letterSpacing: "-0.02em", color: "var(--text)" }}
+                style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem,4.8vw,4.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: "var(--text)" }}
               />
               <div className="flex flex-wrap gap-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
                 <span>{project.type}</span>
@@ -60,7 +60,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
             </FadeUp>
             <FadeUp delay={0.18} className="space-y-6">
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.05rem,1.4vw,1.28rem)", lineHeight: 1.65, color: "var(--text-muted)" }}>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                 {project.philosophy}
               </p>
               <Link
@@ -98,7 +98,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               {prev ? (
                 <Link href={`/projects/${prev.slug}`} className="flex flex-col gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
                   <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>&larr; Previous</span>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1rem,1.7vw,1.25rem)", fontWeight: 600, fontStyle: "italic", letterSpacing: "-0.01em", color: "var(--text)" }}>{prev.title}</span>
+                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{prev.title}</span>
                 </Link>
               ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
             </div>
@@ -106,7 +106,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               {next ? (
                 <Link href={`/projects/${next.slug}`} className="flex flex-col items-end gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
                   <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>Next &rarr;</span>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1rem,1.7vw,1.25rem)", fontWeight: 600, fontStyle: "italic", letterSpacing: "-0.01em", color: "var(--text)" }}>{next.title}</span>
+                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{next.title}</span>
                 </Link>
               ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
             </div>

@@ -18,10 +18,10 @@ export default function ContactPage() {
             <div className="grid gap-12 py-14 md:gap-16 md:py-20 lg:grid-cols-2 lg:gap-24 lg:py-28">
               {/* Left */}
               <FadeUp delay={0} className="space-y-7">
-                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem,4.2vw,3.8rem)", fontWeight: 600, fontStyle: "italic", lineHeight: 1.05, letterSpacing: "-0.02em", color: "var(--text)" }}>
+                <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.6rem,3.8vw,3.4rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: "var(--text)" }}>
                   Begin with a clear architectural conversation.
                 </h2>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem,1.35vw,1.22rem)", lineHeight: 1.65, color: "var(--text-muted)" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   Share the site, scope, and intent. We will return with a focused
                   first consultation and the strongest next step.
                 </p>

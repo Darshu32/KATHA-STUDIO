@@ -24,23 +24,22 @@ export default function ProjectsPage() {
                     tone={project.tone}
                     topLabel={`Project ${project.id}`}
                   >
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <div className="flex items-start justify-between gap-3">
                         <p
                           style={{
-                            fontFamily: "var(--font-display)",
-                            fontSize: "clamp(1.3rem,2.1vw,1.7rem)",
-                            fontWeight: 600,
-                            fontStyle: "italic",
-                            letterSpacing: "-0.01em",
-                            lineHeight: 1.05,
+                            fontFamily: "var(--font-avenir-heavy)",
+                            fontSize: "clamp(0.95rem,1.5vw,1.05rem)",
+                            fontWeight: 800,
+                            textTransform: "uppercase",
+                            letterSpacing: "0.02em",
                             color: "var(--text)",
                           }}
                         >
                           {project.title}
                         </p>
                         <span
-                          className="shrink-0 mt-[6px]"
+                          className="shrink-0 mt-[3px]"
                           style={{
                             fontFamily: "var(--font-inter)",
                             fontSize: "0.56rem",
@@ -69,10 +68,9 @@ export default function ProjectsPage() {
                       </div>
                       <p
                         style={{
-                          fontFamily: "var(--font-serif)",
-                          fontSize: "clamp(0.95rem,1.15vw,1.1rem)",
-                          fontWeight: 400,
-                          lineHeight: 1.65,
+                          fontFamily: "var(--font-inter)",
+                          fontSize: "clamp(0.78rem,1.1vw,0.9rem)",
+                          lineHeight: 1.8,
                           color: "var(--text-muted)",
                         }}
                       >

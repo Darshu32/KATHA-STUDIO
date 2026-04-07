@@ -24,15 +24,14 @@ export default function ServicesPage() {
                     tone={service.tone}
                     topLabel={`Service ${service.id}`}
                   >
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <p
                         style={{
-                          fontFamily: "var(--font-display)",
-                          fontSize: "clamp(1.3rem,2.1vw,1.7rem)",
-                          fontWeight: 600,
-                          fontStyle: "italic",
-                          letterSpacing: "-0.01em",
-                          lineHeight: 1.05,
+                          fontFamily: "var(--font-avenir-heavy)",
+                          fontSize: "clamp(0.95rem,1.5vw,1.05rem)",
+                          fontWeight: 800,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.02em",
                           color: "var(--text)",
                         }}
                       >
@@ -52,10 +51,9 @@ export default function ServicesPage() {
                       </p>
                       <p
                         style={{
-                          fontFamily: "var(--font-serif)",
-                          fontSize: "clamp(0.95rem,1.15vw,1.1rem)",
-                          fontWeight: 400,
-                          lineHeight: 1.65,
+                          fontFamily: "var(--font-inter)",
+                          fontSize: "clamp(0.78rem,1.1vw,0.9rem)",
+                          lineHeight: 1.8,
                           color: "var(--text-muted)",
                         }}
                       >
