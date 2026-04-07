@@ -8,6 +8,19 @@ import "@fontsource/playfair-display/latin-400-italic.css";
 import "@fontsource/playfair-display/latin-500-italic.css";
 import "@fontsource/playfair-display/latin-700.css";
 import "@fontsource/playfair-display/latin-800.css";
+// Editorial display — Bodoni Moda (luxury high-contrast serif for page titles)
+import "@fontsource/bodoni-moda/latin-500.css";
+import "@fontsource/bodoni-moda/latin-600.css";
+import "@fontsource/bodoni-moda/latin-700.css";
+import "@fontsource/bodoni-moda/latin-800.css";
+import "@fontsource/bodoni-moda/latin-500-italic.css";
+import "@fontsource/bodoni-moda/latin-600-italic.css";
+// Editorial body — EB Garamond (timeless readable serif for descriptions)
+import "@fontsource/eb-garamond/latin-400.css";
+import "@fontsource/eb-garamond/latin-500.css";
+import "@fontsource/eb-garamond/latin-600.css";
+import "@fontsource/eb-garamond/latin-400-italic.css";
+import "@fontsource/eb-garamond/latin-500-italic.css";
 import { CustomCursor } from "@/components/cursor";
 import { PersistentNavbar } from "@/components/persistent-navbar";
 import { PageTransitionOverlay } from "@/components/page-transition";

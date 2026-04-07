@@ -78,12 +78,13 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
         tag="h1"
         delay={0.1}
         style={{
-          fontFamily: "var(--font-avenir-heavy)",
-          fontSize: "clamp(2.2rem,6vw,5.5rem)",
-          fontWeight: 800,
-          textTransform: "uppercase",
-          letterSpacing: "0.01em",
-          lineHeight: 1.05,
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(2.6rem,7vw,6.5rem)",
+          fontWeight: 700,
+          fontStyle: "italic",
+          textTransform: "none",
+          letterSpacing: "-0.01em",
+          lineHeight: 1,
           color: "var(--text)",
         }}
       />
