@@ -245,7 +245,7 @@ function IntroBrandSequence({
                         transition: { duration: 0.45 },
                       }
                 }
-                className="cursor-pointer select-none font-[var(--font-playfair)] italic text-[clamp(2rem,10vw,7.8rem)] font-medium normal-case leading-[0.9] tracking-[0.01em] text-[var(--text-muted)]"
+                className="cursor-pointer select-none font-[var(--font-avenir-book)] text-[clamp(2rem,10vw,8.5rem)] font-medium uppercase leading-[0.9] tracking-[0.06em] text-[var(--text-muted)]"
               >
                 Studio
               </motion.span>
@@ -367,26 +367,25 @@ function NavCardContent({
       <motion.div
         animate={{ y: isActive ? -2 : 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="relative"
+        className="relative space-y-[6px]"
       >
         <p
-          className="font-[var(--font-playfair)] italic font-medium normal-case leading-[0.95]"
+          className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-none tracking-[0.02em]"
           style={{
-            fontSize: "clamp(0.72rem, 1vw, 0.88rem)",
-            color: `${card.accent}90`,
-            marginBottom: "4px",
-          }}
-        >
-          {card.tagline}
-        </p>
-        <p
-          className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-none tracking-[0.01em]"
-          style={{
-            fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
+            fontSize: "clamp(1.7rem, 3vw, 2.5rem)",
             color: card.accent,
           }}
         >
           {card.label}
+        </p>
+        <p
+          className="font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.2em]"
+          style={{
+            fontSize: "clamp(0.58rem, 0.8vw, 0.68rem)",
+            color: `${card.accent}80`,
+          }}
+        >
+          {card.tagline}
         </p>
       </motion.div>
     </Link>
@@ -515,8 +514,8 @@ export function SiteExperience() {
                   delay: reduceMotion ? 0 : 0.3,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="mb-1 font-[var(--font-playfair)] italic text-[var(--text-muted)]"
-                style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.35rem)" }}
+                className="mb-2 font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]"
+                style={{ fontSize: "clamp(0.65rem, 1vw, 0.85rem)" }}
               >
                 For the
               </motion.p>
@@ -532,14 +531,12 @@ export function SiteExperience() {
                   delay: reduceMotion ? 0 : 0.44,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.88] tracking-[0.01em] text-[var(--text)]"
-                style={{ fontSize: "clamp(2.2rem, 8vw, 6rem)" }}
+                className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.88] tracking-[0.02em] text-[var(--text)]"
+                style={{ fontSize: "clamp(2.4rem, 7vw, 5.8rem)" }}
               >
                 Architecture
                 <br />
-                <span className="font-[var(--font-playfair)] italic font-medium normal-case tracking-normal">
-                  that breathes
-                </span>
+                That Breathes
               </motion.h1>
             </div>
 
