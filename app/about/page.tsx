@@ -16,7 +16,7 @@ export default function AboutPage() {
 
         <div className="border-t border-[var(--border)]">
           <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
-            <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-2 lg:gap-24 lg:py-28">
+            <div className="grid gap-10 py-8 md:gap-14 md:py-12 lg:grid-cols-2 lg:gap-20 lg:py-14">
               <FadeUp delay={0} className="space-y-5">
                 <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
                   KATHA unfolds deliberately — a quieter architectural language, slower reveals,
@@ -50,7 +50,7 @@ export default function AboutPage() {
       <div className="border-t border-[var(--border)]">
         <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
           <FadeUp>
-            <div className="grid grid-cols-3 divide-x divide-[var(--border)] py-14 md:py-16">
+            <div className="grid grid-cols-3 divide-x divide-[var(--border)] py-10 md:py-12">
               {[
                 { to: 12, suffix: "+", label: "Projects Completed" },
                 { to: 4,  suffix: "",  label: "Years of Practice"  },

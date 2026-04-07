@@ -59,7 +59,7 @@ export function SiteFooter() {
 /* ── Section page header ───────────────────────────────────── */
 export function PageHeader({ index, title }: { index: string; title: string }) {
   return (
-    <div className="mx-auto max-w-[88rem] px-5 py-16 md:px-12 md:py-20 lg:px-20 lg:py-28">
+    <div className="mx-auto max-w-[88rem] px-5 pt-10 pb-8 md:px-12 md:pt-12 md:pb-10 lg:px-20 lg:pt-14 lg:pb-12">
       <p
         style={{
           fontFamily: "var(--font-inter)",
@@ -69,7 +69,7 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
           letterSpacing: "0.3em",
           color: "var(--text-dim)",
         }}
-        className="mb-5"
+        className="mb-4"
       >
         {index}
       </p>
@@ -87,7 +87,7 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
           color: "var(--text)",
         }}
       />
-      <LineReveal className="mt-8 h-[1px] w-16 bg-[var(--text)] opacity-20" />
+      <LineReveal className="mt-5 h-[1px] w-16 bg-[var(--text)] opacity-20" />
     </div>
   );
 }

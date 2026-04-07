@@ -12,6 +12,7 @@ import { CustomCursor } from "@/components/cursor";
 import { PersistentNavbar } from "@/components/persistent-navbar";
 import { PageTransitionOverlay } from "@/components/page-transition";
 import { FloatingCTA } from "@/components/floating-cta";
+import { ClickRipple } from "@/components/click-ripple";
 
 export const metadata: Metadata = {
   title: "KATHA STUDIO - Architecture & Interior Design",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <CustomCursor />
+        <ClickRipple />
         <PageTransitionOverlay />
         <PersistentNavbar />
         <FloatingCTA />

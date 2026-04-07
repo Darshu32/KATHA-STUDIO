@@ -43,10 +43,19 @@ export function ListingCard({
           animate={{
             y: hovered ? -10 : 0,
             boxShadow: hovered
-              ? `0 30px 70px -18px ${accent}4d, 0 0 90px -28px ${accent}40, 0 0 0 1px ${accent}22`
-              : "0 0 0 0 rgba(0,0,0,0)",
+              ? [
+                  `0 32px 68px -14px rgba(0,0,0,0.42), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
+                  `0 36px 80px -12px rgba(0,0,0,0.48), 0 0 100px -18px ${accent}a0, 0 0 0 1px ${accent}55`,
+                  `0 32px 68px -14px rgba(0,0,0,0.42), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
+                ]
+              : "0 14px 34px -18px rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0)",
           }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+            boxShadow: hovered
+              ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
+              : { duration: 0.55 },
+          }}
           className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl"
           style={{ backgroundColor: darkBg }}
         >

@@ -9,6 +9,7 @@ import {
   useMotionValue,
   useTransform,
   useSpring,
+  useScroll,
 } from "framer-motion";
 import { useEffect, useState, useCallback, useRef } from "react";
 import Lenis from "lenis";
@@ -66,6 +67,15 @@ const mysteryPhrases = [
   "What stays after the drawing ends",
   "Light, patience, a single gesture",
   "Architecture, in its lower voice",
+];
+
+/* Whispered lines that appear after idle timeout */
+const idleWhispers = [
+  "— still here?",
+  "— take your time",
+  "— the quietest architecture wins",
+  "— stay a moment longer",
+  "— we noticed you",
 ];
 
 /* ─────────────────────── BRAND WORDMARK ───────────────────── */
@@ -463,6 +473,161 @@ function NavCardContent({
   );
 }
 
+/* ──────────────────── DRIFTING DRAFTING MARKS ───────────────
+ *
+ * Small decorative elements that float around the hero on infinite
+ * sine-wave paths. Each has its own speed and phase so they never
+ * sync up. Creates an ambient "living page" feel.
+ * ──────────────────────────────────────────────────────────── */
+
+type DriftMark = {
+  content: string;
+  top: string;
+  left: string;
+  size: string;
+  letterSpacing: string;
+  duration: number;
+  delay: number;
+  dx: number; // horizontal drift amplitude
+  dy: number; // vertical drift amplitude
+  opacity: number;
+  italic?: boolean;
+};
+
+const driftMarks: DriftMark[] = [
+  {
+    content: "№ 01",
+    top: "18%",
+    left: "6%",
+    size: "0.58rem",
+    letterSpacing: "0.32em",
+    duration: 11,
+    delay: 0,
+    dx: 14,
+    dy: 10,
+    opacity: 0.22,
+  },
+  {
+    content: "—",
+    top: "32%",
+    left: "88%",
+    size: "1.4rem",
+    letterSpacing: "0",
+    duration: 13,
+    delay: 1.5,
+    dx: 18,
+    dy: 12,
+    opacity: 0.14,
+  },
+  {
+    content: "•",
+    top: "72%",
+    left: "14%",
+    size: "0.6rem",
+    letterSpacing: "0",
+    duration: 9,
+    delay: 2.8,
+    dx: 10,
+    dy: 14,
+    opacity: 0.2,
+  },
+  {
+    content: "23.02° N",
+    top: "80%",
+    left: "82%",
+    size: "0.55rem",
+    letterSpacing: "0.3em",
+    duration: 14,
+    delay: 0.6,
+    dx: 16,
+    dy: 8,
+    opacity: 0.18,
+  },
+  {
+    content: "/ ii",
+    top: "26%",
+    left: "72%",
+    size: "0.7rem",
+    letterSpacing: "0.15em",
+    duration: 12,
+    delay: 3.6,
+    dx: 12,
+    dy: 10,
+    opacity: 0.16,
+    italic: true,
+  },
+  {
+    content: "·",
+    top: "58%",
+    left: "46%",
+    size: "0.9rem",
+    letterSpacing: "0",
+    duration: 10,
+    delay: 4.2,
+    dx: 8,
+    dy: 12,
+    opacity: 0.14,
+  },
+];
+
+function DriftingMarks({ visible }: { visible: boolean }) {
+  const reduceMotion = useReducedMotion();
+  if (reduceMotion) return null;
+
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      {driftMarks.map((m, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0 }}
+          animate={
+            visible
+              ? {
+                  opacity: [0, m.opacity, m.opacity, 0],
+                  x: [0, m.dx, -m.dx * 0.6, 0],
+                  y: [0, -m.dy, m.dy * 0.5, 0],
+                }
+              : { opacity: 0 }
+          }
+          transition={{
+            opacity: {
+              duration: m.duration,
+              times: [0, 0.2, 0.8, 1],
+              delay: m.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+            x: {
+              duration: m.duration,
+              delay: m.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+            y: {
+              duration: m.duration,
+              delay: m.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
+          className="absolute font-[var(--font-inter)] font-medium uppercase"
+          style={{
+            top: m.top,
+            left: m.left,
+            fontSize: m.size,
+            letterSpacing: m.letterSpacing,
+            color: "var(--text-dim)",
+            fontStyle: m.italic ? "italic" : "normal",
+            textTransform: "uppercase",
+          }}
+        >
+          {m.content}
+        </motion.span>
+      ))}
+    </div>
+  );
+}
+
 /* ═══════════════════════ MAIN COMPONENT ══════════════════════ */
 
 export function SiteExperience() {
@@ -474,6 +639,9 @@ export function SiteExperience() {
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isIdle, setIsIdle] = useState(false);
+  const [whisper, setWhisper] = useState("");
+  const idleTimerRef = useRef<number | null>(null);
 
   /* Hero spotlight cursor — follows mouse, creates a soft light reveal */
   const spotX = useMotionValue(50);
@@ -485,6 +653,13 @@ export function SiteExperience() {
     ([x, y]) =>
       `radial-gradient(circle 380px at ${x}% ${y}%, color-mix(in srgb, var(--text) 5%, transparent) 0%, transparent 70%)`
   );
+
+  /* Scroll-linked parallax for hero elements */
+  const { scrollY, scrollYProgress } = useScroll();
+  const heroHeadlineY = useTransform(scrollY, [0, 600], [0, -40]);
+  const heroTaglineY = useTransform(scrollY, [0, 600], [0, -12]);
+  const driftLayerY = useTransform(scrollY, [0, 600], [0, 60]);
+  const scrollProgressY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -523,6 +698,36 @@ export function SiteExperience() {
       setPhraseIndex((n) => (n + 1) % mysteryPhrases.length);
     }, 4200);
     return () => window.clearInterval(id);
+  }, [introComplete, reduceMotion]);
+
+  /* Idle reveal — after 8s of no cursor/touch movement, show a whisper */
+  useEffect(() => {
+    if (!introComplete || reduceMotion) return;
+
+    const resetIdle = () => {
+      setIsIdle(false);
+      if (idleTimerRef.current) window.clearTimeout(idleTimerRef.current);
+      idleTimerRef.current = window.setTimeout(() => {
+        const pick =
+          idleWhispers[Math.floor(Math.random() * idleWhispers.length)];
+        setWhisper(pick);
+        setIsIdle(true);
+      }, 8000);
+    };
+
+    resetIdle();
+    window.addEventListener("mousemove", resetIdle);
+    window.addEventListener("scroll", resetIdle, { passive: true });
+    window.addEventListener("touchstart", resetIdle, { passive: true });
+    window.addEventListener("keydown", resetIdle);
+
+    return () => {
+      if (idleTimerRef.current) window.clearTimeout(idleTimerRef.current);
+      window.removeEventListener("mousemove", resetIdle);
+      window.removeEventListener("scroll", resetIdle);
+      window.removeEventListener("touchstart", resetIdle);
+      window.removeEventListener("keydown", resetIdle);
+    };
   }, [introComplete, reduceMotion]);
 
   /* Hero spotlight — track cursor over the hero section */
@@ -598,7 +803,28 @@ export function SiteExperience() {
     <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500">
       <IntroBrandSequence visible={!introComplete} onSettled={handleIntroSettled} />
 
-      <main className="relative pt-[4.5rem]">
+      {/* ── Floating scroll progress indicator (right edge) ── */}
+      {!reduceMotion && introComplete && (
+        <div
+          aria-hidden
+          className="pointer-events-none fixed right-3 top-1/2 z-40 hidden h-48 -translate-y-1/2 md:right-5 md:block lg:right-7"
+        >
+          <div
+            className="relative h-full w-px"
+            style={{ backgroundColor: "var(--border)" }}
+          >
+            <motion.span
+              className="absolute -left-[3px] block h-[7px] w-[7px] rounded-full"
+              style={{
+                top: scrollProgressY,
+                backgroundColor: "var(--text)",
+              }}
+            />
+          </div>
+        </div>
+      )}
+
+      <main className="relative flex min-h-[100svh] flex-col pt-[4.5rem]">
 
         {/* ── HERO SECTION ── */}
         <motion.section
@@ -606,7 +832,7 @@ export function SiteExperience() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="relative overflow-hidden px-6 pt-10 pb-10 sm:px-8 sm:pt-14 sm:pb-12 md:px-12 md:pt-16 md:pb-14 lg:px-20 lg:pt-20 lg:pb-16"
+          className="relative overflow-hidden px-6 pt-6 pb-6 sm:px-8 sm:pt-8 sm:pb-6 md:px-12 md:pt-10 md:pb-8 lg:px-20 lg:pt-12 lg:pb-10"
         >
           {/* Cinematic spotlight — cursor-following light reveal (desktop only) */}
           {!isMobile && !reduceMotion && (
@@ -617,10 +843,22 @@ export function SiteExperience() {
             />
           )}
 
+          {/* Drifting drafting marks — ambient "antigravity" layer */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-0"
+            style={reduceMotion ? undefined : { y: driftLayerY }}
+          >
+            <DriftingMarks visible={introComplete} />
+          </motion.div>
+
           <div className="relative z-[1] flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
 
             {/* Left: Headline */}
-            <div className="flex-shrink-0">
+            <motion.div
+              className="flex-shrink-0"
+              style={reduceMotion ? undefined : { y: heroHeadlineY }}
+            >
               <motion.p
                 initial={reduceMotion ? false : { opacity: 0, y: 16 }}
                 animate={
@@ -641,17 +879,25 @@ export function SiteExperience() {
               <motion.h1
                 initial={reduceMotion ? false : { opacity: 0, y: 28 }}
                 animate={
-                  introComplete || reduceMotion
-                    ? { opacity: 1, y: 0 }
+                  reduceMotion
+                    ? { opacity: 1 }
+                    : introComplete
+                    ? {
+                        opacity: 1,
+                        y: [0, -3, 0],
+                        scale: [1, 1.006, 1],
+                      }
                     : { opacity: 0, y: 28 }
                 }
                 transition={{
-                  duration: 0.9,
-                  delay: reduceMotion ? 0 : 0.44,
-                  ease: [0.22, 1, 0.36, 1],
+                  opacity: { duration: 0.9, delay: reduceMotion ? 0 : 0.44, ease: [0.22, 1, 0.36, 1] },
+                  y: introComplete
+                    ? { duration: 6, delay: 1.4, repeat: Infinity, ease: "easeInOut" }
+                    : { duration: 0.9, delay: 0.44, ease: [0.22, 1, 0.36, 1] },
+                  scale: { duration: 6, delay: 1.4, repeat: Infinity, ease: "easeInOut" },
                 }}
                 className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.88] tracking-[0.02em] text-[var(--text)]"
-                style={{ fontSize: "clamp(2.4rem, 7vw, 5.8rem)" }}
+                style={{ fontSize: "clamp(2rem, 5.8vw, 4.8rem)" }}
               >
                 Architecture
                 <br />
@@ -693,7 +939,26 @@ export function SiteExperience() {
                   </AnimatePresence>
                 </div>
               </motion.div>
-            </div>
+
+              {/* Idle whisper — fades in after 8s of no motion */}
+              <div className="relative mt-3 h-[1.3em]">
+                <AnimatePresence mode="wait">
+                  {isIdle && !reduceMotion && (
+                    <motion.span
+                      key={whisper}
+                      initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: -4, filter: "blur(4px)" }}
+                      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                      className="block font-[var(--font-avenir-book)] italic text-[var(--text-dim)]"
+                      style={{ fontSize: "clamp(0.68rem, 0.95vw, 0.82rem)" }}
+                    >
+                      {whisper}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
 
             {/* Right: Tagline — visible on all screens */}
             <motion.p
@@ -708,8 +973,8 @@ export function SiteExperience() {
                 delay: reduceMotion ? 0 : 0.62,
                 ease: [0.22, 1, 0.36, 1],
               }}
+              style={reduceMotion ? { fontSize: "clamp(0.78rem, 1vw, 0.88rem)" } : { y: heroTaglineY, fontSize: "clamp(0.78rem, 1vw, 0.88rem)" }}
               className="max-w-full font-[var(--font-inter)] leading-[1.75] text-[var(--text-muted)] md:max-w-[240px] lg:max-w-[300px]"
-              style={{ fontSize: "clamp(0.78rem, 1vw, 0.88rem)" }}
             >
               We design spaces that mirror your vision, your calm, and your
               story — because architecture is not just built, it&apos;s lived.
@@ -718,7 +983,11 @@ export function SiteExperience() {
         </motion.section>
 
         {/* ── CARD CAROUSEL / STACK ── */}
-        <section className="pb-16 md:pb-28">
+        <section className="relative flex flex-1 flex-col justify-center pb-8 md:pb-12">
+          {/* Ambient hairline sweep at top boundary */}
+          <div className="relative mx-auto mb-6 h-px max-w-[88rem] opacity-70 md:mb-8">
+            <div className="hairline-sweep" />
+          </div>
           {isMobile ? (
             /* ── Mobile: Vertical Stack with scroll-triggered active ── */
             <motion.div
@@ -731,6 +1000,10 @@ export function SiteExperience() {
             >
               {navCards.map((card, i) => {
                 const isActive = activeIndex === i;
+                /* Center-out cascade: active first, then neighbours in parallel */
+                const wave = Math.abs(i - activeIndex);
+                const entranceDelay = reduceMotion ? 0 : 0.75 + wave * 0.2;
+                const entranceDuration = wave === 0 ? 0.65 : 0.95;
                 return (
                   <div
                     key={card.id}
@@ -748,8 +1021,8 @@ export function SiteExperience() {
                           : { opacity: 0, y: 60 }
                       }
                       transition={{
-                        duration: 0.9,
-                        delay: reduceMotion ? 0 : 0.75 + i * 0.1,
+                        duration: entranceDuration,
+                        delay: entranceDelay,
                         ease: [0.22, 1, 0.36, 1],
                       }}
                       className="w-full"
@@ -758,16 +1031,22 @@ export function SiteExperience() {
                         animate={{
                           scale: isActive ? 1 : 0.92,
                           y: isActive ? -6 : 0,
-                          opacity: isActive ? 1 : 0.4,
+                          opacity: isActive ? 1 : 0.42,
                           boxShadow: isActive
-                            ? `0 26px 60px -18px ${card.accent}55, 0 0 90px -28px ${card.accent}48, 0 0 0 1px ${card.accent}26`
-                            : "0 0 0 0 rgba(0,0,0,0)",
+                            ? [
+                                `0 28px 60px -14px rgba(0,0,0,0.4), 0 0 60px -18px ${card.accent}80, 0 0 0 1px ${card.accent}40`,
+                                `0 32px 70px -12px rgba(0,0,0,0.45), 0 0 90px -16px ${card.accent}99, 0 0 0 1px ${card.accent}55`,
+                                `0 28px 60px -14px rgba(0,0,0,0.4), 0 0 60px -18px ${card.accent}80, 0 0 0 1px ${card.accent}40`,
+                              ]
+                            : "0 10px 26px -14px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
                         }}
                         transition={{
                           scale: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
                           y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
                           opacity: { duration: 0.45 },
-                          boxShadow: { duration: 0.55 },
+                          boxShadow: isActive
+                            ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
+                            : { duration: 0.55 },
                         }}
                         whileTap={{ scale: 0.95 }}
                         className="relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-2xl"
@@ -802,7 +1081,7 @@ export function SiteExperience() {
             </motion.div>
           ) : (
             /* ── Desktop: Horizontal Carousel (drag-enabled) ── */
-            <div ref={outerRef} className="overflow-hidden">
+            <div ref={outerRef} className="overflow-x-clip py-12 -my-12">
               <motion.div
                 ref={innerRef}
                 drag="x"
@@ -811,41 +1090,57 @@ export function SiteExperience() {
                 dragMomentum
                 onDragStart={() => setIsDragging(true)}
                 onDragEnd={() => setTimeout(() => setIsDragging(false), 80)}
-                initial="hidden"
-                animate={introComplete ? "visible" : "hidden"}
-                variants={{
-                  hidden: {},
-                  visible: {
-                    transition: {
-                      staggerChildren: reduceMotion ? 0 : 0.14,
-                      delayChildren: reduceMotion ? 0 : 0.75,
-                    },
-                  },
-                }}
                 className="flex gap-3 px-8 md:gap-4 md:px-12 lg:justify-center lg:px-20 cursor-grab active:cursor-grabbing select-none"
               >
                 {navCards.map((card, i) => {
                   const isActive = activeIndex === i;
+                  /* Dramatic center-out cascade:
+                   *   wave 0 (active): zooms in from scale 1.2, blurred, fast
+                   *   wave 1 (neighbours): slide in from outside, in parallel
+                   *   wave 2 (outer): slide from even further, in parallel
+                   */
+                  const wave = Math.abs(i - activeIndex);
+                  const direction = i < activeIndex ? -1 : 1; // -1 = from left, +1 = from right
+                  const entranceDelay = reduceMotion ? 0 : 0.55 + wave * 0.42;
+                  const entranceDuration = wave === 0 ? 0.9 : 1.15;
+
+                  const initialState = reduceMotion
+                    ? false
+                    : wave === 0
+                    ? {
+                        opacity: 0,
+                        scale: 1.22,
+                        filter: "blur(14px)",
+                        x: 0,
+                      }
+                    : {
+                        opacity: 0,
+                        scale: 0.85,
+                        filter: "blur(8px)",
+                        x: direction * (140 + wave * 80),
+                        y: 20,
+                      };
+
+                  const animateState =
+                    introComplete || reduceMotion
+                      ? {
+                          opacity: 1,
+                          scale: 1,
+                          filter: "blur(0px)",
+                          x: 0,
+                          y: 0,
+                        }
+                      : initialState;
 
                   return (
                     <motion.div
                       key={card.id}
-                      variants={{
-                        hidden: reduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, y: 120, rotateX: -12, filter: "blur(10px)" },
-                        visible: reduceMotion
-                          ? { opacity: 1 }
-                          : {
-                              opacity: 1,
-                              y: 0,
-                              rotateX: 0,
-                              filter: "blur(0px)",
-                              transition: {
-                                duration: 1,
-                                ease: [0.22, 1, 0.36, 1],
-                              },
-                            },
+                      initial={initialState}
+                      animate={animateState}
+                      transition={{
+                        duration: entranceDuration,
+                        delay: entranceDelay,
+                        ease: [0.22, 1, 0.36, 1],
                       }}
                       className="flex-shrink-0"
                       style={{ perspective: "900px" }}
@@ -856,21 +1151,27 @@ export function SiteExperience() {
                           y: isActive ? -26 : 0,
                           opacity: isActive ? 1 : 0.52,
                           boxShadow: isActive
-                            ? `0 30px 70px -18px ${card.accent}4d, 0 0 90px -28px ${card.accent}40, 0 0 0 1px ${card.accent}22`
-                            : "0 0 0 0 rgba(0,0,0,0)",
+                            ? [
+                                `0 32px 68px -14px rgba(0,0,0,0.42), 0 0 70px -20px ${card.accent}85, 0 0 0 1px ${card.accent}40`,
+                                `0 36px 80px -12px rgba(0,0,0,0.48), 0 0 100px -18px ${card.accent}a0, 0 0 0 1px ${card.accent}55`,
+                                `0 32px 68px -14px rgba(0,0,0,0.42), 0 0 70px -20px ${card.accent}85, 0 0 0 1px ${card.accent}40`,
+                              ]
+                            : "0 12px 30px -16px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
                         }}
                         transition={{
                           scale: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
                           y: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
                           opacity: { duration: 0.4 },
-                          boxShadow: { duration: 0.55 },
+                          boxShadow: isActive
+                            ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
+                            : { duration: 0.55 },
                         }}
                         onHoverStart={() => setActiveIndex(i)}
                         whileTap={{ scale: isActive ? 1.03 : 0.87 }}
                         className="overflow-hidden rounded-2xl"
                         style={{
-                          width: "clamp(200px, 22vw, 290px)",
-                          height: "clamp(360px, 60vh, 540px)",
+                          width: "clamp(180px, 19vw, 260px)",
+                          height: "clamp(300px, 48vh, 440px)",
                           backgroundColor: card.darkBg,
                         }}
                       >
