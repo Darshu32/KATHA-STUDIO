@@ -42,6 +42,8 @@ a, button, [role="button"] {
 @media (pointer: coarse) {
   * { cursor: auto !important; }
   a, button, [role="button"] { cursor: pointer !important; }
+  /* Hide the custom cursor dot and ring on touch devices */
+  .cursor-shell { display: none !important; }
 }
 
 html {

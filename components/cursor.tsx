@@ -63,13 +63,13 @@ export function CustomCursor() {
       {/* Dot — breathes subtly on a 2.4s loop */}
       <div
         ref={dotRef}
-        className="cursor-dot pointer-events-none fixed left-0 top-0 z-[9999] rounded-full bg-[var(--text)]"
+        className="cursor-dot cursor-shell pointer-events-none fixed left-0 top-0 z-[9999] rounded-full bg-[var(--text)]"
         style={{ width: "6px", height: "6px", transition: "opacity 0.2s ease" }}
       />
       {/* Ring — expands + fills when over [data-cursor] elements */}
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[9998] flex items-center justify-center rounded-full border border-[var(--text)]"
+        className="cursor-shell pointer-events-none fixed left-0 top-0 z-[9998] flex items-center justify-center rounded-full border border-[var(--text)]"
         style={{
           width: "1.75rem",
           height: "1.75rem",
