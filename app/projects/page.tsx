@@ -23,6 +23,8 @@ export default function ProjectsPage() {
                     href={`/projects/${project.slug}`}
                     tone={project.tone}
                     topLabel={`Project ${project.id}`}
+                    image={project.image}
+                    imageAlt={project.title}
                   >
                     <div className="space-y-2">
                       <div className="flex items-start justify-between gap-3">

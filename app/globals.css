@@ -99,6 +99,30 @@ html[data-theme="dark"] ::selection {
   to   { transform: translateX(-33.333%); }
 }
 
+/* Cinematic edge vignette — subtle darkening at viewport corners */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9996;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 120% 90% at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.08) 88%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+}
+
+html[data-theme="dark"] body::before {
+  background: radial-gradient(
+    ellipse 120% 90% at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.25) 88%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
 /* Grain texture overlay — premium surface feel */
 body::after {
   content: '';

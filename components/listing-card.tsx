@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type { Tone } from "@/lib/data";
 
 const toneMap: Record<Tone, { accent: string; darkBg: string }> = {
@@ -15,15 +16,21 @@ export function ListingCard({
   href,
   tone,
   topLabel,
+  image,
+  imageAlt,
   children,
 }: {
   href: string;
   tone: Tone;
   topLabel: string;
+  image?: string;
+  imageAlt?: string;
   children: ReactNode;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [imageFailed, setImageFailed] = useState(false);
   const { accent, darkBg } = toneMap[tone];
+  const hasImage = !!image && !imageFailed;
 
   return (
     <motion.div
@@ -43,6 +50,30 @@ export function ListingCard({
           className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl"
           style={{ backgroundColor: darkBg }}
         >
+          {/* Image (if provided and loaded) */}
+          {hasImage && (
+            <motion.div
+              animate={{ scale: hovered ? 1.04 : 1 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={image!}
+                alt={imageAlt ?? topLabel}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                onError={() => setImageFailed(true)}
+              />
+              {/* Image darkening overlay on idle, clears on hover */}
+              <motion.div
+                animate={{ opacity: hovered ? 0.25 : 0.55 }}
+                transition={{ duration: 0.55 }}
+                className="absolute inset-0 bg-black"
+              />
+            </motion.div>
+          )}
+
           {/* Accent top line */}
           <motion.div
             animate={{
@@ -92,7 +123,7 @@ export function ListingCard({
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.32em",
-                color: `${accent}88`,
+                color: hasImage ? "rgba(255,255,255,0.85)" : `${accent}88`,
               }}
             >
               {topLabel}
@@ -106,7 +137,7 @@ export function ListingCard({
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 fontSize: "0.9rem",
-                color: hovered ? accent : `${accent}75`,
+                color: hovered ? accent : hasImage ? "rgba(255,255,255,0.75)" : `${accent}75`,
               }}
             >
               ↗

@@ -1,11 +1,12 @@
 const items = [
-  "Architecture",
-  "Interior Design",
-  "Ahmedabad",
   "Katha Studio",
-  "Residential",
+  "Stillness, Designed",
+  "Ahmedabad",
+  "Architecture as Pause",
   "Material Calm",
-  "Spaces That Last",
+  "Rooms That Listen",
+  "Selected Work",
+  "Begin Quietly",
 ];
 
 const text = items.join("  ·  ") + "  ·  ";

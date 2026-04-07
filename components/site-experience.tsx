@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -27,6 +28,7 @@ const navCards = [
     href: "/about",
     accent: "#c8a882",
     darkBg: "#1c1409",
+    image: "/images/home/about.jpg",
   },
   {
     id: "02",
@@ -35,6 +37,7 @@ const navCards = [
     href: "/projects",
     accent: "#8b9eb4",
     darkBg: "#0c1219",
+    image: "/images/home/projects.jpg",
   },
   {
     id: "03",
@@ -43,6 +46,7 @@ const navCards = [
     href: "/services",
     accent: "#a8b49c",
     darkBg: "#111610",
+    image: "/images/home/services.jpg",
   },
   {
     id: "04",
@@ -51,7 +55,17 @@ const navCards = [
     href: "/contact",
     accent: "#b4a090",
     darkBg: "#1a1411",
+    image: "/images/home/contact.jpg",
   },
+];
+
+/* Cycling mystery phrases — rotate under the hero headline */
+const mysteryPhrases = [
+  "Spaces that hold their breath",
+  "The quieter, the more alive",
+  "What stays after the drawing ends",
+  "Light, patience, a single gesture",
+  "Architecture, in its lower voice",
 ];
 
 /* ─────────────────────── BRAND WORDMARK ───────────────────── */
@@ -286,6 +300,9 @@ function NavCardContent({
   isActive: boolean;
   isDragging: boolean;
 }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const hasImage = !!card.image && !imageFailed;
+
   return (
     <Link
       href={card.href}
@@ -296,6 +313,31 @@ function NavCardContent({
       }}
       className="relative flex h-full flex-col justify-between overflow-hidden p-6 md:p-7"
     >
+      {/* Image (if present) — zooms on active */}
+      {hasImage && (
+        <motion.div
+          animate={{ scale: isActive ? 1.06 : 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 z-0"
+        >
+          <Image
+            src={card.image!}
+            alt={card.label}
+            fill
+            sizes="(max-width: 768px) 100vw, 25vw"
+            className="object-cover"
+            onError={() => setImageFailed(true)}
+            priority
+          />
+          {/* Darken layer — clears a touch on active */}
+          <motion.div
+            animate={{ opacity: isActive ? 0.35 : 0.6 }}
+            transition={{ duration: 0.55 }}
+            className="absolute inset-0 bg-black"
+          />
+        </motion.div>
+      )}
+
       {/* Accent line — top */}
       <motion.div
         animate={{
@@ -303,7 +345,7 @@ function NavCardContent({
           scaleX: isActive ? 1 : 0.4,
         }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-0 left-0 right-0 origin-center"
+        className="absolute top-0 left-0 right-0 z-[2] origin-center"
         style={{ height: "2px", backgroundColor: card.accent }}
       />
 
@@ -311,7 +353,7 @@ function NavCardContent({
       <motion.div
         animate={{ opacity: isActive ? 1 : 0.4 }}
         transition={{ duration: 0.5 }}
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background: `radial-gradient(ellipse at 50% 0%, ${card.accent}22 0%, transparent 60%)`,
         }}
@@ -321,7 +363,7 @@ function NavCardContent({
       <motion.div
         animate={{ opacity: isActive ? 0.7 : 0 }}
         transition={{ duration: 0.6 }}
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background: `radial-gradient(circle at 50% 55%, ${card.accent}18 0%, transparent 70%)`,
         }}
@@ -329,20 +371,20 @@ function NavCardContent({
 
       {/* Bottom vignette */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background:
-            "linear-gradient(to top, rgba(0,0,0,0.42) 0%, transparent 52%)",
+            "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 52%)",
         }}
       />
 
       {/* Top row: number + arrow */}
-      <div className="relative flex items-start justify-between">
+      <div className="relative z-[3] flex items-start justify-between">
         <span
           className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em]"
           style={{
             fontSize: "clamp(0.56rem, 0.8vw, 0.62rem)",
-            color: `${card.accent}88`,
+            color: hasImage ? "rgba(255,255,255,0.78)" : `${card.accent}88`,
           }}
         >
           {card.id}
@@ -356,7 +398,11 @@ function NavCardContent({
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           style={{
             fontSize: "clamp(0.8rem, 1vw, 0.92rem)",
-            color: isActive ? card.accent : `${card.accent}70`,
+            color: isActive
+              ? card.accent
+              : hasImage
+              ? "rgba(255,255,255,0.7)"
+              : `${card.accent}70`,
           }}
         >
           ↗
@@ -367,13 +413,16 @@ function NavCardContent({
       <motion.div
         animate={{ y: isActive ? -2 : 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="relative space-y-[6px]"
+        className="relative z-[3] space-y-[6px]"
       >
         <p
           className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-none tracking-[0.02em]"
           style={{
             fontSize: "clamp(1.7rem, 3vw, 2.5rem)",
-            color: card.accent,
+            color: hasImage ? "#ffffff" : card.accent,
+            textShadow: hasImage
+              ? "0 2px 18px rgba(0,0,0,0.4)"
+              : undefined,
           }}
         >
           {card.label}
@@ -382,11 +431,33 @@ function NavCardContent({
           className="font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.2em]"
           style={{
             fontSize: "clamp(0.58rem, 0.8vw, 0.68rem)",
-            color: `${card.accent}80`,
+            color: hasImage ? "rgba(255,255,255,0.72)" : `${card.accent}80`,
           }}
         >
           {card.tagline}
         </p>
+
+        {/* Active-state affordance: "Enter ↗" hint */}
+        <motion.div
+          animate={{
+            opacity: isActive ? 1 : 0,
+            y: isActive ? 0 : 8,
+          }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="pt-3"
+        >
+          <span
+            className="font-[var(--font-inter)] font-medium uppercase tracking-[0.3em]"
+            style={{
+              fontSize: "0.52rem",
+              color: card.accent,
+              borderBottom: `1px solid ${card.accent}70`,
+              paddingBottom: "2px",
+            }}
+          >
+            Enter
+          </span>
+        </motion.div>
       </motion.div>
     </Link>
   );
@@ -402,9 +473,22 @@ export function SiteExperience() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  /* Hero spotlight cursor — follows mouse, creates a soft light reveal */
+  const spotX = useMotionValue(50);
+  const spotY = useMotionValue(50);
+  const smoothSpotX = useSpring(spotX, { stiffness: 80, damping: 22 });
+  const smoothSpotY = useSpring(spotY, { stiffness: 80, damping: 22 });
+  const spotlightBg = useTransform(
+    [smoothSpotX, smoothSpotY],
+    ([x, y]) =>
+      `radial-gradient(circle 380px at ${x}% ${y}%, color-mix(in srgb, var(--text) 5%, transparent) 0%, transparent 70%)`
+  );
 
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
+  const heroSectionRef = useRef<HTMLElement>(null);
   const mobileCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
 
@@ -431,6 +515,31 @@ export function SiteExperience() {
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
+
+  /* Cycling mystery phrases under the hero */
+  useEffect(() => {
+    if (!introComplete || reduceMotion) return;
+    const id = window.setInterval(() => {
+      setPhraseIndex((n) => (n + 1) % mysteryPhrases.length);
+    }, 4200);
+    return () => window.clearInterval(id);
+  }, [introComplete, reduceMotion]);
+
+  /* Hero spotlight — track cursor over the hero section */
+  useEffect(() => {
+    if (!introComplete || reduceMotion || isMobile) return;
+    const el = heroSectionRef.current;
+    if (!el) return;
+    const handle = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      spotX.set(Math.max(0, Math.min(100, x)));
+      spotY.set(Math.max(0, Math.min(100, y)));
+    };
+    el.addEventListener("mousemove", handle);
+    return () => el.removeEventListener("mousemove", handle);
+  }, [introComplete, reduceMotion, isMobile, spotX, spotY]);
 
   /* Compute horizontal drag constraints (desktop only) */
   useEffect(() => {
@@ -493,12 +602,22 @@ export function SiteExperience() {
 
         {/* ── HERO SECTION ── */}
         <motion.section
+          ref={heroSectionRef}
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="px-6 pt-10 pb-8 sm:px-8 sm:pt-14 sm:pb-10 md:px-12 md:pt-16 md:pb-12 lg:px-20 lg:pt-20 lg:pb-16"
+          className="relative overflow-hidden px-6 pt-10 pb-10 sm:px-8 sm:pt-14 sm:pb-12 md:px-12 md:pt-16 md:pb-14 lg:px-20 lg:pt-20 lg:pb-16"
         >
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
+          {/* Cinematic spotlight — cursor-following light reveal (desktop only) */}
+          {!isMobile && !reduceMotion && (
+            <motion.div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{ background: spotlightBg }}
+            />
+          )}
+
+          <div className="relative z-[1] flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
 
             {/* Left: Headline */}
             <div className="flex-shrink-0">
@@ -538,6 +657,42 @@ export function SiteExperience() {
                 <br />
                 That Breathes
               </motion.h1>
+
+              {/* Cycling mystery phrase */}
+              <motion.div
+                initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                animate={
+                  introComplete || reduceMotion
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 12 }
+                }
+                transition={{
+                  duration: 0.8,
+                  delay: reduceMotion ? 0 : 0.72,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="mt-5 flex items-center gap-3"
+              >
+                <span
+                  aria-hidden
+                  className="block h-px w-8 bg-[var(--text-dim)]"
+                />
+                <div className="relative h-[1.3em] overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={phraseIndex}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                      className="block font-[var(--font-avenir-book)] italic text-[var(--text-muted)]"
+                      style={{ fontSize: "clamp(0.74rem, 1.05vw, 0.92rem)" }}
+                    >
+                      {mysteryPhrases[phraseIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </motion.div>
             </div>
 
             {/* Right: Tagline — visible on all screens */}
@@ -601,11 +756,11 @@ export function SiteExperience() {
                     >
                       <motion.div
                         animate={{
-                          scale: isActive ? 1 : 0.94,
+                          scale: isActive ? 1 : 0.92,
                           y: isActive ? -6 : 0,
-                          opacity: isActive ? 1 : 0.45,
+                          opacity: isActive ? 1 : 0.4,
                           boxShadow: isActive
-                            ? `0 30px 70px -18px ${card.accent}4d, 0 0 90px -28px ${card.accent}40, 0 0 0 1px ${card.accent}22`
+                            ? `0 26px 60px -18px ${card.accent}55, 0 0 90px -28px ${card.accent}48, 0 0 0 1px ${card.accent}26`
                             : "0 0 0 0 rgba(0,0,0,0)",
                         }}
                         transition={{
@@ -614,10 +769,10 @@ export function SiteExperience() {
                           opacity: { duration: 0.45 },
                           boxShadow: { duration: 0.55 },
                         }}
-                        whileTap={{ scale: 0.97 }}
-                        className="relative mx-auto w-full max-w-[26rem] overflow-hidden rounded-2xl"
+                        whileTap={{ scale: 0.95 }}
+                        className="relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-2xl"
                         style={{
-                          height: "min(62vh, 30rem)",
+                          height: "min(44vh, 22rem)",
                           backgroundColor: card.darkBg,
                         }}
                       >
@@ -626,6 +781,19 @@ export function SiteExperience() {
                           isActive={isActive}
                           isDragging={false}
                         />
+                      </motion.div>
+                      {/* Mobile: active card progress indicator */}
+                      <motion.div
+                        animate={{ opacity: isActive ? 1 : 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="mx-auto mt-3 flex items-center justify-center gap-2"
+                      >
+                        <span
+                          className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em] text-[var(--text-dim)]"
+                          style={{ fontSize: "0.54rem" }}
+                        >
+                          {String(i + 1).padStart(2, "0")} / {String(navCards.length).padStart(2, "0")}
+                        </span>
                       </motion.div>
                     </motion.div>
                   </div>

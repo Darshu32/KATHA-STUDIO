@@ -23,6 +23,8 @@ export default function ServicesPage() {
                     href={`/services/${service.slug}`}
                     tone={service.tone}
                     topLabel={`Service ${service.id}`}
+                    image={service.image}
+                    imageAlt={service.title}
                   >
                     <div className="space-y-2">
                       <p
