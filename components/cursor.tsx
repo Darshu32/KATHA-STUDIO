@@ -8,6 +8,9 @@ export function CustomCursor() {
   const labelRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    // No custom cursor on touch/mobile devices
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     let raf: number;
     let rx = -100, ry = -100, tx = -100, ty = -100;
 
