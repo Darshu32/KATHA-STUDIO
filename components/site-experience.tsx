@@ -765,38 +765,47 @@ export function SiteExperience() {
     };
   }, [introComplete, reduceMotion, isMobile, scrollToIndex]);
 
-  /* IntersectionObserver — mobile scroll-based active detection */
+  /* Scroll event — detect active card in horizontal mobile carousel */
   useEffect(() => {
     if (!isMobile || !introComplete) return;
+    const container = mobileScrollRef.current;
+    if (!container) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let bestRatio = 0;
-        let bestIndex = -1;
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > bestRatio) {
-            bestRatio = entry.intersectionRatio;
-            const idx = Number(entry.target.getAttribute("data-index"));
-            if (!Number.isNaN(idx)) bestIndex = idx;
-          }
-        });
-        if (bestIndex >= 0 && bestRatio > 0.35) {
-          setActiveIndex(bestIndex);
+    const handleScroll = () => {
+      const containerCenter = container.scrollLeft + container.offsetWidth / 2;
+      let closestIndex = 0;
+      let closestDist = Infinity;
+      mobileCardRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const cardCenter = el.offsetLeft + el.offsetWidth / 2;
+        const dist = Math.abs(cardCenter - containerCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIndex = i;
         }
-      },
-      {
-        rootMargin: "-28% 0px -28% 0px",
-        threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
-      }
-    );
+      });
+      setActiveIndex(closestIndex);
+    };
 
-    const refs = mobileCardRefs.current;
-    refs.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => container.removeEventListener("scroll", handleScroll);
   }, [isMobile, introComplete]);
+
+  /* Mobile: snap to the initial active card once intro completes */
+  useEffect(() => {
+    if (!introComplete || !isMobile) return;
+    const timer = setTimeout(() => {
+      const container = mobileScrollRef.current;
+      const card = mobileCardRefs.current[activeIndexRef.current];
+      if (container && card) {
+        container.scrollLeft =
+          card.offsetLeft - container.offsetWidth / 2 + card.offsetWidth / 2;
+      }
+    }, 160);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [introComplete, isMobile]);
 
   return (
     <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500">
@@ -996,98 +1005,126 @@ export function SiteExperience() {
             <div className="hairline-sweep" />
           </div>
           {isMobile ? (
-            /* ── Mobile: Vertical Stack with scroll-triggered active ── */
+            /* ── Mobile: Horizontal Snap Wave Carousel ── */
             <motion.div
               initial={reduceMotion ? false : { opacity: 0 }}
-              animate={
-                introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }
-              }
-              transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.6 }}
-              className="flex flex-col gap-5 px-4 pb-4 sm:px-6"
-              ref={mobileScrollRef}
-              onTouchStart={pauseInteraction}
-              onTouchEnd={resumeInteraction}
+              animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.55 }}
+              className="relative"
             >
-              {allCards.map((card, i) => {
-                const isActive = activeIndex === i;
-                /* Center-out cascade: active first, then neighbours in parallel */
-                const wave = Math.abs(i - activeIndex);
-                const entranceDelay = reduceMotion ? 0 : 0.75 + wave * 0.2;
-                const entranceDuration = wave === 0 ? 0.65 : 0.95;
-                return (
-                  <div
-                    key={card.href}
-                    ref={(el) => {
-                      mobileCardRefs.current[i] = el;
-                    }}
-                    data-index={i}
-                    className="flex w-full justify-center"
-                  >
-                    <motion.div
-                      initial={reduceMotion ? false : { opacity: 0, y: 60 }}
-                      animate={
-                        introComplete || reduceMotion
-                          ? { opacity: 1, y: 0 }
-                          : { opacity: 0, y: 60 }
-                      }
-                      transition={{
-                        duration: entranceDuration,
-                        delay: entranceDelay,
-                        ease: [0.22, 1, 0.36, 1],
-                      }}
-                      className="w-full"
+              {/* Scroll track */}
+              <div
+                ref={mobileScrollRef}
+                className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto"
+                style={{ paddingLeft: "10vw", paddingRight: "10vw", gap: "3vw", paddingBottom: "0.5rem" }}
+                onTouchStart={pauseInteraction}
+                onTouchEnd={resumeInteraction}
+              >
+                {allCards.map((card, i) => {
+                  const isActive = activeIndex === i;
+                  const wave = Math.abs(i - activeIndex);
+                  const entranceDelay = reduceMotion ? 0 : 0.7 + wave * 0.16;
+                  const entranceDuration = wave === 0 ? 0.7 : 0.88;
+                  /* Wave Y: active floats up, neighbours cascade down */
+                  const waveY = isActive ? -6 : Math.min(wave * 7, 20);
+                  /* Wave opacity: active=1, falls off with distance */
+                  const waveOpacity = isActive ? 1 : Math.max(0.45, 0.82 - wave * 0.14);
+                  /* Wave scale: active full-size, neighbours shrink */
+                  const waveScale = isActive ? 1 : Math.max(0.82, 0.96 - wave * 0.06);
+
+                  return (
+                    <div
+                      key={card.href}
+                      ref={(el) => { mobileCardRefs.current[i] = el; }}
+                      data-index={i}
+                      className="shrink-0 snap-center"
+                      style={{ width: "80vw" }}
                     >
                       <motion.div
-                        animate={{
-                          scale: isActive ? 1 : 0.92,
-                          y: isActive ? -6 : 0,
-                          opacity: isActive ? 1 : 0.68,
-                          boxShadow: isActive
-                            ? [
-                                `0 28px 60px -14px rgba(0,0,0,0.4), 0 0 60px -18px ${card.accent}80, 0 0 0 1px ${card.accent}40`,
-                                `0 32px 70px -12px rgba(0,0,0,0.45), 0 0 90px -16px ${card.accent}99, 0 0 0 1px ${card.accent}55`,
-                                `0 28px 60px -14px rgba(0,0,0,0.4), 0 0 60px -18px ${card.accent}80, 0 0 0 1px ${card.accent}40`,
-                              ]
-                            : "0 10px 26px -14px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
-                        }}
-                        transition={{
-                          scale: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-                          y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-                          opacity: { duration: 0.45 },
-                          boxShadow: isActive
-                            ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
-                            : { duration: 0.55 },
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative mx-auto w-full overflow-hidden rounded-2xl"
-                        style={{
-                          height: "min(44vh, 26rem)",
-                          backgroundColor: card.darkBg,
-                        }}
+                        initial={reduceMotion ? false : { opacity: 0, y: 48 }}
+                        animate={introComplete || reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 48 }}
+                        transition={{ duration: entranceDuration, delay: entranceDelay, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        <NavCardContent
-                          card={card}
-                          isActive={isActive}
-                          isDragging={false}
-                        />
-                      </motion.div>
-                      {/* Mobile: active card progress indicator */}
-                      <motion.div
-                        animate={{ opacity: isActive ? 1 : 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="mx-auto mt-3 flex items-center justify-center gap-2"
-                      >
-                        <span
-                          className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em] text-[var(--text-dim)]"
-                          style={{ fontSize: "0.54rem" }}
+                        {/* Card */}
+                        <motion.div
+                          animate={{
+                            scale: waveScale,
+                            y: waveY,
+                            opacity: waveOpacity,
+                            boxShadow: isActive
+                              ? [
+                                  `0 28px 60px -14px rgba(0,0,0,0.42), 0 0 64px -18px ${card.accent}82, 0 0 0 1px ${card.accent}42`,
+                                  `0 34px 72px -12px rgba(0,0,0,0.48), 0 0 96px -16px ${card.accent}a0, 0 0 0 1px ${card.accent}58`,
+                                  `0 28px 60px -14px rgba(0,0,0,0.42), 0 0 64px -18px ${card.accent}82, 0 0 0 1px ${card.accent}42`,
+                                ]
+                              : "0 8px 22px -12px rgba(0,0,0,0.2)",
+                          }}
+                          transition={{
+                            scale:     { duration: 0.52, ease: [0.22, 1, 0.36, 1] },
+                            y:         { duration: 0.52, ease: [0.22, 1, 0.36, 1] },
+                            opacity:   { duration: 0.4 },
+                            boxShadow: isActive
+                              ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
+                              : { duration: 0.52 },
+                          }}
+                          whileTap={{ scale: isActive ? 0.97 : 0.91 }}
+                          className="relative w-full overflow-hidden rounded-2xl"
+                          style={{ height: "min(56vw, 26rem)", backgroundColor: card.darkBg }}
                         >
-                          {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
-                        </span>
+                          <NavCardContent card={card} isActive={isActive} isDragging={false} />
+                        </motion.div>
+
+                        {/* Label + counter — fades in below active card */}
+                        <motion.div
+                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 5 }}
+                          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                          className="mt-3 flex items-end justify-between px-0.5"
+                        >
+                          <div className="min-w-0">
+                            <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "0.84rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.03em", color: "var(--text)", lineHeight: 1.1 }}>
+                              {card.label}
+                            </p>
+                            <p className="mt-1 truncate" style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-muted)" }}>
+                              {card.tagline}
+                            </p>
+                          </div>
+                          <span className="shrink-0 pl-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5rem", letterSpacing: "0.26em", color: "var(--text-dim)" }}>
+                            {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
+                          </span>
+                        </motion.div>
                       </motion.div>
-                    </motion.div>
-                  </div>
-                );
-              })}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Dot pagination */}
+              <div className="mt-5 flex items-center justify-center gap-[5px]">
+                {allCards.map((c, i) => (
+                  <motion.button
+                    key={i}
+                    onClick={() => {
+                      setActiveIndex(i);
+                      pauseInteraction();
+                      resumeInteraction();
+                      const container = mobileScrollRef.current;
+                      const card = mobileCardRefs.current[i];
+                      if (container && card) {
+                        const left = card.offsetLeft - container.offsetWidth / 2 + card.offsetWidth / 2;
+                        container.scrollTo({ left, behavior: "smooth" });
+                      }
+                    }}
+                    animate={{
+                      width: activeIndex === i ? "1.5rem" : "0.32rem",
+                      opacity: activeIndex === i ? 1 : 0.25,
+                    }}
+                    transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                    className="h-[2px] rounded-full"
+                    style={{ backgroundColor: "var(--text)" }}
+                    aria-label={`Go to ${c.label}`}
+                  />
+                ))}
+              </div>
             </motion.div>
           ) : (
             /* ── Desktop: Horizontal Carousel (drag-enabled) ── */
