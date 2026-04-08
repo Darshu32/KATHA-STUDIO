@@ -21,6 +21,8 @@ export type Service = {
   title: string;
   category: string;
   desc: string;
+  /** Optional additional paragraphs for the detail page */
+  paragraphs?: string[];
   tone: Tone;
   /** Optional image path relative to /public. Falls back to tone-colored card. */
   image?: string;
