@@ -10,53 +10,60 @@ import {
   useTransform,
   useSpring,
   useScroll,
+  animate as animateValue,
 } from "framer-motion";
 import { useEffect, useState, useCallback, useRef } from "react";
 import Lenis from "lenis";
 import { MarqueeStrip } from "@/components/marquee-strip";
+import { projects, services } from "@/lib/data";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
 let introHasPlayed = false;
 
 const brandLetters = ["K", "A", "T", "H", "A"];
+const studioLetters = ["S", "T", "U", "D", "I", "O"];
 
-const navCards = [
+const toneCards = {
+  warm:    { accent: "#c8a882", darkBg: "#1c1409" },
+  cool:    { accent: "#8b9eb4", darkBg: "#0c1219" },
+  default: { accent: "#a8b49c", darkBg: "#111610" },
+};
+
+const allCards = [
   {
-    id: "01",
+    id: "00",
     label: "About",
     tagline: "Who we are",
     href: "/about",
     accent: "#c8a882",
     darkBg: "#1c1409",
-    image: "/images/home/about.jpg",
+    image: "/images/about/Screenshot 2026-04-08 132119.png",
   },
+  ...projects.map((p) => ({
+    id: p.id,
+    label: p.title,
+    tagline: `${p.type} — ${p.location}`,
+    href: `/projects/${p.slug}`,
+    ...toneCards[p.tone],
+    image: p.image,
+  })),
+  ...services.map((s) => ({
+    id: s.id,
+    label: s.title,
+    tagline: s.category,
+    href: `/services/${s.slug}`,
+    ...toneCards[s.tone],
+    image: s.image,
+  })),
   {
-    id: "02",
-    label: "Projects",
-    tagline: "Selected work",
-    href: "/projects",
-    accent: "#8b9eb4",
-    darkBg: "#0c1219",
-    image: "/images/home/projects.jpg",
-  },
-  {
-    id: "03",
-    label: "Services",
-    tagline: "What we offer",
-    href: "/services",
-    accent: "#a8b49c",
-    darkBg: "#111610",
-    image: "/images/home/services.jpg",
-  },
-  {
-    id: "04",
+    id: "09",
     label: "Contact",
     tagline: "Start a conversation",
     href: "/contact",
     accent: "#b4a090",
     darkBg: "#1a1411",
-    image: "/images/home/contact.jpg",
+    image: "/images/home/Screenshot 2026-04-08 132135.png",
   },
 ];
 
@@ -203,76 +210,43 @@ function IntroBrandSequence({
             className="flex w-full items-center justify-center px-6 md:px-12 lg:px-20"
           >
             <div className="flex flex-wrap items-end justify-center gap-x-3 gap-y-1 sm:gap-x-4">
-              <div className="flex">
-                {brandLetters.map((letter, index) => (
-                  <motion.span
-                    key={`${letter}-${index}`}
-                    initial={
-                      reduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 60, rotateX: -90, filter: "blur(12px)" }
-                    }
-                    animate={
-                      reduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }
-                    }
-                    transition={{
-                      delay: reduceMotion ? 0 : 0.3 + index * 0.42,
-                      duration: 0.95,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    whileHover={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            y: -16,
-                            scale: 1.08,
-                            letterSpacing: "0.06em",
-                            transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
-                          }
-                    }
-                    whileTap={
-                      reduceMotion
-                        ? undefined
-                        : { scale: 0.92, transition: { duration: 0.12 } }
-                    }
-                    className="cursor-pointer select-none font-[var(--font-avenir-heavy)] text-[clamp(2.2rem,11vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
-                    style={{ perspective: "600px" }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
+              {/* KATHA — typewriter letter by letter */}
+              <div className="flex items-end">
+                {brandLetters.map((letter, index) => {
+                  const delay = reduceMotion ? 0 : 0.4 + index * 0.13;
+                  return (
+                    <motion.span
+                      key={`brand-${index}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay, duration: 0.01 }}
+                      className="select-none font-[var(--font-avenir-heavy)] text-[clamp(2.2rem,11vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
+                    >
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+
               </div>
-              <motion.span
-                initial={
-                  reduceMotion
-                    ? { opacity: 1 }
-                    : { opacity: 0, x: 36, filter: "blur(10px)" }
-                }
-                animate={
-                  reduceMotion
-                    ? { opacity: 1 }
-                    : { opacity: 1, x: 0, filter: "blur(0px)" }
-                }
-                transition={{
-                  delay: reduceMotion ? 0.2 : 2.6,
-                  duration: 1.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={
-                  reduceMotion
-                    ? undefined
-                    : {
-                        x: 10,
-                        letterSpacing: "0.14em",
-                        transition: { duration: 0.45 },
-                      }
-                }
-                className="cursor-pointer select-none font-[var(--font-avenir-book)] text-[clamp(2rem,10vw,8.5rem)] font-medium uppercase leading-[0.9] tracking-[0.06em] text-[var(--text-muted)]"
-              >
-                Studio
-              </motion.span>
+
+              {/* STUDIO — typewriter letter by letter */}
+              <div className="flex items-end">
+                {studioLetters.map((letter, index) => {
+                  const delay = reduceMotion ? 0 : 1.2 + index * 0.13;
+                  return (
+                    <motion.span
+                      key={`studio-${index}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay, duration: 0.01 }}
+                      className="select-none font-[var(--font-avenir-book)] text-[clamp(2rem,10vw,8.5rem)] font-medium uppercase leading-[0.9] tracking-[0.06em] text-[var(--text-muted)]"
+                    >
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -306,7 +280,7 @@ function NavCardContent({
   isActive,
   isDragging,
 }: {
-  card: (typeof navCards)[number];
+  card: (typeof allCards)[number];
   isActive: boolean;
   isDragging: boolean;
 }) {
@@ -388,17 +362,8 @@ function NavCardContent({
         }}
       />
 
-      {/* Top row: number + arrow */}
-      <div className="relative z-[3] flex items-start justify-between">
-        <span
-          className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em]"
-          style={{
-            fontSize: "clamp(0.56rem, 0.8vw, 0.62rem)",
-            color: hasImage ? "rgba(255,255,255,0.78)" : `${card.accent}88`,
-          }}
-        >
-          {card.id}
-        </span>
+      {/* Top row: arrow only */}
+      <div className="relative z-[3] flex items-start justify-end">
         <motion.span
           animate={{
             x: isActive ? 4 : 0,
@@ -418,57 +383,6 @@ function NavCardContent({
           ↗
         </motion.span>
       </div>
-
-      {/* Bottom: label + tagline */}
-      <motion.div
-        animate={{ y: isActive ? -2 : 0 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-[3] space-y-[6px]"
-      >
-        <p
-          className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-none tracking-[0.02em]"
-          style={{
-            fontSize: "clamp(1.7rem, 3vw, 2.5rem)",
-            color: hasImage ? "#ffffff" : card.accent,
-            textShadow: hasImage
-              ? "0 2px 18px rgba(0,0,0,0.4)"
-              : undefined,
-          }}
-        >
-          {card.label}
-        </p>
-        <p
-          className="font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.2em]"
-          style={{
-            fontSize: "clamp(0.58rem, 0.8vw, 0.68rem)",
-            color: hasImage ? "rgba(255,255,255,0.72)" : `${card.accent}80`,
-          }}
-        >
-          {card.tagline}
-        </p>
-
-        {/* Active-state affordance: "Enter ↗" hint */}
-        <motion.div
-          animate={{
-            opacity: isActive ? 1 : 0,
-            y: isActive ? 0 : 8,
-          }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="pt-3"
-        >
-          <span
-            className="font-[var(--font-inter)] font-medium uppercase tracking-[0.3em]"
-            style={{
-              fontSize: "0.52rem",
-              color: card.accent,
-              borderBottom: `1px solid ${card.accent}70`,
-              paddingBottom: "2px",
-            }}
-          >
-            Enter
-          </span>
-        </motion.div>
-      </motion.div>
     </Link>
   );
 }
@@ -635,7 +549,7 @@ export function SiteExperience() {
 
   const [introComplete, setIntroComplete] = useState(introHasPlayed);
   const reduceMotion = useReducedMotion();
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(Math.floor(allCards.length / 2));
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -666,6 +580,36 @@ export function SiteExperience() {
   const heroSectionRef = useRef<HTMLElement>(null);
   const mobileCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
+  const dragX = useMotionValue(0);
+
+  /* ── Auto-play refs ── */
+  const activeIndexRef = useRef(Math.floor(allCards.length / 2));
+  const interactingRef = useRef(false);
+  const autoPlayTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  useEffect(() => { activeIndexRef.current = activeIndex; }, [activeIndex]);
+
+  const pauseInteraction = useCallback(() => {
+    interactingRef.current = true;
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+  }, []);
+
+  const resumeInteraction = useCallback(() => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => { interactingRef.current = false; }, 3500);
+  }, []);
+
+  const scrollToIndex = useCallback((index: number, instant = false) => {
+    if (!innerRef.current || !outerRef.current) return;
+    const child = innerRef.current.children[index] as HTMLElement | undefined;
+    if (!child) return;
+    const outerWidth = outerRef.current.offsetWidth;
+    const target = -(child.offsetLeft - outerWidth / 2 + child.offsetWidth / 2);
+    const clamped = Math.min(rightBoundRef.current, Math.max(leftBoundRef.current, target));
+    if (instant) { dragX.set(clamped); }
+    else { animateValue(dragX, clamped, { type: "spring", stiffness: 300, damping: 35 }); }
+  }, [dragX]);
 
   const handleIntroSettled = useCallback(() => {
     introHasPlayed = true;
@@ -747,24 +691,79 @@ export function SiteExperience() {
   }, [introComplete, reduceMotion, isMobile, spotX, spotY]);
 
   /* Compute horizontal drag constraints (desktop only) */
+  const rightBoundRef = useRef(0);
+  const leftBoundRef = useRef(0);
+
   useEffect(() => {
     if (!introComplete || isMobile) return;
     const calc = () => {
-      if (innerRef.current && outerRef.current) {
-        const maxDrag = Math.max(
-          0,
-          innerRef.current.scrollWidth - outerRef.current.offsetWidth
-        );
-        setDragConstraints({ left: -maxDrag, right: 0 });
-      }
+      if (!innerRef.current || !outerRef.current) return;
+      const outerWidth = outerRef.current.offsetWidth;
+      const firstCard = innerRef.current.children[0] as HTMLElement | undefined;
+      const lastCard = innerRef.current.children[allCards.length - 1] as HTMLElement | undefined;
+      if (!firstCard || !lastCard) return;
+      // Allow rightward scroll so first card can be centered
+      const right = Math.max(0, outerWidth / 2 - firstCard.offsetWidth / 2 - firstCard.offsetLeft);
+      // Allow leftward scroll so last card can be centered
+      const left = -(lastCard.offsetLeft + lastCard.offsetWidth / 2 - outerWidth / 2);
+      rightBoundRef.current = right;
+      leftBoundRef.current = left;
+      setDragConstraints({ left, right });
     };
-    const timer = setTimeout(calc, 100);
+    const timer = setTimeout(calc, 200);
     window.addEventListener("resize", calc);
     return () => {
       clearTimeout(timer);
       window.removeEventListener("resize", calc);
     };
   }, [introComplete, isMobile]);
+
+  /* Snap carousel to center the active card before cards animate in */
+  useEffect(() => {
+    if (!introComplete || isMobile) return;
+    const timer = setTimeout(() => {
+      scrollToIndex(activeIndex, true);
+    }, 60);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [introComplete, isMobile]);
+
+  /* Auto-play: advance one card every 1s, loop back to first */
+  useEffect(() => {
+    if (!introComplete || reduceMotion) return;
+
+    const start = setTimeout(() => {
+      autoPlayTimerRef.current = setInterval(() => {
+        if (interactingRef.current) return;
+        const current = activeIndexRef.current;
+        const next = (current + 1) % allCards.length;
+        const isLoop = next === 0;
+        setActiveIndex(next);
+
+        if (isMobile) {
+          const container = mobileScrollRef.current;
+          const card = mobileCardRefs.current[next];
+          if (container && card) {
+            const left = card.offsetLeft - container.offsetWidth / 2 + card.offsetWidth / 2;
+            if (isLoop) { container.scrollLeft = left; }
+            else { container.scrollTo({ left, behavior: "smooth" }); }
+          }
+        } else {
+          if (isLoop) {
+            scrollToIndex(0, true);
+          } else {
+            scrollToIndex(next);
+          }
+        }
+      }, 2000);
+    }, 2600);
+
+    return () => {
+      clearTimeout(start);
+      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+  }, [introComplete, reduceMotion, isMobile, scrollToIndex]);
 
   /* IntersectionObserver — mobile scroll-based active detection */
   useEffect(() => {
@@ -832,7 +831,7 @@ export function SiteExperience() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="relative overflow-hidden px-6 pt-6 pb-6 sm:px-8 sm:pt-8 sm:pb-6 md:px-12 md:pt-10 md:pb-8 lg:px-20 lg:pt-12 lg:pb-10"
+          className="relative overflow-hidden px-6 pt-2 pb-4 sm:px-8 sm:pt-3 sm:pb-4 md:px-12 md:pt-4 md:pb-6 lg:px-20 lg:pt-5 lg:pb-8"
         >
           {/* Cinematic spotlight — cursor-following light reveal (desktop only) */}
           {!isMobile && !reduceMotion && (
@@ -897,7 +896,11 @@ export function SiteExperience() {
                   scale: { duration: 6, delay: 1.4, repeat: Infinity, ease: "easeInOut" },
                 }}
                 className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.88] tracking-[0.02em] text-[var(--text)]"
-                style={{ fontSize: "clamp(2rem, 5.8vw, 4.8rem)" }}
+                style={{
+                  fontSize: "clamp(1.75rem, 6.2vw, 4.8rem)",
+                  overflowWrap: "break-word",
+                  wordBreak: "break-word",
+                }}
               >
                 Architecture
                 <br />
@@ -983,7 +986,11 @@ export function SiteExperience() {
         </motion.section>
 
         {/* ── CARD CAROUSEL / STACK ── */}
-        <section className="relative flex flex-1 flex-col justify-center pb-8 md:pb-12">
+        <motion.section
+          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+          animate={introComplete || reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="relative flex flex-1 flex-col justify-center pb-8 md:pb-12">
           {/* Ambient hairline sweep at top boundary */}
           <div className="relative mx-auto mb-6 h-px max-w-[88rem] opacity-70 md:mb-8">
             <div className="hairline-sweep" />
@@ -996,9 +1003,12 @@ export function SiteExperience() {
                 introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }
               }
               transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.6 }}
-              className="flex flex-col gap-5 px-6 pb-4"
+              className="flex flex-col gap-5 px-4 pb-4 sm:px-6"
+              ref={mobileScrollRef}
+              onTouchStart={pauseInteraction}
+              onTouchEnd={resumeInteraction}
             >
-              {navCards.map((card, i) => {
+              {allCards.map((card, i) => {
                 const isActive = activeIndex === i;
                 /* Center-out cascade: active first, then neighbours in parallel */
                 const wave = Math.abs(i - activeIndex);
@@ -1006,7 +1016,7 @@ export function SiteExperience() {
                 const entranceDuration = wave === 0 ? 0.65 : 0.95;
                 return (
                   <div
-                    key={card.id}
+                    key={card.href}
                     ref={(el) => {
                       mobileCardRefs.current[i] = el;
                     }}
@@ -1071,7 +1081,7 @@ export function SiteExperience() {
                           className="font-[var(--font-inter)] font-medium uppercase tracking-[0.32em] text-[var(--text-dim)]"
                           style={{ fontSize: "0.54rem" }}
                         >
-                          {String(i + 1).padStart(2, "0")} / {String(navCards.length).padStart(2, "0")}
+                          {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
                         </span>
                       </motion.div>
                     </motion.div>
@@ -1081,18 +1091,34 @@ export function SiteExperience() {
             </motion.div>
           ) : (
             /* ── Desktop: Horizontal Carousel (drag-enabled) ── */
-            <div ref={outerRef} className="overflow-x-clip py-12 -my-12">
+            <div className="relative">
+              <button
+                aria-label="Previous"
+                onClick={() => { const next = Math.max(0, activeIndex - 1); setActiveIndex(next); scrollToIndex(next); pauseInteraction(); resumeInteraction(); }}
+                disabled={activeIndex === 0}
+                className="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] transition-opacity hover:opacity-80 disabled:opacity-20 md:left-4"
+                style={{ color: "var(--text)" }}
+              >←</button>
+              <button
+                aria-label="Next"
+                onClick={() => { const next = Math.min(allCards.length - 1, activeIndex + 1); setActiveIndex(next); scrollToIndex(next); pauseInteraction(); resumeInteraction(); }}
+                disabled={activeIndex === allCards.length - 1}
+                className="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] transition-opacity hover:opacity-80 disabled:opacity-20 md:right-4"
+                style={{ color: "var(--text)" }}
+              >→</button>
+            <div ref={outerRef} className="overflow-x-clip py-6 -my-6">
               <motion.div
                 ref={innerRef}
                 drag="x"
                 dragConstraints={dragConstraints}
                 dragElastic={0.06}
-                dragMomentum
-                onDragStart={() => setIsDragging(true)}
-                onDragEnd={() => setTimeout(() => setIsDragging(false), 80)}
-                className="flex gap-3 px-8 md:gap-4 md:px-12 lg:justify-center lg:px-20 cursor-grab active:cursor-grabbing select-none"
+                dragMomentum={false}
+                style={{ x: dragX }}
+                onDragStart={() => { setIsDragging(true); pauseInteraction(); }}
+                onDragEnd={() => { setTimeout(() => setIsDragging(false), 80); resumeInteraction(); }}
+                className="flex gap-3 px-8 md:gap-4 md:px-12 cursor-grab active:cursor-grabbing select-none"
               >
-                {navCards.map((card, i) => {
+                {allCards.map((card, i) => {
                   const isActive = activeIndex === i;
                   /* Dramatic center-out cascade:
                    *   wave 0 (active): zooms in from scale 1.2, blurred, fast
@@ -1101,8 +1127,8 @@ export function SiteExperience() {
                    */
                   const wave = Math.abs(i - activeIndex);
                   const direction = i < activeIndex ? -1 : 1; // -1 = from left, +1 = from right
-                  const entranceDelay = reduceMotion ? 0 : 0.55 + wave * 0.42;
-                  const entranceDuration = wave === 0 ? 0.9 : 1.15;
+                  const entranceDelay = reduceMotion ? 0 : 0.3 + wave * 0.28;
+                  const entranceDuration = wave === 0 ? 0.85 : 0.9 + wave * 0.06;
 
                   const initialState = reduceMotion
                     ? false
@@ -1134,7 +1160,7 @@ export function SiteExperience() {
 
                   return (
                     <motion.div
-                      key={card.id}
+                      key={card.href}
                       initial={initialState}
                       animate={animateState}
                       transition={{
@@ -1148,7 +1174,8 @@ export function SiteExperience() {
                       <motion.div
                         animate={{
                           scale: isActive ? 1.06 : 0.9,
-                          y: isActive ? -26 : 0,
+                          y: isActive ? -10 : 0,
+                          height: [360, 315, 278, 250, 228][Math.min(wave, 4)],
                           opacity: isActive ? 1 : 0.52,
                           boxShadow: isActive
                             ? [
@@ -1159,19 +1186,20 @@ export function SiteExperience() {
                             : "0 12px 30px -16px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
                         }}
                         transition={{
-                          scale: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-                          y: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                          scale: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                          y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                          height: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
                           opacity: { duration: 0.4 },
                           boxShadow: isActive
                             ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
                             : { duration: 0.55 },
                         }}
-                        onHoverStart={() => setActiveIndex(i)}
+                        onHoverStart={() => { setActiveIndex(i); pauseInteraction(); }}
+                        onHoverEnd={() => resumeInteraction()}
                         whileTap={{ scale: isActive ? 1.03 : 0.87 }}
                         className="overflow-hidden rounded-2xl"
                         style={{
                           width: "clamp(180px, 19vw, 260px)",
-                          height: "clamp(300px, 48vh, 440px)",
                           backgroundColor: card.darkBg,
                         }}
                       >
@@ -1186,8 +1214,9 @@ export function SiteExperience() {
                 })}
               </motion.div>
             </div>
+            </div>
           )}
-        </section>
+        </motion.section>
       </main>
 
       {/* ── MARQUEE ── */}

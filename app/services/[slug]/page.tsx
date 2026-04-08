@@ -1,139 +1,104 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, projects } from "@/lib/data";
-import { SiteFooter } from "@/components/page-shell";
-import { FadeUp, SplitReveal } from "@/components/animations";
-import { ParallaxHero } from "@/components/parallax-hero";
+import { services } from "@/lib/data";
+import { getAdjacentNav } from "@/lib/nav-order";
+import { FadeUp } from "@/components/animations";
+import { SideNav, MobileNav } from "@/components/side-nav";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const service = services.find((s) => s.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
   if (!service) return {};
   return { title: `${service.title} — KATHA Studio`, description: service.desc };
 }
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
-  const service = services.find((s) => s.slug === params.slug);
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
-  const idx = services.indexOf(service);
-  const prev = services[idx - 1] ?? null;
-  const next = services[idx + 1] ?? null;
+  const { prev, next, index } = getAdjacentNav(`/services/${slug}`);
 
-  const bg =
-    service.tone === "warm" ? "bg-[#eeeae6]"
-    : service.tone === "cool" ? "bg-[#e8eaec]"
-    : "bg-[#f3f3f3]";
+  const fallbackBg =
+    service.tone === "warm" ? "#eeeae6"
+    : service.tone === "cool" ? "#e8eaec"
+    : "#f3f3f3";
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)]">
+
+      <SideNav prev={prev} next={next} />
+
       <main className="pt-[4.5rem]">
-        {/* Hero */}
-        <ParallaxHero
-          bgClass={bg}
-          outerClass="w-full aspect-[16/9] md:aspect-[16/7]"
-          label={service.category}
-        />
+        <div className="mx-auto max-w-4xl px-5 sm:px-8 md:px-16">
 
-        {/* Header */}
-        <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
-          <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-[0.55fr_0.45fr] lg:gap-24 lg:py-28">
-            <FadeUp delay={0} className="space-y-4">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.3em", color: "var(--text-dim)" }}>
-                {service.id} — Services
-              </p>
-              <SplitReveal
-                text={service.title}
-                tag="h1"
-                delay={0.08}
-                style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(1.8rem,4.8vw,4.5rem)", fontWeight: 800, lineHeight: 1.05, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}
-              />
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
-                {service.category}
-              </p>
-            </FadeUp>
-            <FadeUp delay={0.18} className="space-y-7">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
-                {service.desc}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
-                style={{ borderColor: "var(--border-medium)", fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text)" }}
-              >
-                Book a Consultation
-              </Link>
-            </FadeUp>
-          </div>
+          {/* ── SECTION LABEL + COUNTER ── */}
+          <FadeUp delay={0} className="flex items-center justify-between pt-10 pb-6 md:pt-14">
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.36em", color: "var(--text-dim)" }}>
+              — Service
+            </p>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)" }}>
+              {String(index + 1).padStart(2, "0")} / 09
+            </p>
+          </FadeUp>
 
-          {/* Related Projects */}
-          <FadeUp delay={0} className="border-t border-[var(--border)] py-14 md:py-20 lg:py-24">
-            <div className="mb-10 flex items-center gap-3">
-              <div className="h-5 w-[2px] bg-[var(--text)]" />
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "var(--text)" }}>
-                Related Projects
-              </p>
-            </div>
-            <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-x-10 lg:grid-cols-3 lg:gap-x-12">
-              {projects.map((project, pi) => {
-                const projBg =
-                  project.tone === "warm" ? "bg-[#eeeae6]" : project.tone === "cool" ? "bg-[#e8eaec]" : "bg-[#f3f3f3]";
-                return (
-                  <FadeUp key={project.slug} delay={pi * 0.1}>
-                  <Link href={`/projects/${project.slug}`} className="group block space-y-3 transition-opacity hover:opacity-75">
-                    <div className={`${projBg} aspect-[4/3] w-full relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.18),rgba(0,0,0,0.04))]" />
-                      <div className="absolute bottom-3 left-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
-                        {project.id}
-                      </div>
-                    </div>
-                    <div className="space-y-1">
-                      <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.82rem,1.1vw,0.95rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>
-                        {project.title}
-                      </p>
-                      <div className="flex flex-wrap gap-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.56rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-dim)" }}>
-                        <span>{project.type}</span>
-                        <span>{project.year}</span>
-                      </div>
-                      <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text)", borderBottom: "1px solid var(--border-medium)", paddingBottom: "2px", display: "inline-block" }}>
-                        Read More &rarr;
-                      </span>
-                    </div>
-                  </Link>
-                  </FadeUp>
-                );
-              })}
+          {/* ── TITLE ── */}
+          <FadeUp delay={0.08} className="pb-6">
+            <h1 style={{
+              fontFamily: "var(--font-avenir-heavy)",
+              fontSize: "clamp(2.1rem, 7.5vw, 6rem)",
+              fontWeight: 800,
+              lineHeight: 0.95,
+              textTransform: "uppercase",
+              letterSpacing: "0.01em",
+              color: "var(--text)",
+              overflowWrap: "break-word",
+              wordBreak: "break-word",
+            }}>
+              {service.title}
+            </h1>
+            <p className="mt-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-muted)" }}>
+              {service.category}
+            </p>
+          </FadeUp>
+
+          {/* ── LANDSCAPE IMAGE ── */}
+          <FadeUp delay={0.16} className="mb-10 md:mb-12">
+            <div
+              className="relative w-full overflow-hidden rounded-2xl"
+              style={{ aspectRatio: "16/9", backgroundColor: fallbackBg }}
+            >
+              {service.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover" />
+              )}
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_60%,rgba(0,0,0,0.15))]" />
             </div>
           </FadeUp>
-        </div>
 
-        {/* Prev / Next */}
-        <div className="border-t border-[var(--border)]">
-          <div className="mx-auto max-w-[88rem] grid grid-cols-2 divide-x divide-[var(--border)]">
-            <div>
-              {prev ? (
-                <Link href={`/services/${prev.slug}`} className="flex flex-col gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
-                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>&larr; Previous</span>
-                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{prev.title}</span>
-                </Link>
-              ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
+          {/* ── INFO BELOW IMAGE ── */}
+          <FadeUp delay={0.1} className="pb-16 md:pb-24">
+            <div className="mb-8 h-px w-10" style={{ backgroundColor: "var(--border-medium)" }} />
+            <div className="space-y-6" style={{ maxWidth: "58ch" }}>
+              {(service.paragraphs ?? [service.desc]).map((para, i) => (
+                <p key={i} style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "clamp(0.88rem, 1.35vw, 1.05rem)",
+                  lineHeight: 2,
+                  color: "var(--text-muted)",
+                }}>
+                  {para}
+                </p>
+              ))}
             </div>
-            <div className="text-right">
-              {next ? (
-                <Link href={`/services/${next.slug}`} className="flex flex-col items-end gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
-                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>Next &rarr;</span>
-                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{next.title}</span>
-                </Link>
-              ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
-            </div>
-          </div>
+          </FadeUp>
+
+          <MobileNav prev={prev} next={next} />
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

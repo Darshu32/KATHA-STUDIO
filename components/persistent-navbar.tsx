@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 
 function getBackLink(pathname: string): { href: string; label: string } | null {
   if (pathname === "/") return null;
-  if (pathname.startsWith("/projects/")) return { href: "/projects", label: "Projects" };
-  if (pathname.startsWith("/services/")) return { href: "/services", label: "Services" };
   return { href: "/", label: "Home" };
 }
 
@@ -23,7 +21,7 @@ export function PersistentNavbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] backdrop-blur-md transition-colors duration-500" style={{ backgroundColor: "var(--navbar-bg)" }}>
-      <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-4 px-5 py-4 md:px-12 md:py-5 lg:px-20">
+      <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-3 px-4 py-3.5 sm:px-5 sm:py-4 md:px-12 md:py-5 lg:px-20">
         {/* Brand */}
         <Link
           href="/"
@@ -44,18 +42,18 @@ export function PersistentNavbar() {
           <span
             style={{
               fontFamily: "var(--font-avenir-book)",
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: "clamp(1rem,1.4vw,1.25rem)",
               textTransform: "uppercase",
               letterSpacing: "0.08em",
             }}
           >
-            Studio
+            STUDIO
           </span>
         </Link>
 
         {/* Right side */}
-        <div className="flex items-center gap-6">
+        <div className="flex shrink-0 items-center gap-4 sm:gap-6">
           {backLink && (
             <Link
               href={backLink.href}

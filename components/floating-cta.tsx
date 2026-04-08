@@ -17,7 +17,6 @@ export function FloatingCTA() {
     >
       <Link
         href="/contact"
-        data-cursor="Let's Talk"
         className="group inline-flex items-center gap-3 border border-[var(--text)] bg-[var(--background)] px-5 py-3 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
         style={{
           fontFamily: "var(--font-inter)",

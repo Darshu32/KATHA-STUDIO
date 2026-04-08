@@ -37,7 +37,7 @@ export function ListingCard({
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
     >
-      <Link href={href} data-cursor="View" className="block space-y-4">
+      <Link href={href} className="block space-y-4">
         {/* ── Dark image card ── */}
         <motion.div
           animate={{

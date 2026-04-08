@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
@@ -8,7 +8,6 @@ import "@fontsource/playfair-display/latin-400-italic.css";
 import "@fontsource/playfair-display/latin-500-italic.css";
 import "@fontsource/playfair-display/latin-700.css";
 import "@fontsource/playfair-display/latin-800.css";
-import { CustomCursor } from "@/components/cursor";
 import { PersistentNavbar } from "@/components/persistent-navbar";
 import { PageTransitionOverlay } from "@/components/page-transition";
 import { FloatingCTA } from "@/components/floating-cta";
@@ -20,6 +19,13 @@ export const metadata: Metadata = {
     "A premium architecture and interior design studio. Residential design, interiors, renovation, and consultation.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CustomCursor />
         <ClickRipple />
         <PageTransitionOverlay />
         <PersistentNavbar />

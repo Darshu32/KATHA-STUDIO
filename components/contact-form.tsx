@@ -110,7 +110,6 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          data-cursor="Send"
           className="group relative inline-flex items-center justify-center overflow-hidden border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)] disabled:cursor-not-allowed disabled:opacity-60"
           style={{
             borderColor: "var(--border-medium)",

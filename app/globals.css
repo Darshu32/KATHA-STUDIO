@@ -31,19 +31,10 @@ html[data-theme="dark"] {
 
 * {
   box-sizing: border-box;
-  cursor: none !important;
 }
 
 a, button, [role="button"] {
-  cursor: none !important;
-}
-
-/* Restore native cursor on touch/mobile devices */
-@media (pointer: coarse) {
-  * { cursor: auto !important; }
-  a, button, [role="button"] { cursor: pointer !important; }
-  /* Hide the custom cursor dot and ring on touch devices */
-  .cursor-shell { display: none !important; }
+  cursor: pointer;
 }
 
 html {
@@ -60,6 +51,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+/* Prevent any accidental horizontal overflow on mobile */
+html, body {
+  max-width: 100%;
 }
 
 a {

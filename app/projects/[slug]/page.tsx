@@ -1,120 +1,115 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data";
-import { SiteFooter } from "@/components/page-shell";
-import { FadeUp, SplitReveal } from "@/components/animations";
-import { ParallaxHero } from "@/components/parallax-hero";
+import { getAdjacentNav } from "@/lib/nav-order";
+import { FadeUp } from "@/components/animations";
+import { SideNav, MobileNav } from "@/components/side-nav";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return { title: `${project.title} — KATHA Studio`, description: project.philosophy };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  const idx = projects.indexOf(project);
-  const prev = projects[idx - 1] ?? null;
-  const next = projects[idx + 1] ?? null;
+  const { prev, next, index } = getAdjacentNav(`/projects/${slug}`);
 
-  const bg =
-    project.tone === "warm" ? "bg-[#eeeae6]"
-    : project.tone === "cool" ? "bg-[#e8eaec]"
-    : "bg-[#f3f3f3]";
-
-  const bg2 = project.tone === "warm" ? "bg-[#e8eaec]" : "bg-[#eeeae6]";
+  const fallbackBg =
+    project.tone === "warm" ? "#eeeae6"
+    : project.tone === "cool" ? "#e8eaec"
+    : "#f3f3f3";
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)]">
+
+      <SideNav prev={prev} next={next} />
+
       <main className="pt-[4.5rem]">
-        {/* Hero image */}
-        <ParallaxHero
-          bgClass={bg}
-          outerClass="w-full aspect-[16/9] md:aspect-[16/8]"
-          label={`${project.type} — ${project.location}`}
-        />
+        <div className="mx-auto max-w-4xl px-5 sm:px-8 md:px-16">
 
-        {/* Header */}
-        <div className="mx-auto max-w-[88rem] px-5 md:px-12 lg:px-20">
-          <div className="grid gap-10 py-14 md:gap-16 md:py-20 lg:grid-cols-[0.55fr_0.45fr] lg:gap-24 lg:py-28">
-            <FadeUp delay={0} className="space-y-5">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.3em", color: "var(--text-dim)" }}>
-                Chapter {project.id}
-              </p>
-              <SplitReveal
-                text={project.title}
-                tag="h1"
-                delay={0.08}
-                style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem,4.8vw,4.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: "var(--text)" }}
-              />
-              <div className="flex flex-wrap gap-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
-                <span>{project.type}</span>
-                <span>{project.location}</span>
-                <span>{project.year}</span>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.18} className="space-y-6">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem,1.3vw,1.05rem)", lineHeight: 1.9, color: "var(--text-muted)" }}>
-                {project.philosophy}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
-                style={{ borderColor: "var(--border-medium)", fontFamily: "var(--font-inter)", fontSize: "0.68rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text)" }}
-              >
+          {/* ── SECTION LABEL + COUNTER ── */}
+          <FadeUp delay={0} className="flex items-center justify-between pt-10 pb-6 md:pt-14">
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.36em", color: "var(--text-dim)" }}>
+              — Project
+            </p>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)" }}>
+              {String(index + 1).padStart(2, "0")} / 09
+            </p>
+          </FadeUp>
+
+          {/* ── TITLE ── */}
+          <FadeUp delay={0.08} className="pb-6">
+            <h1 style={{
+              fontFamily: "var(--font-avenir-heavy)",
+              fontSize: "clamp(2.1rem, 7.5vw, 6rem)",
+              fontWeight: 800,
+              lineHeight: 0.95,
+              textTransform: "uppercase",
+              letterSpacing: "0.01em",
+              color: "var(--text)",
+              overflowWrap: "break-word",
+              wordBreak: "break-word",
+            }}>
+              {project.title}
+            </h1>
+
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1">
+              {[project.type, project.location, project.year].map((tag, i) => (
+                <span key={i} style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-muted)" }}>
+                  {i > 0 && <span style={{ margin: "0 0.4rem", opacity: 0.35 }}>·</span>}
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </FadeUp>
+
+          {/* ── HERO IMAGE ── */}
+          <FadeUp delay={0.16} className="mb-10 md:mb-12">
+            <div
+              className="relative w-full overflow-hidden rounded-2xl"
+              style={{ aspectRatio: "16/9", backgroundColor: fallbackBg }}
+            >
+              {project.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={project.image} alt={project.title} className="absolute inset-0 h-full w-full object-cover" />
+              )}
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,rgba(0,0,0,0.2))]" />
+            </div>
+          </FadeUp>
+
+          {/* ── INFO BELOW IMAGE ── */}
+          <FadeUp delay={0.1} className="pb-16 md:pb-24">
+            <div className="mb-6 h-px w-10" style={{ backgroundColor: "var(--border-medium)" }} />
+            <p style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: "clamp(0.88rem, 1.35vw, 1.05rem)",
+              lineHeight: 2,
+              color: "var(--text-muted)",
+              maxWidth: "58ch",
+            }}>
+              {project.philosophy}
+            </p>
+
+            <Link href="/contact" className="group mt-8 inline-flex items-center gap-3 transition-opacity hover:opacity-55">
+              <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "var(--text)" }}>
                 Enquire About This Project
-              </Link>
-            </FadeUp>
-          </div>
-
-          {/* Gallery */}
-          <FadeUp delay={0} className="grid gap-4 pb-14 sm:grid-cols-2 md:gap-5 md:pb-20 lg:pb-24">
-            <div className={`${bg} aspect-[4/3] relative`}>
-              <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(0,0,0,0.04))]" />
-            </div>
-            <div className={`${bg2} aspect-[4/3] relative`}>
-              <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(0,0,0,0.04))]" />
-            </div>
+              </span>
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
           </FadeUp>
 
-          {/* Full-width image */}
-          <FadeUp delay={0.1}>
-            <div className={`${bg} aspect-[4/3] w-full relative mb-14 sm:aspect-[21/9] md:mb-20 lg:mb-24`}>
-              <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(0,0,0,0.06))]" />
-            </div>
-          </FadeUp>
-        </div>
-
-        {/* Prev / Next */}
-        <div className="border-t border-[var(--border)]">
-          <div className="mx-auto max-w-[88rem] grid grid-cols-2 divide-x divide-[var(--border)]">
-            <div>
-              {prev ? (
-                <Link href={`/projects/${prev.slug}`} className="flex flex-col gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
-                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>&larr; Previous</span>
-                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{prev.title}</span>
-                </Link>
-              ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
-            </div>
-            <div className="text-right">
-              {next ? (
-                <Link href={`/projects/${next.slug}`} className="flex flex-col items-end gap-2 px-5 py-8 transition-opacity hover:opacity-60 md:px-12 md:py-10 lg:px-20">
-                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>Next &rarr;</span>
-                  <span style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(0.85rem,1.5vw,1rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", color: "var(--text)" }}>{next.title}</span>
-                </Link>
-              ) : <div className="px-5 py-8 md:px-12 lg:px-20" />}
-            </div>
-          </div>
+          <MobileNav prev={prev} next={next} />
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }
