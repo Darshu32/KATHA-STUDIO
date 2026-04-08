@@ -38,10 +38,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
           {/* ── SECTION LABEL + COUNTER ── */}
           <FadeUp delay={0} className="flex items-center justify-between pt-10 pb-6 md:pt-14">
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.36em", color: "var(--text-dim)" }}>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.32em", color: "var(--text-dim)" }}>
               — Project
             </p>
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)" }}>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)" }}>
               {String(index + 1).padStart(2, "0")} / 09
             </p>
           </FadeUp>

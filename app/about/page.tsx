@@ -22,10 +22,10 @@ export default function AboutPage() {
 
           {/* ── SECTION LABEL + COUNTER ── */}
           <FadeUp delay={0} className="flex items-center justify-between pt-10 pb-6 md:pt-14">
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.36em", color: "var(--text-dim)" }}>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.32em", color: "var(--text-dim)" }}>
               — About
             </p>
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)" }}>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)" }}>
               {String(index + 1).padStart(2, "0")} / 09
             </p>
           </FadeUp>
@@ -72,18 +72,18 @@ export default function AboutPage() {
 
           {/* ── STATS ── */}
           <FadeUp delay={0} className="border-t border-[var(--border)] py-10 md:py-14">
-            <div className="grid grid-cols-3 divide-x divide-[var(--border)]">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x divide-[var(--border)]">
               {[
                 { to: 12, suffix: "+", label: "Projects Completed" },
                 { to: 4,  suffix: "",  label: "Years of Practice"  },
                 { to: 3,  suffix: "",  label: "Design Disciplines" },
               ].map(({ to, suffix, label }) => (
-                <div key={label} className="space-y-2 px-3 first:pl-0 last:pr-0 sm:px-6 md:px-10">
+                <div key={label} className="space-y-2 sm:px-6 sm:first:pl-0 sm:last:pr-0 md:px-10">
                   <p className="font-[var(--font-avenir-heavy)] font-extrabold text-[var(--text)]"
                     style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 1, letterSpacing: "-0.02em" }}>
                     <CountUp to={to} suffix={suffix} />
                   </p>
-                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.55rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
                     {label}
                   </p>
                 </div>

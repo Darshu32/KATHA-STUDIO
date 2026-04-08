@@ -1041,7 +1041,7 @@ export function SiteExperience() {
                         animate={{
                           scale: isActive ? 1 : 0.92,
                           y: isActive ? -6 : 0,
-                          opacity: isActive ? 1 : 0.42,
+                          opacity: isActive ? 1 : 0.68,
                           boxShadow: isActive
                             ? [
                                 `0 28px 60px -14px rgba(0,0,0,0.4), 0 0 60px -18px ${card.accent}80, 0 0 0 1px ${card.accent}40`,
@@ -1059,9 +1059,9 @@ export function SiteExperience() {
                             : { duration: 0.55 },
                         }}
                         whileTap={{ scale: 0.95 }}
-                        className="relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-2xl"
+                        className="relative mx-auto w-full overflow-hidden rounded-2xl"
                         style={{
-                          height: "min(44vh, 22rem)",
+                          height: "min(44vh, 26rem)",
                           backgroundColor: card.darkBg,
                         }}
                       >

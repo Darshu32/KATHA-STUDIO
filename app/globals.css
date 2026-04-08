@@ -172,6 +172,27 @@ html[data-theme="dark"] body::before {
   );
 }
 
+/* ── Mobile readability: prevent text from going below ~10px ── */
+@media (max-width: 640px) {
+  /* Boost hero headline minimum on very small screens */
+  .site-hero-title {
+    font-size: clamp(1.6rem, 8.5vw, 3rem) !important;
+  }
+  /* Improve project/service page body readability */
+  .prose-body {
+    font-size: clamp(0.92rem, 3.5vw, 1.05rem) !important;
+    line-height: 1.85 !important;
+  }
+}
+
+/* ── Mobile: tighten hero section top padding ── */
+@media (max-width: 640px) {
+  .mobile-hero-compact {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+}
+
 /* Grain texture overlay — premium surface feel */
 body::after {
   content: '';
