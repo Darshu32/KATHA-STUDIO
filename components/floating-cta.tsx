@@ -6,14 +6,20 @@ import { motion } from "framer-motion";
 
 export function FloatingCTA() {
   const pathname = usePathname();
-  if (pathname === "/" || pathname === "/contact") return null;
+  /* Hide on home, contact, and the minimal detail pages */
+  if (
+    pathname === "/" ||
+    pathname === "/contact" ||
+    pathname.startsWith("/projects/") ||
+    pathname.startsWith("/services/")
+  ) return null;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed bottom-8 right-6 z-40 md:right-10"
+      className="fixed bottom-8 right-6 z-40 hidden md:block md:right-10"
     >
       <Link
         href="/contact"

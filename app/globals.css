@@ -193,6 +193,22 @@ html[data-theme="dark"] body::before {
   }
 }
 
+/* ── Interactive tagline word hover ── */
+.interactive-word {
+  will-change: transform, color;
+}
+.interactive-word:hover {
+  transform: translateY(-3px) scale(1.04);
+  color: var(--text) !important;
+  text-shadow: 0 6px 14px color-mix(in srgb, var(--text) 22%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .interactive-word:hover {
+    transform: none;
+    text-shadow: none;
+  }
+}
+
 /* Grain texture overlay — premium surface feel */
 body::after {
   content: '';

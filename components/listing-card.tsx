@@ -44,11 +44,11 @@ export function ListingCard({
             y: hovered ? -10 : 0,
             boxShadow: hovered
               ? [
-                  `0 32px 68px -14px rgba(0,0,0,0.42), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
-                  `0 36px 80px -12px rgba(0,0,0,0.48), 0 0 100px -18px ${accent}a0, 0 0 0 1px ${accent}55`,
-                  `0 32px 68px -14px rgba(0,0,0,0.42), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
+                  `0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
+                  `0 48px 100px -8px rgba(0,0,0,0.62), 0 18px 36px -6px rgba(0,0,0,0.32), 0 0 100px -18px ${accent}a0, 0 0 0 1px ${accent}55`,
+                  `0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
                 ]
-              : "0 14px 34px -18px rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0)",
+              : "0 24px 50px -12px rgba(0,0,0,0.38), 0 10px 22px -6px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
           }}
           transition={{
             y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },

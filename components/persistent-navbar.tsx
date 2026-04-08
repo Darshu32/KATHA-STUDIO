@@ -76,13 +76,13 @@ export function PersistentNavbar() {
               </Link>
             )}
 
-            {/* Dark mode toggle — desktop only */}
+            {/* Dark mode toggle — visible on all screens */}
             {isHome && (
               <button
                 type="button"
                 onClick={() => setIsDark((p) => !p)}
                 aria-label={isDark ? "Switch to light" : "Switch to dark"}
-                className="hidden h-[1.25rem] w-[2.6rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65 md:block"
+                className="h-[1.25rem] w-[2.6rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
               />
             )}
 
@@ -175,12 +175,12 @@ export function PersistentNavbar() {
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
                 KATHA Studio · Ahmedabad
               </p>
-              {/* Dark mode toggle inside overlay */}
+              {/* Dark mode toggle inside overlay — identical to desktop */}
               <button
                 type="button"
                 onClick={() => setIsDark((p) => !p)}
                 aria-label={isDark ? "Switch to light" : "Switch to dark"}
-                className="h-[1.1rem] w-[2.4rem] rounded-full bg-[var(--text)] transition-colors duration-500"
+                className="h-[1.25rem] w-[2.6rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
               />
             </motion.div>
           </motion.div>

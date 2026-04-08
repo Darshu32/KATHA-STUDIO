@@ -11,8 +11,8 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)]">
-      <main className="pt-[4.5rem]">
-        <div className="mx-auto max-w-4xl px-5 sm:px-8 md:px-16">
+      <main className="pt-[4.2rem]">
+        <div className="mx-auto max-w-[88rem] px-5 sm:px-8 md:px-12 lg:px-20">
 
           {/* ── SECTION LABEL ── */}
           <FadeUp delay={0} className="flex items-center justify-between pt-10 pb-6 md:pt-14">
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
           {/* ── PROJECTS GRID ── */}
           <FadeUp delay={0.12} className="pb-16 md:pb-24">
             <div className="mb-8 h-px w-10" style={{ backgroundColor: "var(--border-medium)" }} />
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-12">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-14">
               {projects.map((project, i) => (
                 <FadeUp key={project.slug} delay={0.16 + i * 0.08}>
                   <ListingCard
