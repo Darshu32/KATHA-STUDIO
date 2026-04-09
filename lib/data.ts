@@ -34,10 +34,10 @@ export const projects: Project[] = [
     id: "01",
     title: "Courtyard Residence",
     type: "Residential",
-    location: "Ahmedabad",
+    location: "Bengaluru",
     year: "2024",
     philosophy:
-      "This private residence in Ahmedabad is organised around a central courtyard that acts as the home's beating heart. Every room opens onto it — drawing in natural light, cross-ventilation, and a sense of calm that shifts with the seasons. The architecture does not impose itself; instead, it steps back to let the courtyard do its quiet work. Materials were chosen for their warmth and age well — exposed brick, textured plaster, and timber screens that filter the afternoon sun into patterns across the floor.",
+      "This private residence in Bengaluru is organised around a central courtyard that acts as the home's beating heart. Every room opens onto it — drawing in natural light, cross-ventilation, and a sense of calm that shifts with the seasons. The architecture does not impose itself; instead, it steps back to let the courtyard do its quiet work. Materials were chosen for their warmth and age well — exposed brick, textured plaster, and timber screens that filter the afternoon sun into patterns across the floor.",
     tone: "warm",
     image: "/images/projects/courtyard-residence/Screenshot 2026-04-08 135950.png",
   },

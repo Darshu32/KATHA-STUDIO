@@ -170,18 +170,11 @@ export function PersistentNavbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.44, duration: 0.4 }}
-              className="flex items-center justify-between border-t border-[var(--border)] px-6 py-5"
+              className="border-t border-[var(--border)] px-6 py-5"
             >
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
                 KATHA Studio · Bengaluru
               </p>
-              {/* Dark mode toggle inside overlay — identical to desktop */}
-              <button
-                type="button"
-                onClick={() => setIsDark((p) => !p)}
-                aria-label={isDark ? "Switch to light" : "Switch to dark"}
-                className="h-[1.25rem] w-[2.6rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
-              />
             </motion.div>
           </motion.div>
         )}
