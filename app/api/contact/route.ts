@@ -1,21 +1,32 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+import { StudioEnquiryNotification } from "@/emails/studio-enquiry-notification";
+import { VisitorAutoresponse } from "@/emails/visitor-autoresponse";
 
 /*
  * POST /api/contact
  * ──────────────────
- * Handles contact form submissions and forwards them as email via
- * Formsubmit.co to the studio inbox (STUDIO_EMAIL below).
+ * Sends two emails via Resend whenever the contact form is submitted:
  *
- * Important: Formsubmit requires an Origin/Referer header and checks
- * the response body (not just HTTP status) for success.
+ *   1. Studio notification  →  STUDIO_EMAIL
+ *      (editorial dispatch layout — see emails/studio-enquiry-notification.tsx)
  *
- * First-time activation: on the FIRST submission ever, Formsubmit
- * sends an activation link to STUDIO_EMAIL. Open the inbox (and the
- * SPAM folder), click the "Activate Form" link, then future submissions
- * arrive directly. Until that link is clicked, no emails are delivered.
+ *   2. Visitor autoresponse  →  the sender
+ *      (warm personal confirmation — see emails/visitor-autoresponse.tsx)
+ *
+ * Required env vars:
+ *   RESEND_API_KEY    — obtain at https://resend.com (free tier: 100/day)
+ *   RESEND_FROM       — verified sender, e.g. "KATHA Studio <hello@kathastudio.co>"
+ *                       During development, use Resend's onboarding@resend.dev
+ *                       which only delivers to the account owner.
+ *
+ * Optional:
+ *   STUDIO_EMAIL      — defaults to neha@kathastudio.co
  */
 
-const STUDIO_EMAIL = "darshuug32@gmail.com";
+const STUDIO_EMAIL = process.env.STUDIO_EMAIL ?? "neha@kathastudio.co";
+const RESEND_FROM =
+  process.env.RESEND_FROM ?? "KATHA Studio <onboarding@resend.dev>";
 
 type ContactPayload = {
   name: string;
@@ -25,6 +36,34 @@ type ContactPayload = {
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function formatSubmittedAt(d: Date): string {
+  // "Thu · 09 Apr 2026 · 14:32 IST"
+  return new Intl.DateTimeFormat("en-GB", {
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Kolkata",
+    timeZoneName: "short",
+  })
+    .format(d)
+    .replace(/, /g, " · ");
+}
+
+function buildDispatchId(d: Date): string {
+  // "KS·240409·1432"  — YY MM DD · HH MM
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const yy = pad(d.getFullYear() % 100);
+  const mm = pad(d.getMonth() + 1);
+  const dd = pad(d.getDate());
+  const hh = pad(d.getHours());
+  const mi = pad(d.getMinutes());
+  return `KS·${yy}${mm}${dd}·${hh}${mi}`;
 }
 
 export async function POST(request: Request) {
@@ -62,77 +101,78 @@ export async function POST(request: Request) {
     );
   }
 
-  // Derive the request origin so Formsubmit trusts us.
-  const origin =
-    request.headers.get("origin") ??
-    request.headers.get("referer") ??
-    "http://localhost:3000";
-
-  // Forward to Formsubmit.co — delivers to STUDIO_EMAIL
-  try {
-    const fsRes = await fetch(
-      `https://formsubmit.co/ajax/${encodeURIComponent(STUDIO_EMAIL)}`,
+  // Required env
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("[contact] RESEND_API_KEY is not set");
+    return NextResponse.json(
       {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Origin: origin,
-          Referer: origin,
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          _subject: `New Enquiry from ${name} — KATHA Studio`,
-          _template: "table",
-          _captcha: "false",
-          _replyto: email,
-        }),
-      }
+        ok: false,
+        error:
+          "Email service is not configured. Please email us directly at neha@kathastudio.co.",
+      },
+      { status: 503 }
     );
+  }
 
-    const body = (await fsRes.json().catch(() => ({}))) as {
-      success?: string | boolean;
-      message?: string;
-    };
+  const resend = new Resend(apiKey);
 
-    // Formsubmit returns HTTP 200 for several error cases — we have to
-    // inspect the body. Activation step: body.success === "false" AND
-    // the message mentions "Activation".
-    const success = body.success === true || body.success === "true";
-    const needsActivation =
-      !success && typeof body.message === "string" && /activat/i.test(body.message);
+  const now = new Date();
+  const submittedAt = formatSubmittedAt(now);
+  const dispatchId = buildDispatchId(now);
+  const firstName = name.split(/\s+/)[0];
+  const sourceUrl =
+    request.headers.get("referer") ??
+    request.headers.get("origin") ??
+    "—";
 
-    if (needsActivation) {
-      // Tell the caller we've kicked off activation. The form-sender
-      // still sees a friendly success — the studio will activate once
-      // and then all subsequent submissions flow through.
-      return NextResponse.json(
-        {
-          ok: true,
-          activation: true,
-          message:
-            "Your enquiry was received. The studio inbox is being set up — the next one will arrive instantly.",
-        },
-        { status: 200 }
-      );
-    }
+  try {
+    // 1. Studio notification  ─────────────────────────────────────────
+    const studio = await resend.emails.send({
+      from: RESEND_FROM,
+      to: [STUDIO_EMAIL],
+      replyTo: email,
+      subject: `◆ New enquiry — ${name} · KATHA Studio`,
+      react: StudioEnquiryNotification({
+        name,
+        email,
+        phone,
+        submittedAt,
+        sourceUrl,
+        dispatchId,
+      }),
+    });
 
-    if (!success) {
-      console.error("[contact] Formsubmit rejected", fsRes.status, body);
+    if (studio.error) {
+      console.error("[contact] studio email failed", studio.error);
       return NextResponse.json(
         {
           ok: false,
           error:
-            body.message ??
             "We couldn't deliver your message right now. Please try again or email us directly.",
         },
         { status: 502 }
       );
     }
+
+    // 2. Visitor autoresponse  ────────────────────────────────────────
+    // Failure here is non-fatal — the studio already has the lead.
+    const visitor = await resend.emails.send({
+      from: RESEND_FROM,
+      to: [email],
+      replyTo: STUDIO_EMAIL,
+      subject: `Thank you for writing to KATHA Studio`,
+      react: VisitorAutoresponse({
+        firstName,
+        submittedAt,
+      }),
+    });
+
+    if (visitor.error) {
+      console.warn("[contact] autoresponse failed (non-fatal)", visitor.error);
+    }
   } catch (err) {
-    console.error("[contact] forwarding failure", err);
+    console.error("[contact] Resend exception", err);
     return NextResponse.json(
       {
         ok: false,

@@ -7,9 +7,9 @@ import { ContactForm } from "@/components/contact-form";
 type NavItem = { href: string; label: string };
 
 const contactDetails = [
-  { label: "Email",  value: "hello@kathastudio.com", href: "mailto:hello@kathastudio.com" },
-  { label: "Phone",  value: "+91 98765 43210",        href: "tel:+919876543210"           },
-  { label: "Studio", value: "Ahmedabad, India",       href: undefined                     },
+  { label: "Email",  value: "neha@kathastudio.co", href: "mailto:neha@kathastudio.co" },
+  { label: "Phone",  value: "+91 70195 98600",     href: "tel:+917019598600"          },
+  { label: "Studio", value: "Bengaluru, India",    href: undefined                    },
 ];
 
 export function ContactView({ prev, next }: { prev: NavItem | null; next: NavItem | null }) {

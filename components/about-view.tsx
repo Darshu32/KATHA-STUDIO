@@ -74,7 +74,7 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
                 transition: "color 0.4s ease",
               }}
             >
-              Based in Ahmedabad, India. We work across residential architecture,
+              Based in Bengaluru, India. We work across residential architecture,
               interior design, renovation, and architectural consultation. Every
               project begins with listening.
             </motion.p>

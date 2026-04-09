@@ -5,7 +5,7 @@ import { ListingCard } from "@/components/listing-card";
 
 export const metadata = {
   title: "Services — KATHA Studio",
-  description: "Architectural and interior design services by KATHA Studio — Ahmedabad.",
+  description: "Architectural and interior design services by KATHA Studio — Bengaluru.",
 };
 
 export default function ServicesPage() {
@@ -40,7 +40,7 @@ export default function ServicesPage() {
               Services
             </h1>
             <p className="mt-4" style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-muted)" }}>
-              Architecture & Interior Design · Ahmedabad
+              Architecture & Interior Design · Bengaluru
             </p>
           </FadeUp>
 

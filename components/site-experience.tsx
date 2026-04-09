@@ -794,13 +794,17 @@ export function SiteExperience() {
     return () => window.removeEventListener("resize", calc);
   }, [isMobile]);
 
-  /* Mobile: sync activeIndex from smoothed position */
+  /* Mobile: sync activeIndex from smoothed position.
+     Guarded against redundant setState calls — the spring emits many "change"
+     events per second while settling, and re-rendering every card on each
+     emission was what made vertical scrolling feel "stuck". */
   useEffect(() => {
     if (!isMobile) return;
     return mobileSmoothX.on("change", (x) => {
       if (mobileStepRef.current === 0) return;
-      const idx = Math.round(-x / mobileStepRef.current);
-      setActiveIndex(Math.max(0, Math.min(allCards.length - 1, idx)));
+      const raw = Math.round(-x / mobileStepRef.current);
+      const idx = Math.max(0, Math.min(allCards.length - 1, raw));
+      if (idx !== activeIndexRef.current) setActiveIndex(idx);
     });
   }, [isMobile, mobileSmoothX]);
 
@@ -1037,7 +1041,7 @@ export function SiteExperience() {
                       fontWeight: 700,
                       color: "var(--text)",
                       cursor: "default",
-                      transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1), color 0.35s, text-shadow 0.35s",
+                      transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1), color 0.35s",
                     }}
                   >
                     {w.t}
@@ -1132,14 +1136,8 @@ export function SiteExperience() {
                           className="relative"
                         >
                           {/* Editorial category label — left-aligned above the active card */}
-                          <AnimatePresence mode="wait">
-                            {isActive && (
-                              <motion.div
-                                key={`mcat-${card.href}`}
-                                initial={{ opacity: 0, y: 6 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -4 }}
-                                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                          {isActive && (
+                              <div
                                 className="pointer-events-none absolute z-[4] flex items-center"
                                 style={{ top: "-2.05rem", left: "0", gap: "0.7rem" }}
                               >
@@ -1161,9 +1159,8 @@ export function SiteExperience() {
                                 >
                                   {getCardCategory(card.href)}
                                 </span>
-                              </motion.div>
+                              </div>
                             )}
-                          </AnimatePresence>
 
                           {/* Card shell */}
                           <motion.div
@@ -1171,24 +1168,14 @@ export function SiteExperience() {
                               scale: waveScale,
                               y: waveY,
                               opacity: waveOpacity,
-                              boxShadow: isActive
-                                ? [
-                                    `0 36px 78px -10px rgba(0,0,0,0.55), 0 14px 28px -6px rgba(0,0,0,0.28), 0 0 64px -18px ${card.accent}82, 0 0 0 1px ${card.accent}42`,
-                                    `0 42px 92px -8px rgba(0,0,0,0.62), 0 16px 32px -6px rgba(0,0,0,0.32), 0 0 96px -16px ${card.accent}a0, 0 0 0 1px ${card.accent}58`,
-                                    `0 36px 78px -10px rgba(0,0,0,0.55), 0 14px 28px -6px rgba(0,0,0,0.28), 0 0 64px -18px ${card.accent}82, 0 0 0 1px ${card.accent}42`,
-                                  ]
-                                : "0 18px 38px -10px rgba(0,0,0,0.35), 0 6px 14px -4px rgba(0,0,0,0.2)",
                             }}
                             transition={{
                               scale:     { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
                               y:         { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
                               opacity:   { duration: 0.38 },
-                              boxShadow: isActive
-                                ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
-                                : { duration: 0.5 },
                             }}
                             whileTap={{ scale: isActive ? 0.97 : 0.92 }}
-                            className="relative w-full overflow-hidden rounded-2xl"
+                            className="relative w-full overflow-hidden"
                             style={{ height: "min(56vw, 26rem)", backgroundColor: card.darkBg }}
                           >
                             <NavCardContent card={card} isActive={isActive} isDragging={isDragging} />
@@ -1390,27 +1377,17 @@ export function SiteExperience() {
                           y: isActive ? -6 : 0,
                           height: [320, 282, 248, 222, 202][Math.min(wave, 4)],
                           opacity: isActive ? 1 : 0.92,
-                          boxShadow: isActive
-                            ? [
-                                `0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28), 0 0 70px -20px ${card.accent}85, 0 0 0 1px ${card.accent}40`,
-                                `0 48px 100px -8px rgba(0,0,0,0.62), 0 18px 36px -6px rgba(0,0,0,0.32), 0 0 100px -18px ${card.accent}a0, 0 0 0 1px ${card.accent}55`,
-                                `0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28), 0 0 70px -20px ${card.accent}85, 0 0 0 1px ${card.accent}40`,
-                              ]
-                            : "0 24px 50px -12px rgba(0,0,0,0.38), 0 10px 22px -6px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
                         }}
                         transition={{
                           scale: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
                           y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
                           height: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
                           opacity: { duration: 0.4 },
-                          boxShadow: isActive
-                            ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
-                            : { duration: 0.55 },
                         }}
                         onHoverStart={() => { setActiveIndex(i); pauseInteraction(); }}
                         onHoverEnd={() => resumeInteraction()}
                         whileTap={{ scale: isActive ? 1.03 : 0.87 }}
-                        className="overflow-hidden rounded-2xl"
+                        className="overflow-hidden"
                         style={{
                           width: "100%",
                           backgroundColor: card.darkBg,

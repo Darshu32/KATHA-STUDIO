@@ -12,11 +12,13 @@
     "@fontsource/inter": "latest",
     "@fontsource/manrope": "latest",
     "@fontsource/playfair-display": "latest",
+    "@react-email/components": "^1.0.11",
     "framer-motion": "latest",
     "lenis": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "resend": "^6.10.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",

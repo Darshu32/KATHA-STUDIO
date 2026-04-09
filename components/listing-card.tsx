@@ -42,21 +42,11 @@ export function ListingCard({
         <motion.div
           animate={{
             y: hovered ? -10 : 0,
-            boxShadow: hovered
-              ? [
-                  `0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
-                  `0 48px 100px -8px rgba(0,0,0,0.62), 0 18px 36px -6px rgba(0,0,0,0.32), 0 0 100px -18px ${accent}a0, 0 0 0 1px ${accent}55`,
-                  `0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28), 0 0 70px -20px ${accent}85, 0 0 0 1px ${accent}40`,
-                ]
-              : "0 24px 50px -12px rgba(0,0,0,0.38), 0 10px 22px -6px rgba(0,0,0,0.22), 0 0 0 0 rgba(0,0,0,0)",
           }}
           transition={{
             y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-            boxShadow: hovered
-              ? { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
-              : { duration: 0.55 },
           }}
-          className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl"
+          className="relative aspect-[4/3] w-full overflow-hidden"
           style={{ backgroundColor: darkBg }}
         >
           {/* Image (if provided and loaded) */}

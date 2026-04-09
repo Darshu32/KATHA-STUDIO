@@ -173,7 +173,7 @@ export function PersistentNavbar() {
               className="flex items-center justify-between border-t border-[var(--border)] px-6 py-5"
             >
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
-                KATHA Studio · Ahmedabad
+                KATHA Studio · Bengaluru
               </p>
               {/* Dark mode toggle inside overlay — identical to desktop */}
               <button

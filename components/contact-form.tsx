@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -9,18 +9,27 @@ export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
 
+  /* Auto-return to idle 5s after a success or error so the user
+     can submit again without the button looking frozen. */
+  useEffect(() => {
+    if (status !== "success" && status !== "error") return;
+    const t = setTimeout(() => setStatus("idle"), 5000);
+    return () => clearTimeout(t);
+  }, [status]);
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("submitting");
-    setErrorMsg("");
 
     const form = e.currentTarget;
     const data = new FormData(form);
     const payload = {
-      name: String(data.get("name") ?? ""),
-      email: String(data.get("email") ?? ""),
-      phone: String(data.get("phone") ?? ""),
+      name: String(data.get("name") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim(),
     };
+
+    setStatus("submitting");
+    setErrorMsg("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -29,14 +38,17 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setErrorMsg(body?.error ?? "Something went wrong. Please try again.");
+      if (!res.ok || body?.ok === false) {
+        const msg = body?.error ?? `Request failed (${res.status}).`;
+        console.error("[contact] submission failed", res.status, body);
+        setErrorMsg(msg);
         setStatus("error");
         return;
       }
       form.reset();
       setStatus("success");
-    } catch {
+    } catch (err) {
+      console.error("[contact] network error", err);
       setErrorMsg("Network error. Please try again.");
       setStatus("error");
     }

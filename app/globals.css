@@ -100,8 +100,8 @@ html[data-theme="dark"] ::selection {
 
 /* Cursor dot — gentle breathing pulse */
 @keyframes cursor-breathe {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
-  50%      { box-shadow: 0 0 0 3px color-mix(in srgb, var(--text) 10%, transparent); }
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.15); }
 }
 
 .cursor-dot::before {
@@ -200,12 +200,10 @@ html[data-theme="dark"] body::before {
 .interactive-word:hover {
   transform: translateY(-3px) scale(1.04);
   color: var(--text) !important;
-  text-shadow: 0 6px 14px color-mix(in srgb, var(--text) 22%, transparent);
 }
 @media (prefers-reduced-motion: reduce) {
   .interactive-word:hover {
     transform: none;
-    text-shadow: none;
   }
 }
 

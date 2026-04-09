@@ -1,7 +1,7 @@
 const items = [
   "Katha Studio",
   "Stillness, Designed",
-  "Ahmedabad",
+  "Bengaluru",
   "Architecture as Pause",
   "Material Calm",
   "Rooms That Listen",

@@ -127,10 +127,8 @@ export function DetailView({
                 rotateY: reduceMotion ? 0 : tiltY,
                 transformStyle: "preserve-3d",
                 backgroundColor: fallbackBg,
-                boxShadow:
-                  "0 42px 86px -10px rgba(0,0,0,0.55), 0 16px 32px -8px rgba(0,0,0,0.28)",
               }}
-              className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl"
+              className="relative aspect-[4/3] w-full overflow-hidden"
             >
               {image && (
                 // eslint-disable-next-line @next/next/no-img-element
