@@ -25,16 +25,31 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: "var(--font-avenir-heavy)",
             fontSize: "clamp(2.2rem, 5vw, 4.4rem)",
-            fontWeight: 800,
             lineHeight: 0.96,
             textTransform: "uppercase",
-            letterSpacing: "0.005em",
             color: "var(--text)",
           }}
+          className="inline-flex flex-wrap items-end gap-x-[0.35em] leading-none"
         >
-          Katha Studio
+          <span
+            style={{
+              fontFamily: "var(--font-avenir-heavy)",
+              fontWeight: 800,
+              letterSpacing: "0.005em",
+            }}
+          >
+            Katha
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-avenir-book)",
+              fontWeight: 500,
+              letterSpacing: "0.04em",
+            }}
+          >
+            Studio
+          </span>
         </motion.h1>
 
         {/* SPLIT: PARAGRAPHS LEFT · STATS RIGHT */}

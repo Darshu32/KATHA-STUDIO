@@ -14,7 +14,7 @@
   --font-inter: "Inter", "Segoe UI", sans-serif;
   --font-brand: "Manrope", "Inter", "Segoe UI", sans-serif;
   --font-avenir-heavy: "Avenir Next Heavy", "Avenir Next", "Avenir", "Manrope", "Segoe UI", sans-serif;
-  --font-avenir-book: "Avenir Next", "Avenir Book", "Avenir Medium", "Inter", "Segoe UI", sans-serif;
+  --font-avenir-book: "Avenir Next", "Avenir Book", "Avenir Medium", "Manrope", "Inter", "Segoe UI", sans-serif;
 }
 
 html[data-theme="dark"] {

@@ -28,6 +28,7 @@ export type StudioEnquiryNotificationProps = {
   name: string;
   email: string;
   phone: string;
+  message?: string;
   submittedAt: string; // preformatted, e.g. "Thu · 09 Apr 2026 · 14:32 IST"
   sourceUrl: string;
   dispatchId: string; // short stable identifier, e.g. "KS·240409·1432"
@@ -48,6 +49,7 @@ export function StudioEnquiryNotification({
   name = "Anonymous",
   email = "—",
   phone = "—",
+  message = "",
   submittedAt = "—",
   sourceUrl = "—",
   dispatchId = "KS·000000·0000",
@@ -223,6 +225,46 @@ export function StudioEnquiryNotification({
             <LedgerRow label="Received"  value={submittedAt} muted />
             <LedgerRow label="Source"    value={sourceUrl} href={sourceUrl} muted truncate />
           </Section>
+
+          {/* ── Message block ── */}
+          {message && (
+            <>
+              <Hr
+                style={{
+                  border: "none",
+                  borderTop: `1px solid ${PAPER_RULE}`,
+                  margin: "32px 0 24px 0",
+                }}
+              />
+              <Text
+                style={{
+                  margin: "0 0 12px 0",
+                  fontFamily: fontBody,
+                  fontSize: "9px",
+                  fontWeight: 600,
+                  letterSpacing: "0.26em",
+                  textTransform: "uppercase",
+                  color: INK_DIM,
+                }}
+              >
+                Message
+              </Text>
+              <Text
+                style={{
+                  margin: 0,
+                  fontFamily: fontDisplay,
+                  fontSize: "16px",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  lineHeight: "1.65",
+                  color: INK,
+                  whiteSpace: "pre-wrap",
+                }}
+              >
+                “{message}”
+              </Text>
+            </>
+          )}
 
           {/* ── Thin rule ── */}
           <Hr

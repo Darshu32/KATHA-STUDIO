@@ -29,7 +29,7 @@ export function SiteFooter() {
           <span
             style={{
               fontFamily: "var(--font-avenir-book)",
-              fontWeight: 300,
+              fontWeight: 500,
               fontSize: "clamp(1rem,1.4vw,1.25rem)",
               textTransform: "uppercase",
               letterSpacing: "0.08em",

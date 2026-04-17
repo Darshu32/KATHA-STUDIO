@@ -57,7 +57,7 @@ export function PersistentNavbar() {
             <span style={{ fontFamily: "var(--font-avenir-heavy)", fontWeight: 800, fontSize: "clamp(1rem,1.4vw,1.25rem)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
               KATHA
             </span>
-            <span style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 300, fontSize: "clamp(1rem,1.4vw,1.25rem)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <span style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1rem,1.4vw,1.25rem)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
               STUDIO
             </span>
           </Link>

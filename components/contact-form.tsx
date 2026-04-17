@@ -5,9 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+/* E.164-ish phone validation.
+   Accepts an optional leading "+", followed by digits, spaces, dashes,
+   dots, or parentheses. After stripping separators we require between
+   8 and 15 digits — the ITU E.164 range. */
+function isValidPhone(raw: string): boolean {
+  if (!/^[+\d\s().\-]+$/.test(raw)) return false;
+  const digits = raw.replace(/\D/g, "");
+  return digits.length >= 8 && digits.length <= 15;
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [phoneError, setPhoneError] = useState<string>("");
 
   /* Auto-return to idle 5s after a success or error so the user
      can submit again without the button looking frozen. */
@@ -26,7 +37,17 @@ export function ContactForm() {
       name: String(data.get("name") ?? "").trim(),
       email: String(data.get("email") ?? "").trim(),
       phone: String(data.get("phone") ?? "").trim(),
+      message: String(data.get("message") ?? "").trim(),
     };
+
+    // Client-side phone validation — fail fast before hitting the API.
+    if (!isValidPhone(payload.phone)) {
+      setPhoneError("Please enter a valid phone number (8–15 digits).");
+      setErrorMsg("Please check the highlighted field.");
+      setStatus("error");
+      return;
+    }
+    setPhoneError("");
 
     setStatus("submitting");
     setErrorMsg("");
@@ -110,9 +131,42 @@ export function ContactForm() {
           name="phone"
           required
           autoComplete="tel"
+          inputMode="tel"
+          pattern="[+\d\s().\-]{8,}"
           placeholder="+91 98765 43210"
           disabled={status === "submitting"}
+          onInput={() => {
+            if (phoneError) setPhoneError("");
+          }}
+          aria-invalid={phoneError ? true : undefined}
           className={inputClass}
+          style={{
+            ...inputStyle,
+            borderColor: phoneError ? "#c85a3c" : inputStyle.borderColor,
+          }}
+        />
+        {phoneError && (
+          <span
+            className="block pt-1 font-[var(--font-inter)]"
+            style={{ fontSize: "0.72rem", color: "#c85a3c" }}
+          >
+            {phoneError}
+          </span>
+        )}
+      </label>
+
+      {/* Message */}
+      <label className="block space-y-2">
+        <span style={fieldLabelStyle}>Message</span>
+        <textarea
+          name="message"
+          rows={5}
+          required
+          minLength={10}
+          maxLength={2000}
+          placeholder="Tell us a little about your space, timeline, or the feeling you'd like to create…"
+          disabled={status === "submitting"}
+          className={`${inputClass} resize-y`}
           style={inputStyle}
         />
       </label>

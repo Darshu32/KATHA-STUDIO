@@ -32,10 +32,19 @@ type ContactPayload = {
   name: string;
   email: string;
   phone?: string;
+  message?: string;
 };
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+/* E.164-ish phone validation — optional leading "+", digits / spaces /
+   dashes / dots / parens only; 8–15 digits after stripping separators. */
+function isValidPhone(raw: string): boolean {
+  if (!/^[+\d\s().\-]+$/.test(raw)) return false;
+  const digits = raw.replace(/\D/g, "");
+  return digits.length >= 8 && digits.length <= 15;
 }
 
 function formatSubmittedAt(d: Date): string {
@@ -80,6 +89,7 @@ export async function POST(request: Request) {
   const name = (data.name ?? "").trim();
   const email = (data.email ?? "").trim();
   const phone = (data.phone ?? "").trim();
+  const message = (data.message ?? "").trim();
 
   // Server-side validation
   if (!name || name.length < 2) {
@@ -94,9 +104,21 @@ export async function POST(request: Request) {
       { status: 400 }
     );
   }
-  if (!phone || phone.length < 6) {
+  if (!isValidPhone(phone)) {
     return NextResponse.json(
-      { ok: false, error: "Please share a phone number." },
+      { ok: false, error: "Please share a valid phone number (8–15 digits)." },
+      { status: 400 }
+    );
+  }
+  if (!message || message.length < 10) {
+    return NextResponse.json(
+      { ok: false, error: "Please share a few words about your enquiry." },
+      { status: 400 }
+    );
+  }
+  if (message.length > 2000) {
+    return NextResponse.json(
+      { ok: false, error: "Your message is a little too long — please trim it under 2000 characters." },
       { status: 400 }
     );
   }
@@ -137,6 +159,7 @@ export async function POST(request: Request) {
         name,
         email,
         phone,
+        message,
         submittedAt,
         sourceUrl,
         dispatchId,
