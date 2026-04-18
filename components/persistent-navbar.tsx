@@ -4,11 +4,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { categories } from "@/lib/data";
 
-const mobileNavItems = [
+type NavEntry = {
+  href: string;
+  label: string;
+  num: string;
+  expandable?: boolean;
+};
+
+const mobileNavItems: NavEntry[] = [
   { href: "/",         label: "Home",     num: "00" },
   { href: "/about",    label: "About",    num: "01" },
-  { href: "/projects", label: "Projects", num: "02" },
+  { href: "/projects", label: "Projects", num: "02", expandable: true },
   { href: "/services", label: "Services", num: "03" },
   { href: "/contact",  label: "Contact",  num: "04" },
 ];
@@ -22,6 +30,7 @@ export function PersistentNavbar() {
   const pathname = usePathname();
   const [isDark, setIsDark] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [projectsExpanded, setProjectsExpanded] = useState(false);
   const backLink = getBackLink(pathname);
   const isHome = pathname === "/";
 
@@ -39,6 +48,15 @@ export function PersistentNavbar() {
     document.body.style.overflow = isNavOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isNavOpen]);
+
+  /* Reset the Projects accordion each time the overlay opens.
+     Default expanded only when the visitor is already inside /projects,
+     otherwise start collapsed so the menu feels fresh on every open. */
+  useEffect(() => {
+    if (isNavOpen) {
+      setProjectsExpanded(pathname.startsWith("/projects"));
+    }
+  }, [isNavOpen, pathname]);
 
   return (
     <>
@@ -86,12 +104,12 @@ export function PersistentNavbar() {
               />
             )}
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger — all screens */}
             <button
               type="button"
               onClick={() => setIsNavOpen((p) => !p)}
               aria-label={isNavOpen ? "Close menu" : "Open menu"}
-              className="relative flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
+              className="relative flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
             >
               <motion.span
                 animate={isNavOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
@@ -116,7 +134,7 @@ export function PersistentNavbar() {
         </div>
       </header>
 
-      {/* ── Mobile Full-Screen Navigation Overlay ── */}
+      {/* ── Full-Screen Navigation Overlay ── */}
       <AnimatePresence>
         {isNavOpen && (
           <motion.div
@@ -124,16 +142,34 @@ export function PersistentNavbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[49] flex flex-col md:hidden"
+            className="fixed inset-0 z-[49] flex flex-col"
             style={{ backgroundColor: "var(--background)", paddingTop: "4rem" }}
           >
             {/* Nav items */}
-            <nav className="flex flex-1 flex-col justify-center px-6 py-8">
+            <nav className="flex flex-1 flex-col justify-center overflow-y-auto px-6 py-8 [&>*]:shrink-0" style={{ justifyContent: "safe center" }}>
               {mobileNavItems.map((item, i) => {
                 const isActive =
                   pathname === item.href ||
                   (item.href === "/projects" && pathname.startsWith("/projects")) ||
                   (item.href === "/services" && pathname.startsWith("/services"));
+
+                const rowStyle = {
+                  fontFamily: "var(--font-avenir-heavy)",
+                  fontSize: "clamp(1.85rem, 9vw, 2.8rem)",
+                  fontWeight: 800,
+                  textTransform: "uppercase" as const,
+                  letterSpacing: "0.01em",
+                  color: "var(--text)",
+                  lineHeight: 1,
+                };
+                const numStyle = {
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.6rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.18em",
+                  color: "var(--text-dim)",
+                  minWidth: "1.8rem",
+                };
 
                 return (
                   <motion.div
@@ -142,24 +178,148 @@ export function PersistentNavbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.08 + i * 0.055, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <Link
-                      href={item.href}
-                      className="group flex items-baseline gap-4 border-b border-[var(--border)] py-4"
-                      style={{ opacity: isActive ? 1 : 0.55 }}
-                    >
-                      <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.18em", color: "var(--text-dim)", minWidth: "1.8rem" }}>
-                        {item.num}
-                      </span>
-                      <span
-                        className="flex-1 transition-opacity group-hover:opacity-100"
-                        style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "clamp(1.85rem, 9vw, 2.8rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.01em", color: "var(--text)", lineHeight: 1 }}
+                    {item.expandable ? (
+                      <>
+                        {/* Accordion header — acts as both toggle and link */}
+                        <button
+                          type="button"
+                          onClick={() => setProjectsExpanded((p) => !p)}
+                          className="group flex w-full items-baseline gap-4 border-b border-[var(--border)] py-4 text-left"
+                          style={{ opacity: isActive || projectsExpanded ? 1 : 0.55 }}
+                          aria-expanded={projectsExpanded}
+                          aria-controls="projects-submenu"
+                        >
+                          <span style={numStyle}>{item.num}</span>
+                          <span
+                            className="flex-1 transition-opacity group-hover:opacity-100"
+                            style={rowStyle}
+                          >
+                            {item.label}
+                          </span>
+                          <motion.span
+                            animate={{ rotate: projectsExpanded ? 45 : 0 }}
+                            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                            style={{
+                              fontSize: "1rem",
+                              fontWeight: 300,
+                              color: "var(--text-dim)",
+                              alignSelf: "center",
+                              display: "inline-block",
+                              lineHeight: 1,
+                            }}
+                            aria-hidden
+                          >
+                            +
+                          </motion.span>
+                        </button>
+
+                        {/* Sub-items */}
+                        <AnimatePresence initial={false}>
+                          {projectsExpanded && (
+                            <motion.div
+                              id="projects-submenu"
+                              key="projects-submenu"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-[2.3rem]">
+                                {categories.map((cat, j) => {
+                                  const subHref = `/projects/${cat.slug}`;
+                                  const subActive = pathname.startsWith(subHref);
+                                  return (
+                                    <motion.div
+                                      key={cat.slug}
+                                      initial={{ opacity: 0, x: -12 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{
+                                        delay: 0.05 + j * 0.06,
+                                        duration: 0.35,
+                                        ease: [0.22, 1, 0.36, 1],
+                                      }}
+                                    >
+                                      <Link
+                                        href={subHref}
+                                        className="group flex items-baseline gap-3 border-b border-dashed border-[var(--border)] py-3"
+                                        style={{ opacity: subActive ? 1 : 0.62 }}
+                                      >
+                                        <span
+                                          style={{
+                                            fontFamily: "var(--font-inter)",
+                                            fontSize: "0.58rem",
+                                            fontWeight: 500,
+                                            letterSpacing: "0.26em",
+                                            color: "var(--text-dim)",
+                                            minWidth: "1.4rem",
+                                          }}
+                                        >
+                                          {cat.index}
+                                        </span>
+                                        <span
+                                          className="flex-1 transition-opacity group-hover:opacity-100"
+                                          style={{
+                                            fontFamily: "var(--font-avenir-book)",
+                                            fontSize: "clamp(1rem, 3.4vw, 1.25rem)",
+                                            fontWeight: 500,
+                                            textTransform: "uppercase",
+                                            letterSpacing: "0.08em",
+                                            color: "var(--text)",
+                                            lineHeight: 1.15,
+                                          }}
+                                        >
+                                          {cat.title}
+                                        </span>
+                                        {subActive && (
+                                          <span
+                                            style={{
+                                              fontSize: "0.4rem",
+                                              color: "var(--text-dim)",
+                                              alignSelf: "center",
+                                            }}
+                                          >
+                                            ●
+                                          </span>
+                                        )}
+                                        <motion.span
+                                          className="inline-block transition-transform duration-300 group-hover:translate-x-1"
+                                          style={{
+                                            fontSize: "0.75rem",
+                                            color: "var(--text-dim)",
+                                            alignSelf: "center",
+                                          }}
+                                          aria-hidden
+                                        >
+                                          →
+                                        </motion.span>
+                                      </Link>
+                                    </motion.div>
+                                  );
+                                })}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="group flex items-baseline gap-4 border-b border-[var(--border)] py-4"
+                        style={{ opacity: isActive ? 1 : 0.55 }}
                       >
-                        {item.label}
-                      </span>
-                      {isActive && (
-                        <span style={{ fontSize: "0.45rem", color: "var(--text-dim)", alignSelf: "center" }}>●</span>
-                      )}
-                    </Link>
+                        <span style={numStyle}>{item.num}</span>
+                        <span
+                          className="flex-1 transition-opacity group-hover:opacity-100"
+                          style={rowStyle}
+                        >
+                          {item.label}
+                        </span>
+                        {isActive && (
+                          <span style={{ fontSize: "0.45rem", color: "var(--text-dim)", alignSelf: "center" }}>●</span>
+                        )}
+                      </Link>
+                    )}
                   </motion.div>
                 );
               })}

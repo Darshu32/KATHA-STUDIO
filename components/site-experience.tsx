@@ -44,7 +44,7 @@ const allCards = [
     id: p.id,
     label: p.title,
     tagline: `${p.type} — ${p.location}`,
-    href: `/projects/${p.slug}`,
+    href: `/projects/${p.category}/${p.slug}`,
     ...toneCards[p.tone],
     image: p.image,
   })),

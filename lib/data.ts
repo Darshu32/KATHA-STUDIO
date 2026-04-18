@@ -1,9 +1,25 @@
 export type Tone = "default" | "warm" | "cool";
 
+export type CategorySlug = "residential" | "landscape-design" | "drawings";
+
+export type Category = {
+  slug: CategorySlug;
+  title: string;
+  /** Roman index displayed on the card (I · II · III). */
+  index: string;
+  /** Italic one-liner shown under the category title. */
+  tagline: string;
+  tone: Tone;
+  /** Optional cover image relative to /public. Falls back to tone-colored card. */
+  image?: string;
+};
+
 export type Project = {
   slug: string;
   id: string;
   title: string;
+  /** Which portfolio category this project belongs to. */
+  category: CategorySlug;
   type: string;
   location: string;
   year: string;
@@ -28,11 +44,43 @@ export type Service = {
   image?: string;
 };
 
+/* ───────────────────────── Categories ───────────────────────── */
+
+export const categories: Category[] = [
+  {
+    slug: "residential",
+    title: "Residential",
+    index: "I",
+    tagline: "Homes shaped by light, proportion, and quiet ritual.",
+    tone: "warm",
+    image: "/images/projects/courtyard-residence/Screenshot 2026-04-08 135950.png",
+  },
+  {
+    slug: "landscape-design",
+    title: "Landscape Design",
+    index: "II",
+    tagline: "Gardens, courtyards, and the architecture of ground.",
+    tone: "cool",
+    image: "/images/projects/stone-and-silence/Screenshot 2026-04-08 140011.png",
+  },
+  {
+    slug: "drawings",
+    title: "Drawings",
+    index: "III",
+    tagline: "Plans, studies, and sketches — the thinking before the thing.",
+    tone: "default",
+    image: "/images/projects/the-gallery-interior/Screenshot 2026-04-08 140035.png",
+  },
+];
+
+/* ───────────────────────── Projects ────────────────────────── */
+
 export const projects: Project[] = [
   {
     slug: "courtyard-residence",
     id: "01",
     title: "Courtyard Residence",
+    category: "residential",
     type: "Residential",
     location: "Bengaluru",
     year: "2024",
@@ -45,6 +93,7 @@ export const projects: Project[] = [
     slug: "stone-and-silence",
     id: "02",
     title: "Stone & Silence",
+    category: "residential",
     type: "Renovation",
     location: "Udaipur",
     year: "2023",
@@ -57,6 +106,7 @@ export const projects: Project[] = [
     slug: "the-gallery-interior",
     id: "03",
     title: "The Gallery Interior",
+    category: "residential",
     type: "Interior Design",
     location: "Mumbai",
     year: "2024",
@@ -66,6 +116,8 @@ export const projects: Project[] = [
     image: "/images/projects/the-gallery-interior/Screenshot 2026-04-08 140035.png",
   },
 ];
+
+/* ───────────────────────── Services ────────────────────────── */
 
 export const services: Service[] = [
   {
@@ -105,3 +157,13 @@ export const services: Service[] = [
     image: "/images/services/housing.png",
   },
 ];
+
+/* ───────────────────────── Helpers ─────────────────────────── */
+
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((c) => c.slug === slug);
+}
+
+export function getProjectsByCategory(slug: CategorySlug): Project[] {
+  return projects.filter((p) => p.category === slug);
+}
