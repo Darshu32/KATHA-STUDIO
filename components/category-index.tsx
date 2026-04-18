@@ -215,9 +215,8 @@ export function CategoryIndex({ rows }: { rows: IndexRow[] }) {
                     }}
                     className="mt-3 max-w-[46ch]"
                     style={{
-                      fontFamily: "var(--font-playfair)",
+                      fontFamily: "var(--font-avenir-book)",
                       fontSize: "clamp(0.88rem, 1.05vw, 1.05rem)",
-                      fontStyle: "italic",
                       lineHeight: 1.55,
                       color: "var(--text-muted)",
                     }}

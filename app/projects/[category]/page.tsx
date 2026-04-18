@@ -113,9 +113,8 @@ export default async function CategoryPage({
             <p
               className="max-w-[52ch]"
               style={{
-                fontFamily: "var(--font-playfair)",
+                fontFamily: "var(--font-avenir-book)",
                 fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
-                fontStyle: "italic",
                 lineHeight: 1.7,
                 color: "var(--text-muted)",
               }}
@@ -201,9 +200,8 @@ export default async function CategoryPage({
                 <p
                   className="max-w-[44ch]"
                   style={{
-                    fontFamily: "var(--font-playfair)",
+                    fontFamily: "var(--font-avenir-book)",
                     fontSize: "clamp(1.35rem, 2.4vw, 2rem)",
-                    fontStyle: "italic",
                     lineHeight: 1.4,
                     color: "var(--text)",
                   }}

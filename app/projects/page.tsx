@@ -77,9 +77,8 @@ export default function ProjectsPage() {
             <p
               className="max-w-[52ch]"
               style={{
-                fontFamily: "var(--font-playfair)",
+                fontFamily: "var(--font-avenir-book)",
                 fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
-                fontStyle: "italic",
                 lineHeight: 1.65,
                 color: "var(--text-muted)",
               }}
