@@ -150,15 +150,15 @@ function IntroBrandSequence({
     if (!visible) return;
     const t1 = window.setTimeout(
       () => setPhase("hold"),
-      reduceMotion ? 300 : 1900
+      reduceMotion ? 300 : 2400
     );
     const t2 = window.setTimeout(
       () => setPhase("settle"),
-      reduceMotion ? 500 : 2000
+      reduceMotion ? 500 : 2550
     );
     const t3 = window.setTimeout(
       () => onSettled(),
-      reduceMotion ? 800 : 2900
+      reduceMotion ? 800 : 3500
     );
     return () => {
       clearTimeout(t1);
