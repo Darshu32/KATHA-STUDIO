@@ -140,6 +140,7 @@ export default async function CategoryPage({
                       topLabel={project.type}
                       image={project.image}
                       imageAlt={project.title}
+                      expandOnClick
                     >
                       <div className="space-y-2 pt-1">
                         <h2

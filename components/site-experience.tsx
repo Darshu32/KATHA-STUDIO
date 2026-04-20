@@ -15,7 +15,7 @@ import {
 import { useEffect, useState, useCallback, useRef } from "react";
 import Lenis from "lenis";
 import { MarqueeStrip } from "@/components/marquee-strip";
-import { projects, services } from "@/lib/data";
+import { categories, services } from "@/lib/data";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
@@ -40,13 +40,13 @@ const allCards = [
     darkBg: "#1c1409",
     image: "/images/about/Screenshot 2026-04-08 132119.png",
   },
-  ...projects.map((p) => ({
-    id: p.id,
-    label: p.title,
-    tagline: `${p.type} — ${p.location}`,
-    href: `/projects/${p.category}/${p.slug}`,
-    ...toneCards[p.tone],
-    image: p.image,
+  ...categories.map((c, i) => ({
+    id: String(i + 1).padStart(2, "0"),
+    label: c.title,
+    tagline: c.tagline,
+    href: `/projects/${c.slug}`,
+    ...toneCards[c.tone],
+    image: c.image,
   })),
   ...services.map((s) => ({
     id: s.id,

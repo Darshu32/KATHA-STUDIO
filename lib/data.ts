@@ -28,7 +28,17 @@ export type Project = {
   /** Optional image path relative to /public. Falls back to tone-colored card. */
   image?: string;
   /** Optional gallery images for the detail page. */
-  gallery?: string[];
+  gallery?: GalleryImage[];
+};
+
+export type GalleryImage = {
+  src: string;
+  /** Short editorial caption (1–4 words). */
+  caption?: string;
+  /** Accessible alt text. Falls back to caption or project title. */
+  alt?: string;
+  /** Layout hint used by the detail page grid. */
+  layout?: "full" | "offset-right" | "offset-left" | "pair" | "portrait";
 };
 
 export type Service = {
@@ -53,7 +63,6 @@ export const categories: Category[] = [
     index: "I",
     tagline: "Homes shaped by light, proportion, and quiet ritual.",
     tone: "warm",
-    image: "/images/projects/courtyard-residence/Screenshot 2026-04-08 135950.png",
   },
   {
     slug: "landscape-design",
@@ -61,7 +70,6 @@ export const categories: Category[] = [
     index: "II",
     tagline: "Gardens, courtyards, and the architecture of ground.",
     tone: "cool",
-    image: "/images/projects/stone-and-silence/Screenshot 2026-04-08 140011.png",
   },
   {
     slug: "drawings",
@@ -69,7 +77,6 @@ export const categories: Category[] = [
     index: "III",
     tagline: "Plans, studies, and sketches — the thinking before the thing.",
     tone: "default",
-    image: "/images/projects/the-gallery-interior/Screenshot 2026-04-08 140035.png",
   },
 ];
 
@@ -77,43 +84,64 @@ export const categories: Category[] = [
 
 export const projects: Project[] = [
   {
-    slug: "courtyard-residence",
+    slug: "sujan-residency",
     id: "01",
-    title: "Courtyard Residence",
+    title: "Sujan Residency",
     category: "residential",
     type: "Residential",
     location: "Bengaluru",
     year: "2024",
     philosophy:
-      "This private residence in Bengaluru is organised around a central courtyard that acts as the home's beating heart. Every room opens onto it — drawing in natural light, cross-ventilation, and a sense of calm that shifts with the seasons. The architecture does not impose itself; instead, it steps back to let the courtyard do its quiet work. Materials were chosen for their warmth and age well — exposed brick, textured plaster, and timber screens that filter the afternoon sun into patterns across the floor.",
+      "Project description to be added. Placeholder text for Sujan Residency — a private home designed around the rhythms of daily life, where every room is tuned to light, air, and the quiet dignity of material.",
     tone: "warm",
-    image: "/images/projects/courtyard-residence/Screenshot 2026-04-08 135950.png",
+    image: "/images/projects/sujan-residency/01-cover.png",
+    gallery: [
+      { src: "/images/projects/sujan-residency/01-cover.png", caption: "Approach", layout: "full" },
+      { src: "/images/projects/sujan-residency/02-exterior.png", caption: "Exterior · Morning", layout: "offset-right" },
+      { src: "/images/projects/sujan-residency/03-courtyard.png", caption: "Courtyard", layout: "full" },
+      { src: "/images/projects/sujan-residency/04-interior.png", caption: "Living", layout: "offset-left" },
+      { src: "/images/projects/sujan-residency/05-detail.png", caption: "Detail", layout: "portrait" },
+      { src: "/images/projects/sujan-residency/06-dusk.png", caption: "Dusk", layout: "full" },
+    ],
   },
   {
-    slug: "stone-and-silence",
+    slug: "karthik-residency",
     id: "02",
-    title: "Stone & Silence",
+    title: "Karthik Residency",
     category: "residential",
-    type: "Renovation",
-    location: "Udaipur",
-    year: "2023",
-    philosophy:
-      "A heritage haveli in the old city of Udaipur, carefully restored without erasing the marks of its history. The brief was to bring the structure back to life for contemporary living while honouring the craftsmanship of its original builders. Existing stone walls were cleaned and retained, new interventions were made in materials that acknowledge rather than imitate the old, and unnecessary additions from later decades were stripped away. The result is a home that feels quietly authoritative — as though it always knew what it was.",
-    tone: "cool",
-    image: "/images/projects/stone-and-silence/Screenshot 2026-04-08 140011.png",
-  },
-  {
-    slug: "the-gallery-interior",
-    id: "03",
-    title: "The Gallery Interior",
-    category: "residential",
-    type: "Interior Design",
-    location: "Mumbai",
+    type: "Residential",
+    location: "Bengaluru",
     year: "2024",
     philosophy:
-      "A live-work apartment in Mumbai reimagined as a curated interior, where every surface and object earns its place. The client collects art and required a home that could hold significant pieces without competing with them. We responded with a restrained material palette — pale stone floors, white-limewashed walls, and dark-stained joinery — that recedes to let the collection breathe. Proportions were carefully tuned room by room, and artificial lighting was designed to perform both as ambience and as gallery-quality illumination.",
+      "Project description to be added. Placeholder text for Karthik Residency — a home that balances contemporary planning with a restrained, tactile palette drawn from the site and its surroundings.",
+    tone: "cool",
+    image: "/images/projects/karthik-residency/01-cover.png",
+  },
+  {
+    slug: "moodabagilu-residency",
+    id: "03",
+    title: "Moodabagilu Residency",
+    category: "residential",
+    type: "Residential",
+    location: "Moodabagilu",
+    year: "2023",
+    philosophy:
+      "Project description to be added. Placeholder text for Moodabagilu Residency — a house rooted in its landscape, where traditional planning sensibilities meet a pared-back contemporary language.",
     tone: "default",
-    image: "/images/projects/the-gallery-interior/Screenshot 2026-04-08 140035.png",
+    image: "/images/projects/moodabagilu-residency/01-cover.png",
+  },
+  {
+    slug: "dhawan-suites",
+    id: "04",
+    title: "Dhawan Suites",
+    category: "residential",
+    type: "Suites",
+    location: "Bengaluru",
+    year: "2025",
+    philosophy:
+      "Project description to be added. Placeholder text for Dhawan Suites — a set of private residences conceived as discrete, considered interiors, each with its own proportion and character yet held together by a single architectural hand.",
+    tone: "warm",
+    image: "/images/projects/dhawan-suites/01-cover.png",
   },
 ];
 
