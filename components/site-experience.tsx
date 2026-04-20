@@ -150,15 +150,15 @@ function IntroBrandSequence({
     if (!visible) return;
     const t1 = window.setTimeout(
       () => setPhase("hold"),
-      reduceMotion ? 500 : 3400
+      reduceMotion ? 300 : 1900
     );
     const t2 = window.setTimeout(
       () => setPhase("settle"),
-      reduceMotion ? 1000 : 5200
+      reduceMotion ? 500 : 2000
     );
     const t3 = window.setTimeout(
       () => onSettled(),
-      reduceMotion ? 1400 : 6800
+      reduceMotion ? 800 : 2900
     );
     return () => {
       clearTimeout(t1);
@@ -193,8 +193,8 @@ function IntroBrandSequence({
                     x: ["0vw", "-32vw", "-32vw"],
                     y: ["0vh", "-40vh", "-40vh"],
                     transition: {
-                      duration: 1.5,
-                      times: [0, 0.65, 1],
+                      duration: 0.9,
+                      times: [0, 0.55, 1],
                       ease: [0.22, 1, 0.36, 1],
                     },
                   }
@@ -230,7 +230,7 @@ function IntroBrandSequence({
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay, duration: 0.01 }}
-                      className="select-none font-[var(--font-avenir-heavy)] text-[clamp(2.2rem,11vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
+                      className="select-none font-[var(--font-avenir-heavy)] text-[clamp(2rem,10vw,8.5rem)] font-extrabold uppercase leading-[0.9] tracking-[0.02em] text-[var(--text)]"
                     >
                       {letter}
                     </motion.span>
