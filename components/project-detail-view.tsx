@@ -89,96 +89,98 @@ export function ProjectDetailView({
       <div className="flex min-h-0 flex-1 flex-col md:flex-row">
         {/* LEFT — active image */}
         <div
-          className="relative min-h-0 flex-1 overflow-hidden md:flex-[1.5]"
-          style={{ backgroundColor: fallbackBg }}
+          className="relative min-h-0 flex-1 overflow-hidden"
+          style={{ backgroundColor: "var(--background)" }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <AnimatePresence mode="wait">
-            {activeImage && (
-              <motion.button
-                key={activeImage.src}
-                initial={{ opacity: 0, scale: 1.03 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.99 }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                onClick={() => setLightbox(active)}
-                className="absolute inset-0 block cursor-zoom-in"
-                aria-label="Open image fullscreen"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={activeImage.src}
-                  alt={activeImage.alt ?? activeImage.caption ?? project.title}
-                  draggable={false}
-                  className="absolute inset-0 h-full w-full select-none object-cover"
-                />
-                {/* subtle bottom vignette so caption reads cleanly */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 35%)",
-                  }}
-                />
-                {/* accent hairline top */}
-                <span
-                  aria-hidden
-                  className="absolute top-0 left-0 right-0"
-                  style={{ height: "2px", backgroundColor: accent, opacity: 0.7 }}
-                />
-                {/* expand glyph */}
-                <span
-                  aria-hidden
-                  className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center border border-white/30 bg-black/25 text-white backdrop-blur-sm"
-                  style={{ fontSize: "0.72rem" }}
-                >
-                  ⤢
-                </span>
-                {/* caption + counter bottom-left */}
-                <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-                  <span
-                    style={{
-                      fontFamily: "var(--font-avenir-heavy)",
-                      fontSize: "clamp(0.82rem, 1.1vw, 1rem)",
-                      fontWeight: 800,
-                      letterSpacing: "0.04em",
-                      textTransform: "uppercase",
-                      color: "rgba(255,255,255,0.92)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {activeImage.caption ?? ""}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-inter)",
-                      fontSize: "0.52rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.3em",
-                      color: "rgba(255,255,255,0.75)",
-                    }}
-                  >
-                    {String(active + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}
-                  </span>
-                </div>
-              </motion.button>
-            )}
-          </AnimatePresence>
+          {/* Inner framed area — keeps the image neatly inside safe bounds */}
+          <div className="absolute inset-3 sm:inset-4 md:inset-6 lg:inset-8">
+            {/* Accent hairline frame */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-px left-0 right-0"
+              style={{ height: "2px", backgroundColor: accent, opacity: 0.5 }}
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -bottom-px left-0 right-0"
+              style={{ height: "1px", backgroundColor: "var(--border)" }}
+            />
 
-          {/* Desktop side-arrows */}
+            <AnimatePresence mode="wait">
+              {activeImage && (
+                <motion.button
+                  key={activeImage.src}
+                  initial={{ opacity: 0, scale: 0.985 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.99 }}
+                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                  onClick={() => setLightbox(active)}
+                  className="absolute inset-0 block cursor-zoom-in"
+                  style={{ backgroundColor: fallbackBg }}
+                  aria-label="Open image fullscreen"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={activeImage.src}
+                    alt={activeImage.alt ?? activeImage.caption ?? project.title}
+                    draggable={false}
+                    className="absolute inset-0 h-full w-full select-none object-contain"
+                  />
+                  {/* expand glyph */}
+                  <span
+                    aria-hidden
+                    className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center border border-white/25 bg-black/30 text-white backdrop-blur-sm"
+                    style={{ fontSize: "0.72rem" }}
+                  >
+                    ⤢
+                  </span>
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Caption + counter — sit OUTSIDE the image, in the page margin */}
+          <div className="pointer-events-none absolute bottom-1 left-3 right-3 flex items-center justify-between gap-4 sm:left-4 sm:right-4 md:bottom-1.5 md:left-6 md:right-6 lg:left-8 lg:right-8">
+            <span
+              style={{
+                fontFamily: "var(--font-avenir-heavy)",
+                fontSize: "clamp(0.68rem, 0.9vw, 0.82rem)",
+                fontWeight: 800,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--text)",
+                lineHeight: 1,
+              }}
+            >
+              {activeImage?.caption ?? ""}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: "0.5rem",
+                fontWeight: 600,
+                letterSpacing: "0.3em",
+                color: "var(--text-dim)",
+              }}
+            >
+              {String(active + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}
+            </span>
+          </div>
+
+          {/* Desktop side-arrows — outside the framed image, against the page edge */}
           <button
             aria-label="Previous image"
             onClick={() => go(active - 1)}
-            className="absolute left-3 top-1/2 z-[3] hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/25 bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 md:flex"
+            className="absolute left-1 top-1/2 z-[3] hidden h-9 w-9 -translate-y-1/2 items-center justify-center border border-[var(--border)] bg-[var(--background)] text-[var(--text)] transition-colors hover:bg-[var(--background-alt)] md:flex"
           >
             ←
           </button>
           <button
             aria-label="Next image"
             onClick={() => go(active + 1)}
-            className="absolute right-3 top-1/2 z-[3] hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/25 bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 md:flex"
+            className="absolute right-1 top-1/2 z-[3] hidden h-9 w-9 -translate-y-1/2 items-center justify-center border border-[var(--border)] bg-[var(--background)] text-[var(--text)] transition-colors hover:bg-[var(--background-alt)] md:flex"
           >
             →
           </button>

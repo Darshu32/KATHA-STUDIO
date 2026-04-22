@@ -129,6 +129,21 @@ export const projects: Project[] = [
       "Project description to be added. Placeholder text for Moodabagilu Residency — a house rooted in its landscape, where traditional planning sensibilities meet a pared-back contemporary language.",
     tone: "default",
     image: "/images/projects/moodabagilu-residency/01-cover.png",
+    gallery: [
+      { src: "/images/projects/moodabagilu-residency/01-cover.png", caption: "Approach" },
+      { src: "/images/projects/moodabagilu-residency/02-view.png", caption: "Exterior" },
+      { src: "/images/projects/moodabagilu-residency/03-view.png", caption: "Courtyard" },
+      { src: "/images/projects/moodabagilu-residency/04-view.png", caption: "Interior" },
+      { src: "/images/projects/moodabagilu-residency/05-view.png", caption: "Living" },
+      { src: "/images/projects/moodabagilu-residency/06-view.png", caption: "Dining" },
+      { src: "/images/projects/moodabagilu-residency/07-view.png", caption: "Bedroom" },
+      { src: "/images/projects/moodabagilu-residency/08-view.png", caption: "Bath" },
+      { src: "/images/projects/moodabagilu-residency/09-view.png", caption: "Detail" },
+      { src: "/images/projects/moodabagilu-residency/10-view.png", caption: "Material" },
+      { src: "/images/projects/moodabagilu-residency/11-view.png", caption: "Garden" },
+      { src: "/images/projects/moodabagilu-residency/12-view.png", caption: "Dusk" },
+      { src: "/images/projects/moodabagilu-residency/13-view.png", caption: "Plan" },
+    ],
   },
   {
     slug: "dhawan-suites",
@@ -142,6 +157,15 @@ export const projects: Project[] = [
       "Project description to be added. Placeholder text for Dhawan Suites — a set of private residences conceived as discrete, considered interiors, each with its own proportion and character yet held together by a single architectural hand.",
     tone: "warm",
     image: "/images/projects/dhawan-suites/01-cover.png",
+    gallery: [
+      { src: "/images/projects/dhawan-suites/01-cover.png", caption: "Approach" },
+      { src: "/images/projects/dhawan-suites/02-exterior.png", caption: "Exterior" },
+      { src: "/images/projects/dhawan-suites/03-courtyard.png", caption: "Courtyard" },
+      { src: "/images/projects/dhawan-suites/04-interior.png", caption: "Interior" },
+      { src: "/images/projects/dhawan-suites/05-detail.png", caption: "Detail" },
+      { src: "/images/projects/dhawan-suites/06-dusk.png", caption: "Dusk" },
+      { src: "/images/projects/dhawan-suites/07-plan.png", caption: "Plan" },
+    ],
   },
 ];
 
