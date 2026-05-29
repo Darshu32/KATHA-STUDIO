@@ -1,19 +1,14 @@
-import { projects, services } from "./data";
+import { services } from "./data";
 
 export type NavItem = {
   href: string;
   label: string;
-  type: "about" | "project" | "service" | "contact";
+  type: "about" | "service" | "contact";
 };
 
 /** Global card order — matches the home page carousel exactly */
 export const globalNavOrder: NavItem[] = [
   { href: "/about", label: "About", type: "about" },
-  ...projects.map((p) => ({
-    href: `/projects/${p.category}/${p.slug}`,
-    label: p.title,
-    type: "project" as const,
-  })),
   ...services.map((s) => ({
     href: `/services/${s.slug}`,
     label: s.title,

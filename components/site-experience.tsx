@@ -15,7 +15,7 @@ import {
 import { useEffect, useState, useCallback, useRef } from "react";
 import Lenis from "lenis";
 import { MarqueeStrip } from "@/components/marquee-strip";
-import { categories, services } from "@/lib/data";
+import { services } from "@/lib/data";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
@@ -40,16 +40,8 @@ const allCards = [
     darkBg: "#1c1409",
     image: "/images/about/Screenshot 2026-04-08 132119.png",
   },
-  ...categories.map((c, i) => ({
+  ...services.map((s, i) => ({
     id: String(i + 1).padStart(2, "0"),
-    label: c.title,
-    tagline: c.tagline,
-    href: `/projects/${c.slug}`,
-    ...toneCards[c.tone],
-    image: c.image,
-  })),
-  ...services.map((s) => ({
-    id: s.id,
     label: s.title,
     tagline: s.category,
     href: `/services/${s.slug}`,
@@ -57,7 +49,7 @@ const allCards = [
     image: s.image,
   })),
   {
-    id: "09",
+    id: String(services.length + 1).padStart(2, "0"),
     label: "Contact",
     tagline: "Start a conversation",
     href: "/contact",
@@ -71,7 +63,6 @@ const allCards = [
 function getCardCategory(href: string): string {
   if (href === "/")                  return "INTRO";
   if (href === "/about")             return "ABOUT";
-  if (href.startsWith("/projects"))  return "PROJECT";
   if (href.startsWith("/services"))  return "SERVICE";
   if (href === "/contact")           return "CONTACT";
   return "";

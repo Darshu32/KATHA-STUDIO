@@ -170,7 +170,7 @@ export function DetailView({
           initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-between gap-6 border-t border-[var(--border)] pt-6 md:pt-7"
+          className="flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:pt-7"
         >
           {prev ? <NavKey nav={prev} dir="prev" /> : <span />}
           {next ? <NavKey nav={next} dir="next" /> : <span />}

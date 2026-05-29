@@ -23,11 +23,15 @@ function Title({
   active: boolean;
   reduceMotion: boolean | null;
 }) {
-  const chars = Array.from(text);
+  const words = text.split(" ");
+  const wordStarts = words.reduce<number[]>((acc, word, i) => {
+    acc.push(i === 0 ? 0 : acc[i - 1] + words[i - 1].length);
+    return acc;
+  }, []);
   return (
     <span
-      className="inline-flex flex-wrap"
       style={{
+        display: "inline",
         fontFamily: "var(--font-avenir-heavy)",
         fontWeight: 800,
         fontSize: "clamp(1.8rem, 5.8vw, 4.8rem)",
@@ -37,29 +41,38 @@ function Title({
         color: "var(--text)",
       }}
     >
-      {chars.map((ch, i) => {
-        const isSpace = ch === " ";
+      {words.map((word, w) => {
+        const wordStart = wordStarts[w];
         return (
-          <motion.span
-            key={`${ch}-${i}`}
-            className="inline-block"
-            animate={
-              reduceMotion
-                ? undefined
-                : {
-                    y: active ? -8 : 0,
-                    color: active && i === 0 ? ACCENT : "var(--text)",
-                  }
-            }
-            transition={{
-              duration: 0.45,
-              delay: active ? i * 0.025 : 0,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            style={{ whiteSpace: "pre" }}
-          >
-            {isSpace ? "\u00A0" : ch}
-          </motion.span>
+          <span key={`w-${w}`}>
+            <span style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+              {Array.from(word).map((ch, j) => {
+                const i = wordStart + j;
+                return (
+                  <motion.span
+                    key={`${ch}-${i}`}
+                    className="inline-block"
+                    animate={
+                      reduceMotion
+                        ? undefined
+                        : {
+                            y: active ? -8 : 0,
+                            color: active && i === 0 ? ACCENT : "var(--text)",
+                          }
+                    }
+                    transition={{
+                      duration: 0.45,
+                      delay: active ? i * 0.025 : 0,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    {ch}
+                  </motion.span>
+                );
+              })}
+            </span>
+            {w < words.length - 1 ? " " : null}
+          </span>
         );
       })}
     </span>

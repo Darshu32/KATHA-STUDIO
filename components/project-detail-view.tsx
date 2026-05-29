@@ -82,14 +82,14 @@ export function ProjectDetailView({
 
   return (
     <div
-      className="relative flex h-[100svh] w-full flex-col overflow-hidden bg-[var(--background)] text-[var(--text)]"
+      className="relative flex min-h-[100svh] w-full flex-col bg-[var(--background)] text-[var(--text)] lg:h-[100svh] lg:overflow-hidden"
       style={{ paddingTop: "4.2rem" }}
     >
       {/* ── MAIN STAGE ── */}
-      <div className="flex min-h-0 flex-1 flex-col md:flex-row">
+      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
         {/* LEFT — active image */}
         <div
-          className="relative min-h-0 flex-1 overflow-hidden"
+          className="relative h-[55svh] min-h-0 overflow-hidden lg:h-auto lg:flex-1"
           style={{ backgroundColor: "var(--background)" }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
@@ -188,7 +188,7 @@ export function ProjectDetailView({
 
         {/* RIGHT — title + content */}
         <aside
-          className="relative flex min-h-0 flex-col justify-between gap-6 overflow-hidden px-5 py-6 sm:px-8 md:max-w-[30rem] md:basis-[30rem] md:px-10 md:py-10 lg:max-w-[34rem] lg:basis-[34rem] lg:px-12"
+          className="relative flex min-h-0 flex-col justify-between gap-6 overflow-hidden px-5 py-6 sm:px-8 md:px-10 md:py-8 lg:max-w-[32rem] lg:basis-[32rem] lg:py-10 xl:max-w-[34rem] xl:basis-[34rem] xl:px-12"
         >
           <div className="min-h-0 flex-1 overflow-hidden">
             <motion.p

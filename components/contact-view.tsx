@@ -10,6 +10,11 @@ const contactDetails = [
   { label: "Email",  value: "neha@kathastudio.co", href: "mailto:neha@kathastudio.co" },
   { label: "Phone",  value: "+91 70195 98600",     href: "tel:+917019598600"          },
   { label: "Studio", value: "Bengaluru, India",    href: undefined                    },
+  {
+    label: "Portfolio",
+    value: "Available on request — write to us",
+    href: "mailto:neha@kathastudio.co?subject=Portfolio%20Request",
+  },
 ];
 
 export function ContactView({ prev, next }: { prev: NavItem | null; next: NavItem | null }) {
