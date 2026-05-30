@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 
 export function FloatingCTA() {
   const pathname = usePathname();
-  /* Hide on home, contact, and the minimal detail pages */
+  /* Hide on home, contact, about (already has its own CTA), and the
+   * minimal detail pages. */
   if (
     pathname === "/" ||
+    pathname === "/about" ||
     pathname === "/contact" ||
     pathname.startsWith("/projects/") ||
     pathname.startsWith("/services/")

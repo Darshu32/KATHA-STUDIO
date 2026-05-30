@@ -10,11 +10,12 @@
   --text: #111111;
   --text-muted: rgba(17, 17, 17, 0.58);
   --text-dim: rgba(17, 17, 17, 0.28);
+  --font-sans: "Geist Sans", "Geist", "Inter", "Segoe UI", sans-serif;
   --font-playfair: "Playfair Display", Georgia, serif;
-  --font-inter: "Inter", "Segoe UI", sans-serif;
-  --font-brand: "Manrope", "Inter", "Segoe UI", sans-serif;
-  --font-avenir-heavy: "Avenir Next Heavy", "Avenir Next", "Avenir", "Manrope", "Segoe UI", sans-serif;
-  --font-avenir-book: "Avenir Next", "Avenir Book", "Avenir Medium", "Manrope", "Inter", "Segoe UI", sans-serif;
+  --font-inter: var(--font-sans);
+  --font-brand: var(--font-sans);
+  --font-avenir-heavy: var(--font-sans);
+  --font-avenir-book: var(--font-sans);
 }
 
 html[data-theme="dark"] {
