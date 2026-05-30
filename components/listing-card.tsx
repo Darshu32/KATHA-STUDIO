@@ -73,7 +73,7 @@ export function ListingCard({
       <Link
         href={href}
         onClick={handleClick}
-        className="block space-y-4"
+        className="block space-y-4 lg:mx-auto lg:max-w-[20rem]"
         aria-label={imageAlt ?? topLabel}
       >
         {/* ── Dark image card ── */}
@@ -87,7 +87,7 @@ export function ListingCard({
             y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
             opacity: { duration: 0.2, delay: expanding ? 0.05 : 0 },
           }}
-          className="relative aspect-[4/3] w-full overflow-hidden"
+          className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-square lg:mx-auto lg:h-[clamp(14rem,32vh,20rem)] lg:w-auto"
           style={{ backgroundColor: darkBg }}
         >
           {/* Image (if provided and loaded) */}

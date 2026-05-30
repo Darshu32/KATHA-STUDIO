@@ -49,9 +49,16 @@ export type Service = {
   desc: string;
   /** Optional additional paragraphs for the detail page */
   paragraphs?: string[];
+  /** Short editorial pull-quote shown beneath the heading. */
+  tagline?: string;
+  /** Editorial scope list rendered as the "What's Included" sheet on the
+   *  detail page. Keep entries to 2–4 words for a confident, tabular feel. */
+  scope?: string[];
   tone: Tone;
   /** Optional image path relative to /public. Falls back to tone-colored card. */
   image?: string;
+  /** Caption shown beneath the detail-page image. */
+  imageCaption?: string;
 };
 
 /* ───────────────────────── Categories ───────────────────────── */
@@ -177,36 +184,48 @@ export const services: Service[] = [
     id: "01",
     title: "Architectural Design",
     category: "Residential & Commercial",
+    tagline: "Private homes, considered from first sketch to final fitting.",
     desc: "Specialising in private residential projects, the studio has completed projects that span from new build designs, to home renovation and refurbishments including extensions and basements. We have completed many conservation and heritage building projects, successfully and harmoniously integrating new architectural technologies and features, into the original fabric of the building.",
+    scope: ["New Builds", "Renovations", "Extensions", "Conservation"],
     tone: "warm",
     image: "/images/services/architectural-design.png",
+    imageCaption: "Study · Light & Material",
   },
   {
     slug: "landscape-design",
     id: "02",
     title: "Landscape Design",
     category: "Exterior & Gardens",
+    tagline: "Gardens, courtyards, and the architecture of ground.",
     desc: "A consideration of the external landscape is an essential component to any architectural project. Whether it concerns the landscaping of a garden at the rear of a house or conceiving an illuminated walled garden to a housing development scheme, it is important to align exterior concepts to an architectural scheme. In collaboration with landscape architects, we can achieve space-appropriate, elegant and elaborate solutions.",
+    scope: ["Private Gardens", "Courtyards", "Site Strategy", "Planting Plans"],
     tone: "cool",
     image: "/images/services/landscape image.png",
+    imageCaption: "Study · Courtyard & Ground",
   },
   {
     slug: "planning-applications",
     id: "03",
     title: "Planning Applications",
     category: "Regulatory & Advisory",
+    tagline: "Quiet conversations with planning departments — on your behalf.",
     desc: "The architectural team have a wealth of experience with planning departments across all boroughs of London. We advise on all planning matters and building regulations, from small to large scale residential schemes. Where required, we work in consultation with English Heritage, and also external planning consultant teams.",
+    scope: ["Pre-Application", "Permission", "Building Regs", "Heritage Liaison"],
     tone: "default",
     image: "/images/services/planning design.png",
+    imageCaption: "Study · Brief & Boundary",
   },
   {
     slug: "housing",
     id: "04",
     title: "Housing",
     category: "Residential & Mixed-Use",
+    tagline: "Residential schemes that meet the market without losing the room.",
     desc: "House renovations and mixed-use projects are invariably cost-sensitive. Our residential architects work directly with our clients to evaluate project feasibility. This includes planning objectives as well as key commercial decisions regarding multiple occupancy design. The studio combines strategic thinking with design creativity to provide value-added innovative design solutions for all housing schemes. This ensures projects are attractive to the market, and meet the required long-term occupancy needs.",
+    scope: ["Feasibility", "Mixed-Use", "Multi-Occupancy", "Value Design"],
     tone: "warm",
     image: "/images/services/housing.png",
+    imageCaption: "Study · Scheme & Scale",
   },
 ];
 

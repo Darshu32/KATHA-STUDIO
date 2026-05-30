@@ -24,33 +24,60 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
     <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)] lg:h-[100svh] lg:min-h-0 lg:overflow-hidden">
       <main className="mx-auto flex w-full max-w-[88rem] flex-1 flex-col px-5 pt-[5.2rem] pb-8 sm:px-8 md:px-12 md:pt-[5.6rem] md:pb-10 lg:px-20 lg:pt-[5.4rem] lg:pb-6">
 
+        {/* META STRIP */}
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="pb-3 md:pb-4 lg:pb-5"
+        >
+          <p style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: "0.62rem",
+            fontWeight: 600,
+            textTransform: "uppercase",
+            letterSpacing: "0.32em",
+            color: "var(--text-dim)",
+          }}>
+            — Get in Touch
+          </p>
+        </motion.div>
+
         {/* HEADING */}
         <motion.h1
           initial={reduceMotion ? false : { opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: "var(--font-avenir-heavy)",
-            fontSize: "clamp(2.2rem, 4.2vw, 3.6rem)",
-            fontWeight: 800,
+            fontFamily: "var(--font-avenir-book)",
+            fontSize: "clamp(2.2rem, 4.6vw, 4rem)",
+            fontWeight: 500,
             lineHeight: 0.96,
             textTransform: "uppercase",
-            letterSpacing: "0.005em",
+            letterSpacing: "0.02em",
             color: "var(--text)",
           }}
         >
           Begin a<br />Conversation
         </motion.h1>
 
+        {/* Hairline beneath headline */}
+        <motion.div
+          initial={reduceMotion ? false : { scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.9, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 h-px w-full origin-left bg-[var(--border-medium)] md:mt-7 lg:mt-8"
+        />
+
         {/* SPLIT: FORM LEFT · DETAILS RIGHT */}
-        <div className="my-8 grid flex-1 grid-cols-1 items-start gap-10 md:my-10 md:grid-cols-[1.4fr_1fr] md:gap-14 lg:my-6 lg:gap-16">
+        <div className="grid flex-1 grid-cols-1 items-stretch gap-10 pt-6 md:grid-cols-[1.4fr_1fr] md:gap-14 md:pt-8 lg:gap-20 lg:pt-10">
 
           {/* Left — form */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full"
+            className="flex w-full flex-col justify-between"
           >
             <ContactForm />
           </motion.div>
@@ -60,7 +87,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-5 md:border-l md:border-[var(--border-medium)] md:pl-10 lg:space-y-4 lg:pl-14"
+            className="space-y-5 md:border-l md:border-[var(--border-medium)] md:pl-10 lg:space-y-6 lg:pl-14"
           >
             {contactDetails.map(({ label, value, href }, i) => (
               <motion.div

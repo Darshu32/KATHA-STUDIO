@@ -18,6 +18,13 @@ export function DetailView({
   image,
   imageAlt,
   fallbackBg,
+  eyebrow,
+  meta,
+  tagline,
+  scope,
+  imageCaption,
+  ctaHref = "/contact",
+  ctaLabel = "Begin a Project",
   prev,
   next,
 }: {
@@ -26,6 +33,13 @@ export function DetailView({
   image?: string;
   imageAlt: string;
   fallbackBg: string;
+  eyebrow?: string;
+  meta?: string;
+  tagline?: string;
+  scope?: string[];
+  imageCaption?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
   prev: NavItem | null;
   next: NavItem | null;
 }): ReactElement {
@@ -59,66 +73,203 @@ export function DetailView({
     <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)] lg:h-[100svh] lg:min-h-0 lg:overflow-hidden">
       <main className="mx-auto flex w-full max-w-[88rem] flex-1 flex-col px-5 pt-[5.2rem] pb-8 sm:px-8 md:px-12 md:pt-[5.6rem] md:pb-10 lg:px-20 lg:pt-[5.4rem] lg:pb-6">
 
+        {/* ─────────── META STRIP ─────────── */}
+        {(eyebrow || meta) && (
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center justify-between pb-3 md:pb-4 lg:pb-5"
+          >
+            <p style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: "0.62rem",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.32em",
+              color: "var(--text-dim)",
+            }}>
+              {eyebrow ? `— ${eyebrow}` : ""}
+            </p>
+            <p style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: "0.6rem",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              letterSpacing: "0.26em",
+              color: "var(--text-dim)",
+            }}>
+              {meta ?? ""}
+            </p>
+          </motion.div>
+        )}
+
         {/* ─────────── HEADING ─────────── */}
         <motion.h1
           initial={reduceMotion ? false : { opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: "var(--font-avenir-heavy)",
-            fontSize: "clamp(2.2rem, 5vw, 4.4rem)",
-            fontWeight: 800,
+            fontFamily: "var(--font-avenir-book)",
+            fontSize: "clamp(2.2rem, 4.6vw, 4rem)",
+            fontWeight: 500,
             lineHeight: 0.96,
             textTransform: "uppercase",
-            letterSpacing: "0.005em",
+            letterSpacing: "0.02em",
             color: "var(--text)",
-            overflowWrap: "break-word",
-            wordBreak: "break-word",
-            maxWidth: "16ch",
           }}
         >
           {title}
         </motion.h1>
 
-        {/* ─────────── SPLIT: TEXT LEFT · IMAGE RIGHT ─────────── */}
-        <div className="my-8 grid flex-1 grid-cols-1 items-center gap-10 md:my-10 md:grid-cols-2 md:gap-12 lg:my-12 lg:gap-20">
+        {/* Tagline */}
+        {tagline && (
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-4 max-w-[52ch] md:mt-5"
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: "clamp(0.78rem, 0.9vw, 0.92rem)",
+              fontWeight: 500,
+              lineHeight: 1.55,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              color: "var(--text-dim)",
+            }}
+          >
+            {tagline}
+          </motion.p>
+        )}
 
-          {/* Left — interactive paragraphs */}
+        {/* Hairline beneath the headline + tagline block */}
+        <motion.div
+          initial={reduceMotion ? false : { scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.9, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 h-px w-full origin-left bg-[var(--border-medium)] md:mt-7 lg:mt-7"
+        />
+
+        {/* ─────────── SPLIT: TEXT LEFT · IMAGE RIGHT ─────────── */}
+        <div className="grid flex-1 grid-cols-1 items-stretch gap-8 pt-6 md:grid-cols-[1.15fr_1fr] md:gap-12 md:pt-7 lg:gap-16 lg:pt-8">
+
+          {/* Left — lead paragraph, scope sheet, CTA */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="order-2 max-w-[58ch] space-y-5 md:order-1"
+            className="order-2 flex flex-col gap-6 md:order-1 md:gap-7 lg:justify-between lg:gap-8"
           >
-            {paragraphs.map((p, i) => (
-              <motion.p
-                key={i}
+            {/* Lead paragraph (primary) + supporting paragraphs (muted) */}
+            <div className="space-y-4 max-w-[52ch]">
+              {paragraphs.map((p, i) => (
+                <motion.p
+                  key={i}
+                  initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.32 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    fontSize: i === 0
+                      ? "clamp(1rem, 1.15vw, 1.12rem)"
+                      : "clamp(0.92rem, 1.05vw, 1.02rem)",
+                    fontWeight: i === 0 ? 500 : 400,
+                    lineHeight: 1.7,
+                    color: i === 0 ? "var(--text)" : "var(--text-muted)",
+                  }}
+                >
+                  {p}
+                </motion.p>
+              ))}
+            </div>
+
+            {/* Scope sheet — editorial fact strip */}
+            {scope && scope.length > 0 && (
+              <motion.div
                 initial={reduceMotion ? false : { opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: 0.32 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={reduceMotion ? undefined : { color: "var(--text)", x: 4 }}
+                transition={{ duration: 0.8, delay: 0.46, ease: [0.22, 1, 0.36, 1] }}
+                className="border-t border-[var(--border)] pt-5"
+              >
+                <p
+                  className="mb-3"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    fontSize: "0.56rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.32em",
+                    color: "var(--text-dim)",
+                  }}
+                >
+                  — Scope
+                </p>
+                <ul className="grid grid-cols-2 gap-x-6 gap-y-2 lg:grid-cols-4">
+                  {scope.map((item, i) => (
+                    <li
+                      key={item}
+                      className="flex items-baseline gap-2"
+                      style={{
+                        fontFamily: "var(--font-inter)",
+                        fontSize: "clamp(0.78rem, 0.9vw, 0.88rem)",
+                        fontWeight: 500,
+                        color: "var(--text)",
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      <span
+                        aria-hidden
+                        style={{
+                          fontFamily: "var(--font-inter)",
+                          fontSize: "0.5rem",
+                          fontWeight: 600,
+                          letterSpacing: "0.18em",
+                          color: "var(--text-dim)",
+                          minWidth: "1.4rem",
+                        }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {/* CTA */}
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Link
+                href={ctaHref}
+                className="group inline-flex items-center gap-3 border border-[var(--text)] bg-[var(--background)] px-5 py-3 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
                 style={{
                   fontFamily: "var(--font-inter)",
-                  fontSize: "clamp(0.95rem, 1.18vw, 1.08rem)",
-                  lineHeight: 1.9,
-                  color: "var(--text-muted)",
-                  cursor: "default",
-                  transition: "color 0.4s ease",
+                  fontSize: "0.62rem",
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.28em",
+                  color: "var(--text)",
                 }}
               >
-                {p}
-              </motion.p>
-            ))}
+                {ctaLabel}
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </motion.div>
           </motion.div>
 
-          {/* Right — 3D-tilt interactive image */}
+          {/* Right — image + caption */}
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.95 }}
+            initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.05, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
             onMouseMove={handleMove}
             onMouseLeave={handleLeave}
-            className="order-1 w-full md:order-2"
+            className="order-1 flex w-full min-h-0 flex-col md:order-2"
             style={{ perspective: "1400px" }}
           >
             <motion.div
@@ -128,7 +279,7 @@ export function DetailView({
                 transformStyle: "preserve-3d",
                 backgroundColor: fallbackBg,
               }}
-              className="relative aspect-[4/3] w-full overflow-hidden"
+              className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-auto lg:min-h-0 lg:flex-1"
             >
               {image && (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -139,7 +290,6 @@ export function DetailView({
                   className="absolute inset-0 h-full w-full object-cover select-none"
                 />
               )}
-              {/* Cursor-following highlight */}
               {!reduceMotion && (
                 <motion.div
                   aria-hidden
@@ -155,13 +305,34 @@ export function DetailView({
                   }}
                 />
               )}
-              {/* Bottom soft vignette */}
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0"
                 style={{ background: "linear-gradient(to top, rgba(0,0,0,0.18), transparent 60%)" }}
               />
             </motion.div>
+
+            {/* Image caption */}
+            {imageCaption && (
+              <div className="mt-3 flex items-center justify-between gap-4">
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    fontSize: "0.56rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.32em",
+                    color: "var(--text-dim)",
+                  }}
+                >
+                  {imageCaption}
+                </p>
+                <span
+                  aria-hidden
+                  className="h-px flex-1 bg-[var(--border)]"
+                />
+              </div>
+            )}
           </motion.div>
         </div>
 
@@ -170,7 +341,7 @@ export function DetailView({
           initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:pt-7"
+          className="mt-6 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:mt-7 md:pt-7"
         >
           {prev ? <NavKey nav={prev} dir="prev" /> : <span />}
           {next ? <NavKey nav={next} dir="next" /> : <span />}

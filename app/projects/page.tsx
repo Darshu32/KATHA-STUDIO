@@ -33,12 +33,12 @@ export default function ProjectsPage() {
           <FadeUp delay={0.06} className="pb-6 md:pb-8">
             <h1
               style={{
-                fontFamily: "var(--font-avenir-heavy)",
+                fontFamily: "var(--font-avenir-book)",
                 fontSize: "clamp(2.4rem, 8vw, 6rem)",
-                fontWeight: 800,
-                lineHeight: 0.95,
+                fontWeight: 500,
+                lineHeight: 0.96,
                 textTransform: "uppercase",
-                letterSpacing: "0.005em",
+                letterSpacing: "0.02em",
                 color: "var(--text)",
               }}
             >

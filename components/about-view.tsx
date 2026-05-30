@@ -54,12 +54,12 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: "var(--font-avenir-heavy)",
-            fontWeight: 800,
+            fontFamily: "var(--font-avenir-book)",
+            fontWeight: 500,
             fontSize: "clamp(2.4rem, 6vw, 5.2rem)",
-            lineHeight: 0.94,
+            lineHeight: 0.96,
             textTransform: "uppercase",
-            letterSpacing: "0.005em",
+            letterSpacing: "0.02em",
             color: "var(--text)",
           }}
         >
