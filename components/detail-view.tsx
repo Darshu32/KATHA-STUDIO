@@ -56,8 +56,8 @@ export function DetailView({
   };
 
   return (
-    <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)]">
-      <main className="mx-auto flex w-full max-w-[88rem] flex-1 flex-col px-5 pt-[5.2rem] pb-8 sm:px-8 md:px-12 md:pt-[5.6rem] md:pb-10 lg:px-20 lg:pt-[6rem] lg:pb-12">
+    <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)] lg:h-[100svh] lg:min-h-0 lg:overflow-hidden">
+      <main className="mx-auto flex w-full max-w-[88rem] flex-1 flex-col px-5 pt-[5.2rem] pb-8 sm:px-8 md:px-12 md:pt-[5.6rem] md:pb-10 lg:px-20 lg:pt-[5.4rem] lg:pb-6">
 
         {/* ─────────── HEADING ─────────── */}
         <motion.h1

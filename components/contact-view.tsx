@@ -21,8 +21,8 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)]">
-      <main className="mx-auto flex w-full max-w-[88rem] flex-1 flex-col px-5 pt-[5.2rem] pb-8 sm:px-8 md:px-12 md:pt-[5.6rem] md:pb-10 lg:px-20 lg:pt-[6rem] lg:pb-12">
+    <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)] lg:h-[100svh] lg:min-h-0 lg:overflow-hidden">
+      <main className="mx-auto flex w-full max-w-[88rem] flex-1 flex-col px-5 pt-[5.2rem] pb-8 sm:px-8 md:px-12 md:pt-[5.6rem] md:pb-10 lg:px-20 lg:pt-[5.4rem] lg:pb-6">
 
         {/* HEADING */}
         <motion.h1
@@ -31,7 +31,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           style={{
             fontFamily: "var(--font-avenir-heavy)",
-            fontSize: "clamp(2.2rem, 5vw, 4.4rem)",
+            fontSize: "clamp(2.2rem, 4.2vw, 3.6rem)",
             fontWeight: 800,
             lineHeight: 0.96,
             textTransform: "uppercase",
@@ -43,7 +43,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
         </motion.h1>
 
         {/* SPLIT: FORM LEFT · DETAILS RIGHT */}
-        <div className="my-8 grid flex-1 grid-cols-1 items-start gap-10 md:my-10 md:grid-cols-[1.4fr_1fr] md:gap-14 lg:my-12 lg:gap-20">
+        <div className="my-8 grid flex-1 grid-cols-1 items-start gap-10 md:my-10 md:grid-cols-[1.4fr_1fr] md:gap-14 lg:my-6 lg:gap-16">
 
           {/* Left — form */}
           <motion.div
@@ -60,7 +60,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-7 md:border-l md:border-[var(--border-medium)] md:pl-10 lg:pl-14"
+            className="space-y-5 md:border-l md:border-[var(--border-medium)] md:pl-10 lg:space-y-4 lg:pl-14"
           >
             {contactDetails.map(({ label, value, href }, i) => (
               <motion.div

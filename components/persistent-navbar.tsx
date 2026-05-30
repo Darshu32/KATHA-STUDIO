@@ -59,10 +59,10 @@ export function PersistentNavbar() {
             className="inline-flex shrink-0 items-end gap-2 leading-none transition-opacity hover:opacity-60"
             style={{ color: "var(--text)" }}
           >
-            <span style={{ fontFamily: "var(--font-avenir-heavy)", fontWeight: 800, fontSize: "clamp(1rem,1.4vw,1.25rem)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+            <span style={{ fontFamily: "var(--font-avenir-heavy)", fontWeight: 800, fontSize: "clamp(1.05rem,1.85vw,1.6rem)", textTransform: "uppercase", letterSpacing: "0.02em" }}>
               KATHA
             </span>
-            <span style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1rem,1.4vw,1.25rem)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <span style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 600, fontSize: "clamp(1.05rem,1.85vw,1.6rem)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
               STUDIO
             </span>
           </Link>

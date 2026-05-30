@@ -745,6 +745,26 @@ export function SiteExperience() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [introComplete, isMobile]);
 
+  /* After the bloom entrance settles, glide focus to the ABOUT card so
+   * the carousel's "story" starts at the beginning before auto-play
+   * advances through it line by line. */
+  useEffect(() => {
+    if (!introComplete || reduceMotion) return;
+    const middleIdx = Math.floor(allCards.length / 2);
+    const maxWave = Math.max(middleIdx, allCards.length - 1 - middleIdx);
+    /* Last card enters at 0.3 + maxWave*0.45 + 0.82 duration. */
+    const entranceMs = (0.3 + maxWave * 0.45 + 0.82) * 1000;
+    const t = setTimeout(() => {
+      setActiveIndex(0);
+      if (isMobile) {
+        snapMobileTo(0);
+      } else {
+        scrollToIndex(0);
+      }
+    }, entranceMs + 300);
+    return () => clearTimeout(t);
+  }, [introComplete, reduceMotion, isMobile, scrollToIndex, snapMobileTo]);
+
   /* Auto-play: advance one card every 1s, loop back to first */
   useEffect(() => {
     if (!introComplete || reduceMotion) return;
@@ -808,7 +828,7 @@ export function SiteExperience() {
   }, [introComplete, isMobile]);
 
   return (
-    <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500">
+    <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500 lg:flex lg:h-[100svh] lg:min-h-0 lg:flex-col lg:overflow-hidden">
       <IntroBrandSequence visible={!introComplete} onSettled={handleIntroSettled} />
 
       {/* ── Floating scroll progress indicator (right edge) ── */}
@@ -832,7 +852,7 @@ export function SiteExperience() {
         </div>
       )}
 
-      <main className="relative flex min-h-[100svh] flex-col pt-[4.2rem]">
+      <main className="relative flex min-h-[100svh] flex-col pt-[4.2rem] lg:min-h-0 lg:flex-1">
 
         {/* ── HERO SECTION ── */}
         <motion.section
@@ -904,9 +924,9 @@ export function SiteExperience() {
                     : { duration: 0.9, delay: 0.44, ease: [0.22, 1, 0.36, 1] },
                   scale: { duration: 6, delay: 1.4, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.88] tracking-[0.02em] text-[var(--text)]"
+                className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.92] tracking-[0.02em] text-[var(--text)]"
                 style={{
-                  fontSize: "clamp(1.75rem, 6.2vw, 4.8rem)",
+                  fontSize: "clamp(1.75rem, 4.6vw, 3.4rem)",
                   overflowWrap: "break-word",
                   wordBreak: "break-word",
                 }}
@@ -1271,21 +1291,15 @@ export function SiteExperience() {
                    */
                   const wave = Math.abs(i - activeIndex);
                   const direction = i < activeIndex ? -1 : 1;
-                  const isRight = i > activeIndex;
-                  const rightOffset = i - activeIndex;
-                  const leftOffset  = activeIndex - i;
-                  const numRight    = allCards.length - 1 - activeIndex;
-                  let entranceDelay: number;
-                  if (reduceMotion) {
-                    entranceDelay = 0;
-                  } else if (wave === 0) {
-                    entranceDelay = 0.25;
-                  } else if (isRight) {
-                    entranceDelay = 0.85 + (rightOffset - 1) * 0.11;
-                  } else {
-                    entranceDelay = 0.85 + numRight * 0.11 + (leftOffset - 1) * 0.11;
-                  }
-                  const entranceDuration = wave === 0 ? 0.8 : 0.78;
+                  /* Symmetric entrance: middle pops first, then pairs
+                   * (left + right at same wave) bloom outward together,
+                   * each wave breathing a little before the next lands. */
+                  const entranceDelay: number = reduceMotion
+                    ? 0
+                    : wave === 0
+                    ? 0.3
+                    : 0.3 + wave * 0.45;
+                  const entranceDuration = wave === 0 ? 0.85 : 0.82;
 
                   const initialState = reduceMotion
                     ? false
@@ -1326,7 +1340,7 @@ export function SiteExperience() {
                         ease: [0.22, 1, 0.36, 1],
                       }}
                       className="relative flex-shrink-0"
-                      style={{ perspective: "900px", width: "clamp(180px, 19vw, 260px)" }}
+                      style={{ perspective: "900px", width: "clamp(220px, 23vw, 340px)" }}
                     >
                       {/* Editorial category label — left-aligned above active card, Minale + Mann style */}
                       <AnimatePresence mode="wait">
@@ -1366,7 +1380,7 @@ export function SiteExperience() {
                         animate={{
                           scale: isActive ? 1.04 : 0.9,
                           y: isActive ? -6 : 0,
-                          height: [320, 282, 248, 222, 202][Math.min(wave, 4)],
+                          height: [360, 318, 280, 246, 220][Math.min(wave, 4)],
                           opacity: isActive ? 1 : 0.92,
                         }}
                         transition={{
@@ -1445,8 +1459,7 @@ export function SiteExperience() {
       {/* ── FOOTER ── */}
       <footer className="border-t border-[var(--border)]">
         <div className="mx-auto max-w-[88rem] px-6 py-6 md:px-12 lg:px-20">
-          <div className="flex items-center justify-between">
-            <BrandWordmark compact />
+          <div className="flex items-center justify-end">
             <p className="font-[var(--font-inter)] text-[0.58rem] font-medium uppercase tracking-[0.22em] text-[var(--text-dim)] sm:text-[0.6rem]">
               &copy; {new Date().getFullYear()} Katha Studio
             </p>
