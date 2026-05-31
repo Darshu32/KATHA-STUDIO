@@ -98,7 +98,7 @@ export default function ProjectsPage() {
 
           <FadeUp
             delay={0.24}
-            className="flex items-center justify-between border-t border-[var(--border)] py-8 pb-12"
+            className="flex flex-col gap-4 border-t border-[var(--border)] py-8 pb-12 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
           >
             <Link
               href="/"

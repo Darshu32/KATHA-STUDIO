@@ -87,7 +87,7 @@ export function ListingCard({
             y: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
             opacity: { duration: 0.2, delay: expanding ? 0.05 : 0 },
           }}
-          className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-square lg:mx-auto lg:h-[clamp(14rem,32vh,20rem)] lg:w-auto"
+          className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-square lg:mx-auto lg:h-[clamp(11rem,24vh,16rem)] lg:w-auto"
           style={{ backgroundColor: darkBg }}
         >
           {/* Image (if provided and loaded) */}

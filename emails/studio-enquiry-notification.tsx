@@ -14,36 +14,24 @@ import {
 import * as React from "react";
 
 /**
- * Studio-facing notification email.
- *
- * Aesthetic: editorial dispatch — a printed telegram from the website.
- * Cream paper canvas, deep ink, a rule grid, Playfair display set in
- * uppercase with tight tracking, Inter for the data, numbered index
- * in the corner like a magazine masthead.
- *
- * Designed to be instantly scannable: the studio should know who,
- * when, how to reply, and how to call — all in one glance.
+ * Studio-facing notification email — plain and scannable.
+ * White paper, system sans, no ornaments.
  */
 export type StudioEnquiryNotificationProps = {
   name: string;
   email: string;
   phone: string;
   message?: string;
-  submittedAt: string; // preformatted, e.g. "Thu · 09 Apr 2026 · 14:32 IST"
+  submittedAt: string;
   sourceUrl: string;
-  dispatchId: string; // short stable identifier, e.g. "KS·240409·1432"
+  dispatchId: string;
 };
 
-const PAPER = "#f5f1e8";
-const PAPER_RULE = "#1a1a1a0f";
-const INK = "#111111";
-const INK_MUTED = "#5c5650";
-const INK_DIM = "#8a847c";
-const ACCENT = "#b8451f"; // burnt vermillion — editorial red
+const TEXT = "#111111";
+const TEXT_MUTED = "#666666";
+const RULE = "#e6e6e6";
 
-const fontBody = `'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif`;
-const fontDisplay = `'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif`;
-const fontMono = `'JetBrains Mono', 'SF Mono', 'Menlo', monospace`;
+const fontStack = `-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif`;
 
 export function StudioEnquiryNotification({
   name = "Anonymous",
@@ -52,13 +40,10 @@ export function StudioEnquiryNotification({
   message = "",
   submittedAt = "—",
   sourceUrl = "—",
-  dispatchId = "KS·000000·0000",
 }: StudioEnquiryNotificationProps) {
-  const firstName = name.split(/\s+/)[0];
   const mailtoReply = `mailto:${email}?subject=${encodeURIComponent(
-    `Re: Your enquiry to KATHA Studio`
-  )}&body=${encodeURIComponent(`Hi ${firstName},\n\n`)}`;
-  const telDirect = `tel:${phone.replace(/\s+/g, "")}`;
+    "Re: Your enquiry to KATHA Studio"
+  )}`;
 
   return (
     <Html>
@@ -70,181 +55,74 @@ export function StudioEnquiryNotification({
         style={{
           margin: 0,
           padding: 0,
-          backgroundColor: PAPER,
-          fontFamily: fontBody,
-          color: INK,
-          WebkitFontSmoothing: "antialiased",
+          backgroundColor: "#ffffff",
+          fontFamily: fontStack,
+          color: TEXT,
         }}
       >
         <Container
           style={{
-            maxWidth: "640px",
+            maxWidth: "560px",
             margin: "0 auto",
-            padding: "48px 40px 56px",
-            backgroundColor: PAPER,
+            padding: "40px 32px 40px",
+            backgroundColor: "#ffffff",
           }}
         >
-          {/* ── Masthead ── */}
-          <Section>
-            <Row>
-              <Column style={{ verticalAlign: "top" }}>
-                <Text
-                  style={{
-                    margin: 0,
-                    fontFamily: fontBody,
-                    fontSize: "10px",
-                    fontWeight: 600,
-                    letterSpacing: "0.32em",
-                    textTransform: "uppercase",
-                    color: INK,
-                  }}
-                >
-                  Katha&nbsp;·&nbsp;Studio
-                </Text>
-                <Text
-                  style={{
-                    margin: "2px 0 0 0",
-                    fontFamily: fontBody,
-                    fontSize: "9px",
-                    fontWeight: 400,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: INK_DIM,
-                  }}
-                >
-                  Incoming Dispatch
-                </Text>
-              </Column>
-              <Column style={{ textAlign: "right", verticalAlign: "top" }}>
-                <Text
-                  style={{
-                    margin: 0,
-                    fontFamily: fontMono,
-                    fontSize: "9px",
-                    letterSpacing: "0.14em",
-                    color: INK_DIM,
-                  }}
-                >
-                  № {dispatchId}
-                </Text>
-                <Text
-                  style={{
-                    margin: "2px 0 0 0",
-                    fontFamily: fontMono,
-                    fontSize: "9px",
-                    letterSpacing: "0.14em",
-                    color: INK_DIM,
-                  }}
-                >
-                  {submittedAt}
-                </Text>
-              </Column>
-            </Row>
-          </Section>
-
-          {/* ── Heavy rule ── */}
-          <Hr
-            style={{
-              border: "none",
-              borderTop: `2px solid ${INK}`,
-              margin: "20px 0 0 0",
-            }}
-          />
-          <Hr
-            style={{
-              border: "none",
-              borderTop: `1px solid ${INK}`,
-              margin: "3px 0 40px 0",
-            }}
-          />
-
-          {/* ── Kicker ── */}
+          {/* Wordmark */}
           <Text
             style={{
               margin: 0,
-              fontFamily: fontBody,
-              fontSize: "10px",
+              fontSize: "13px",
               fontWeight: 600,
-              letterSpacing: "0.34em",
-              textTransform: "uppercase",
-              color: ACCENT,
+              letterSpacing: "0.18em",
+              color: TEXT,
             }}
           >
-            ◆ &nbsp;New Enquiry
+            KATHA STUDIO
           </Text>
 
-          {/* ── Headline ── */}
+          {/* Heading */}
           <Text
             style={{
-              margin: "14px 0 0 0",
-              fontFamily: fontDisplay,
-              fontSize: "42px",
-              fontWeight: 700,
-              lineHeight: "1.05",
-              letterSpacing: "-0.01em",
-              color: INK,
+              margin: "28px 0 0 0",
+              fontSize: "20px",
+              fontWeight: 600,
+              lineHeight: 1.35,
+              color: TEXT,
             }}
           >
-            A new conversation
-            <br />
-            from <em style={{ fontStyle: "italic" }}>{firstName}</em>.
+            New enquiry from {name}
           </Text>
 
-          {/* ── Standfirst ── */}
           <Text
             style={{
-              margin: "22px 0 0 0",
-              maxWidth: "520px",
-              fontFamily: fontDisplay,
-              fontSize: "16px",
-              fontStyle: "italic",
-              fontWeight: 400,
-              lineHeight: "1.55",
-              color: INK_MUTED,
+              margin: "6px 0 28px 0",
+              fontSize: "13px",
+              color: TEXT_MUTED,
             }}
           >
-            Someone reached out through the studio site. Their details are
-            below — reply within two working days to honour the promise on
-            the contact page.
+            Received {submittedAt}
           </Text>
 
-          {/* ── Thin rule ── */}
-          <Hr
-            style={{
-              border: "none",
-              borderTop: `1px solid ${PAPER_RULE}`,
-              margin: "36px 0 28px 0",
-            }}
-          />
+          {/* Divider */}
+          <Hr style={{ border: "none", borderTop: `1px solid ${RULE}`, margin: "0 0 24px 0" }} />
 
-          {/* ── Data ledger ── */}
-          <Section>
-            <LedgerRow label="Full name" value={name} />
-            <LedgerRow label="Email"     value={email} href={`mailto:${email}`} />
-            <LedgerRow label="Phone"     value={phone} href={telDirect} />
-            <LedgerRow label="Received"  value={submittedAt} muted />
-            <LedgerRow label="Source"    value={sourceUrl} href={sourceUrl} muted truncate />
-          </Section>
+          {/* Contact details */}
+          <Field label="Name" value={name} />
+          <Field label="Email" value={email} href={`mailto:${email}`} />
+          <Field label="Phone" value={phone} href={`tel:${phone.replace(/\s+/g, "")}`} />
+          {sourceUrl !== "—" && <Field label="Source" value={sourceUrl} href={sourceUrl} />}
 
-          {/* ── Message block ── */}
+          {/* Message */}
           {message && (
             <>
-              <Hr
-                style={{
-                  border: "none",
-                  borderTop: `1px solid ${PAPER_RULE}`,
-                  margin: "32px 0 24px 0",
-                }}
-              />
+              <Hr style={{ border: "none", borderTop: `1px solid ${RULE}`, margin: "24px 0 20px 0" }} />
               <Text
                 style={{
-                  margin: "0 0 12px 0",
-                  fontFamily: fontBody,
-                  fontSize: "9px",
+                  margin: "0 0 8px 0",
+                  fontSize: "12px",
                   fontWeight: 600,
-                  letterSpacing: "0.26em",
-                  textTransform: "uppercase",
-                  color: INK_DIM,
+                  color: TEXT_MUTED,
                 }}
               >
                 Message
@@ -252,127 +130,35 @@ export function StudioEnquiryNotification({
               <Text
                 style={{
                   margin: 0,
-                  fontFamily: fontDisplay,
-                  fontSize: "16px",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  lineHeight: "1.65",
-                  color: INK,
+                  fontSize: "15px",
+                  lineHeight: 1.6,
+                  color: TEXT,
                   whiteSpace: "pre-wrap",
                 }}
               >
-                “{message}”
+                {message}
               </Text>
             </>
           )}
 
-          {/* ── Thin rule ── */}
-          <Hr
-            style={{
-              border: "none",
-              borderTop: `1px solid ${PAPER_RULE}`,
-              margin: "32px 0 32px 0",
-            }}
-          />
-
-          {/* ── Action buttons ── */}
-          <Section>
-            <Row>
-              <Column style={{ width: "50%", paddingRight: "6px" }}>
-                <Link
-                  href={mailtoReply}
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    padding: "16px 20px",
-                    backgroundColor: INK,
-                    color: PAPER,
-                    fontFamily: fontBody,
-                    fontSize: "10px",
-                    fontWeight: 600,
-                    letterSpacing: "0.26em",
-                    textTransform: "uppercase",
-                    textDecoration: "none",
-                    border: `1px solid ${INK}`,
-                  }}
-                >
-                  Reply by email →
-                </Link>
-              </Column>
-              <Column style={{ width: "50%", paddingLeft: "6px" }}>
-                <Link
-                  href={telDirect}
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    padding: "16px 20px",
-                    backgroundColor: PAPER,
-                    color: INK,
-                    fontFamily: fontBody,
-                    fontSize: "10px",
-                    fontWeight: 600,
-                    letterSpacing: "0.26em",
-                    textTransform: "uppercase",
-                    textDecoration: "none",
-                    border: `1px solid ${INK}`,
-                  }}
-                >
-                  Call direct ↗
-                </Link>
-              </Column>
-            </Row>
-          </Section>
-
-          {/* ── Footer rule ── */}
-          <Hr
-            style={{
-              border: "none",
-              borderTop: `1px solid ${INK}`,
-              margin: "56px 0 3px 0",
-            }}
-          />
-          <Hr
-            style={{
-              border: "none",
-              borderTop: `2px solid ${INK}`,
-              margin: 0,
-            }}
-          />
-
-          {/* ── Colophon ── */}
-          <Section style={{ marginTop: "18px" }}>
-            <Row>
-              <Column style={{ verticalAlign: "top" }}>
-                <Text
-                  style={{
-                    margin: 0,
-                    fontFamily: fontBody,
-                    fontSize: "9px",
-                    fontWeight: 500,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: INK_DIM,
-                  }}
-                >
-                  Studio · Bengaluru
-                </Text>
-              </Column>
-              <Column style={{ textAlign: "right", verticalAlign: "top" }}>
-                <Text
-                  style={{
-                    margin: 0,
-                    fontFamily: fontBody,
-                    fontSize: "9px",
-                    fontWeight: 500,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: INK_DIM,
-                  }}
-                >
-                  kathastudio.co
-                </Text>
-              </Column>
-            </Row>
+          {/* Reply button */}
+          <Section style={{ marginTop: "32px" }}>
+            <Link
+              href={mailtoReply}
+              style={{
+                display: "inline-block",
+                padding: "12px 22px",
+                backgroundColor: TEXT,
+                color: "#ffffff",
+                fontFamily: fontStack,
+                fontSize: "13px",
+                fontWeight: 500,
+                textDecoration: "none",
+                borderRadius: "2px",
+              }}
+            >
+              Reply to {name}
+            </Link>
           </Section>
         </Container>
       </Body>
@@ -382,47 +168,17 @@ export function StudioEnquiryNotification({
 
 export default StudioEnquiryNotification;
 
-/* ── Reusable ledger row for the data block ── */
-function LedgerRow({
-  label,
-  value,
-  href,
-  muted = false,
-  truncate = false,
-}: {
-  label: string;
-  value: string;
-  href?: string;
-  muted?: boolean;
-  truncate?: boolean;
-}) {
-  const valueStyle: React.CSSProperties = {
-    margin: 0,
-    fontFamily: fontBody,
-    fontSize: muted ? "13px" : "15px",
-    fontWeight: muted ? 400 : 500,
-    color: muted ? INK_MUTED : INK,
-    textDecoration: "none",
-    ...(truncate && {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap" as const,
-    }),
-  };
-
+function Field({ label, value, href }: { label: string; value: string; href?: string }) {
   return (
-    <Row style={{ marginBottom: "18px" }}>
-      <Column style={{ width: "130px", verticalAlign: "top" }}>
+    <Row style={{ marginBottom: "12px" }}>
+      <Column style={{ width: "90px", verticalAlign: "top" }}>
         <Text
           style={{
             margin: 0,
-            fontFamily: fontBody,
-            fontSize: "9px",
-            fontWeight: 600,
-            letterSpacing: "0.26em",
-            textTransform: "uppercase",
-            color: INK_DIM,
-            paddingTop: "3px",
+            fontSize: "12px",
+            fontWeight: 500,
+            color: TEXT_MUTED,
+            paddingTop: "1px",
           }}
         >
           {label}
@@ -430,11 +186,28 @@ function LedgerRow({
       </Column>
       <Column style={{ verticalAlign: "top" }}>
         {href ? (
-          <Link href={href} style={{ ...valueStyle, borderBottom: `1px solid ${PAPER_RULE}` }}>
+          <Link
+            href={href}
+            style={{
+              margin: 0,
+              fontSize: "14px",
+              color: TEXT,
+              textDecoration: "underline",
+              textDecorationColor: RULE,
+            }}
+          >
             {value}
           </Link>
         ) : (
-          <Text style={valueStyle}>{value}</Text>
+          <Text
+            style={{
+              margin: 0,
+              fontSize: "14px",
+              color: TEXT,
+            }}
+          >
+            {value}
+          </Text>
         )}
       </Column>
     </Row>

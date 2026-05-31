@@ -45,8 +45,8 @@ export default function ServicesPage() {
           </FadeUp>
 
           {/* ── SERVICES GRID ── */}
-          <FadeUp delay={0.22} className="pb-16 pt-6 md:pb-20 md:pt-8 lg:pb-10 lg:pt-8">
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-12 lg:gap-x-14 lg:gap-y-14">
+          <FadeUp delay={0.22} className="pb-16 pt-6 md:pb-20 md:pt-8 lg:pb-6 lg:pt-6">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-12 lg:gap-x-14 lg:gap-y-8">
               {services.map((service, i) => (
                 <FadeUp key={service.slug} delay={0.16 + i * 0.08}>
                   <ListingCard
