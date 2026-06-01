@@ -15,7 +15,8 @@ const mobileNavItems: NavEntry[] = [
   { href: "/",         label: "Home",     num: "00" },
   { href: "/about",    label: "About",    num: "01" },
   { href: "/services", label: "Services", num: "02" },
-  { href: "/contact",  label: "Contact",  num: "03" },
+  { href: "/projects", label: "Projects", num: "03" },
+  { href: "/contact",  label: "Contact",  num: "04" },
 ];
 
 function getBackLink(pathname: string): { href: string; label: string } | null {
