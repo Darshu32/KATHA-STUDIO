@@ -36,7 +36,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       imageAlt={service.title}
       fallbackBg={fallbackBg}
       eyebrow={service.category}
-      meta="KATHA Studio · Bengaluru"
       tagline={service.tagline}
       scope={service.scope}
       imageCaption={service.imageCaption}

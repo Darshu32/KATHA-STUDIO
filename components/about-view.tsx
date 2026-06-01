@@ -24,7 +24,7 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
           initial={reduceMotion ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-between pb-3 md:pb-4 lg:pb-5"
+          className="pb-3 md:pb-4 lg:pb-5"
         >
           <p style={{
             fontFamily: "var(--font-inter)",
@@ -35,16 +35,6 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
             color: "var(--text-dim)",
           }}>
             — The Practice
-          </p>
-          <p style={{
-            fontFamily: "var(--font-inter)",
-            fontSize: "0.6rem",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            letterSpacing: "0.26em",
-            color: "var(--text-dim)",
-          }}>
-            Bengaluru · Est. 2022
           </p>
         </motion.div>
 

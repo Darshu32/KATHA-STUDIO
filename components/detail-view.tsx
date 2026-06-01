@@ -91,16 +91,18 @@ export function DetailView({
             }}>
               {eyebrow ? `— ${eyebrow}` : ""}
             </p>
-            <p style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: "0.6rem",
-              fontWeight: 500,
-              textTransform: "uppercase",
-              letterSpacing: "0.26em",
-              color: "var(--text-dim)",
-            }}>
-              {meta ?? ""}
-            </p>
+            {meta && (
+              <p style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: "0.6rem",
+                fontWeight: 500,
+                textTransform: "uppercase",
+                letterSpacing: "0.26em",
+                color: "var(--text-dim)",
+              }}>
+                {meta}
+              </p>
+            )}
           </motion.div>
         )}
 

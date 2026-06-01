@@ -14,13 +14,10 @@ export default function ServicesPage() {
       <main className="pt-[4.2rem]">
         <div className="mx-auto flex w-full max-w-[88rem] flex-col px-5 sm:px-8 md:px-12 lg:px-20">
 
-          {/* ── META STRIP ── */}
-          <FadeUp delay={0} className="flex items-center justify-between pt-10 pb-3 md:pt-14 lg:pt-3 lg:pb-2">
+          {/* ── EYEBROW ── */}
+          <FadeUp delay={0} className="pt-10 pb-3 md:pt-14 lg:pt-3 lg:pb-2">
             <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.32em", color: "var(--text-dim)" }}>
               — What We Offer
-            </p>
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.26em", color: "var(--text-dim)" }}>
-              Bengaluru · {services.length} Disciplines
             </p>
           </FadeUp>
 
