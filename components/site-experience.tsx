@@ -639,6 +639,32 @@ export function SiteExperience() {
     setIntroComplete(true);
   }, []);
 
+  /* Safety net: framer-motion pauses while the tab is hidden, so a
+   * visitor who opens the site in a background tab can land on a
+   * page whose entrance animation never finishes — leaving every
+   * section at opacity:0. Two guards:
+   *   1. A 5s hard timeout that flips introComplete regardless.
+   *   2. A visibilitychange listener that flips it the moment the
+   *      tab regains focus, so the page is ready when they look. */
+  useEffect(() => {
+    if (introComplete) return;
+    const fallback = window.setTimeout(() => {
+      introHasPlayed = true;
+      setIntroComplete(true);
+    }, 5000);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") {
+        introHasPlayed = true;
+        setIntroComplete(true);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearTimeout(fallback);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [introComplete]);
+
   /* Lock scroll during intro */
   useEffect(() => {
     if (!introComplete) {
