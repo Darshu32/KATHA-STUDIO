@@ -39,12 +39,15 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-/* E.164-ish phone validation — optional leading "+", digits / spaces /
-   dashes / dots / parens only; 8–15 digits after stripping separators. */
+/* Indian phone validation — accepts 10 digits, or 10 digits prefixed
+   with +91 / 91 / 0 (which we strip before counting). Allows digits,
+   spaces, dashes, dots, parens, optional "+" in the input. */
 function isValidPhone(raw: string): boolean {
   if (!/^[+\d\s().\-]+$/.test(raw)) return false;
-  const digits = raw.replace(/\D/g, "");
-  return digits.length >= 8 && digits.length <= 15;
+  let digits = raw.replace(/\D/g, "");
+  if (digits.length === 12 && digits.startsWith("91")) digits = digits.slice(2);
+  if (digits.length === 11 && digits.startsWith("0"))  digits = digits.slice(1);
+  return digits.length === 10;
 }
 
 function formatSubmittedAt(d: Date): string {
@@ -106,7 +109,7 @@ export async function POST(request: Request) {
   }
   if (!isValidPhone(phone)) {
     return NextResponse.json(
-      { ok: false, error: "Please share a valid phone number (8–15 digits)." },
+      { ok: false, error: "Please share a valid 10-digit phone number (with or without +91)." },
       { status: 400 }
     );
   }

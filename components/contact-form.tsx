@@ -29,9 +29,13 @@ function validateField(name: FieldName, value: string): string {
       if (!v) return "Please share a phone number.";
       if (!PHONE_ALLOWED.test(v)) return "Use digits, spaces, dashes, dots or parentheses only.";
       {
-        const digits = v.replace(/\D/g, "");
-        if (digits.length < 8 || digits.length > 15) {
-          return "Phone should be between 8 and 15 digits.";
+        /* Strip everything except digits, then strip a leading 91 or 0
+           that visitors often type before their 10-digit number. */
+        let digits = v.replace(/\D/g, "");
+        if (digits.length === 12 && digits.startsWith("91")) digits = digits.slice(2);
+        if (digits.length === 11 && digits.startsWith("0"))  digits = digits.slice(1);
+        if (digits.length !== 10) {
+          return "Phone should be 10 digits (with or without +91).";
         }
       }
       return "";
