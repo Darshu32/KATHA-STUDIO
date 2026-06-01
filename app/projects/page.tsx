@@ -11,9 +11,9 @@ const STUDIO_EMAIL = "neha@kathastudio.co";
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--text)]">
-      <main className="pt-[4.2rem]">
-        <div className="mx-auto max-w-[72rem] px-5 sm:px-8 md:px-12 lg:px-20">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--text)] lg:flex lg:h-[100svh] lg:flex-col lg:overflow-hidden">
+      <main className="flex-1 pt-[4.2rem] lg:flex lg:flex-col lg:pt-[3.2rem]">
+        <div className="mx-auto flex w-full max-w-[72rem] flex-1 flex-col px-5 sm:px-8 md:px-12 lg:px-20">
 
           <FadeUp delay={0} className="pt-10 pb-6 md:pt-14">
             <p
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
 
           <FadeUp
             delay={0.18}
-            className="flex flex-col gap-3 pb-16 sm:flex-row sm:items-center sm:gap-6 md:pb-24"
+            className="flex flex-col gap-3 pb-12 sm:flex-row sm:items-center sm:gap-6 md:pb-16 lg:pb-10"
           >
             <a
               href={`mailto:${STUDIO_EMAIL}?subject=Portfolio%20Request`}
@@ -98,7 +98,7 @@ export default function ProjectsPage() {
 
           <FadeUp
             delay={0.24}
-            className="flex flex-col gap-4 border-t border-[var(--border)] py-8 pb-12 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+            className="mt-auto flex flex-col gap-4 border-t border-[var(--border)] py-8 pb-12 sm:flex-row sm:items-center sm:justify-between sm:gap-6 lg:py-6 lg:pb-6"
           >
             <Link
               href="/"
