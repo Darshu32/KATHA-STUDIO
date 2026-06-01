@@ -42,7 +42,7 @@ export function StudioEnquiryNotification({
   sourceUrl = "—",
 }: StudioEnquiryNotificationProps) {
   const mailtoReply = `mailto:${email}?subject=${encodeURIComponent(
-    "Re: Your enquiry to KATHA Studio"
+    "Re: Your enquiry to KATHA STUDIO"
   )}`;
 
   return (

@@ -29,7 +29,7 @@ export function VisitorAutoresponse({
     <Html>
       <Head />
       <Preview>
-        Thank you for writing to KATHA Studio — we&apos;ve received your note.
+        Thank you for writing to KATHA STUDIO — we&apos;ve received your note.
       </Preview>
       <Body
         style={{
@@ -108,7 +108,7 @@ export function VisitorAutoresponse({
               color: TEXT,
             }}
           >
-            — The KATHA Studio team
+            — The KATHA STUDIO team
           </Text>
         </Container>
       </Body>

@@ -16,7 +16,7 @@ import { VisitorAutoresponse } from "@/emails/visitor-autoresponse";
  *
  * Required env vars:
  *   RESEND_API_KEY    — obtain at https://resend.com (free tier: 100/day)
- *   RESEND_FROM       — verified sender, e.g. "KATHA Studio <hello@kathastudio.co>"
+ *   RESEND_FROM       — verified sender, e.g. "KATHA STUDIO <no-reply@kathastudio.co>"
  *                       During development, use Resend's onboarding@resend.dev
  *                       which only delivers to the account owner.
  *
@@ -26,7 +26,7 @@ import { VisitorAutoresponse } from "@/emails/visitor-autoresponse";
 
 const STUDIO_EMAIL = process.env.STUDIO_EMAIL ?? "neha@kathastudio.co";
 const RESEND_FROM =
-  process.env.RESEND_FROM ?? "KATHA Studio <onboarding@resend.dev>";
+  process.env.RESEND_FROM ?? "KATHA STUDIO <onboarding@resend.dev>";
 
 type ContactPayload = {
   name: string;
@@ -154,7 +154,7 @@ export async function POST(request: Request) {
       from: RESEND_FROM,
       to: [STUDIO_EMAIL],
       replyTo: email,
-      subject: `◆ New enquiry — ${name} · KATHA Studio`,
+      subject: `◆ New enquiry — ${name} · KATHA STUDIO`,
       react: StudioEnquiryNotification({
         name,
         email,
@@ -184,7 +184,7 @@ export async function POST(request: Request) {
       from: RESEND_FROM,
       to: [email],
       replyTo: STUDIO_EMAIL,
-      subject: `Thank you for writing to KATHA Studio`,
+      subject: `Thank you for writing to KATHA STUDIO`,
       react: VisitorAutoresponse({
         firstName,
         submittedAt,
