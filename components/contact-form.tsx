@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent, type FocusEvent, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type FocusEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -65,7 +65,7 @@ export function ContactForm() {
     setErrors((prev) => ({ ...prev, [name]: msg || undefined }));
   }
 
-  function handleInput(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function handleInput(e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const name = e.currentTarget.name as FieldName;
     /* Clear the field's error the moment they start fixing it — but
        don't re-validate on every keystroke; that's nagging. */
