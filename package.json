@@ -16,6 +16,7 @@
     "@react-email/components": "^1.0.11",
     "framer-motion": "latest",
     "lenis": "latest",
+    "lucide-react": "^1.17.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

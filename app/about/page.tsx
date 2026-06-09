@@ -2,8 +2,8 @@ import { getAdjacentNav } from "@/lib/nav-order";
 import { AboutView } from "@/components/about-view";
 
 export const metadata = {
-  title: "About — KATHA Studio",
-  description: "Architecture and interiors shaped through proportion, restraint, and material calm.",
+  title: "Studio — KATHA Studio",
+  description: "Katha means story. A founder-led practice shaped by listening, context, and craftsmanship.",
 };
 
 export default function AboutPage() {

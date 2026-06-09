@@ -25,18 +25,18 @@ export function FloatingCTA() {
     >
       <Link
         href="/contact"
-        className="group inline-flex items-center gap-3 border border-[var(--text)] bg-[var(--background)] px-5 py-3 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
+        className="group inline-flex items-center gap-3 rounded-full border border-[var(--border-medium)] bg-[var(--background)] px-6 py-3 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
         style={{
           fontFamily: "var(--font-inter)",
-          fontSize: "0.58rem",
+          fontSize: "0.6rem",
           fontWeight: 500,
           textTransform: "uppercase",
-          letterSpacing: "0.22em",
+          letterSpacing: "0.2em",
           color: "var(--text)",
         }}
       >
         Start a Project
-        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        <span className="accent-arrow transition-transform duration-300 group-hover:translate-x-1">→</span>
       </Link>
     </motion.div>
   );

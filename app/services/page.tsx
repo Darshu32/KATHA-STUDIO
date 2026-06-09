@@ -15,8 +15,8 @@ export default function ServicesPage() {
         <div className="mx-auto flex w-full max-w-[88rem] flex-col px-5 sm:px-8 md:px-12 lg:px-20">
 
           {/* ── EYEBROW ── */}
-          <FadeUp delay={0} className="pt-10 pb-3 md:pt-14 lg:pt-3 lg:pb-2">
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.32em", color: "var(--text-dim)" }}>
+          <FadeUp delay={0} className="pt-10 pb-3 md:pt-14 lg:pt-9 lg:pb-2">
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-caption)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.32em", color: "var(--text-dim)" }}>
               — What We Offer
             </p>
           </FadeUp>
@@ -25,11 +25,10 @@ export default function ServicesPage() {
           <FadeUp delay={0.06} className="pb-3 md:pb-4 lg:pb-1">
             <h1 style={{
               fontFamily: "var(--font-avenir-book)",
-              fontSize: "clamp(2.2rem, 3.4vw, 2.8rem)",
-              fontWeight: 500,
-              lineHeight: 0.96,
-              textTransform: "uppercase",
-              letterSpacing: "0.02em",
+              fontSize: "var(--fs-page-title)",
+              fontWeight: 300,
+              lineHeight: 1.02,
+              letterSpacing: "-0.02em",
               color: "var(--text)",
             }}>
               How We Build
@@ -53,21 +52,17 @@ export default function ServicesPage() {
                     image={service.image}
                     imageAlt={service.title}
                   >
-                    <div className="space-y-2 pt-1">
+                    <div className="pt-1">
                       <h2 style={{
-                        fontFamily: "var(--font-avenir-heavy)",
-                        fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
-                        fontWeight: 800,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.02em",
+                        fontFamily: "var(--font-avenir-book)",
+                        fontSize: "clamp(1.15rem, 1.5vw, 1.4rem)",
+                        fontWeight: 400,
+                        letterSpacing: "-0.02em",
                         color: "var(--text)",
-                        lineHeight: 1.1,
+                        lineHeight: 1.15,
                       }}>
                         {service.title}
                       </h2>
-                      <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.22em", color: "var(--text-dim)" }}>
-                        {service.category}
-                      </p>
                     </div>
                   </ListingCard>
                 </FadeUp>
@@ -78,7 +73,7 @@ export default function ServicesPage() {
           {/* ── BACK / ENQUIRE ── */}
           <div className="flex items-center justify-between border-t border-[var(--border)] py-8 pb-12 lg:py-3 lg:pb-4">
             <Link href="/" className="group inline-flex items-center gap-3 transition-opacity hover:opacity-55">
-              <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">←</span>
+              <span className="accent-arrow inline-block transition-transform duration-300 group-hover:-translate-x-1">←</span>
               <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "var(--text)" }}>
                 Back to Home
               </span>
@@ -87,7 +82,7 @@ export default function ServicesPage() {
               <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.28em", color: "var(--text)" }}>
                 Get in Touch
               </span>
-              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="accent-arrow inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </div>
 

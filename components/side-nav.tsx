@@ -98,10 +98,10 @@ export function MobileNav({
           <span
             className="truncate"
             style={{
-              fontFamily: "var(--font-avenir-heavy)",
-              fontSize: "0.78rem",
-              fontWeight: 800,
-              textTransform: "uppercase",
+              fontFamily: "var(--font-avenir-book)",
+              fontSize: "0.92rem",
+              fontWeight: 500,
+              letterSpacing: "-0.01em",
               color: "var(--text)",
             }}
           >
@@ -132,10 +132,10 @@ export function MobileNav({
           <span
             className="truncate text-right"
             style={{
-              fontFamily: "var(--font-avenir-heavy)",
-              fontSize: "0.78rem",
-              fontWeight: 800,
-              textTransform: "uppercase",
+              fontFamily: "var(--font-avenir-book)",
+              fontSize: "0.92rem",
+              fontWeight: 500,
+              letterSpacing: "-0.01em",
               color: "var(--text)",
               maxWidth: "100%",
             }}

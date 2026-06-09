@@ -7,20 +7,23 @@ import {
   motion,
   useReducedMotion,
   useMotionValue,
-  useTransform,
   useSpring,
-  useScroll,
+  useTransform,
   animate as animateValue,
 } from "framer-motion";
 import { useEffect, useState, useCallback, useRef } from "react";
 import Lenis from "lenis";
 import { MarqueeStrip } from "@/components/marquee-strip";
+import { HomeStory } from "@/components/home-story";
+import { WhyKatha } from "@/components/why-katha";
 import { services } from "@/lib/data";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
+/* Intro plays once per full page load. The flag survives client-side
+   navigation (so returning to "/" doesn't replay it) but resets on a
+   hard reload. */
 let introHasPlayed = false;
-
 const brandLetters = ["K", "A", "T", "H", "A"];
 const studioLetters = ["S", "T", "U", "D", "I", "O"];
 
@@ -33,12 +36,13 @@ const toneCards = {
 const allCards = [
   {
     id: "00",
-    label: "About",
+    label: "Studio",
     tagline: "Who we are",
     href: "/about",
     accent: "#c8a882",
     darkBg: "#1c1409",
-    image: "/images/about/Screenshot 2026-04-08 132119.png",
+    image: "/images/home/studio.webp",
+    focal: "50% 60%",
   },
   ...services.map((s, i) => ({
     id: String(i + 1).padStart(2, "0"),
@@ -47,6 +51,7 @@ const allCards = [
     href: `/services/${s.slug}`,
     ...toneCards[s.tone],
     image: s.image,
+    focal: s.focal ?? "50% 50%",
   })),
   {
     id: String(services.length + 1).padStart(2, "0"),
@@ -55,14 +60,15 @@ const allCards = [
     href: "/contact",
     accent: "#b4a090",
     darkBg: "#1a1411",
-    image: "/images/home/Screenshot 2026-04-08 132135.png",
+    image: "/images/home/contact.webp",
+    focal: "50% 70%",
   },
 ];
 
 /* Derive editorial category label from href */
 function getCardCategory(href: string): string {
   if (href === "/")                  return "INTRO";
-  if (href === "/about")             return "ABOUT";
+  if (href === "/about")             return "STUDIO";
   if (href.startsWith("/services"))  return "SERVICE";
   if (href === "/contact")           return "CONTACT";
   return "";
@@ -75,15 +81,6 @@ const mysteryPhrases = [
   "What stays after the drawing ends",
   "Light, patience, a single gesture",
   "Architecture, in its lower voice",
-];
-
-/* Whispered lines that appear after idle timeout */
-const idleWhispers = [
-  "— still here?",
-  "— take your time",
-  "— the quietest architecture wins",
-  "— stay a moment longer",
-  "— we noticed you",
 ];
 
 /* ─────────────────────── BRAND WORDMARK ───────────────────── */
@@ -112,6 +109,148 @@ export function BrandWordmark({
         Studio
       </span>
     </span>
+  );
+}
+
+/* ─────────────────────── SMOOTH SCROLL ────────────────────── */
+
+function useLenisScroll() {
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    let frame = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      frame = requestAnimationFrame(raf);
+    };
+    frame = requestAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(frame);
+      lenis.destroy();
+    };
+  }, []);
+}
+
+/* ─────────────────────── CARD CONTENT ─────────────────────── */
+
+function NavCardContent({
+  card,
+  isActive,
+  isDragging,
+  priority = false,
+}: {
+  card: (typeof allCards)[number];
+  isActive: boolean;
+  isDragging: boolean;
+  priority?: boolean;
+}) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const hasImage = !!card.image && !imageFailed;
+
+  return (
+    <Link
+      href={card.href}
+      data-cursor="Enter"
+      draggable={false}
+      onClick={(e) => {
+        if (isDragging) e.preventDefault();
+      }}
+      className="relative flex h-full flex-col justify-between overflow-hidden p-6 md:p-7"
+    >
+      {/* Image (if present) — zooms on active */}
+      {hasImage && (
+        <motion.div
+          animate={{ scale: isActive ? 1.06 : 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 z-0"
+        >
+          <Image
+            src={card.image!}
+            alt={card.label}
+            fill
+            sizes="(max-width: 768px) 100vw, 25vw"
+            className="object-cover"
+            style={{ objectPosition: card.focal ?? "50% 50%" }}
+            onError={() => setImageFailed(true)}
+            priority={priority}
+            loading={priority ? undefined : "lazy"}
+            /* Card art is already pre-optimized webp (watermark-cropped, q80,
+               <160KB). Skip Next's on-the-fly optimizer: it re-fetches a
+               variant on every carousel re-render, and the dev optimizer
+               can't keep up — neighbours flash to the dark fallback. Serving
+               the static file directly is instant, cache-stable, flicker-free. */
+            unoptimized
+          />
+          {/* Darken layer — minimal, keeps images vibrant */}
+          <motion.div
+            animate={{ opacity: isActive ? 0.18 : 0.22 }}
+            transition={{ duration: 0.55 }}
+            className="absolute inset-0 bg-black"
+          />
+        </motion.div>
+      )}
+
+      {/* Accent line — top */}
+      <motion.div
+        animate={{
+          opacity: isActive ? 1 : 0.3,
+          scaleX: isActive ? 1 : 0.4,
+        }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 left-0 right-0 z-[2] origin-center"
+        style={{ height: "2px", backgroundColor: "rgba(255,255,255,0.85)" }}
+      />
+
+      {/* Radial top glow */}
+      <motion.div
+        animate={{ opacity: isActive ? 1 : 0.4 }}
+        transition={{ duration: 0.5 }}
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background: `radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.13) 0%, transparent 60%)`,
+        }}
+      />
+
+      {/* Ambient center glow */}
+      <motion.div
+        animate={{ opacity: isActive ? 0.7 : 0 }}
+        transition={{ duration: 0.6 }}
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background: `radial-gradient(circle at 50% 55%, rgba(255,255,255,0.10) 0%, transparent 70%)`,
+        }}
+      />
+
+      {/* Bottom vignette — subtle, preserves image brightness */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.32) 0%, transparent 45%)",
+        }}
+      />
+
+      {/* Top row: arrow only */}
+      <div className="relative z-[3] flex items-start justify-end">
+        <motion.span
+          animate={{
+            x: isActive ? 4 : 0,
+            y: isActive ? -4 : 0,
+            scale: isActive ? 1.22 : 1,
+          }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            fontSize: "clamp(0.8rem, 1vw, 0.92rem)",
+            color: isActive
+              ? "#ffffff"
+              : hasImage
+              ? "rgba(255,255,255,0.7)"
+              : "rgba(255,255,255,0.45)",
+          }}
+        >
+          ↗
+        </motion.span>
+      </div>
+    </Link>
   );
 }
 
@@ -227,7 +366,6 @@ function IntroBrandSequence({
                     </motion.span>
                   );
                 })}
-
               </div>
 
               {/* STUDIO — typewriter letter by letter */}
@@ -246,7 +384,6 @@ function IntroBrandSequence({
                     </motion.span>
                   );
                 })}
-
               </div>
             </div>
           </motion.div>
@@ -256,329 +393,62 @@ function IntroBrandSequence({
   );
 }
 
-/* ─────────────────────── SMOOTH SCROLL ────────────────────── */
-
-function useLenisScroll() {
-  useEffect(() => {
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
-    let frame = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
-      frame = requestAnimationFrame(raf);
-    };
-    frame = requestAnimationFrame(raf);
-    return () => {
-      cancelAnimationFrame(frame);
-      lenis.destroy();
-    };
-  }, []);
-}
-
-/* ─────────────────────── CARD CONTENT ─────────────────────── */
-
-function NavCardContent({
-  card,
-  isActive,
-  isDragging,
-}: {
-  card: (typeof allCards)[number];
-  isActive: boolean;
-  isDragging: boolean;
-}) {
-  const [imageFailed, setImageFailed] = useState(false);
-  const hasImage = !!card.image && !imageFailed;
-
-  return (
-    <Link
-      href={card.href}
-      data-cursor="Enter"
-      draggable={false}
-      onClick={(e) => {
-        if (isDragging) e.preventDefault();
-      }}
-      className="relative flex h-full flex-col justify-between overflow-hidden p-6 md:p-7"
-    >
-      {/* Image (if present) — zooms on active */}
-      {hasImage && (
-        <motion.div
-          animate={{ scale: isActive ? 1.06 : 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 z-0"
-        >
-          <Image
-            src={card.image!}
-            alt={card.label}
-            fill
-            sizes="(max-width: 768px) 100vw, 25vw"
-            className="object-cover"
-            onError={() => setImageFailed(true)}
-            priority
-          />
-          {/* Darken layer — minimal, keeps images vibrant */}
-          <motion.div
-            animate={{ opacity: isActive ? 0.18 : 0.22 }}
-            transition={{ duration: 0.55 }}
-            className="absolute inset-0 bg-black"
-          />
-        </motion.div>
-      )}
-
-      {/* Accent line — top */}
-      <motion.div
-        animate={{
-          opacity: isActive ? 1 : 0.3,
-          scaleX: isActive ? 1 : 0.4,
-        }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-0 left-0 right-0 z-[2] origin-center"
-        style={{ height: "2px", backgroundColor: card.accent }}
-      />
-
-      {/* Radial top glow */}
-      <motion.div
-        animate={{ opacity: isActive ? 1 : 0.4 }}
-        transition={{ duration: 0.5 }}
-        className="pointer-events-none absolute inset-0 z-[1]"
-        style={{
-          background: `radial-gradient(ellipse at 50% 0%, ${card.accent}22 0%, transparent 60%)`,
-        }}
-      />
-
-      {/* Ambient center glow */}
-      <motion.div
-        animate={{ opacity: isActive ? 0.7 : 0 }}
-        transition={{ duration: 0.6 }}
-        className="pointer-events-none absolute inset-0 z-[1]"
-        style={{
-          background: `radial-gradient(circle at 50% 55%, ${card.accent}18 0%, transparent 70%)`,
-        }}
-      />
-
-      {/* Bottom vignette — subtle, preserves image brightness */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[1]"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(0,0,0,0.32) 0%, transparent 45%)",
-        }}
-      />
-
-      {/* Top row: arrow only */}
-      <div className="relative z-[3] flex items-start justify-end">
-        <motion.span
-          animate={{
-            x: isActive ? 4 : 0,
-            y: isActive ? -4 : 0,
-            scale: isActive ? 1.22 : 1,
-          }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            fontSize: "clamp(0.8rem, 1vw, 0.92rem)",
-            color: isActive
-              ? card.accent
-              : hasImage
-              ? "rgba(255,255,255,0.7)"
-              : `${card.accent}70`,
-          }}
-        >
-          ↗
-        </motion.span>
-      </div>
-    </Link>
-  );
-}
-
-/* ──────────────────── DRIFTING DRAFTING MARKS ───────────────
- *
- * Small decorative elements that float around the hero on infinite
- * sine-wave paths. Each has its own speed and phase so they never
- * sync up. Creates an ambient "living page" feel.
- * ──────────────────────────────────────────────────────────── */
-
-type DriftMark = {
-  content: string;
-  top: string;
-  left: string;
-  size: string;
-  letterSpacing: string;
-  duration: number;
-  delay: number;
-  dx: number; // horizontal drift amplitude
-  dy: number; // vertical drift amplitude
-  opacity: number;
-  italic?: boolean;
-};
-
-const driftMarks: DriftMark[] = [
-  {
-    content: "№ 01",
-    top: "18%",
-    left: "6%",
-    size: "0.58rem",
-    letterSpacing: "0.32em",
-    duration: 11,
-    delay: 0,
-    dx: 14,
-    dy: 10,
-    opacity: 0.22,
-  },
-  {
-    content: "—",
-    top: "32%",
-    left: "88%",
-    size: "1.4rem",
-    letterSpacing: "0",
-    duration: 13,
-    delay: 1.5,
-    dx: 18,
-    dy: 12,
-    opacity: 0.14,
-  },
-  {
-    content: "•",
-    top: "72%",
-    left: "14%",
-    size: "0.6rem",
-    letterSpacing: "0",
-    duration: 9,
-    delay: 2.8,
-    dx: 10,
-    dy: 14,
-    opacity: 0.2,
-  },
-  {
-    content: "23.02° N",
-    top: "80%",
-    left: "82%",
-    size: "0.55rem",
-    letterSpacing: "0.3em",
-    duration: 14,
-    delay: 0.6,
-    dx: 16,
-    dy: 8,
-    opacity: 0.18,
-  },
-  {
-    content: "/ ii",
-    top: "26%",
-    left: "72%",
-    size: "0.7rem",
-    letterSpacing: "0.15em",
-    duration: 12,
-    delay: 3.6,
-    dx: 12,
-    dy: 10,
-    opacity: 0.16,
-    italic: true,
-  },
-  {
-    content: "·",
-    top: "58%",
-    left: "46%",
-    size: "0.9rem",
-    letterSpacing: "0",
-    duration: 10,
-    delay: 4.2,
-    dx: 8,
-    dy: 12,
-    opacity: 0.14,
-  },
-];
-
-function DriftingMarks({ visible }: { visible: boolean }) {
-  const reduceMotion = useReducedMotion();
-  if (reduceMotion) return null;
-
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      {driftMarks.map((m, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0 }}
-          animate={
-            visible
-              ? {
-                  opacity: [0, m.opacity, m.opacity, 0],
-                  x: [0, m.dx, -m.dx * 0.6, 0],
-                  y: [0, -m.dy, m.dy * 0.5, 0],
-                }
-              : { opacity: 0 }
-          }
-          transition={{
-            opacity: {
-              duration: m.duration,
-              times: [0, 0.2, 0.8, 1],
-              delay: m.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            x: {
-              duration: m.duration,
-              delay: m.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            y: {
-              duration: m.duration,
-              delay: m.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-          className="absolute font-[var(--font-inter)] font-medium uppercase"
-          style={{
-            top: m.top,
-            left: m.left,
-            fontSize: m.size,
-            letterSpacing: m.letterSpacing,
-            color: "var(--text-dim)",
-            fontStyle: m.italic ? "italic" : "normal",
-            textTransform: "uppercase",
-          }}
-        >
-          {m.content}
-        </motion.span>
-      ))}
-    </div>
-  );
-}
-
 /* ═══════════════════════ MAIN COMPONENT ══════════════════════ */
 
 export function SiteExperience() {
   useLenisScroll();
 
-  const [introComplete, setIntroComplete] = useState(introHasPlayed);
   const reduceMotion = useReducedMotion();
+  /* Intro brand sequence — types "KATHA STUDIO" then settles into the
+     header to reveal the page. Plays once per full load (introHasPlayed).
+     `introComplete` gates the hero + carousel enter animations. */
+  const [introComplete, setIntroComplete] = useState(introHasPlayed);
+
+  const handleIntroSettled = useCallback(() => {
+    introHasPlayed = true;
+    setIntroComplete(true);
+  }, []);
+
+  /* Safety guard — never let the page stay hidden behind the intro.
+     framer-motion tweens pause when the tab is backgrounded (rAF stops),
+     so a fallback timeout and a visibility listener guarantee the intro
+     resolves even if the settle animation never fires. */
+  useEffect(() => {
+    if (introComplete) return;
+    const fallback = window.setTimeout(() => {
+      introHasPlayed = true;
+      setIntroComplete(true);
+    }, 5000);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") {
+        introHasPlayed = true;
+        setIntroComplete(true);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearTimeout(fallback);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [introComplete]);
+
+  /* Lock scroll while the intro is on screen */
+  useEffect(() => {
+    if (!introComplete) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [introComplete]);
+
   const [activeIndex, setActiveIndex] = useState(Math.floor(allCards.length / 2));
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
-  const [isIdle, setIsIdle] = useState(false);
-  const [whisper, setWhisper] = useState("");
-  const idleTimerRef = useRef<number | null>(null);
-
-  /* Hero spotlight cursor — follows mouse, creates a soft light reveal */
-  const spotX = useMotionValue(50);
-  const spotY = useMotionValue(50);
-  const smoothSpotX = useSpring(spotX, { stiffness: 80, damping: 22 });
-  const smoothSpotY = useSpring(spotY, { stiffness: 80, damping: 22 });
-  const spotlightBg = useTransform(
-    [smoothSpotX, smoothSpotY],
-    ([x, y]) =>
-      `radial-gradient(circle 380px at ${x}% ${y}%, color-mix(in srgb, var(--text) 5%, transparent) 0%, transparent 70%)`
-  );
-
-  /* Scroll-linked parallax for hero elements */
-  const { scrollY, scrollYProgress } = useScroll();
-  const heroHeadlineY = useTransform(scrollY, [0, 600], [0, -40]);
-  const heroTaglineY = useTransform(scrollY, [0, 600], [0, -12]);
-  const driftLayerY = useTransform(scrollY, [0, 600], [0, 60]);
-  const scrollProgressY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
-  const heroSectionRef = useRef<HTMLElement>(null);
   const mobileCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
   const dragX = useMotionValue(0);
@@ -634,47 +504,6 @@ export function SiteExperience() {
     else { animateValue(dragX, clamped, { type: "spring", stiffness: 190, damping: 26, mass: 0.95 }); }
   }, [dragX]);
 
-  const handleIntroSettled = useCallback(() => {
-    introHasPlayed = true;
-    setIntroComplete(true);
-  }, []);
-
-  /* Safety net: framer-motion pauses while the tab is hidden, so a
-   * visitor who opens the site in a background tab can land on a
-   * page whose entrance animation never finishes — leaving every
-   * section at opacity:0. Two guards:
-   *   1. A 5s hard timeout that flips introComplete regardless.
-   *   2. A visibilitychange listener that flips it the moment the
-   *      tab regains focus, so the page is ready when they look. */
-  useEffect(() => {
-    if (introComplete) return;
-    const fallback = window.setTimeout(() => {
-      introHasPlayed = true;
-      setIntroComplete(true);
-    }, 5000);
-    const onVisible = () => {
-      if (document.visibilityState === "visible") {
-        introHasPlayed = true;
-        setIntroComplete(true);
-      }
-    };
-    document.addEventListener("visibilitychange", onVisible);
-    return () => {
-      window.clearTimeout(fallback);
-      document.removeEventListener("visibilitychange", onVisible);
-    };
-  }, [introComplete]);
-
-  /* Lock scroll during intro */
-  useEffect(() => {
-    if (!introComplete) {
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = "";
-      };
-    }
-  }, [introComplete]);
-
   /* Detect mobile viewport */
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
@@ -692,52 +521,6 @@ export function SiteExperience() {
     }, 4200);
     return () => window.clearInterval(id);
   }, [introComplete, reduceMotion]);
-
-  /* Idle reveal — after 8s of no cursor/touch movement, show a whisper */
-  useEffect(() => {
-    if (!introComplete || reduceMotion) return;
-
-    const resetIdle = () => {
-      setIsIdle(false);
-      if (idleTimerRef.current) window.clearTimeout(idleTimerRef.current);
-      idleTimerRef.current = window.setTimeout(() => {
-        const pick =
-          idleWhispers[Math.floor(Math.random() * idleWhispers.length)];
-        setWhisper(pick);
-        setIsIdle(true);
-      }, 8000);
-    };
-
-    resetIdle();
-    window.addEventListener("mousemove", resetIdle);
-    window.addEventListener("scroll", resetIdle, { passive: true });
-    window.addEventListener("touchstart", resetIdle, { passive: true });
-    window.addEventListener("keydown", resetIdle);
-
-    return () => {
-      if (idleTimerRef.current) window.clearTimeout(idleTimerRef.current);
-      window.removeEventListener("mousemove", resetIdle);
-      window.removeEventListener("scroll", resetIdle);
-      window.removeEventListener("touchstart", resetIdle);
-      window.removeEventListener("keydown", resetIdle);
-    };
-  }, [introComplete, reduceMotion]);
-
-  /* Hero spotlight — track cursor over the hero section */
-  useEffect(() => {
-    if (!introComplete || reduceMotion || isMobile) return;
-    const el = heroSectionRef.current;
-    if (!el) return;
-    const handle = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      spotX.set(Math.max(0, Math.min(100, x)));
-      spotY.set(Math.max(0, Math.min(100, y)));
-    };
-    el.addEventListener("mousemove", handle);
-    return () => el.removeEventListener("mousemove", handle);
-  }, [introComplete, reduceMotion, isMobile, spotX, spotY]);
 
   /* Compute horizontal drag constraints (desktop only) */
   const rightBoundRef = useRef(0);
@@ -854,67 +637,20 @@ export function SiteExperience() {
   }, [introComplete, isMobile]);
 
   return (
-    <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500 lg:flex lg:h-[100svh] lg:min-h-0 lg:flex-col lg:overflow-hidden">
+    <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500">
       <IntroBrandSequence visible={!introComplete} onSettled={handleIntroSettled} />
-
-      {/* ── Floating scroll progress indicator (right edge) ── */}
-      {!reduceMotion && introComplete && (
-        <div
-          aria-hidden
-          className="pointer-events-none fixed right-3 top-1/2 z-40 hidden h-48 -translate-y-1/2 md:right-5 md:block lg:right-7"
-        >
-          <div
-            className="relative h-full w-px"
-            style={{ backgroundColor: "var(--border)" }}
-          >
-            <motion.span
-              className="absolute -left-[3px] block h-[7px] w-[7px] rounded-full"
-              style={{
-                top: scrollProgressY,
-                backgroundColor: "var(--text)",
-              }}
-            />
-          </div>
-        </div>
-      )}
-
-      <main className="relative flex min-h-[100svh] flex-col pt-[4.2rem] lg:min-h-0 lg:flex-1">
+      <main className="relative flex min-h-[100svh] flex-col pt-[4.2rem]">
 
         {/* ── HERO SECTION ── */}
-        <motion.section
-          ref={heroSectionRef}
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.9, delay: 0.15 }}
+        <section
           className="relative overflow-hidden px-6 pt-1 pb-2 sm:px-8 sm:pt-2 sm:pb-2 md:px-12 md:pt-2 md:pb-3 lg:px-20 lg:pt-3 lg:pb-4"
         >
-          {/* Cinematic spotlight — cursor-following light reveal (desktop only) */}
-          {!isMobile && !reduceMotion && (
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-0"
-              style={{ background: spotlightBg }}
-            />
-          )}
+          <div className="relative z-[1] grid grid-cols-1 items-start gap-7 lg:grid-cols-12 lg:gap-12">
 
-          {/* Drifting drafting marks — ambient "antigravity" layer */}
-          <motion.div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 z-0"
-            style={reduceMotion ? undefined : { y: driftLayerY }}
-          >
-            <DriftingMarks visible={introComplete} />
-          </motion.div>
-
-          <div className="relative z-[1] flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
-
-            {/* Left: Headline */}
-            <motion.div
-              className="flex-shrink-0"
-              style={reduceMotion ? undefined : { y: heroHeadlineY }}
-            >
+            {/* Headline */}
+            <div className="lg:col-span-7 lg:pr-4">
               <motion.p
-                initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                initial={false}
                 animate={
                   introComplete || reduceMotion
                     ? { opacity: 1, y: 0 }
@@ -925,46 +661,35 @@ export function SiteExperience() {
                   delay: reduceMotion ? 0 : 0.3,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="mb-2 font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.2em] text-[var(--text-muted)]"
-                style={{ fontSize: "clamp(0.65rem, 1vw, 0.85rem)" }}
+                className="mb-4 font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.24em] text-[var(--text-dim)]"
+                style={{ fontSize: "var(--fs-caption)" }}
               >
-                For the
+                Architecture · Interiors · Renovation
               </motion.p>
               <motion.h1
-                initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+                initial={false}
                 animate={
-                  reduceMotion
-                    ? { opacity: 1 }
-                    : introComplete
-                    ? {
-                        opacity: 1,
-                        y: [0, -3, 0],
-                        scale: [1, 1.006, 1],
-                      }
+                  introComplete || reduceMotion
+                    ? { opacity: 1, y: 0 }
                     : { opacity: 0, y: 28 }
                 }
-                transition={{
-                  opacity: { duration: 0.9, delay: reduceMotion ? 0 : 0.44, ease: [0.22, 1, 0.36, 1] },
-                  y: introComplete
-                    ? { duration: 6, delay: 1.4, repeat: Infinity, ease: "easeInOut" }
-                    : { duration: 0.9, delay: 0.44, ease: [0.22, 1, 0.36, 1] },
-                  scale: { duration: 6, delay: 1.4, repeat: Infinity, ease: "easeInOut" },
-                }}
-                className="font-[var(--font-avenir-heavy)] font-extrabold uppercase leading-[0.92] tracking-[0.02em] text-[var(--text)]"
+                transition={{ duration: 0.9, delay: reduceMotion ? 0 : 0.44, ease: [0.22, 1, 0.36, 1] }}
+                className="site-hero-title font-[var(--font-avenir-book)] font-light leading-[1.02] text-[var(--text)]"
                 style={{
-                  fontSize: "clamp(1.75rem, 4.6vw, 3.4rem)",
+                  fontSize: "var(--fs-hero)",
+                  letterSpacing: "-0.02em",
                   overflowWrap: "break-word",
                   wordBreak: "break-word",
                 }}
               >
-                Architecture
+                Thoughtful spaces
                 <br />
-                That Breathes
+                begin with understanding
               </motion.h1>
 
               {/* Cycling mystery phrase */}
               <motion.div
-                initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                initial={false}
                 animate={
                   introComplete || reduceMotion
                     ? { opacity: 1, y: 0 }
@@ -982,127 +707,91 @@ export function SiteExperience() {
                   className="block h-px w-8 bg-[var(--text-dim)]"
                 />
                 <div className="relative h-[1.3em] overflow-hidden">
-                  <AnimatePresence mode="wait">
+                  <AnimatePresence mode="wait" initial={false}>
                     <motion.span
                       key={phraseIndex}
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
                       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                      className="block font-[var(--font-avenir-book)] italic text-[var(--text-muted)]"
-                      style={{ fontSize: "clamp(0.74rem, 1.05vw, 0.92rem)" }}
+                      className="block font-[var(--font-avenir-book)] font-light text-[var(--text-muted)]"
+                      style={{ fontSize: "clamp(0.78rem, 1.05vw, 0.95rem)", letterSpacing: "-0.01em" }}
                     >
                       {mysteryPhrases[phraseIndex]}
                     </motion.span>
                   </AnimatePresence>
                 </div>
               </motion.div>
+            </div>
 
-              {/* Idle whisper — fades in after 8s of no motion */}
-              <div className="relative mt-3 h-[1.3em]">
-                <AnimatePresence mode="wait">
-                  {isIdle && !reduceMotion && (
-                    <motion.span
-                      key={whisper}
-                      initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, y: -4, filter: "blur(4px)" }}
-                      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                      className="block font-[var(--font-avenir-book)] italic text-[var(--text-dim)]"
-                      style={{ fontSize: "clamp(0.68rem, 0.95vw, 0.82rem)" }}
-                    >
-                      {whisper}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-
-            {/* Right: Interactive Tagline — word-by-word reveal with hover lift */}
+            {/* Right: Subheading + positioning + CTA (PDF hero spec) */}
             <motion.div
-              style={reduceMotion ? undefined : { y: heroTaglineY }}
-              className="max-w-full md:max-w-[300px] lg:max-w-[340px]"
+              initial={false}
+              animate={
+                introComplete || reduceMotion
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 16 }
+              }
+              transition={{
+                duration: 0.8,
+                delay: reduceMotion ? 0 : 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="max-w-full lg:col-span-5 lg:max-w-[400px] lg:justify-self-end"
             >
               <p
-                className="font-[var(--font-inter)] leading-[1.85]"
-                style={{ fontSize: "clamp(0.82rem, 1.02vw, 0.95rem)", color: "var(--text-muted)" }}
+                className="font-[var(--font-inter)]"
+                style={{ fontSize: "var(--fs-body)", lineHeight: 1.85, color: "var(--text-muted)", letterSpacing: "-0.005em" }}
               >
-                {([
-                  { t: "In" },
-                  { t: "every" },
-                  { t: "before" },
-                  { t: "and" },
-                  { t: "after" },
-                  { t: "lies" },
-                  { t: "a" },
-                  { t: "story" },
-                  { t: "of" },
-                  { t: "becoming" },
-                  { t: "—" },
-                  { t: "of" },
-                  { t: "materials" },
-                  { t: "meeting" },
-                  { t: "purpose," },
-                  { t: "of" },
-                  { t: "light" },
-                  { t: "learning" },
-                  { t: "its" },
-                  { t: "path," },
-                  { t: "of" },
-                  { t: "details" },
-                  { t: "that" },
-                  { t: "only" },
-                  { t: "patience" },
-                  { t: "could" },
-                  { t: "perfect." },
-                ] as { t: string }[]).map((w, i, arr) => (
-                  <motion.span
-                    key={i}
-                    initial={reduceMotion ? false : { opacity: 0, y: 10, filter: "blur(4px)" }}
-                    animate={
-                      introComplete || reduceMotion
-                        ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                        : { opacity: 0, y: 10, filter: "blur(4px)" }
-                    }
-                    transition={{
-                      duration: 0.6,
-                      delay: reduceMotion ? 0 : 0.68 + i * 0.035,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="interactive-word"
-                    style={{
-                      display: "inline-block",
-                      marginRight: i === arr.length - 1 ? 0 : "0.3em",
-                      fontFamily: "inherit",
-                      fontStyle: "normal",
-                      fontWeight: 700,
-                      color: "var(--text)",
-                      cursor: "default",
-                      transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1), color 0.35s",
-                    }}
-                  >
-                    {w.t}
-                  </motion.span>
-                ))}
+                At Katha Studio, every project begins with listening. We take the
+                time to understand people, place and purpose before shaping
+                spaces that feel personal, timeless and deeply connected to the
+                lives they support.
               </p>
+              <p
+                className="mt-5 font-[var(--font-inter)] uppercase"
+                style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.2em", lineHeight: 1.7, color: "var(--text-dim)" }}
+              >
+                Based in Bengaluru · Working Across India · Open to Select
+                International Collaborations
+              </p>
+              <Link
+                href="/contact"
+                data-cursor="Enter"
+                className="group mt-8 inline-flex items-center gap-2.5 rounded-full border px-7 py-3.5 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
+                style={{
+                  borderColor: "var(--border-medium)",
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.64rem",
+                  fontWeight: 500,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.22em",
+                  color: "var(--text)",
+                }}
+              >
+                Start a Conversation
+                <span className="accent-arrow transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                  →
+                </span>
+              </Link>
             </motion.div>
           </div>
-        </motion.section>
+        </section>
 
         {/* ── CARD CAROUSEL / STACK ── */}
         <motion.section
-          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+          initial={false}
           animate={introComplete || reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative flex flex-1 flex-col justify-center pb-6 md:pb-8 lg:pb-10">
+          className="relative flex flex-1 flex-col justify-center pb-5 md:pb-6">
           {/* Ambient hairline sweep at top boundary */}
-          <div className="relative mx-auto mb-3 h-px max-w-[88rem] opacity-70 md:mb-5">
+          <div className="relative mx-auto mb-3 h-px max-w-[88rem] opacity-70 md:mb-4">
             <div className="hairline-sweep" />
           </div>
           {isMobile ? (
             /* ── Mobile: Framer Motion Drag Wave Carousel ── */
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0 }}
+              initial={false}
               animate={introComplete || reduceMotion ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.55 }}
               className="relative"
@@ -1167,7 +856,7 @@ export function SiteExperience() {
                         style={{ width: "80vw" }}
                       >
                         <motion.div
-                          initial={reduceMotion ? false : { opacity: 0, y: 48 }}
+                          initial={false}
                           animate={introComplete || reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 48 }}
                           transition={{ duration: entranceDuration, delay: entranceDelay, ease: [0.22, 1, 0.36, 1] }}
                           className="relative"
@@ -1185,11 +874,11 @@ export function SiteExperience() {
                                 />
                                 <span
                                   style={{
-                                    fontFamily: "var(--font-avenir-heavy)",
-                                    fontSize: "clamp(0.82rem, 3.6vw, 0.96rem)",
-                                    fontWeight: 800,
+                                    fontFamily: "var(--font-inter)",
+                                    fontSize: "clamp(0.6rem, 2.4vw, 0.68rem)",
+                                    fontWeight: 600,
                                     textTransform: "uppercase",
-                                    letterSpacing: "0.07em",
+                                    letterSpacing: "0.24em",
                                     color: "var(--text)",
                                     lineHeight: 1,
                                   }}
@@ -1215,7 +904,7 @@ export function SiteExperience() {
                             className="relative w-full overflow-hidden"
                             style={{ height: "min(56vw, 26rem)", backgroundColor: card.darkBg }}
                           >
-                            <NavCardContent card={card} isActive={isActive} isDragging={isDragging} />
+                            <NavCardContent card={card} isActive={isActive} isDragging={isDragging} priority={i < 2} />
                           </motion.div>
 
                           {/* Label + counter below active card */}
@@ -1225,7 +914,7 @@ export function SiteExperience() {
                             className="mt-3 flex items-end justify-between px-0.5"
                           >
                             <div className="min-w-0">
-                              <p style={{ fontFamily: "var(--font-avenir-heavy)", fontSize: "0.84rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.03em", color: "var(--text)", lineHeight: 1.1 }}>
+                              <p style={{ fontFamily: "var(--font-avenir-book)", fontSize: "1.02rem", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.1 }}>
                                 {card.label}
                               </p>
                               <p className="mt-1 truncate" style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-muted)" }}>
@@ -1316,10 +1005,6 @@ export function SiteExperience() {
                    *   3. Left cards fly in from the left edge, staggered outward
                    */
                   const wave = Math.abs(i - activeIndex);
-                  const direction = i < activeIndex ? -1 : 1;
-                  /* Symmetric entrance: middle pops first, then pairs
-                   * (left + right at same wave) bloom outward together,
-                   * each wave breathing a little before the next lands. */
                   const entranceDelay: number = reduceMotion
                     ? 0
                     : wave === 0
@@ -1327,33 +1012,32 @@ export function SiteExperience() {
                     : 0.3 + wave * 0.45;
                   const entranceDuration = wave === 0 ? 0.85 : 0.82;
 
-                  const initialState = reduceMotion
-                    ? false
-                    : wave === 0
-                    ? {
-                        opacity: 0,
-                        scale: 1.18,
-                        filter: "blur(12px)",
-                        x: 0,
-                      }
-                    : {
-                        opacity: 0,
-                        scale: 0.86,
-                        filter: "blur(6px)",
-                        x: direction * (260 + wave * 90),
-                        y: 0,
-                      };
-
+                  /* Entrance cascade, gated on `introComplete` (same safe
+                     pattern as the hero + mobile cards). `initial={false}` means
+                     each card mounts at whatever `animate` resolves to on first
+                     render: before the intro settles that's the hidden state, so
+                     the cards bloom in one-by-one the moment the intro completes.
+                     The intro is guaranteed to resolve (5s fallback + the
+                     visibilitychange listener above), so cards can never stay
+                     stuck invisible even if a background tab pauses rAF. */
+                  const enterDir = i === activeIndex ? 0 : i > activeIndex ? 1 : -1;
+                  const initialState = false;
+                  const restState = {
+                    opacity: 1,
+                    scale: 1,
+                    filter: "blur(0px)",
+                    x: 0,
+                    y: 0,
+                  };
+                  const hiddenState = {
+                    opacity: 0,
+                    scale: wave === 0 ? 0.92 : 0.86,
+                    filter: "blur(8px)",
+                    x: enterDir * 64,
+                    y: 0,
+                  };
                   const animateState =
-                    introComplete || reduceMotion
-                      ? {
-                          opacity: 1,
-                          scale: 1,
-                          filter: "blur(0px)",
-                          x: 0,
-                          y: 0,
-                        }
-                      : initialState;
+                    introComplete || reduceMotion ? restState : hiddenState;
 
                   return (
                     <motion.div
@@ -1387,11 +1071,11 @@ export function SiteExperience() {
                             />
                             <span
                               style={{
-                                fontFamily: "var(--font-avenir-heavy)",
-                                fontSize: "clamp(0.86rem, 1.05vw, 1.02rem)",
-                                fontWeight: 800,
+                                fontFamily: "var(--font-inter)",
+                                fontSize: "clamp(0.6rem, 0.72vw, 0.7rem)",
+                                fontWeight: 600,
                                 textTransform: "uppercase",
-                                letterSpacing: "0.08em",
+                                letterSpacing: "0.24em",
                                 color: "var(--text)",
                                 lineHeight: 1,
                               }}
@@ -1406,7 +1090,7 @@ export function SiteExperience() {
                         animate={{
                           scale: isActive ? 1.04 : 0.9,
                           y: isActive ? -6 : 0,
-                          height: [360, 318, 280, 246, 220][Math.min(wave, 4)],
+                          height: [324, 288, 254, 224, 200][Math.min(wave, 4)],
                           opacity: isActive ? 1 : 0.92,
                         }}
                         transition={{
@@ -1428,6 +1112,7 @@ export function SiteExperience() {
                           card={card}
                           isActive={isActive}
                           isDragging={isDragging}
+                          priority={i < 2}
                         />
                       </motion.div>
 
@@ -1439,11 +1124,10 @@ export function SiteExperience() {
                       >
                         <div className="min-w-0">
                           <p style={{
-                            fontFamily: "var(--font-avenir-heavy)",
-                            fontSize: "clamp(0.74rem, 0.92vw, 0.86rem)",
-                            fontWeight: 800,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.03em",
+                            fontFamily: "var(--font-avenir-book)",
+                            fontSize: "clamp(0.92rem, 1.1vw, 1.05rem)",
+                            fontWeight: 500,
+                            letterSpacing: "-0.01em",
                             color: "var(--text)",
                             lineHeight: 1.1,
                           }}>
@@ -1478,6 +1162,12 @@ export function SiteExperience() {
           )}
         </motion.section>
       </main>
+
+      {/* ── WHY KATHA (after the hero + carousel) ── */}
+      <WhyKatha />
+
+      {/* ── HOMEPAGE STORY (PDF sections 2–13) ── */}
+      <HomeStory />
 
       {/* ── MARQUEE ── */}
       <MarqueeStrip />

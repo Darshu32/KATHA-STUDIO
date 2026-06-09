@@ -82,7 +82,7 @@ export function PageHeader({ index, title }: { index: string; title: string }) {
           fontSize: "clamp(2.2rem,6vw,5.5rem)",
           fontWeight: 800,
           textTransform: "uppercase",
-          letterSpacing: "0.01em",
+          letterSpacing: "-0.025em",
           lineHeight: 1.05,
           color: "var(--text)",
         }}

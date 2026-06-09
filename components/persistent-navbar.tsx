@@ -12,11 +12,11 @@ type NavEntry = {
 };
 
 const mobileNavItems: NavEntry[] = [
-  { href: "/",         label: "Home",     num: "00" },
-  { href: "/about",    label: "About",    num: "01" },
-  { href: "/services", label: "Services", num: "02" },
-  { href: "/projects", label: "Projects", num: "03" },
-  { href: "/contact",  label: "Contact",  num: "04" },
+  { href: "/about",    label: "Studio",   num: "01" },
+  { href: "/approach", label: "Approach", num: "02" },
+  { href: "/services", label: "Services", num: "03" },
+  { href: "/notes",    label: "Notes",    num: "04" },
+  { href: "/contact",  label: "Contact",  num: "05" },
 ];
 
 function getBackLink(pathname: string): { href: string; label: string } | null {
@@ -60,7 +60,7 @@ export function PersistentNavbar() {
             className="inline-flex shrink-0 items-end gap-2 leading-none transition-opacity hover:opacity-60"
             style={{ color: "var(--text)" }}
           >
-            <span style={{ fontFamily: "var(--font-avenir-heavy)", fontWeight: 800, fontSize: "clamp(1.05rem,1.85vw,1.6rem)", textTransform: "uppercase", letterSpacing: "0.02em" }}>
+            <span style={{ fontFamily: "var(--font-avenir-heavy)", fontWeight: 800, fontSize: "clamp(1.05rem,1.85vw,1.6rem)", textTransform: "uppercase", letterSpacing: "-0.025em" }}>
               KATHA
             </span>
             <span style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 600, fontSize: "clamp(1.05rem,1.85vw,1.6rem)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
@@ -141,13 +141,13 @@ export function PersistentNavbar() {
                   (item.href === "/services" && pathname.startsWith("/services"));
 
                 const rowStyle = {
-                  fontFamily: "var(--font-avenir-heavy)",
-                  fontSize: "clamp(1.85rem, 9vw, 2.8rem)",
-                  fontWeight: 800,
+                  fontFamily: "var(--font-avenir-book)",
+                  fontSize: "clamp(1.95rem, 9vw, 2.9rem)",
+                  fontWeight: 300,
                   textTransform: "uppercase" as const,
-                  letterSpacing: "0.01em",
+                  letterSpacing: "0.04em",
                   color: "var(--text)",
-                  lineHeight: 1,
+                  lineHeight: 1.05,
                 };
                 const numStyle = {
                   fontFamily: "var(--font-inter)",

@@ -1,17 +1,88 @@
 @import "tailwindcss";
 
+/* ─────────────── Avenir LT Pro — self-hosted brand font ───────────────
+ * Weights mapped to the design's usage:
+ *   300 Light · 400 Roman (regular body) · 500–600 Medium · 700–800 Heavy · 900 Black
+ * Obliques provide true italics (no faux slanting).
+ * ─────────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* 400 regular body weight — Avenir LT Pro 55 Roman, matching the studio proposal */
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-Roman.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-Medium.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-Heavy.woff2") format("woff2");
+  font-weight: 700 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-BookOblique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-MediumOblique.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  src: url("/fonts/AvenirLTPro-HeavyOblique.woff2") format("woff2");
+  font-weight: 700 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
+  --background: #FAFAF8;
   --surface: #ffffff;
   --surface-light: #f3f3f3;
   --border: rgba(17, 17, 17, 0.1);
   --border-medium: rgba(17, 17, 17, 0.45);
-  --navbar-bg: rgba(255, 255, 255, 0.92);
+  --navbar-bg: rgba(250, 250, 248, 0.92);
   --text: #111111;
-  --text-muted: rgba(17, 17, 17, 0.58);
-  --text-dim: rgba(17, 17, 17, 0.28);
-  --font-sans: "Geist Sans", "Geist", "Inter", "Segoe UI", sans-serif;
-  --font-playfair: "Playfair Display", Georgia, serif;
+  --text-muted: #6E6E6E;
+  --text-dim: rgba(17, 17, 17, 0.32);
+  --accent: #A89A84;
+  --accent-hover: #95876f;
+  /* Type scale — fluid between mobile and desktop targets (spec) */
+  --fs-hero: clamp(3.25rem, 5.5vw + 0.5rem, 5.25rem);  /* 52px → 84px  · home only */
+  --fs-page-title: clamp(2.5rem, 3.5vw + 0.75rem, 3.75rem); /* 40px → 60px · inner-page heroes */
+  --fs-section: clamp(2.375rem, 3vw + 1rem, 3.25rem);  /* 38px → 52px  */
+  --fs-body: clamp(1.125rem, 0.4vw + 1rem, 1.25rem);   /* 18px → 20px  */
+  --fs-caption: 0.8125rem;                              /* 13px         */
+  --font-sans: "Avenir LT Pro", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-playfair: var(--font-sans);
   --font-inter: var(--font-sans);
   --font-brand: var(--font-sans);
   --font-avenir-heavy: var(--font-sans);
@@ -47,6 +118,9 @@ body {
   font-family: var(--font-inter);
   font-size: 1rem;
   line-height: 1.6;
+  /* Body copy: tracking-tight (inherited by all text unless an
+     element sets its own letter-spacing, e.g. wide-tracked labels). */
+  letter-spacing: -0.025em;
   background: var(--background);
   color: var(--text);
   text-rendering: optimizeLegibility;
@@ -63,6 +137,26 @@ html, body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* ── Accent (#A89A84): links, arrows and hover states only ── */
+a:hover {
+  color: var(--accent);
+}
+.accent-arrow {
+  color: var(--accent);
+}
+
+/* ── Major section spacing (spec: 90px mobile / 140px desktop) ── */
+.section-pad {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
 }
 
 button,
@@ -99,31 +193,6 @@ html[data-theme="dark"] ::selection {
   to   { transform: translateX(-33.333%); }
 }
 
-/* Cursor dot — gentle breathing pulse */
-@keyframes cursor-breathe {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.15); }
-}
-
-.cursor-dot::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1px solid var(--text);
-  opacity: 0;
-  animation: cursor-breathe-ring 2.4s ease-in-out infinite;
-}
-
-@keyframes cursor-breathe-ring {
-  0%, 100% { opacity: 0; transform: scale(0.6); }
-  50%      { opacity: 0.35; transform: scale(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cursor-dot::before { animation: none; opacity: 0; }
-}
-
 /* Ambient hairline — draws in from left, exits to right, on a slow loop */
 @keyframes hairline-sweep {
   0%   { transform: scaleX(0); transform-origin: left;  opacity: 0; }
@@ -149,36 +218,8 @@ html[data-theme="dark"] ::selection {
   .hairline-sweep { animation: none; }
 }
 
-/* Cinematic edge vignette — subtle darkening at viewport corners */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9996;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse 120% 90% at center,
-    transparent 55%,
-    rgba(0, 0, 0, 0.08) 88%,
-    rgba(0, 0, 0, 0.18) 100%
-  );
-}
-
-html[data-theme="dark"] body::before {
-  background: radial-gradient(
-    ellipse 120% 90% at center,
-    transparent 55%,
-    rgba(0, 0, 0, 0.25) 88%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
-}
-
 /* ── Mobile readability: prevent text from going below ~10px ── */
 @media (max-width: 640px) {
-  /* Boost hero headline minimum on very small screens */
-  .site-hero-title {
-    font-size: clamp(1.6rem, 8.5vw, 3rem) !important;
-  }
   /* Improve project/service page body readability */
   .prose-body {
     font-size: clamp(0.92rem, 3.5vw, 1.05rem) !important;
@@ -206,17 +247,4 @@ html[data-theme="dark"] body::before {
   .interactive-word:hover {
     transform: none;
   }
-}
-
-/* Grain texture overlay — premium surface feel */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9997;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 180px 180px;
-  opacity: 0.028;
 }

@@ -90,6 +90,9 @@ export function ContactForm() {
       name: String(data.get("name") ?? ""),
       email: String(data.get("email") ?? ""),
       phone: String(data.get("phone") ?? ""),
+      projectType: String(data.get("projectType") ?? ""),
+      budgetRange: String(data.get("budgetRange") ?? ""),
+      timeline: String(data.get("timeline") ?? ""),
       message: String(data.get("message") ?? ""),
     };
 
@@ -128,6 +131,9 @@ export function ContactForm() {
           name: payload.name.trim(),
           email: payload.email.trim(),
           phone: payload.phone.trim(),
+          projectType: payload.projectType.trim(),
+          budgetRange: payload.budgetRange.trim(),
+          timeline: payload.timeline.trim(),
           message: payload.message.trim(),
         }),
       });
@@ -253,6 +259,43 @@ export function ContactForm() {
         <AnimatePresence>{inlineError("phone")}</AnimatePresence>
       </label>
 
+      {/* Project Type · Budget Range · Timeline — optional */}
+      <div className="grid gap-6 sm:grid-cols-3">
+        <label className="block space-y-2">
+          <span style={fieldLabelStyle}>Project Type</span>
+          <input
+            type="text"
+            name="projectType"
+            placeholder="e.g. Interiors"
+            disabled={status === "submitting"}
+            className={inputBaseClass}
+            style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
+          />
+        </label>
+        <label className="block space-y-2">
+          <span style={fieldLabelStyle}>Budget Range</span>
+          <input
+            type="text"
+            name="budgetRange"
+            placeholder="e.g. ₹20 – 50 Lakh"
+            disabled={status === "submitting"}
+            className={inputBaseClass}
+            style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
+          />
+        </label>
+        <label className="block space-y-2">
+          <span style={fieldLabelStyle}>Timeline</span>
+          <input
+            type="text"
+            name="timeline"
+            placeholder="e.g. 3 – 6 months"
+            disabled={status === "submitting"}
+            className={inputBaseClass}
+            style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
+          />
+        </label>
+      </div>
+
       {/* Message */}
       <label className="block space-y-2">
         <span className="flex items-baseline justify-between gap-3">
@@ -290,14 +333,14 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="group relative inline-flex items-center justify-center overflow-hidden border px-7 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)] disabled:cursor-not-allowed disabled:opacity-60"
+          className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-8 py-4 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)] disabled:cursor-not-allowed disabled:opacity-60"
           style={{
             borderColor: "var(--border-medium)",
             fontFamily: "var(--font-inter)",
-            fontSize: "0.68rem",
+            fontSize: "0.7rem",
             fontWeight: 500,
             textTransform: "uppercase",
-            letterSpacing: "0.22em",
+            letterSpacing: "0.2em",
             color: "var(--text)",
           }}
         >
@@ -313,7 +356,7 @@ export function ContactForm() {
               <>
                 Send Enquiry
                 <span
-                  className="inline-block transition-transform duration-300 group-hover:translate-x-1"
+                  className="accent-arrow inline-block transition-transform duration-300 group-hover:translate-x-1"
                   aria-hidden
                 >
                   →
@@ -333,7 +376,7 @@ export function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="font-[var(--font-avenir-book)] italic"
+                className="font-[var(--font-avenir-book)]"
                 style={{
                   fontSize: "clamp(0.78rem,1vw,0.9rem)",
                   color: "var(--text-muted)",

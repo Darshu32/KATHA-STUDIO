@@ -33,7 +33,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
         >
           <p style={{
             fontFamily: "var(--font-inter)",
-            fontSize: "0.62rem",
+            fontSize: "var(--fs-caption)",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.32em",
@@ -50,15 +50,14 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           style={{
             fontFamily: "var(--font-avenir-book)",
-            fontSize: "clamp(2.2rem, 4.6vw, 4rem)",
-            fontWeight: 500,
-            lineHeight: 0.96,
-            textTransform: "uppercase",
-            letterSpacing: "0.02em",
+            fontSize: "var(--fs-page-title)",
+            fontWeight: 300,
+            lineHeight: 1,
+            letterSpacing: "-0.02em",
             color: "var(--text)",
           }}
         >
-          Begin a<br />Conversation
+          Begin a<br />conversation
         </motion.h1>
 
         {/* Hairline beneath headline */}
@@ -177,13 +176,12 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
         <span
           className="truncate transition-opacity duration-300 group-hover:opacity-70"
           style={{
-            fontFamily: "var(--font-avenir-heavy)",
-            fontSize: "clamp(0.85rem, 1.1vw, 1.05rem)",
-            fontWeight: 800,
-            textTransform: "uppercase",
-            letterSpacing: "0.02em",
+            fontFamily: "var(--font-avenir-book)",
+            fontSize: "clamp(0.95rem, 1.2vw, 1.2rem)",
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
             color: "var(--text)",
-            lineHeight: 1.1,
+            lineHeight: 1.2,
             maxWidth: "60vw",
           }}
         >

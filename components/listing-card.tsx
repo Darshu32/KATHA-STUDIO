@@ -13,10 +13,12 @@ import {
 import { createPortal } from "react-dom";
 import type { Tone } from "@/lib/data";
 
+/* Monochrome chrome — the photograph carries the only colour.
+   All tones share a neutral light accent + near-black tile bg. */
 const toneMap: Record<Tone, { accent: string; darkBg: string }> = {
-  warm: { accent: "#c8a882", darkBg: "#1c1409" },
-  cool: { accent: "#8b9eb4", darkBg: "#0c1219" },
-  default: { accent: "#a8b49c", darkBg: "#111610" },
+  warm: { accent: "#e6e6e6", darkBg: "#141414" },
+  cool: { accent: "#e6e6e6", darkBg: "#141414" },
+  default: { accent: "#e6e6e6", darkBg: "#141414" },
 };
 
 type Rect = { top: number; left: number; width: number; height: number };
@@ -105,11 +107,20 @@ export function ListingCard({
                 className="object-cover"
                 onError={() => setImageFailed(true)}
               />
-              {/* Image darkening overlay on idle, clears on hover */}
+              {/* Image darkening overlay on idle, clears further on hover —
+                 kept light so the photography reads through */}
               <motion.div
-                animate={{ opacity: hovered ? 0.25 : 0.55 }}
+                animate={{ opacity: hovered ? 0.12 : 0.3 }}
                 transition={{ duration: 0.55 }}
                 className="absolute inset-0 bg-black"
+              />
+              {/* Soft top gradient — keeps the white label legible without dimming the whole image */}
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-1/3"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%)",
+                }}
               />
             </motion.div>
           )}

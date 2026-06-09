@@ -21,6 +21,9 @@ export type StudioEnquiryNotificationProps = {
   name: string;
   email: string;
   phone: string;
+  projectType?: string;
+  budgetRange?: string;
+  timeline?: string;
   message?: string;
   submittedAt: string;
   sourceUrl: string;
@@ -37,6 +40,9 @@ export function StudioEnquiryNotification({
   name = "Anonymous",
   email = "—",
   phone = "—",
+  projectType = "",
+  budgetRange = "",
+  timeline = "",
   message = "",
   submittedAt = "—",
   sourceUrl = "—",
@@ -111,6 +117,9 @@ export function StudioEnquiryNotification({
           <Field label="Name" value={name} />
           <Field label="Email" value={email} href={`mailto:${email}`} />
           <Field label="Phone" value={phone} href={`tel:${phone.replace(/\s+/g, "")}`} />
+          {projectType && <Field label="Project" value={projectType} />}
+          {budgetRange && <Field label="Budget" value={budgetRange} />}
+          {timeline && <Field label="Timeline" value={timeline} />}
           {sourceUrl !== "—" && <Field label="Source" value={sourceUrl} href={sourceUrl} />}
 
           {/* Message */}

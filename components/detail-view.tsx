@@ -113,11 +113,10 @@ export function DetailView({
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           style={{
             fontFamily: "var(--font-avenir-book)",
-            fontSize: "clamp(2.2rem, 4.6vw, 4rem)",
-            fontWeight: 500,
-            lineHeight: 0.96,
-            textTransform: "uppercase",
-            letterSpacing: "0.02em",
+            fontSize: "var(--fs-page-title)",
+            fontWeight: 300,
+            lineHeight: 1,
+            letterSpacing: "-0.02em",
             color: "var(--text)",
           }}
         >
@@ -132,13 +131,12 @@ export function DetailView({
             transition={{ duration: 0.75, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
             className="mt-4 max-w-[52ch] md:mt-5"
             style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: "clamp(0.78rem, 0.9vw, 0.92rem)",
-              fontWeight: 500,
-              lineHeight: 1.55,
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
-              color: "var(--text-dim)",
+              fontFamily: "var(--font-avenir-book)",
+              fontSize: "clamp(1rem, 1.3vw, 1.25rem)",
+              fontWeight: 400,
+              lineHeight: 1.5,
+              letterSpacing: "-0.01em",
+              color: "var(--text-muted)",
             }}
           >
             {tagline}
@@ -248,18 +246,18 @@ export function DetailView({
             >
               <Link
                 href={ctaHref}
-                className="group inline-flex items-center gap-3 border border-[var(--text)] bg-[var(--background)] px-5 py-3 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
+                className="group inline-flex items-center gap-3 rounded-full border border-[var(--border-medium)] bg-[var(--background)] px-7 py-3.5 transition-all duration-300 hover:bg-[var(--text)] hover:text-[var(--background)]"
                 style={{
                   fontFamily: "var(--font-inter)",
-                  fontSize: "0.62rem",
-                  fontWeight: 600,
+                  fontSize: "0.66rem",
+                  fontWeight: 500,
                   textTransform: "uppercase",
-                  letterSpacing: "0.28em",
+                  letterSpacing: "0.2em",
                   color: "var(--text)",
                 }}
               >
                 {ctaLabel}
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="accent-arrow transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </motion.div>
           </motion.div>
@@ -386,13 +384,12 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
         <span
           className="truncate transition-opacity duration-300 group-hover:opacity-70"
           style={{
-            fontFamily: "var(--font-avenir-heavy)",
-            fontSize: "clamp(0.85rem, 1.1vw, 1.05rem)",
-            fontWeight: 800,
-            textTransform: "uppercase",
-            letterSpacing: "0.02em",
+            fontFamily: "var(--font-avenir-book)",
+            fontSize: "clamp(0.95rem, 1.2vw, 1.2rem)",
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
             color: "var(--text)",
-            lineHeight: 1.1,
+            lineHeight: 1.2,
             maxWidth: "60vw",
           }}
         >

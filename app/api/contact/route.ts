@@ -32,6 +32,9 @@ type ContactPayload = {
   name: string;
   email: string;
   phone?: string;
+  projectType?: string;
+  budgetRange?: string;
+  timeline?: string;
   message?: string;
 };
 
@@ -92,6 +95,9 @@ export async function POST(request: Request) {
   const name = (data.name ?? "").trim();
   const email = (data.email ?? "").trim();
   const phone = (data.phone ?? "").trim();
+  const projectType = (data.projectType ?? "").trim();
+  const budgetRange = (data.budgetRange ?? "").trim();
+  const timeline = (data.timeline ?? "").trim();
   const message = (data.message ?? "").trim();
 
   // Server-side validation
@@ -162,6 +168,9 @@ export async function POST(request: Request) {
         name,
         email,
         phone,
+        projectType,
+        budgetRange,
+        timeline,
         message,
         submittedAt,
         sourceUrl,

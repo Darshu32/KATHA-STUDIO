@@ -21,10 +21,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   const { prev, next } = getAdjacentNav(`/services/${slug}`);
 
-  const fallbackBg =
-    service.tone === "warm" ? "#eeeae6"
-    : service.tone === "cool" ? "#e8eaec"
-    : "#f3f3f3";
+  // monochrome — colour is reserved for photography
+  const fallbackBg = "#f3f3f3";
 
   const paragraphs = service.paragraphs ?? [service.desc];
 

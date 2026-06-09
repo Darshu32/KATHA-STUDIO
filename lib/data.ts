@@ -1,46 +1,5 @@
 export type Tone = "default" | "warm" | "cool";
 
-export type CategorySlug = "residential" | "landscape-design" | "drawings";
-
-export type Category = {
-  slug: CategorySlug;
-  title: string;
-  /** Roman index displayed on the card (I · II · III). */
-  index: string;
-  /** Italic one-liner shown under the category title. */
-  tagline: string;
-  tone: Tone;
-  /** Optional cover image relative to /public. Falls back to tone-colored card. */
-  image?: string;
-};
-
-export type Project = {
-  slug: string;
-  id: string;
-  title: string;
-  /** Which portfolio category this project belongs to. */
-  category: CategorySlug;
-  type: string;
-  location: string;
-  year: string;
-  philosophy: string;
-  tone: Tone;
-  /** Optional image path relative to /public. Falls back to tone-colored card. */
-  image?: string;
-  /** Optional gallery images for the detail page. */
-  gallery?: GalleryImage[];
-};
-
-export type GalleryImage = {
-  src: string;
-  /** Short editorial caption (1–4 words). */
-  caption?: string;
-  /** Accessible alt text. Falls back to caption or project title. */
-  alt?: string;
-  /** Layout hint used by the detail page grid. */
-  layout?: "full" | "offset-right" | "offset-left" | "pair" | "portrait";
-};
-
 export type Service = {
   slug: string;
   id: string;
@@ -59,182 +18,182 @@ export type Service = {
   image?: string;
   /** Caption shown beneath the detail-page image. */
   imageCaption?: string;
+  /** Home-carousel focal point ("x% y%") for object-position so the subject
+   *  stays framed when the card crops to its square / landscape states. */
+  focal?: string;
 };
 
-/* ───────────────────────── Categories ───────────────────────── */
+/** Canonical Notes topics — used for the register label and filter chips. */
+export const noteTopics = [
+  "Design",
+  "Process",
+  "Materials",
+  "Travel",
+  "Observations",
+] as const;
+export type NoteTopic = (typeof noteTopics)[number];
 
-export const categories: Category[] = [
-  {
-    slug: "residential",
-    title: "Residential",
-    index: "I",
-    tagline: "Homes shaped by light, proportion, and quiet ritual.",
-    tone: "warm",
-  },
-  {
-    slug: "landscape-design",
-    title: "Landscape Design",
-    index: "II",
-    tagline: "Gardens, courtyards, and the architecture of ground.",
-    tone: "cool",
-  },
-  {
-    slug: "drawings",
-    title: "Drawings",
-    index: "III",
-    tagline: "Plans, studies, and sketches — the thinking before the thing.",
-    tone: "default",
-  },
-];
+export type Note = {
+  slug: string;
+  /** Two-digit index displayed in the register (01 · 02 · 03). */
+  id: string;
+  title: string;
+  /** Topic shown as the register/eyebrow label and used by the filter chips. */
+  category: NoteTopic;
+  /** Human-readable date, e.g. "March 2026" — or a season for forthcoming. */
+  date: string;
+  /** Short editorial lede — shown as the register dek and the reading lede. */
+  excerpt: string;
+  /** Body paragraphs for the reading view. The first carries a drop cap. */
+  paragraphs: string[];
+  /** Optional editorial pull-quote surfaced inside the reading view. */
+  pullquote?: string;
+  /** Estimated read time, e.g. "4 min". Shown in the register meta. */
+  readTime?: string;
+  /** "forthcoming" entries render as a dimmed, non-clickable register row. */
+  status?: "published" | "forthcoming";
+  tone: Tone;
+};
 
-/* ───────────────────────── Projects ────────────────────────── */
-
-export const projects: Project[] = [
-  {
-    slug: "sujan-residency",
-    id: "01",
-    title: "Sujan Residency",
-    category: "residential",
-    type: "Residential",
-    location: "Bengaluru",
-    year: "2024",
-    philosophy:
-      "Project description to be added. Placeholder text for Sujan Residency — a private home designed around the rhythms of daily life, where every room is tuned to light, air, and the quiet dignity of material.",
-    tone: "warm",
-    image: "/images/projects/sujan-residency/01-cover.png",
-    gallery: [
-      { src: "/images/projects/sujan-residency/01-cover.png", caption: "Approach", layout: "full" },
-      { src: "/images/projects/sujan-residency/02-exterior.png", caption: "Exterior · Morning", layout: "offset-right" },
-      { src: "/images/projects/sujan-residency/03-courtyard.png", caption: "Courtyard", layout: "full" },
-      { src: "/images/projects/sujan-residency/04-interior.png", caption: "Living", layout: "offset-left" },
-      { src: "/images/projects/sujan-residency/05-detail.png", caption: "Detail", layout: "portrait" },
-      { src: "/images/projects/sujan-residency/06-dusk.png", caption: "Dusk", layout: "full" },
-    ],
-  },
-  {
-    slug: "karthik-residency",
-    id: "02",
-    title: "Karthik Residency",
-    category: "residential",
-    type: "Residential",
-    location: "Bengaluru",
-    year: "2024",
-    philosophy:
-      "Project description to be added. Placeholder text for Karthik Residency — a home that balances contemporary planning with a restrained, tactile palette drawn from the site and its surroundings.",
-    tone: "cool",
-    image: "/images/projects/karthik-residency/01-cover.png",
-  },
-  {
-    slug: "moodabagilu-residency",
-    id: "03",
-    title: "Moodabagilu Residency",
-    category: "residential",
-    type: "Residential",
-    location: "Moodabagilu",
-    year: "2023",
-    philosophy:
-      "Project description to be added. Placeholder text for Moodabagilu Residency — a house rooted in its landscape, where traditional planning sensibilities meet a pared-back contemporary language.",
-    tone: "default",
-    image: "/images/projects/moodabagilu-residency/01-cover.png",
-    gallery: [
-      { src: "/images/projects/moodabagilu-residency/01-cover.png", caption: "Approach" },
-      { src: "/images/projects/moodabagilu-residency/02-view.png", caption: "Exterior" },
-      { src: "/images/projects/moodabagilu-residency/03-view.png", caption: "Courtyard" },
-      { src: "/images/projects/moodabagilu-residency/04-view.png", caption: "Interior" },
-      { src: "/images/projects/moodabagilu-residency/05-view.png", caption: "Living" },
-      { src: "/images/projects/moodabagilu-residency/06-view.png", caption: "Dining" },
-      { src: "/images/projects/moodabagilu-residency/07-view.png", caption: "Bedroom" },
-      { src: "/images/projects/moodabagilu-residency/08-view.png", caption: "Bath" },
-      { src: "/images/projects/moodabagilu-residency/09-view.png", caption: "Detail" },
-      { src: "/images/projects/moodabagilu-residency/10-view.png", caption: "Material" },
-      { src: "/images/projects/moodabagilu-residency/11-view.png", caption: "Garden" },
-      { src: "/images/projects/moodabagilu-residency/12-view.png", caption: "Dusk" },
-      { src: "/images/projects/moodabagilu-residency/13-view.png", caption: "Plan" },
-    ],
-  },
-  {
-    slug: "dhawan-suites",
-    id: "04",
-    title: "Dhawan Suites",
-    category: "residential",
-    type: "Suites",
-    location: "Bengaluru",
-    year: "2025",
-    philosophy:
-      "Project description to be added. Placeholder text for Dhawan Suites — a set of private residences conceived as discrete, considered interiors, each with its own proportion and character yet held together by a single architectural hand.",
-    tone: "warm",
-    image: "/images/projects/dhawan-suites/01-cover.png",
-    gallery: [
-      { src: "/images/projects/dhawan-suites/01-cover.png", caption: "Approach" },
-      { src: "/images/projects/dhawan-suites/02-exterior.png", caption: "Exterior" },
-      { src: "/images/projects/dhawan-suites/03-courtyard.png", caption: "Courtyard" },
-      { src: "/images/projects/dhawan-suites/04-interior.png", caption: "Interior" },
-      { src: "/images/projects/dhawan-suites/05-detail.png", caption: "Detail" },
-      { src: "/images/projects/dhawan-suites/06-dusk.png", caption: "Dusk" },
-      { src: "/images/projects/dhawan-suites/07-plan.png", caption: "Plan" },
-    ],
-  },
-];
+/** Material accents drawn from the studio's palette — limewash, slate, sage.
+ *  The single point of color in the otherwise ink-on-parchment Notes world. */
+export const toneAccent: Record<Tone, string> = {
+  warm: "#c8a882", // limewash sand
+  cool: "#8b9eb4", // slate stone
+  default: "#a8b49c", // sage verdigris
+};
 
 /* ───────────────────────── Services ────────────────────────── */
 
 export const services: Service[] = [
   {
-    slug: "architectural-design",
+    slug: "architecture",
     id: "01",
-    title: "Architectural Design",
-    category: "Residential & Commercial",
-    tagline: "Private homes, considered from first sketch to final fitting.",
-    desc: "Specialising in private residential projects, the studio has completed projects that span from new build designs, to home renovation and refurbishments including extensions and basements. We have completed many conservation and heritage building projects, successfully and harmoniously integrating new architectural technologies and features, into the original fabric of the building.",
-    scope: ["New Builds", "Renovations", "Extensions", "Conservation"],
+    title: "Architecture",
+    category: "Homes & Buildings",
+    tagline: "Homes and buildings designed with clarity and purpose.",
+    desc: "Homes and buildings designed with clarity, purpose and a strong connection to the people who use them.",
+    paragraphs: [
+      "We design homes and buildings with clarity, purpose and a strong connection to the people who use them.",
+      "Every project begins by understanding how you want to live or work. From there, we shape spaces around light, proportion and the way a place is meant to feel — considered carefully from the first sketch to the final detail.",
+    ],
+    scope: ["New Homes", "Buildings", "Concept Design", "Detailing"],
     tone: "warm",
-    image: "/images/services/architectural-design.png",
-    imageCaption: "Study · Light & Material",
+    image: "/images/services/architecture.webp",
+    imageCaption: "Study · Light & Proportion",
+    focal: "50% 55%",
   },
   {
-    slug: "landscape-design",
+    slug: "interiors",
     id: "02",
-    title: "Landscape Design",
-    category: "Exterior & Gardens",
-    tagline: "Gardens, courtyards, and the architecture of ground.",
-    desc: "A consideration of the external landscape is an essential component to any architectural project. Whether it concerns the landscaping of a garden at the rear of a house or conceiving an illuminated walled garden to a housing development scheme, it is important to align exterior concepts to an architectural scheme. In collaboration with landscape architects, we can achieve space-appropriate, elegant and elaborate solutions.",
-    scope: ["Private Gardens", "Courtyards", "Site Strategy", "Planting Plans"],
+    title: "Interiors",
+    category: "Spaces & Detailing",
+    tagline: "Spaces shaped through materiality, light and thoughtful detailing.",
+    desc: "Spaces shaped through materiality, light and thoughtful detailing.",
+    paragraphs: [
+      "We shape interiors through materiality, light and thoughtful detailing.",
+      "The work is in the considered choices — the texture of a surface, the proportion of a room, the way light moves across the day. Our interiors are calm, tactile and made to be lived in.",
+    ],
+    scope: ["Layouts", "Materials", "Joinery", "Lighting"],
     tone: "cool",
-    image: "/images/services/landscape image.png",
-    imageCaption: "Study · Courtyard & Ground",
+    image: "/images/services/interiors.webp",
+    imageCaption: "Study · Material & Detail",
+    focal: "50% 66%",
   },
   {
-    slug: "planning-applications",
+    slug: "renovation",
     id: "03",
-    title: "Planning Applications",
-    category: "Regulatory & Advisory",
-    tagline: "Quiet conversations with planning departments — on your behalf.",
-    desc: "The architectural team have a wealth of experience with planning departments across all boroughs of London. We advise on all planning matters and building regulations, from small to large scale residential schemes. Where required, we work in consultation with English Heritage, and also external planning consultant teams.",
-    scope: ["Pre-Application", "Permission", "Building Regs", "Heritage Liaison"],
+    title: "Renovation",
+    category: "Evolving Spaces",
+    tagline: "Helping existing spaces evolve while building on their strengths.",
+    desc: "Helping existing spaces evolve while building on their strengths.",
+    paragraphs: [
+      "We help existing spaces evolve while building on their strengths.",
+      "Older homes and buildings carry character worth keeping. We work with what is already there — improving how a space functions and feels, while staying honest to what made it worth holding on to.",
+    ],
+    scope: ["Reworking", "Restoration", "Extensions", "Adaptation"],
     tone: "default",
-    image: "/images/services/planning design.png",
-    imageCaption: "Study · Brief & Boundary",
+    image: "/images/services/renovation.webp",
+    imageCaption: "Study · The Existing",
+    focal: "50% 50%",
   },
   {
-    slug: "housing",
+    slug: "advisory",
     id: "04",
-    title: "Housing",
-    category: "Residential & Mixed-Use",
-    tagline: "Residential schemes that meet the market without losing the room.",
-    desc: "House renovations and mixed-use projects are invariably cost-sensitive. Our residential architects work directly with our clients to evaluate project feasibility. This includes planning objectives as well as key commercial decisions regarding multiple occupancy design. The studio combines strategic thinking with design creativity to provide value-added innovative design solutions for all housing schemes. This ensures projects are attractive to the market, and meet the required long-term occupancy needs.",
-    scope: ["Feasibility", "Mixed-Use", "Multi-Occupancy", "Value Design"],
+    title: "Advisory",
+    category: "Guidance & Planning",
+    tagline: "Guidance through planning, decision-making and execution.",
+    desc: "Providing guidance through planning, decision-making and execution.",
+    paragraphs: [
+      "We provide guidance through planning, decision-making and execution.",
+      "Not every project needs a full design service. Sometimes what helps most is clear advice at the right moment — on feasibility, direction, or how to move a decision forward with confidence.",
+    ],
+    scope: ["Feasibility", "Direction", "Decisions", "Execution"],
     tone: "warm",
-    image: "/images/services/housing.png",
-    imageCaption: "Study · Scheme & Scale",
+    image: "/images/services/advisory.webp",
+    imageCaption: "Study · Brief & Direction",
+    focal: "50% 48%",
   },
 ];
 
-/* ───────────────────────── Helpers ─────────────────────────── */
+/* ───────────────────────── Notes ───────────────────────────── */
 
-export function getCategoryBySlug(slug: string): Category | undefined {
-  return categories.find((c) => c.slug === slug);
-}
+/* The register. Published entries are written in full and read as essays;
+ * forthcoming entries are honest placeholders — listed, dimmed, and not
+ * clickable — so the section reads as curated rather than padded. Add real
+ * pieces by setting status to "published" (or omitting it) with paragraphs. */
+export const notes: Note[] = [
+  {
+    slug: "on-lime-and-time",
+    id: "01",
+    title: "On Lime & Time",
+    category: "Materials",
+    date: "March 2026",
+    readTime: "4 min",
+    excerpt:
+      "Why we keep returning to lime plaster — a surface that breathes, ages, and refuses to stay perfectly still.",
+    pullquote:
+      "The best surfaces, like the best homes, are the ones still becoming themselves.",
+    paragraphs: [
+      "Lime is a material that asks for patience. It is mixed slowly, applied in thin coats, and left to cure on its own time. Unlike cement, it does not promise permanence on the first day; it earns its strength over months, drawing carbon back from the air as it sets.",
+      "We are drawn to it for the same reason. A lime wall holds light differently through the day — soft at noon, almost luminous at dusk. It carries the faint irregularity of the hand that laid it, and it weathers without looking worn. Over years it develops a patina that no factory finish can imitate.",
+      "Working with lime is a quiet argument against the idea that a building should look finished the moment it is handed over. A home is not a product to be completed and shipped; it is a place that keeps changing in the hands of the people who live in it.",
+    ],
+    tone: "warm",
+  },
+  {
+    slug: "the-architecture-of-ground",
+    id: "02",
+    title: "The Architecture of Ground",
+    category: "Design",
+    date: "February 2026",
+    readTime: "5 min",
+    excerpt:
+      "A garden is not what surrounds a building — it is the first room you arrive through.",
+    pullquote:
+      "The ground comes first. The building is only the part of it that we choose to roof.",
+    paragraphs: [
+      "We tend to think of landscape as the thing that happens after the architecture is done. But the ground comes first. Before a single wall is drawn, the site already has a grade, a drainage line, a direction the light falls, a place where you naturally want to pause.",
+      "When we design a courtyard or a threshold, we are really shaping how a person slows down. A change in level, a shift from gravel to stone underfoot, the shade of a single well-placed tree — these are architectural decisions as much as any room.",
+      "The most considered homes treat their gardens as continuous with their interiors: a sequence of rooms, some with roofs and some with sky, each tuned to a different hour of the day.",
+    ],
+    tone: "cool",
+  },
+  {
+    slug: "notes-from-other-peoples-homes",
+    id: "03",
+    title: "Notes from Other People's Homes",
+    category: "Observations",
+    date: "Summer 2026",
+    excerpt:
+      "On the small observations that come from spending time in the places people actually live.",
+    paragraphs: [],
+    status: "forthcoming",
+    tone: "default",
+  },
+];
 
-export function getProjectsByCategory(slug: CategorySlug): Project[] {
-  return projects.filter((p) => p.category === slug);
-}
+/** Only the entries that have actually been written and published. */
+export const publishedNotes: Note[] = notes.filter(
+  (n) => n.status !== "forthcoming",
+);

@@ -1,18 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import "@fontsource/geist-sans/latin-400.css";
-import "@fontsource/geist-sans/latin-500.css";
-import "@fontsource/geist-sans/latin-600.css";
-import "@fontsource/geist-sans/latin-700.css";
-import "@fontsource/geist-sans/latin-800.css";
-import "@fontsource/playfair-display/latin-400-italic.css";
-import "@fontsource/playfair-display/latin-500-italic.css";
-import "@fontsource/playfair-display/latin-700.css";
-import "@fontsource/playfair-display/latin-800.css";
 import { PersistentNavbar } from "@/components/persistent-navbar";
-import { PageTransitionOverlay } from "@/components/page-transition";
-import { FloatingCTA } from "@/components/floating-cta";
-import { ClickRipple } from "@/components/click-ripple";
 
 export const metadata: Metadata = {
   title: "KATHA STUDIO - Architecture & Interior Design",
@@ -35,10 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClickRipple />
-        <PageTransitionOverlay />
         <PersistentNavbar />
-        <FloatingCTA />
         {children}
       </body>
     </html>
