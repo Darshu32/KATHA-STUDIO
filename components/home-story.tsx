@@ -73,13 +73,13 @@ export function HomeStory() {
           <FadeUp>
             <p style={eyebrow}>— What We Value</p>
           </FadeUp>
-          <FadeUp delay={0.08} className="mt-8 grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-5">
+          <FadeUp delay={0.08} className="mt-12 grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-5 md:mt-16">
             {VALUES.map((v) => (
-              <div key={v.title} className="flex h-full flex-col gap-3 bg-[var(--background)] px-1 py-8 lg:px-3">
-                <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
+              <div key={v.title} className="flex h-full flex-col gap-4 bg-[var(--background)] px-1 py-10 lg:px-3 lg:py-12">
+                <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.3rem, 1.6vw, 1.45rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
                   {v.title}
                 </h3>
-                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", lineHeight: 1.65, color: "var(--text-muted)" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--text-muted)" }}>
                   {v.body}
                 </p>
               </div>
@@ -95,13 +95,13 @@ export function HomeStory() {
           <FadeUp delay={0.06} className="mt-5 md:mt-7">
             <h2 style={sectionHeading}>How We Build</h2>
           </FadeUp>
-          <div className="mt-8 grid grid-cols-1 gap-px bg-[var(--border)] md:mt-10 sm:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-px bg-[var(--border)] md:mt-16 sm:grid-cols-2">
             {services.map((s, i) => (
               <FadeUp key={s.slug} delay={0.08 + i * 0.06} className="bg-[var(--background)]">
                 <Link
                   href={`/services/${s.slug}`}
                   data-cursor="Enter"
-                  className="group flex h-full flex-col gap-3 px-1 py-8 transition-opacity duration-300 hover:opacity-70 lg:px-4 lg:py-10"
+                  className="group flex h-full flex-col gap-4 px-1 py-10 transition-opacity duration-300 hover:opacity-70 lg:px-4 lg:py-12"
                 >
                   <span style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-caption)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
                     {s.category}
@@ -124,7 +124,7 @@ export function HomeStory() {
           <FadeUp>
             <p style={eyebrow}>— Craft Matters</p>
           </FadeUp>
-          <FadeUp delay={0.08} className="mt-6 max-w-[68ch] md:mt-8">
+          <FadeUp delay={0.08} className="mt-8 max-w-[68ch] md:mt-10">
             <p style={{ ...body, color: "var(--text)" }}>
               Architecture is shaped through thousands of decisions. The quality
               of a material, the proportion of a room, the way light enters a
@@ -132,9 +132,9 @@ export function HomeStory() {
               experienced every day.
             </p>
           </FadeUp>
-          <FadeUp delay={0.16} className="mt-10 grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4 lg:grid-cols-7 md:mt-12">
+          <FadeUp delay={0.16} className="mt-14 grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4 lg:grid-cols-7 md:mt-16">
             {MATERIALS.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex flex-col items-center gap-3 bg-[var(--background)] px-3 py-8 text-center">
+              <div key={label} className="flex flex-col items-center gap-3 bg-[var(--background)] px-3 py-10 text-center">
                 <Icon size={24} strokeWidth={1.25} color="var(--text-muted)" aria-hidden />
                 <span style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-caption)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--text-muted)" }}>
                   {label}
@@ -146,8 +146,8 @@ export function HomeStory() {
 
         {/* ── CLOSING · PERSONAL NOTE + CONTACT ── */}
         <section className="section-pad border-t border-[var(--border)]">
-          <FadeUp className="max-w-[62ch]">
-            <p style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 300, fontSize: "clamp(1.35rem, 2.2vw, 2rem)", lineHeight: 1.5, letterSpacing: "-0.02em", color: "var(--text)" }}>
+          <FadeUp className="max-w-[60ch]">
+            <p style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 300, fontSize: "clamp(1.6rem, 2.6vw, 2.4rem)", lineHeight: 1.45, letterSpacing: "-0.02em", color: "var(--text)" }}>
               Every project represents an important chapter in someone&apos;s
               life. It is a responsibility we value deeply. Thank you for
               considering Katha Studio as part of that journey.

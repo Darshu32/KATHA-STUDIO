@@ -75,12 +75,15 @@
   --text-dim: rgba(17, 17, 17, 0.32);
   --accent: #A89A84;
   --accent-hover: #95876f;
-  /* Type scale — fluid between mobile and desktop targets (spec) */
-  --fs-hero: clamp(3.25rem, 5.5vw + 0.5rem, 5.25rem);  /* 52px → 84px  · home only */
-  --fs-page-title: clamp(2.5rem, 3.5vw + 0.75rem, 3.75rem); /* 40px → 60px · inner-page heroes */
-  --fs-section: clamp(2.375rem, 3vw + 1rem, 3.25rem);  /* 38px → 52px  */
-  --fs-body: clamp(1.125rem, 0.4vw + 1rem, 1.25rem);   /* 18px → 20px  */
-  --fs-caption: 0.8125rem;                              /* 13px         */
+  /* Type scale — editorial hierarchy. Mobile carries the biggest lift (it
+     was reading as one flat column of text); desktop stays close to before.
+     Clear steps between hero / heading / body give the page rhythm, while the
+     calm still rests on generous line-height + negative space. */
+  --fs-hero: clamp(2.875rem, 5vw + 1rem, 3.75rem);        /* 46px → 60px · home hero        */
+  --fs-page-title: clamp(2.375rem, 2.6vw + 1rem, 3.25rem);/* 38px → 52px · inner-page heroes */
+  --fs-section: clamp(2rem, 1.6vw + 1.1rem, 2.375rem);    /* 32px → 38px · section headings  */
+  --fs-body: clamp(1.0625rem, 0.25vw + 1rem, 1.125rem);   /* 17px → 18px · body              */
+  --fs-caption: 0.8125rem;                                /* 13px        · labels/eyebrows   */
   --font-sans: "Avenir LT Pro", "Inter", "Segoe UI", system-ui, sans-serif;
   --font-playfair: var(--font-sans);
   --font-inter: var(--font-sans);
@@ -117,7 +120,7 @@ body {
   margin: 0;
   font-family: var(--font-inter);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.75;
   /* Body copy: tracking-tight (inherited by all text unless an
      element sets its own letter-spacing, e.g. wide-tracked labels). */
   letter-spacing: -0.025em;
@@ -147,15 +150,15 @@ a:hover {
   color: var(--accent);
 }
 
-/* ── Major section spacing (spec: 90px mobile / 140px desktop) ── */
+/* ── Major section spacing — generous negative space (116px mobile / 168px desktop) ── */
 .section-pad {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 116px;
+  padding-bottom: 116px;
 }
 @media (min-width: 768px) {
   .section-pad {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 168px;
+    padding-bottom: 168px;
   }
 }
 

@@ -39,7 +39,7 @@ export function WhyKatha() {
             <FadeUp>
               <p style={eyebrow}>— Why Katha</p>
             </FadeUp>
-            <FadeUp delay={0.08} className="mt-5 md:mt-7">
+            <FadeUp delay={0.08} className="mt-6 md:mt-8">
               <h2
                 style={{
                   fontFamily: "var(--font-avenir-book)",
@@ -75,12 +75,12 @@ export function WhyKatha() {
         {/* Process imagery — represented as quiet line icons */}
         <FadeUp
           delay={0.24}
-          className="mt-12 grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4 md:mt-16"
+          className="mt-16 grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4 md:mt-20"
         >
           {PROCESS.map(({ icon: Icon, label }) => (
             <div
               key={label}
-              className="flex flex-col items-center gap-4 bg-[var(--background)] px-4 py-10 text-center"
+              className="flex flex-col items-center gap-4 bg-[var(--background)] px-4 py-12 text-center"
             >
               <Icon size={26} strokeWidth={1.25} color="var(--text-muted)" aria-hidden />
               <span

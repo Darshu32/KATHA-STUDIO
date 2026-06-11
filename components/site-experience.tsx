@@ -645,7 +645,7 @@ export function SiteExperience() {
         <section
           className="relative overflow-hidden px-6 pt-1 pb-2 sm:px-8 sm:pt-2 sm:pb-2 md:px-12 md:pt-2 md:pb-3 lg:px-20 lg:pt-3 lg:pb-4"
         >
-          <div className="relative z-[1] grid grid-cols-1 items-start gap-7 lg:grid-cols-12 lg:gap-12">
+          <div className="relative z-[1] grid grid-cols-1 items-start gap-9 lg:grid-cols-12 lg:gap-12">
 
             {/* Headline */}
             <div className="lg:col-span-7 lg:pr-4">
