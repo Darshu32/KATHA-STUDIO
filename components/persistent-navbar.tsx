@@ -15,7 +15,7 @@ const mobileNavItems: NavEntry[] = [
   { href: "/about",    label: "Studio",   num: "01" },
   { href: "/approach", label: "Approach", num: "02" },
   { href: "/services", label: "Services", num: "03" },
-  { href: "/notes",    label: "Notes",    num: "04" },
+  { href: "/journal",  label: "Journal",  num: "04" },
   { href: "/contact",  label: "Contact",  num: "05" },
 ];
 

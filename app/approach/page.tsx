@@ -11,27 +11,27 @@ const STEPS = [
   {
     num: "01",
     title: "Listen",
-    body: "Every project begins with understanding — your life, your site, and the way you want to live in a space.",
+    body: "Every project begins before the brief — in how you live, how your business moves, what the site is quietly asking for.",
   },
   {
     num: "02",
     title: "Explore",
-    body: "We test ideas openly, studying proportion, light, and material before settling on a direction.",
+    body: "Ideas are tested openly. Proportion, light and material are studied before any direction is committed to.",
   },
   {
     num: "03",
     title: "Design",
-    body: "The concept is shaped into a considered whole, where every decision answers to the brief.",
+    body: "The concept is shaped into a whole where every decision answers to the brief and to the space itself.",
   },
   {
     num: "04",
     title: "Refine",
-    body: "Details are resolved patiently — the quiet work that separates a good space from a lasting one.",
+    body: "The details are resolved. This is the quiet work that separates a space that looks finished from one that feels right.",
   },
   {
     num: "05",
     title: "Deliver",
-    body: "We see the work through to completion, holding the original intent steady to the final finish.",
+    body: "The work is seen through to completion — the original intent held steady to the final detail.",
   },
 ];
 
@@ -64,9 +64,8 @@ export default function ApproachPage() {
 
           <FadeUp delay={0.12} className="pb-2">
             <p className="max-w-[58ch]" style={{ fontFamily: "var(--font-avenir-book)", fontSize: "clamp(1rem, 1.3vw, 1.15rem)", lineHeight: 1.75, color: "var(--text-muted)" }}>
-              Good architecture is rarely rushed. We move through five
-              deliberate stages — each one giving the work room to settle
-              before the next begins.
+              Every stage has a purpose. Nothing moves forward until the
+              current one is ready.
             </p>
           </FadeUp>
 
@@ -76,7 +75,7 @@ export default function ApproachPage() {
           </FadeUp>
 
           {/* ── STEPS ── */}
-          <div className="grid grid-cols-1 gap-px bg-[var(--border)] pb-16 pt-px md:grid-cols-2 lg:grid-cols-5 lg:pb-20">
+          <div className="grid grid-cols-1 gap-px bg-[var(--border)] pt-px mb-16 md:grid-cols-2 lg:grid-cols-5 lg:mb-20">
             {STEPS.map((step, i) => (
               <FadeUp key={step.num} delay={0.2 + i * 0.07} className="bg-[var(--background)]">
                 <div className="flex h-full flex-col gap-4 px-1 py-8 md:px-2 lg:px-3 lg:py-10">
@@ -110,10 +109,13 @@ export default function ApproachPage() {
             </FadeUp>
             <FadeUp delay={0.08} className="mt-6 max-w-[68ch] md:mt-8">
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)" }}>
-                Architecture is shaped through thousands of decisions. The
-                quality of a material, the proportion of a room, the way light
-                enters a space and the detail of a junction influence how a
-                space is experienced every day.
+                Every decision in a building is also a material decision.
+              </p>
+              <p className="mt-5" style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.95rem, 1.2vw, 1.08rem)", lineHeight: 1.8, color: "var(--text-muted)" }}>
+                What something is made of determines how it ages, how it feels
+                underhand, how it holds light, how it sits in its climate. We
+                choose materials for what they do over time — not just how they
+                read on the day they are installed.
               </p>
             </FadeUp>
             <FadeUp delay={0.16} className="mt-10 flex flex-wrap gap-x-8 gap-y-3 md:mt-12">

@@ -63,11 +63,23 @@ export function WhyKatha() {
                 color: "var(--text-muted)",
               }}
             >
-              We chose the name because every project begins with people. Every
-              family brings its own way of living. Every business carries its own
-              aspirations. Every site presents its own opportunities. Our role is
-              to understand what matters most and translate it into spaces that
-              feel meaningful, functional and enduring.
+              Every project carries something that can&apos;t be briefed — the
+              way a family actually lives, what a business needs to feel like
+              from the inside, how a landscape wants to be experienced, what a
+              site is quietly asking for.
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: "var(--fs-body)",
+                lineHeight: 1.85,
+                color: "var(--text-muted)",
+                marginTop: "1.5rem",
+              }}
+            >
+              Our work is learning to read that.
+              <br />
+              Then building it precisely.
             </p>
           </FadeUp>
         </div>

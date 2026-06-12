@@ -91,7 +91,6 @@ export function ContactForm() {
       email: String(data.get("email") ?? ""),
       phone: String(data.get("phone") ?? ""),
       projectType: String(data.get("projectType") ?? ""),
-      budgetRange: String(data.get("budgetRange") ?? ""),
       timeline: String(data.get("timeline") ?? ""),
       message: String(data.get("message") ?? ""),
     };
@@ -132,7 +131,6 @@ export function ContactForm() {
           email: payload.email.trim(),
           phone: payload.phone.trim(),
           projectType: payload.projectType.trim(),
-          budgetRange: payload.budgetRange.trim(),
           timeline: payload.timeline.trim(),
           message: payload.message.trim(),
         }),
@@ -259,25 +257,14 @@ export function ContactForm() {
         <AnimatePresence>{inlineError("phone")}</AnimatePresence>
       </label>
 
-      {/* Project Type · Budget Range · Timeline — optional */}
-      <div className="grid gap-6 sm:grid-cols-3">
+      {/* Project Type · Timeline — optional */}
+      <div className="grid gap-6 sm:grid-cols-2">
         <label className="block space-y-2">
           <span style={fieldLabelStyle}>Project Type</span>
           <input
             type="text"
             name="projectType"
             placeholder="e.g. Interiors"
-            disabled={status === "submitting"}
-            className={inputBaseClass}
-            style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
-          />
-        </label>
-        <label className="block space-y-2">
-          <span style={fieldLabelStyle}>Budget Range</span>
-          <input
-            type="text"
-            name="budgetRange"
-            placeholder="e.g. ₹20 – 50 Lakh"
             disabled={status === "submitting"}
             className={inputBaseClass}
             style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
@@ -316,7 +303,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          placeholder="Tell us a little about your space, timeline, or the feeling you'd like to create…"
+          placeholder="Tell us about your project — what it is, where it sits, and what you are hoping it becomes"
           disabled={status === "submitting"}
           onBlur={handleBlur}
           onInput={handleInput}

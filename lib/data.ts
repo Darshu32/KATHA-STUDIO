@@ -23,13 +23,12 @@ export type Service = {
   focal?: string;
 };
 
-/** Canonical Notes topics — used for the register label and filter chips. */
+/** Canonical Journal topics — used for the register/eyebrow label. */
 export const noteTopics = [
-  "Design",
   "Process",
-  "Materials",
-  "Travel",
-  "Observations",
+  "Culture",
+  "Craft",
+  "Space",
 ] as const;
 export type NoteTopic = (typeof noteTopics)[number];
 
@@ -88,11 +87,11 @@ export const services: Service[] = [
     id: "02",
     title: "Interiors",
     category: "Spaces & Detailing",
-    tagline: "Spaces shaped through materiality, light and thoughtful detailing.",
+    tagline: "Every interior holds a feeling before it holds furniture.",
     desc: "Spaces shaped through materiality, light and thoughtful detailing.",
     paragraphs: [
-      "We shape interiors through materiality, light and thoughtful detailing.",
-      "The work is in the considered choices — the texture of a surface, the proportion of a room, the way light moves across the day. Our interiors are calm, tactile and made to be lived in.",
+      "The work is in the choices that are rarely seen — the texture of a surface, the proportion of a room, the way light settles across the day. These are the decisions that determine how a space feels to live inside for years.",
+      "Every Katha interior is built to that.",
     ],
     scope: ["Layouts", "Materials", "Joinery", "Lighting"],
     tone: "cool",
@@ -105,11 +104,10 @@ export const services: Service[] = [
     id: "03",
     title: "Renovation",
     category: "Evolving Spaces",
-    tagline: "Helping existing spaces evolve while building on their strengths.",
+    tagline: "Every existing space carries something worth understanding before anything is changed.",
     desc: "Helping existing spaces evolve while building on their strengths.",
     paragraphs: [
-      "We help existing spaces evolve while building on their strengths.",
-      "Older homes and buildings carry character worth keeping. We work with what is already there — improving how a space functions and feels, while staying honest to what made it worth holding on to.",
+      "Age leaves intelligence in a building — in how it was constructed, what it was built to withstand, what has quietly held its value over time. Our work is knowing what to keep, what to evolve, and how to bring both forward without losing what made the space worth returning to.",
     ],
     scope: ["Reworking", "Restoration", "Extensions", "Adaptation"],
     tone: "default",
@@ -122,11 +120,11 @@ export const services: Service[] = [
     id: "04",
     title: "Advisory",
     category: "Guidance & Planning",
-    tagline: "Guidance through planning, decision-making and execution.",
+    tagline: "The right question asked early saves everything that comes after.",
     desc: "Providing guidance through planning, decision-making and execution.",
     paragraphs: [
-      "We provide guidance through planning, decision-making and execution.",
-      "Not every project needs a full design service. Sometimes what helps most is clear advice at the right moment — on feasibility, direction, or how to move a decision forward with confidence.",
+      "Some projects need full design. Others need one conversation with someone who has seen enough to know exactly where things are headed — and what decisions will matter most before work begins.",
+      "That is what Katha Advisory is.",
     ],
     scope: ["Feasibility", "Direction", "Decisions", "Execution"],
     tone: "warm",
@@ -144,51 +142,70 @@ export const services: Service[] = [
  * pieces by setting status to "published" (or omitting it) with paragraphs. */
 export const notes: Note[] = [
   {
-    slug: "on-lime-and-time",
+    slug: "why-the-first-sketch-is-never-the-answer",
     id: "01",
-    title: "On Lime & Time",
-    category: "Materials",
-    date: "March 2026",
-    readTime: "4 min",
-    excerpt:
-      "Why we keep returning to lime plaster — a surface that breathes, ages, and refuses to stay perfectly still.",
-    pullquote:
-      "The best surfaces, like the best homes, are the ones still becoming themselves.",
+    title: "Why the First Sketch Is Never the Answer",
+    category: "Process",
+    date: "January 2026",
+    readTime: "3 min",
+    excerpt: "The first sketch is not a design. It is a question.",
     paragraphs: [
-      "Lime is a material that asks for patience. It is mixed slowly, applied in thin coats, and left to cure on its own time. Unlike cement, it does not promise permanence on the first day; it earns its strength over months, drawing carbon back from the air as it sets.",
-      "We are drawn to it for the same reason. A lime wall holds light differently through the day — soft at noon, almost luminous at dusk. It carries the faint irregularity of the hand that laid it, and it weathers without looking worn. Over years it develops a patina that no factory finish can imitate.",
-      "Working with lime is a quiet argument against the idea that a building should look finished the moment it is handed over. A home is not a product to be completed and shipped; it is a place that keeps changing in the hands of the people who live in it.",
+      "It is the fastest way to find out what you do not yet understand about a project. A line drawn too early in the wrong direction costs nothing on paper and everything in construction. So we draw early and loosely — not to commit but to reveal. To see where the thinking holds and where it does not.",
+      "The projects that end well are the ones where the hardest questions were asked before the design was loved. Before the client was attached to a layout. Before anyone had invested in an idea. There is a window early in every project where everything is still possible — and that window is where the most important work happens.",
+      "What comes out of it is not always what anyone expected. A site that seemed to demand one approach reveals through sketching that it needs something quieter. A brief that seemed straightforward opens into something richer once the first lines are drawn and questioned.",
+      "The sketch is where we learn what the project is really asking for.",
     ],
-    tone: "warm",
+    tone: "default",
   },
   {
-    slug: "the-architecture-of-ground",
+    slug: "the-detail-nobody-sees",
     id: "02",
-    title: "The Architecture of Ground",
-    category: "Design",
+    title: "The Detail Nobody Sees",
+    category: "Craft",
     date: "February 2026",
-    readTime: "5 min",
+    readTime: "3 min",
     excerpt:
-      "A garden is not what surrounds a building — it is the first room you arrive through.",
-    pullquote:
-      "The ground comes first. The building is only the part of it that we choose to roof.",
+      "The most important detail in any project is invisible by the time the work is done.",
     paragraphs: [
-      "We tend to think of landscape as the thing that happens after the architecture is done. But the ground comes first. Before a single wall is drawn, the site already has a grade, a drainage line, a direction the light falls, a place where you naturally want to pause.",
-      "When we design a courtyard or a threshold, we are really shaping how a person slows down. A change in level, a shift from gravel to stone underfoot, the shade of a single well-placed tree — these are architectural decisions as much as any room.",
-      "The most considered homes treat their gardens as continuous with their interiors: a sequence of rooms, some with roofs and some with sky, each tuned to a different hour of the day.",
+      "It lives in the junction between two materials — the way a stone floor meets a plastered wall, the shadow line that makes a door frame read cleanly, the depth of a window reveal that determines whether light enters softly or harshly. These decisions separate a space that feels considered from one that merely looks finished.",
+      "Clients rarely ask about these things. They ask about layouts, materials, finishes. But the spaces they remember — the ones they describe to other people, the ones that stay with them — are almost always the ones where someone paid attention at exactly this level.",
+      "A junction resolved badly speaks every time someone stands near it. A shadow line out of place flattens a surface that should have depth. These things register below conscious awareness — but they register.",
+      "The craft of architecture lives in the details nobody sees. That invisibility is the point.",
     ],
     tone: "cool",
   },
   {
-    slug: "notes-from-other-peoples-homes",
+    slug: "what-india-knows-about-space",
     id: "03",
-    title: "Notes from Other People's Homes",
-    category: "Observations",
-    date: "Summer 2026",
+    title: "What India Knows About Space That the World Is Relearning",
+    category: "Culture",
+    date: "April 2026",
+    readTime: "4 min",
     excerpt:
-      "On the small observations that come from spending time in the places people actually live.",
-    paragraphs: [],
-    status: "forthcoming",
+      "The most sophisticated ideas in contemporary architecture were never new. They were forgotten.",
+    paragraphs: [
+      "Passive cooling through courtyard geometry. Thermal mass in stone walls that keep interiors stable without mechanical intervention. The verandah — neither inside nor outside — moderating heat, filtering light, creating a threshold that no air conditioning unit has ever replaced. Step-wells that solved water harvesting, public gathering and microclimate in a single structure.",
+      "These were not accidents. They were centuries of observation built into craft — passed through hands, not textbooks. The knowledge did not disappear because it stopped working. It disappeared because imported modernism arrived faster than anyone thought to question it.",
+      "The world is now spending enormous resources rediscovering what was already known. Biophilic design. Passive ventilation. Human-scale proportion. Locally sourced material. These are not trends. They are returns.",
+      "We build with that knowledge deliberately — not as nostalgia. Because it works better.",
+    ],
+    tone: "warm",
+  },
+  {
+    slug: "on-designing-for-twenty-years-from-now",
+    id: "04",
+    title: "On Designing for Twenty Years From Now",
+    category: "Space",
+    date: "June 2026",
+    readTime: "4 min",
+    excerpt: "Every project will outlast the conversation that started it.",
+    paragraphs: [
+      "The family that briefed it will change. Children will grow and leave. Businesses will shift. The way people work, gather and move through space is already different from a decade ago — and will be different again in the next one. A space designed only for today is already becoming obsolete.",
+      "The answer is not open plans and moveable walls. It is a deeper reading of what is permanent in human behaviour and what is not.",
+      "People will always need a place to be alone and a place to gather. They will always respond to natural light. They will always feel the difference between a ceiling at the right height and one that is not. They will always know when a material is honest and when it is pretending to be something else.",
+      "Design for those constants. Build with materials that age with dignity. Leave room in the plan for life to move through without breaking the architecture.",
+      "That is how a space lasts twenty years and still feels right.",
+    ],
     tone: "default",
   },
 ];

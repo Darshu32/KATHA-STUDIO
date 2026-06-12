@@ -65,12 +65,25 @@ const allCards = [
   },
 ];
 
+/* Each service card shows its own project-type kicker rather than a
+ * blanket "SERVICE". Keyed by the service slug. */
+const serviceCardLabels: Record<string, string> = {
+  architecture: "RESIDENCE",
+  interiors:    "INTERIOR",
+  renovation:   "RENOVATION",
+  advisory:     "ADVISORY",
+};
+
 /* Derive editorial category label from href */
 function getCardCategory(href: string): string {
-  if (href === "/")                  return "INTRO";
-  if (href === "/about")             return "STUDIO";
-  if (href.startsWith("/services"))  return "SERVICE";
-  if (href === "/contact")           return "CONTACT";
+  if (href === "/")        return "INTRO";
+  if (href === "/about")   return "STUDIO";
+  if (href === "/contact") return "CONTACT";
+  if (href.startsWith("/services/")) {
+    const slug = href.slice("/services/".length);
+    return serviceCardLabels[slug] ?? "SERVICE";
+  }
+  if (href.startsWith("/services")) return "SERVICE";
   return "";
 }
 
@@ -664,7 +677,7 @@ export function SiteExperience() {
                 className="mb-4 font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.24em] text-[var(--text-dim)]"
                 style={{ fontSize: "var(--fs-caption)" }}
               >
-                Architecture · Interiors · Renovation
+                Architecture · Interiors · Renovation · Landscape
               </motion.p>
               <motion.h1
                 initial={false}
@@ -682,9 +695,9 @@ export function SiteExperience() {
                   wordBreak: "break-word",
                 }}
               >
-                Thoughtful spaces
+                Every space has a story
                 <br />
-                begin with understanding
+                waiting to be built.
               </motion.h1>
 
               {/* Cycling mystery phrase */}
@@ -783,7 +796,7 @@ export function SiteExperience() {
           initial={false}
           animate={introComplete || reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative flex flex-1 flex-col justify-center pb-5 md:pb-6">
+          className="relative mt-7 flex flex-1 flex-col justify-center pb-5 md:mt-10 md:pb-6">
           {/* Ambient hairline sweep at top boundary */}
           <div className="relative mx-auto mb-3 h-px max-w-[88rem] opacity-70 md:mb-4">
             <div className="hairline-sweep" />
@@ -911,7 +924,7 @@ export function SiteExperience() {
                           <motion.div
                             animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 5 }}
                             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                            className="mt-3 flex items-end justify-between px-0.5"
+                            className="mt-3 flex items-end justify-between"
                           >
                             <div className="min-w-0">
                               <p style={{ fontFamily: "var(--font-avenir-book)", fontSize: "1.02rem", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.1 }}>
@@ -1088,7 +1101,7 @@ export function SiteExperience() {
 
                       <motion.div
                         animate={{
-                          scale: isActive ? 1.04 : 0.9,
+                          scale: isActive ? 1 : 0.9,
                           y: isActive ? -6 : 0,
                           height: [324, 288, 254, 224, 200][Math.min(wave, 4)],
                           opacity: isActive ? 1 : 0.92,
@@ -1120,7 +1133,7 @@ export function SiteExperience() {
                       <motion.div
                         animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 4 }}
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="mt-3 flex items-end justify-between gap-2 px-0.5"
+                        className="mt-3 flex items-end justify-between gap-2"
                       >
                         <div className="min-w-0">
                           <p style={{

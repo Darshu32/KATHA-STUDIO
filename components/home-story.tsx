@@ -45,11 +45,11 @@ const sigName = {
 };
 
 const VALUES = [
-  { title: "Thoughtfulness", body: "We consider how a space will be lived in, long after the drawings are done." },
-  { title: "Craftsmanship", body: "Details are resolved with care, because they shape the everyday experience." },
-  { title: "Clarity", body: "We communicate openly, so decisions are understood and never rushed." },
-  { title: "Context", body: "Every design answers to its site, its climate, and the life around it." },
-  { title: "Longevity", body: "We build for spaces that stay relevant as lives continue to change." },
+  { title: "Depth", body: "We ask what a space needs to become — not just what it needs to look like." },
+  { title: "Permanence", body: "Every material, every proportion, every detail is chosen to last and earn its place over time." },
+  { title: "Roots", body: "We draw from building traditions that carried intelligence about space long before it was written down." },
+  { title: "Precision", body: "Nothing in a Katha project is arbitrary. Every decision has a reason that holds." },
+  { title: "Foresight", body: "We design for the life a space will carry — ten years, twenty years, long after the first day." },
 ];
 
 /* Craft Matters — materials & process represented as quiet line icons */
@@ -154,7 +154,7 @@ export function HomeStory() {
             </p>
           </FadeUp>
           <FadeUp delay={0.12} className="mt-6">
-            <p style={sigName}>— Neha Birla</p>
+            <p style={sigName}>— Ar. Neha</p>
           </FadeUp>
           <FadeUp delay={0.2} className="mt-12 md:mt-16">
             <Link

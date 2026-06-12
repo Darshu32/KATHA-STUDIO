@@ -3,7 +3,7 @@ import { notes, publishedNotes } from "@/lib/data";
 import { FadeUp } from "@/components/animations";
 
 export const metadata = {
-  title: "Notes — KATHA Studio",
+  title: "Journal — KATHA Studio",
   description:
     "Reflections from the studio — on material, proportion, light, and the practice of building thoughtfully.",
 };
@@ -49,7 +49,7 @@ export default function NotesPage() {
                 color: "var(--text)",
               }}
             >
-              Notes
+              Journal
             </h1>
           </FadeUp>
 
