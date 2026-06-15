@@ -75,7 +75,7 @@ export function ListingCard({
       <Link
         href={href}
         onClick={handleClick}
-        className="block space-y-4"
+        className="block space-y-2 sm:space-y-4"
         aria-label={imageAlt ?? topLabel}
       >
         {/* ── Dark image card ── */}

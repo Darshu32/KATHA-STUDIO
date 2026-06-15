@@ -150,15 +150,15 @@ a:hover {
   color: var(--accent);
 }
 
-/* ── Major section spacing — generous negative space (116px mobile / 168px desktop) ── */
+/* ── Major section spacing — calm negative space (72px mobile / 120px desktop) ── */
 .section-pad {
-  padding-top: 116px;
-  padding-bottom: 116px;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 @media (min-width: 768px) {
   .section-pad {
-    padding-top: 168px;
-    padding-bottom: 168px;
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 

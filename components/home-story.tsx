@@ -36,13 +36,6 @@ const body = {
   lineHeight: 1.85,
   color: "var(--text-muted)",
 };
-const sigName = {
-  fontFamily: "var(--font-avenir-book)",
-  fontWeight: 600,
-  fontSize: "1rem",
-  letterSpacing: "-0.01em",
-  color: "var(--text)",
-};
 
 const VALUES = [
   { title: "Depth", body: "We ask what a space needs to become — not just what it needs to look like." },
@@ -151,19 +144,9 @@ export function HomeStory() {
           </FadeUp>
         </section>
 
-        {/* ── CLOSING · PERSONAL NOTE + CONTACT ── */}
-        <section className="section-pad border-t border-[var(--border)]">
-          <FadeUp className="max-w-[60ch]">
-            <p style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 300, fontSize: "clamp(1.6rem, 2.6vw, 2.4rem)", lineHeight: 1.45, letterSpacing: "-0.02em", color: "var(--text)" }}>
-              Every project represents an important chapter in someone&apos;s
-              life. It is a responsibility we value deeply. Thank you for
-              considering Katha Studio as part of that journey.
-            </p>
-          </FadeUp>
-          <FadeUp delay={0.12} className="mt-6">
-            <p style={sigName}>— Ar. Neha</p>
-          </FadeUp>
-          <FadeUp delay={0.2} className="mt-12 md:mt-16">
+        {/* ── CLOSING · CONTACT ── */}
+        <section className="border-t border-[var(--border)] py-14 md:py-20">
+          <FadeUp>
             <Link
               href="/contact"
               data-cursor="Enter"

@@ -146,7 +146,7 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
                 style={{ backgroundColor: "var(--background)" }}
               >
                 <Image
-                  src="/images/about/neha-passport.jpeg"
+                  src="/images/about/neha-portrait.jpeg"
                   alt="Portrait of Ar. Neha, Founder & Principal Architect of Katha Studio"
                   fill
                   sizes="(min-width: 768px) 20rem, 80vw"
