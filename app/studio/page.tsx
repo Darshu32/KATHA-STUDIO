@@ -6,7 +6,7 @@ export const metadata = {
   description: "Katha means story. A founder-led practice shaped by listening, context, and craftsmanship.",
 };
 
-export default function AboutPage() {
-  const { prev, next } = getAdjacentNav("/about");
+export default function StudioPage() {
+  const { prev, next } = getAdjacentNav("/studio");
   return <AboutView prev={prev} next={next} />;
 }

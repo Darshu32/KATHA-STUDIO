@@ -38,7 +38,7 @@ const allCards = [
     id: "00",
     label: "Studio",
     tagline: "Who we are",
-    href: "/about",
+    href: "/studio",
     accent: "#c8a882",
     darkBg: "#1c1409",
     image: "/images/home/studio.webp",
@@ -77,7 +77,7 @@ const serviceCardLabels: Record<string, string> = {
 /* Derive editorial category label from href */
 function getCardCategory(href: string): string {
   if (href === "/")        return "INTRO";
-  if (href === "/about")   return "STUDIO";
+  if (href === "/studio")  return "STUDIO";
   if (href === "/contact") return "CONTACT";
   if (href.startsWith("/services/")) {
     const slug = href.slice("/services/".length);
@@ -920,23 +920,24 @@ export function SiteExperience() {
                             <NavCardContent card={card} isActive={isActive} isDragging={isDragging} priority={i < 2} />
                           </motion.div>
 
-                          {/* Label + counter below active card */}
+                          {/* Caption — label with a quiet tagline · index line
+                              beneath. Left-aligned and tied to the text, so nothing
+                              floats off to the card's far edge. */}
                           <motion.div
                             animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 5 }}
                             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                            className="mt-3 flex items-end justify-between"
+                            className="mt-3"
                           >
-                            <div className="min-w-0">
-                              <p style={{ fontFamily: "var(--font-avenir-book)", fontSize: "1.02rem", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.1 }}>
-                                {card.label}
-                              </p>
-                              <p className="mt-1 truncate" style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-muted)" }}>
-                                {card.tagline}
-                              </p>
-                            </div>
-                            <span className="shrink-0 pl-3" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5rem", letterSpacing: "0.26em", color: "var(--text-dim)" }}>
-                              {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
-                            </span>
+                            <p style={{ fontFamily: "var(--font-avenir-book)", fontSize: "1.02rem", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.1 }}>
+                              {card.label}
+                            </p>
+                            <p className="mt-1.5 flex items-center gap-2" style={{ fontFamily: "var(--font-inter)", fontSize: "0.58rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-muted)" }}>
+                              <span className="min-w-0 truncate">{card.tagline}</span>
+                              <span aria-hidden style={{ color: "var(--text-dim)" }}>·</span>
+                              <span className="shrink-0" style={{ letterSpacing: "0.22em", color: "var(--text-dim)" }}>
+                                {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
+                              </span>
+                            </p>
                           </motion.div>
                         </motion.div>
                       </div>
@@ -1129,42 +1130,38 @@ export function SiteExperience() {
                         />
                       </motion.div>
 
-                      {/* Label + tagline + counter below — only visible on active */}
+                      {/* Caption — label with a quiet tagline · index line beneath.
+                          Left-aligned and tied to the text, so nothing floats off
+                          to the card's far edge. */}
                       <motion.div
                         animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 4 }}
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="mt-3 flex items-end justify-between gap-2"
+                        className="mt-3"
                       >
-                        <div className="min-w-0">
-                          <p style={{
-                            fontFamily: "var(--font-avenir-book)",
-                            fontSize: "clamp(0.92rem, 1.1vw, 1.05rem)",
-                            fontWeight: 500,
-                            letterSpacing: "-0.01em",
-                            color: "var(--text)",
-                            lineHeight: 1.1,
-                          }}>
-                            {card.label}
-                          </p>
-                          <p className="mt-1 truncate" style={{
-                            fontFamily: "var(--font-inter)",
-                            fontSize: "clamp(0.5rem, 0.6vw, 0.58rem)",
-                            fontWeight: 500,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.2em",
-                            color: "var(--text-muted)",
-                          }}>
-                            {card.tagline}
-                          </p>
-                        </div>
-                        <span className="shrink-0" style={{
-                          fontFamily: "var(--font-inter)",
-                          fontSize: "clamp(0.46rem, 0.55vw, 0.54rem)",
-                          letterSpacing: "0.26em",
-                          color: "var(--text-dim)",
+                        <p style={{
+                          fontFamily: "var(--font-avenir-book)",
+                          fontSize: "clamp(0.92rem, 1.1vw, 1.05rem)",
+                          fontWeight: 500,
+                          letterSpacing: "-0.01em",
+                          color: "var(--text)",
+                          lineHeight: 1.1,
                         }}>
-                          {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
-                        </span>
+                          {card.label}
+                        </p>
+                        <p className="mt-1.5 flex items-center gap-2" style={{
+                          fontFamily: "var(--font-inter)",
+                          fontSize: "clamp(0.5rem, 0.6vw, 0.58rem)",
+                          fontWeight: 500,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.2em",
+                          color: "var(--text-muted)",
+                        }}>
+                          <span className="min-w-0 truncate">{card.tagline}</span>
+                          <span aria-hidden style={{ color: "var(--text-dim)" }}>·</span>
+                          <span className="shrink-0" style={{ letterSpacing: "0.22em", color: "var(--text-dim)" }}>
+                            {String(i + 1).padStart(2, "0")} / {String(allCards.length).padStart(2, "0")}
+                          </span>
+                        </p>
                       </motion.div>
                     </motion.div>
                   );

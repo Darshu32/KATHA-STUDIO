@@ -8,7 +8,7 @@ export type NavItem = {
 
 /** Global card order — matches the home page carousel exactly */
 export const globalNavOrder: NavItem[] = [
-  { href: "/about", label: "Studio", type: "about" },
+  { href: "/studio", label: "Studio", type: "about" },
   ...services.map((s) => ({
     href: `/services/${s.slug}`,
     label: s.title,

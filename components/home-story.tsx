@@ -73,17 +73,19 @@ export function HomeStory() {
           <FadeUp>
             <p style={eyebrow}>— What We Value</p>
           </FadeUp>
-          <FadeUp delay={0.08} className="mt-12 grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-5 md:mt-16">
-            {VALUES.map((v) => (
-              <div key={v.title} className="flex h-full flex-col gap-4 bg-[var(--background)] px-1 py-10 lg:px-3 lg:py-12">
-                <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.3rem, 1.6vw, 1.45rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
-                  {v.title}
-                </h3>
-                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--text-muted)" }}>
-                  {v.body}
-                </p>
-              </div>
-            ))}
+          <FadeUp delay={0.08} className="mt-12 overflow-hidden md:mt-16">
+            <div className="-ml-px -mt-px grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+              {VALUES.map((v) => (
+                <div key={v.title} className="flex h-full flex-col gap-4 border-l border-t border-[var(--border)] bg-[var(--background)] px-1 py-10 lg:px-3 lg:py-12">
+                  <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.3rem, 1.6vw, 1.45rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
+                    {v.title}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--text-muted)" }}>
+                    {v.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </FadeUp>
         </section>
 
@@ -132,15 +134,20 @@ export function HomeStory() {
               experienced every day.
             </p>
           </FadeUp>
-          <FadeUp delay={0.16} className="mt-14 grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4 lg:grid-cols-7 md:mt-16">
-            {MATERIALS.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex flex-col items-center gap-3 bg-[var(--background)] px-3 py-10 text-center">
-                <Icon size={24} strokeWidth={1.25} color="var(--text-muted)" aria-hidden />
-                <span style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-caption)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--text-muted)" }}>
-                  {label}
-                </span>
-              </div>
-            ))}
+          {/* Hairlines live on the cells (border-t/border-l) and the grid is
+              nudged -1px so its outer edges clip — internal dividers stay, but
+              an unfilled last row never shows an empty (grey) trailing cell. */}
+          <FadeUp delay={0.16} className="mt-14 overflow-hidden md:mt-16">
+            <div className="-ml-px -mt-px grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7">
+              {MATERIALS.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex flex-col items-center gap-3 border-l border-t border-[var(--border)] bg-[var(--background)] px-3 py-10 text-center">
+                  <Icon size={24} strokeWidth={1.25} color="var(--text-muted)" aria-hidden />
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-caption)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--text-muted)" }}>
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </FadeUp>
         </section>
 

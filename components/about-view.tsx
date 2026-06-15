@@ -146,7 +146,7 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
                 style={{ backgroundColor: "var(--background)" }}
               >
                 <Image
-                  src="/images/about/neha-birla.jpeg"
+                  src="/images/about/neha-passport.jpeg"
                   alt="Portrait of Ar. Neha, Founder & Principal Architect of Katha Studio"
                   fill
                   sizes="(min-width: 768px) 20rem, 80vw"
@@ -159,10 +159,10 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
 
           <div className="order-1 md:order-2">
             <FadeUp>
-              <p style={eyebrow}>— Meet Ar. Neha</p>
+              <p style={eyebrow}>— Meet Neha</p>
             </FadeUp>
             <FadeUp delay={0.08} className="mt-5 md:mt-7">
-              <h2 style={sectionHeading}>Meet Ar. Neha</h2>
+              <h2 style={sectionHeading}>Ar. Neha</h2>
             </FadeUp>
             <FadeUp delay={0.16} className="mt-7 max-w-[58ch] md:mt-9">
               <p style={body}>Space has memory.</p>
@@ -220,19 +220,49 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
           <FadeUp>
             <p style={eyebrow}>— What We Value</p>
           </FadeUp>
-          <FadeUp delay={0.08} className="mt-8 grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-5">
-            {VALUES.map((v) => (
-              <div key={v.title} className="flex h-full flex-col gap-3 bg-[var(--background)] px-1 py-8 lg:px-3">
-                <span className="mb-1" style={{ color: "var(--text-muted)" }}>
-                  {VALUE_ICONS[v.title]}
-                </span>
-                <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
-                  {v.title}
-                </h3>
-                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", lineHeight: 1.65, color: "var(--text-muted)" }}>
-                  {v.body}
-                </p>
-              </div>
+          <FadeUp delay={0.08} className="mt-8 overflow-hidden">
+            <div className="-ml-px -mt-px grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+              {VALUES.map((v) => (
+                <div key={v.title} className="flex h-full flex-col gap-3 border-l border-t border-[var(--border)] bg-[var(--background)] px-1 py-8 lg:px-3">
+                  <span className="mb-1" style={{ color: "var(--text-muted)" }}>
+                    {VALUE_ICONS[v.title]}
+                  </span>
+                  <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
+                    {v.title}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", lineHeight: 1.65, color: "var(--text-muted)" }}>
+                    {v.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </section>
+
+        {/* ── CRAFT & MATERIALS ── */}
+        <section className="mt-24 md:mt-36">
+          <FadeUp>
+            <p style={eyebrow}>— Craft &amp; Materials</p>
+          </FadeUp>
+          <FadeUp delay={0.08} className="mt-6 max-w-[68ch] md:mt-8">
+            <p style={{ ...body, fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)" }}>
+              Every decision in a building is also a material decision.
+            </p>
+            <p style={{ ...body, marginTop: "1.5rem" }}>
+              What something is made of determines how it ages, how it feels
+              underhand, how it holds light, how it sits in its climate. We
+              choose materials for what they do over time — not just how they
+              read on the day they are installed.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.16} className="mt-10 flex flex-wrap gap-x-8 gap-y-3 md:mt-12">
+            {["Wood", "Stone", "Joinery", "Sketches", "Models", "Material Boards", "Details"].map((m) => (
+              <span
+                key={m}
+                style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-muted)" }}
+              >
+                {m}
+              </span>
             ))}
           </FadeUp>
         </section>

@@ -9,106 +9,92 @@ import {
 import * as React from "react";
 
 /**
- * Visitor-facing autoresponder — plain and friendly.
- * White paper, system sans, no ornaments.
+ * Visitor-facing autoresponder — calm editorial serif on soft paper.
+ * Sent to anyone who submits the contact form.
  */
-export type VisitorAutoresponseProps = {
-  firstName: string;
-  submittedAt: string;
+
+const PAPER = "#f7f6f2";
+const INK = "#1a1a1a";
+const INK_DIM = "#6f6c66";
+const SERIF = `Georgia, "Times New Roman", Times, serif`;
+
+const para: React.CSSProperties = {
+  margin: "28px 0 0 0",
+  fontFamily: SERIF,
+  fontSize: "18px",
+  fontWeight: 400,
+  lineHeight: 1.6,
+  color: INK,
 };
 
-const TEXT = "#111111";
+export function VisitorAutoresponse({ name = "" }: { name?: string }) {
+  const firstName = name.trim().split(/\s+/)[0] || "there";
 
-const fontStack = `-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif`;
-
-export function VisitorAutoresponse({
-  firstName = "there",
-  submittedAt = "just now",
-}: VisitorAutoresponseProps) {
   return (
     <Html>
       <Head />
       <Preview>
-        Thank you for writing to KATHA STUDIO — we&apos;ve received your note.
+        Every message we receive is the beginning of something important to us.
       </Preview>
       <Body
         style={{
           margin: 0,
           padding: 0,
-          backgroundColor: "#ffffff",
-          fontFamily: fontStack,
-          color: TEXT,
+          backgroundColor: PAPER,
+          fontFamily: SERIF,
+          color: INK,
+          WebkitFontSmoothing: "antialiased",
         }}
       >
         <Container
           style={{
             maxWidth: "560px",
             margin: "0 auto",
-            padding: "40px 32px 40px",
-            backgroundColor: "#ffffff",
+            padding: "48px 40px 52px",
+            backgroundColor: PAPER,
           }}
         >
           {/* Wordmark */}
           <Text
             style={{
               margin: 0,
-              fontSize: "13px",
-              fontWeight: 600,
-              letterSpacing: "0.18em",
-              color: TEXT,
+              fontFamily: SERIF,
+              fontSize: "19px",
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+              color: INK,
             }}
           >
             KATHA STUDIO
           </Text>
 
           {/* Greeting */}
-          <Text
-            style={{
-              margin: "28px 0 0 0",
-              fontSize: "20px",
-              fontWeight: 600,
-              lineHeight: 1.35,
-              color: TEXT,
-            }}
-          >
-            Hi {firstName},
-          </Text>
+          <Text style={para}>Hi {firstName},</Text>
 
           {/* Body */}
-          <Text
-            style={{
-              margin: "20px 0 0 0",
-              fontSize: "15px",
-              lineHeight: 1.65,
-              color: TEXT,
-            }}
-          >
-            Thanks for writing. We received your note on {submittedAt} and will
-            reply within two working days.
+          <Text style={{ ...para, marginTop: "10px" }}>
+            Every message we receive is the beginning of something important to
+            us.
           </Text>
 
-          <Text
-            style={{
-              margin: "16px 0 0 0",
-              fontSize: "15px",
-              lineHeight: 1.65,
-              color: TEXT,
-            }}
-          >
-            If anything is urgent, just reply to this email — it routes
-            straight to the studio.
+          <Text style={para}>
+            We will be in touch within two working days.
           </Text>
 
           {/* Sign-off */}
+          <Text style={{ ...para, marginTop: "40px" }}>— Neha</Text>
+
           <Text
             style={{
-              margin: "32px 0 0 0",
-              fontSize: "15px",
-              lineHeight: 1.65,
-              color: TEXT,
+              margin: "6px 0 0 0",
+              fontFamily: SERIF,
+              fontSize: "16px",
+              fontWeight: 400,
+              lineHeight: 1.6,
+              color: INK_DIM,
             }}
           >
-            — The KATHA STUDIO team
+            Founder | Katha Studio
           </Text>
         </Container>
       </Body>

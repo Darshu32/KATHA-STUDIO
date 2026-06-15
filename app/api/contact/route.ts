@@ -20,11 +20,10 @@ import { VisitorAutoresponse } from "@/emails/visitor-autoresponse";
  *                       During development, use Resend's onboarding@resend.dev
  *                       which only delivers to the account owner.
  *
- * Optional:
- *   STUDIO_EMAIL      — defaults to neha@kathastudio.co
+ * Enquiry notifications are delivered to the studio inbox below.
  */
 
-const STUDIO_EMAIL = process.env.STUDIO_EMAIL ?? "neha@kathastudio.co";
+const STUDIO_EMAIL = "neha@kathastudio.co";
 const RESEND_FROM =
   process.env.RESEND_FROM ?? "KATHA STUDIO <onboarding@resend.dev>";
 
@@ -151,7 +150,6 @@ export async function POST(request: Request) {
   const now = new Date();
   const submittedAt = formatSubmittedAt(now);
   const dispatchId = buildDispatchId(now);
-  const firstName = name.split(/\s+/)[0];
   const sourceUrl =
     request.headers.get("referer") ??
     request.headers.get("origin") ??
@@ -197,10 +195,7 @@ export async function POST(request: Request) {
       to: [email],
       replyTo: STUDIO_EMAIL,
       subject: `Thank you for writing to KATHA STUDIO`,
-      react: VisitorAutoresponse({
-        firstName,
-        submittedAt,
-      }),
+      react: VisitorAutoresponse({ name }),
     });
 
     if (visitor.error) {

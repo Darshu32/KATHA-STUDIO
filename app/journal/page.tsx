@@ -62,9 +62,8 @@ export default function NotesPage() {
                 color: "var(--text-muted)",
               }}
             >
-              Our quieter writing — reflections on the way we work, the materials
-              we return to, and the small observations that come from spending
-              time in people&apos;s homes. A register, kept slowly.
+              Thinking from the studio — on space, material and the details
+              that matter.
             </p>
           </FadeUp>
 

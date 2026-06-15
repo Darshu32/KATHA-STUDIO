@@ -75,9 +75,10 @@ export default function ApproachPage() {
           </FadeUp>
 
           {/* ── STEPS ── */}
-          <div className="grid grid-cols-1 gap-px bg-[var(--border)] pt-px mb-16 md:grid-cols-2 lg:grid-cols-5 lg:mb-20">
+          <div className="mb-16 overflow-hidden lg:mb-20">
+            <div className="-ml-px -mt-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
             {STEPS.map((step, i) => (
-              <FadeUp key={step.num} delay={0.2 + i * 0.07} className="bg-[var(--background)]">
+              <FadeUp key={step.num} delay={0.2 + i * 0.07} className="border-l border-t border-[var(--border)] bg-[var(--background)]">
                 <div className="flex h-full flex-col gap-4 px-1 py-8 md:px-2 lg:px-3 lg:py-10">
                   <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.28em", color: "var(--text-dim)" }}>
                     {step.num}
@@ -98,37 +99,8 @@ export default function ApproachPage() {
                 </div>
               </FadeUp>
             ))}
+            </div>
           </div>
-
-          {/* ── CRAFT & MATERIALS ── */}
-          <section className="section-pad border-t border-[var(--border)]">
-            <FadeUp>
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-caption)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.32em", color: "var(--text-dim)" }}>
-                — Craft &amp; Materials
-              </p>
-            </FadeUp>
-            <FadeUp delay={0.08} className="mt-6 max-w-[68ch] md:mt-8">
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)" }}>
-                Every decision in a building is also a material decision.
-              </p>
-              <p className="mt-5" style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.95rem, 1.2vw, 1.08rem)", lineHeight: 1.8, color: "var(--text-muted)" }}>
-                What something is made of determines how it ages, how it feels
-                underhand, how it holds light, how it sits in its climate. We
-                choose materials for what they do over time — not just how they
-                read on the day they are installed.
-              </p>
-            </FadeUp>
-            <FadeUp delay={0.16} className="mt-10 flex flex-wrap gap-x-8 gap-y-3 md:mt-12">
-              {["Wood", "Stone", "Joinery", "Sketches", "Models", "Material Boards", "Details"].map((m) => (
-                <span
-                  key={m}
-                  style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-muted)" }}
-                >
-                  {m}
-                </span>
-              ))}
-            </FadeUp>
-          </section>
 
           {/* ── BACK / CONTACT ── */}
           <div className="flex items-center justify-between border-t border-[var(--border)] py-8 pb-12 lg:py-6 lg:pb-8">
