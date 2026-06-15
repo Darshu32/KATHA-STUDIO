@@ -10,3 +10,7 @@ dist
 *.log
 .claude/
 .vercel
+
+# macOS / build artifacts
+.DS_Store
+tsconfig.tsbuildinfo

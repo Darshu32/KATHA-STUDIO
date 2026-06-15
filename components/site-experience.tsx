@@ -692,11 +692,14 @@ export function SiteExperience() {
                   fontSize: "var(--fs-hero)",
                   letterSpacing: "-0.02em",
                   overflowWrap: "break-word",
-                  wordBreak: "break-word",
+                  textWrap: "balance",
                 }}
               >
-                Every space has a story
-                <br />
+                Every space has a story,{" "}
+                {/* Break only on larger screens; on mobile the line flows
+                    naturally so "waiting" continues after "story". The space
+                    sits before the break so desktop has no stray indent. */}
+                <br className="hidden md:block" />
                 waiting to be built.
               </motion.h1>
 
