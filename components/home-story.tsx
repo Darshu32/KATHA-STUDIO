@@ -37,14 +37,6 @@ const body = {
   color: "var(--text-muted)",
 };
 
-const VALUES = [
-  { title: "Depth", body: "We ask what a space needs to become — not just what it needs to look like." },
-  { title: "Permanence", body: "Every material, every proportion, every detail is chosen to last and earn its place over time." },
-  { title: "Roots", body: "We draw from building traditions that carried intelligence about space long before it was written down." },
-  { title: "Precision", body: "Nothing in a Katha project is arbitrary. Every decision has a reason that holds." },
-  { title: "Foresight", body: "We design for the life a space will carry — ten years, twenty years, long after the first day." },
-];
-
 /* Craft Matters — materials & process represented as quiet line icons */
 const MATERIALS = [
   { icon: TreePine, label: "Wood" },
@@ -61,29 +53,8 @@ export function HomeStory() {
     <div className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto w-full max-w-[88rem] px-5 sm:px-8 md:px-12 lg:px-20">
 
-        {/* ── WHAT WE VALUE ── */}
-        <section className="section-pad">
-          <FadeUp>
-            <p style={eyebrow}>— What We Value</p>
-          </FadeUp>
-          <FadeUp delay={0.08} className="mt-12 overflow-hidden md:mt-16">
-            <div className="-ml-px -mt-px grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-              {VALUES.map((v) => (
-                <div key={v.title} className="flex h-full flex-col gap-4 border-l border-t border-[var(--border)] bg-[var(--background)] px-1 py-10 lg:px-3 lg:py-12">
-                  <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.3rem, 1.6vw, 1.45rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
-                    {v.title}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--text-muted)" }}>
-                    {v.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
-        </section>
-
         {/* ── WHAT WE OFFER ── */}
-        <section className="section-pad border-t border-[var(--border)]">
+        <section className="section-pad">
           <FadeUp>
             <p style={eyebrow}>— What We Offer</p>
           </FadeUp>
