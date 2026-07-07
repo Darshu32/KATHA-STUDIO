@@ -74,90 +74,53 @@ export function JournalView() {
             </p>
           </FadeUp>
 
-          {/* ── THE NOTES, READ IN PLACE ── */}
-          <div className="mt-14 md:mt-20">
+          {/* ── THE INDEX — titles only, each opens its own reading page.
+                Keeps the page short however many pieces are published. ── */}
+          <div className="mt-12 md:mt-16">
             {publishedNotes.map((note, i) => {
-              const nt = noteText(t, note.slug);
-              const title = nt?.title ?? note.title;
-              const excerpt = nt?.excerpt ?? note.excerpt;
-              const paragraphs = nt?.paragraphs ?? note.paragraphs;
+              const title = noteText(t, note.slug)?.title ?? note.title;
               return (
-              <FadeUp
-                key={note.slug}
-                delay={0.04}
-                className={
-                  i === 0
-                    ? "border-t border-[var(--border-medium)] pt-12 md:pt-14"
-                    : "mt-16 border-t border-[var(--border)] pt-12 md:mt-24 md:pt-14"
-                }
-              >
-                <article>
-                  {/* Category · date */}
-                  <div className="flex items-center gap-3">
-                    <span style={{ ...microLabel, color: "var(--accent)" }}>
-                      {noteCategory(t, note.category)}
-                    </span>
-                    <span
-                      aria-hidden
-                      className="h-px w-6"
-                      style={{ backgroundColor: "var(--border-medium)" }}
-                    />
-                    <span style={{ ...microLabel, color: "var(--text-dim)" }}>
-                      {[note.date, note.readTime].filter(Boolean).join(" · ")}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h2
-                    className="mt-4"
-                    style={{
-                      fontFamily: "var(--font-avenir-book)",
-                      fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
-                      fontWeight: 300,
-                      lineHeight: 1.06,
-                      letterSpacing: "-0.02em",
-                      color: "var(--text)",
-                    }}
+                <FadeUp key={note.slug} delay={0.04 + i * 0.05}>
+                  <Link
+                    href={`/journal/${note.slug}`}
+                    className={`group block ${
+                      i === 0 ? "border-t border-[var(--border-medium)]" : "border-t border-[var(--border)]"
+                    } py-7 transition-opacity hover:opacity-100 md:py-8`}
                   >
-                    {title}
-                  </h2>
+                    {/* Category · date */}
+                    <div className="flex items-center gap-3">
+                      <span style={{ ...microLabel, color: "var(--accent)" }}>
+                        {noteCategory(t, note.category)}
+                      </span>
+                      <span aria-hidden className="h-px w-6" style={{ backgroundColor: "var(--border-medium)" }} />
+                      <span style={{ ...microLabel, color: "var(--text-dim)" }}>
+                        {[note.date, note.readTime].filter(Boolean).join(" · ")}
+                      </span>
+                    </div>
 
-                  {/* Lede */}
-                  {excerpt && (
-                    <p
-                      className="mt-5 max-w-[52ch]"
+                    {/* Title with arrow */}
+                    <h2
+                      className="mt-3 flex items-start justify-between gap-4"
                       style={{
                         fontFamily: "var(--font-avenir-book)",
-                        fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)",
-                        fontWeight: 500,
-                        lineHeight: 1.55,
-                        color: "var(--text-muted)",
+                        fontSize: "clamp(1.5rem, 3.4vw, 2.2rem)",
+                        fontWeight: 300,
+                        lineHeight: 1.1,
+                        letterSpacing: "-0.02em",
+                        color: "var(--text)",
                       }}
                     >
-                      {excerpt}
-                    </p>
-                  )}
-
-                  {/* Body */}
-                  <div className="mt-6">
-                    {paragraphs.map((para, j) => (
-                      <p
-                        key={j}
-                        className={j === 0 ? "" : "mt-5"}
-                        style={{
-                          fontFamily: "var(--font-avenir-book)",
-                          fontSize: "clamp(1rem, 1.2vw, 1.08rem)",
-                          fontWeight: 400,
-                          lineHeight: 1.85,
-                          color: "var(--text)",
-                        }}
+                      <span className="transition-opacity duration-300 group-hover:opacity-60">{title}</span>
+                      <span
+                        aria-hidden
+                        className="accent-arrow mt-1 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+                        style={{ fontSize: "0.9rem" }}
                       >
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                </article>
-              </FadeUp>
+                        ↗
+                      </span>
+                    </h2>
+                  </Link>
+                </FadeUp>
               );
             })}
           </div>

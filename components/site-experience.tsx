@@ -272,7 +272,7 @@ function IntroBrandSequence({
     if (!visible) return;
     const toSelect = window.setTimeout(
       () => setPhase((p) => (p === "letters" ? "select" : p)),
-      reduceMotion ? 300 : 2400
+      reduceMotion ? 300 : 2300
     );
     const onVisible = () => {
       if (document.visibilityState === "visible") {
@@ -344,7 +344,12 @@ function IntroBrandSequence({
             }
             className="flex w-full items-center justify-center px-6 md:px-12 lg:px-20"
           >
-            <div className="flex flex-wrap items-end justify-center gap-x-6 gap-y-1 sm:gap-x-8 md:gap-x-10">
+            <motion.div
+              initial={false}
+              animate={{ y: phase === "letters" ? 64 : 0 }}
+              transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-wrap items-end justify-center gap-x-6 gap-y-1 sm:gap-x-8 md:gap-x-10"
+            >
               {/* KATHA — typewriter letter by letter */}
               <div className="flex items-end">
                 {brandLetters.map((letter, index) => {
@@ -380,19 +385,31 @@ function IntroBrandSequence({
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* ── Language selector — appears once the wordmark settles still ── */}
-          <AnimatePresence>
-            {phase === "select" && (
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 8, transition: { duration: 0.2 } }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="mt-10 flex flex-col items-center gap-5 px-6 md:mt-12"
-              >
+          {/* ── Language selector ──
+             Its space is reserved from the first frame (always mounted) so the
+             wordmark never re-centers/jumps when it appears. During the typing
+             phase it sits invisible and non-interactive, then fades in gently
+             once the wordmark has settled — a smooth transition, no snap. */}
+          <motion.div
+            initial={false}
+            animate={
+              phase === "select"
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 12 }
+            }
+            transition={{
+              duration: 0.75,
+              delay: phase === "select" ? 0.55 : 0,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            aria-hidden={phase !== "select"}
+            className={`mt-10 flex flex-col items-center gap-5 px-6 md:mt-12 ${
+              phase === "select" ? "pointer-events-auto" : "pointer-events-none"
+            }`}
+          >
                 <p
                   className="font-[var(--font-inter)] uppercase"
                   style={{
@@ -429,9 +446,7 @@ function IntroBrandSequence({
                     →
                   </span>
                 </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

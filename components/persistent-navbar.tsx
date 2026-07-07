@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/components/language-provider";
+import { HeaderLanguageMenu } from "@/components/header-language-menu";
 import { whatWeDo, sectors } from "@/lib/data";
 
 type NavEntry = {
@@ -80,6 +81,9 @@ export function PersistentNavbar() {
                 &larr; {backLink.label}
               </Link>
             )}
+
+            {/* Language switcher — globe icon, present on every page */}
+            <HeaderLanguageMenu />
 
             {/* Dark mode toggle — present in the header on every page */}
             <button
