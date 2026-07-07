@@ -90,7 +90,7 @@ export function PersistentNavbar() {
               type="button"
               onClick={() => setIsDark((p) => !p)}
               aria-label={isDark ? "Switch to light" : "Switch to dark"}
-              className="h-[0.9rem] w-[2rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
+              className="h-[0.75rem] w-[1.65rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
             />
 
             {/* Hamburger — all screens */}
