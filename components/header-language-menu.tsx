@@ -39,17 +39,17 @@ export function HeaderLanguageMenu() {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Change language"
-        className="flex items-center gap-1.5 transition-opacity hover:opacity-60"
+        className="flex items-center gap-[0.3rem] transition-opacity hover:opacity-60"
         style={{ color: "var(--text)" }}
       >
-        <Globe size={17} strokeWidth={1.5} aria-hidden />
+        <Globe size={16} strokeWidth={1.5} aria-hidden />
         <span
           style={{
             fontFamily: "var(--font-inter)",
-            fontSize: "0.6rem",
+            fontSize: "0.58rem",
             fontWeight: 600,
             textTransform: "uppercase",
-            letterSpacing: "0.16em",
+            letterSpacing: "0.06em",
           }}
         >
           {language.code}
