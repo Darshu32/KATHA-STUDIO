@@ -1,0 +1,430 @@
+{
+  "intro": {
+    "chooseLanguage": "Dilinizi seçin",
+    "enter": "Girmek"
+  },
+  "nav": {
+    "studio": "Stüdyo",
+    "approach": "Yaklaşmak",
+    "services": "Hizmetler",
+    "journal": "Dergi",
+    "contact": "Temas etmek",
+    "home": "Ev",
+    "backToHome": "Ana sayfaya geri dön",
+    "next": "Sonraki",
+    "previous": "Öncesi",
+    "locationLine": "KATHA Stüdyosu · Bengaluru",
+    "whatWeDo": "Ne Yapıyoruz",
+    "whatWeBuild": "Ne İnşa Ediyoruz",
+    "allServices": "Tüm Hizmetler"
+  },
+  "home": {
+    "eyebrow": "Mimari · İç Mekan Tasarımı · Yenileme · Peyzaj",
+    "titleLine1": "Her mekanın bir hikayesi vardır.",
+    "titleLine2": "İnşa edilmeyi bekliyor.",
+    "mystery": [
+      "Nefeslerini tutan mekanlar",
+      "Sessizlik arttıkça yaşam da artar.",
+      "Çizim bittikten sonra geriye ne kalır?",
+      "Işık, sabır, tek bir jest",
+      "Mimari, alçak sesle"
+    ],
+    "subhead": "Katha Studio'da her proje dinlemekle başlar. İnsanları, mekanı ve amacı anlamak için zaman ayırıyoruz; ardından kişisel, zamansız ve destekledikleri yaşamlarla derinden bağlantılı hissettiren mekanlar şekillendiriyoruz.",
+    "location": "Bengaluru merkezli · Hindistan genelinde çalışıyor · Seçili uluslararası iş birliklerine açık",
+    "cta": "Bir Sohbet Başlatın",
+    "cardStudioLabel": "Stüdyo",
+    "cardStudioTagline": "Biz kimiz",
+    "cardContactLabel": "Temas etmek",
+    "cardContactTagline": "Bir konuşma başlatın",
+    "category": {
+      "intro": "Giriş",
+      "studio": "Stüdyo",
+      "contact": "Temas etmek",
+      "residence": "İkametgah",
+      "interior": "İç mekan",
+      "renovation": "Yenileme",
+      "advisory": "Danışmanlık",
+      "service": "Hizmet",
+      "residential": "yerleşim",
+      "commercial": "Reklam",
+      "highRise": "Çok katlı"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Katha neden?",
+    "heading": "Katha, Hikaye Anlamına Gelir.",
+    "para1": "Her proje, özetlenemeyecek bir şeyler barındırır; bir ailenin gerçekte nasıl yaşadığı, bir işletmenin içeriden nasıl bir his uyandırması gerektiği, bir peyzajın nasıl deneyimlenmek istediği, bir alanın sessizce ne istediği gibi.",
+    "para2Line1": "Bizim işimiz bunu okumayı öğrenmek.",
+    "para2Line2": "Sonra da onu tam olarak inşa etmek.",
+    "process": {
+      "sketchbook": "Çizim defteri",
+      "tracingPaper": "İzleme Kağıdı",
+      "handwrittenNotes": "El Yazısı Notlar",
+      "materialBoard": "Malzeme Panosu"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "Sunduklarımız",
+    "offerHeading": "Nasıl İnşa Ediyoruz",
+    "craftEyebrow": "El Sanatları Önemlidir",
+    "craftBody": "Mimari, binlerce kararla şekillenir. Bir malzemenin kalitesi, bir odanın oranları, ışığın mekana giriş şekli ve birleşim yerinin detayı, bir mekanın her gün nasıl deneyimlendiğini etkiler.",
+    "closingCta": "Projenizi Konuşalım",
+    "materials": {
+      "wood": "Odun",
+      "stone": "Taş",
+      "joinery": "Marangozluk",
+      "sketches": "Çizimler",
+      "models": "Modeller",
+      "materialBoards": "Malzeme Panoları",
+      "details": "Detaylar"
+    }
+  },
+  "approach": {
+    "eyebrow": "Çalışma Şeklimiz",
+    "title": "Yaklaşımımız",
+    "intro": "Her aşamanın bir amacı vardır. Mevcut aşama tamamlanana kadar hiçbir şey ilerleyemez.",
+    "startConversation": "Bir Sohbet Başlatın",
+    "steps": [
+      {
+        "title": "Dinlemek",
+        "body": "Her proje, proje özetinden önce başlar; yaşam tarzınız, işletmenizin işleyiş biçimi ve sitenin sessizce ne istediğiyle ilgilidir."
+      },
+      {
+        "title": "Keşfetmek",
+        "body": "Fikirler açıkça test edilir. Herhangi bir yöne karar verilmeden önce oran, ışık ve malzeme incelenir."
+      },
+      {
+        "title": "Tasarım",
+        "body": "Konsept, her kararın verilen görev tanımına ve mekanın kendisine uygun olduğu bir bütün haline getiriliyor."
+      },
+      {
+        "title": "İyileştir",
+        "body": "Ayrıntılar çözüldü. Bu, bitmiş gibi görünen bir mekânı, doğru hissettiren bir mekândan ayıran sessiz çalışmadır."
+      },
+      {
+        "title": "Teslim etmek",
+        "body": "İş, en ince ayrıntısına kadar orijinal amacına sadık kalınarak tamamlandı."
+      }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "Sunduklarımız",
+    "title": "Nasıl İnşa Ediyoruz",
+    "getInTouch": "İletişime Geçin"
+  },
+  "journalPage": {
+    "eyebrow": "Stüdyodan",
+    "title": "Dergi",
+    "intro": "Stüdyodan bakış açısıyla — mekan, malzeme ve önemli detaylar üzerine.",
+    "inPreparation": "Hazırlık aşamasında",
+    "stayInTouch": "İletişimde Kalalım"
+  },
+  "marquee": [
+    "Katha Stüdyosu",
+    "Sessizlik, Tasarlanmış",
+    "Bengaluru",
+    "Mimari Bir Duraklama Noktası Olarak",
+    "Maddi Sakinlik",
+    "Dinleyen Odalar",
+    "Seçilmiş Çalışmalar",
+    "Sessizce Başlayın"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Katha neden?",
+    "whyHeading": "Katha, Hikaye Anlamına Gelir.",
+    "whyPara1": "Her proje, özetlenemeyecek bir şeyler barındırır; bir ailenin gerçekte nasıl yaşadığı, bir işletmenin içeriden nasıl bir his uyandırması gerektiği, bir peyzajın nasıl deneyimlenmek istediği, bir alanın sessizce ne istediği gibi.",
+    "whyPara2Line1": "Bizim işimiz bunu okumayı öğrenmek.",
+    "whyPara2Line2": "Sonra da onu tam olarak inşa etmek.",
+    "nehaEyebrow": "Neha ile tanışın",
+    "nehaHeading": "Mimar Neha",
+    "nehaPortraitAlt": "Katha Studio'nun Kurucusu ve Baş Mimarı Ar. Neha'nın Portresi",
+    "nehaPara1": "Uzayın hafızası vardır.",
+    "nehaPara2": "Yapının nasıl inşa edildiğini, neye dayanacak şekilde tasarlandığını ve iş bittikten çok sonra bile insanlarda nasıl bir his uyandırdığını yansıtır.",
+    "nehaPara3": "Yıllarımı bunu okumayı öğrenmekle geçirdim: zamanla nasıl eskiyeceğine göre seçilmiş bir malzemenin ağırlığında, insan ölçeğini bir disiplin haline gelmeden çok önce anlamış geleneklerden alınan oranlarda, her şeyin tam olarak olması gereken yerde olduğu için asla açıklamaya ihtiyaç duymayan bir odanın sessiz mantığında.",
+    "nehaPara4": "Katha projelerinin temelinde bu derinlikteki özen yatmaktadır.",
+    "nehaName": "Mimar Neha",
+    "nehaRole": "Kurucu ve Baş Mimar",
+    "perspectiveEyebrow": "Bizim Bakış Açımız",
+    "perspective1": "En iyi mekanlar asla tesadüfen oluşmaz.",
+    "perspective2": "Her malzeme, on yıllar boyunca nasıl bir performans sergileyeceği göz önünde bulundurularak seçilir.",
+    "perspective3": "Biz, kalıcılığı, ölçeği ve insan deneyimini en derin düzeyde anlayan yapı geleneklerinden ilham alıyoruz.",
+    "perspective4": "Biz, bir mekanın sadece tamamlandığı anı değil, içinde yaşanan hayatı da göz önünde bulundurarak tasarım yapıyoruz.",
+    "valuesEyebrow": "Değer Verdiğimiz Şeyler",
+    "values": [
+      {
+        "title": "Derinlik",
+        "body": "Biz bir mekanın sadece nasıl görünmesi gerektiği değil, neye dönüşmesi gerektiği sorusunu soruyoruz."
+      },
+      {
+        "title": "Kalıcılık",
+        "body": "Her malzeme, her oran, her detay, kalıcı olması ve zaman içinde yerini alması için özenle seçilmiştir."
+      },
+      {
+        "title": "Kökler",
+        "body": "Uzay hakkındaki bilgileri yazılı hale getirilmeden çok önce bünyesinde barındıran yapı geleneklerinden yararlanıyoruz."
+      },
+      {
+        "title": "Kesinlik",
+        "body": "Katha projelerinde hiçbir şey rastgele değildir. Her kararın geçerli bir nedeni vardır."
+      },
+      {
+        "title": "Öngörü",
+        "body": "Biz, bir mekanın taşıyacağı ömrü göz önünde bulundurarak tasarım yapıyoruz; on yıl, yirmi yıl, ilk günden çok sonra bile."
+      }
+    ],
+    "craftEyebrow": "El Sanatları ve Malzemeler",
+    "craftPara1": "Bir binayla ilgili her karar aynı zamanda malzeme ile ilgili bir karardır.",
+    "craftPara2": "Bir şeyin neyden yapıldığı, nasıl yaşlanacağını, altta nasıl hissettireceğini, ışığı nasıl tutacağını, iklimde nasıl duracağını belirler. Malzemeleri sadece monte edildikleri gün nasıl göründüklerine göre değil, zaman içinde ne yaptıklarına göre seçeriz.",
+    "craftTags": [
+      "Odun",
+      "Taş",
+      "Marangozluk",
+      "Çizimler",
+      "Modeller",
+      "Malzeme Panoları",
+      "Detaylar"
+    ],
+    "clientsEyebrow": "Kimlerle Çalışıyoruz",
+    "clientsPara1": "Biz, bir mekanı sadece bir proje olarak görmeyen insanlarla çalışıyoruz.",
+    "clientsPara2": "Nesiller boyu dayanacak ve doğru hissettirecek bir ev isteyen aileler. Çevrelerinin kim olduklarını yansıttığını anlayan işletmeler. Başlangıçtaki doğru detayların sonrasında her şeyi belirlediğini bilen geliştiriciler.",
+    "clientsPara3": "Yapabileceğimiz işleri tam bir özveriyle üstleniyoruz. Daha azıyla yetinmiyoruz.",
+    "noteBody": "Her proje, birinin hayatındaki önemli bir bölümü temsil eder. Bu, çok değer verdiğimiz bir sorumluluktur. Katha Studio'yu bu yolculuğun bir parçası olarak değerlendirdiğiniz için teşekkür ederiz.",
+    "noteSignature": "— Mimar Neha"
+  },
+  "contactPage": {
+    "eyebrow": "İletişime Geçin",
+    "titleLine1": "Başlayın",
+    "titleLine2": "konuşma",
+    "details": {
+      "emailLabel": "E-posta",
+      "phoneLabel": "Telefon",
+      "studioLabel": "Stüdyo",
+      "studioValue": "Bengaluru, Hindistan",
+      "portfolioLabel": "Portföy",
+      "portfolioValue": "Talep üzerine temin edilebilir — lütfen bize yazın."
+    }
+  },
+  "contactForm": {
+    "nameLabel": "İsim",
+    "namePlaceholder": "Adınız",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Proje Türü",
+    "projectTypePlaceholder": "Örneğin, İç Mekanlar",
+    "timelineLabel": "Zaman çizelgesi",
+    "timelinePlaceholder": "Örneğin 3-6 ay",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Bize projenizden bahsedin — nedir, şu anki aşamasında ve neye dönüşmesini umuyorsunuz?",
+    "send": "Sorgu Gönder",
+    "sending": "Gönderme",
+    "sent": "Gönderildi ✓",
+    "success": "— Teşekkür ederiz. İki iş günü içinde sizinle iletişime geçeceğiz.",
+    "errors": {
+      "checkFields": "Lütfen işaretlenmiş alanları kontrol edin.",
+      "network": "Ağ hatası. Lütfen tekrar deneyin.",
+      "nameRequired": "Lütfen adınızı paylaşın.",
+      "nameShort": "İsim en az 2 karakterden oluşmalıdır.",
+      "emailRequired": "Lütfen e-posta adresinizi paylaşın.",
+      "emailInvalid": "Bu geçerli bir e-posta adresi gibi görünmüyor.",
+      "phoneRequired": "Lütfen telefon numaranızı paylaşın.",
+      "phoneChars": "Yalnızca rakamlar, boşluklar, tireler, noktalar veya parantezler kullanın.",
+      "phoneDigits": "Telefon numarası 10 haneli olmalıdır (içinde +91 olsun veya olmasın).",
+      "messageRequired": "Lütfen birkaç kelime paylaşın.",
+      "messageShort": "Biraz daha — en az 10 karakter.",
+      "messageLong": "Bu biraz uzun oldu, lütfen 2000 karakterin altında tutun."
+    }
+  },
+  "detail": {
+    "scope": "Kapsam",
+    "ctaLabel": "Bir Proje Başlatın",
+    "entering": "Giriş"
+  },
+  "services": {
+    "architecture": {
+      "title": "Mimari",
+      "category": "Evler ve Binalar",
+      "tagline": "Netlik ve amaç gözetilerek tasarlanmış evler ve binalar.",
+      "desc": "Netlik, amaç ve onları kullanan insanlarla güçlü bir bağ kurularak tasarlanmış evler ve binalar.",
+      "paragraphs": [
+        "Evlerimizi ve binalarımızı netlik, amaç ve onları kullanan insanlarla güçlü bir bağ kurarak tasarlıyoruz.",
+        "Her proje, nasıl yaşamak veya çalışmak istediğinizi anlamakla başlar. Buradan yola çıkarak, ilk eskizden son detaya kadar dikkatlice düşünülen bir şekilde, ışık, oran ve bir yerin nasıl hissettirmesi gerektiği etrafında mekanlar şekillendiriyoruz."
+      ],
+      "scope": [
+        "Yeni Evler",
+        "Ticari Alanlar",
+        "Konsept Tasarımı",
+        "Site ve Detaylandırma"
+      ],
+      "imageCaption": "Çalışma · Işık ve Oran"
+    },
+    "interiors": {
+      "title": "İç Mekanlar",
+      "category": "Mekanlar ve Detaylandırma",
+      "tagline": "Her iç mekan, mobilyadan önce bir duygu barındırır.",
+      "desc": "Malzeme seçimi, ışık ve özenli detaylandırma ile şekillendirilen mekanlar.",
+      "paragraphs": [
+        "İşin püf noktası, nadiren görülen seçimlerde gizlidir: bir yüzeyin dokusu, bir odanın oranları, ışığın gün boyunca nasıl yansıdığı. Bunlar, bir mekânın yıllarca içinde yaşamanın nasıl bir his vereceğini belirleyen kararlardır.",
+        "Her Katha iç mekanı bu prensibe göre tasarlanmıştır."
+      ],
+      "scope": [
+        "Mekansal Planlama",
+        "Malzeme Seçimi",
+        "Doğrama ve Ankastre Mobilyalar",
+        "Işık ve Atmosfer"
+      ],
+      "imageCaption": "Çalışma · Malzeme ve Detay"
+    },
+    "renovation": {
+      "title": "Yenileme",
+      "category": "Evrimleşen Mekanlar",
+      "tagline": "Var olan her mekan, herhangi bir değişiklik yapılmadan önce anlaşılmaya değer bir şey barındırır.",
+      "desc": "Mevcut mekanların güçlü yönlerini temel alarak, onların gelişimine katkıda bulunmak.",
+      "paragraphs": [
+        "Yaş, bir binada zekâ izleri bırakır; bu izler binanın nasıl inşa edildiğinde, neye dayanacak şekilde inşa edildiğinde ve zaman içinde sessizce değerini koruduğunda kendini gösterir. Bizim işimiz, neyi koruyacağımızı, neyi geliştireceğimizi ve her ikisini de, mekanı tekrar tekrar ziyaret etmeye değer kılan özelliklerini kaybetmeden nasıl ileriye taşıyacağımızı bilmektir."
+      ],
+      "scope": [
+        "Yapısal Yeniden Düzenleme",
+        "Kültürel Miras Restorasyonu",
+        "Uzantılar",
+        "Uyarlanabilir Yeniden Kullanım"
+      ],
+      "imageCaption": "Çalışma · Mevcut"
+    },
+    "advisory": {
+      "title": "Danışmanlık",
+      "category": "Rehberlik ve Planlama",
+      "tagline": "Doğru sorunun erken sorulması, sonrasında yaşanacak her şeyi kurtarır.",
+      "desc": "Planlama, karar alma ve uygulama yoluyla rehberlik sağlamak.",
+      "paragraphs": [
+        "Bazı projeler tam tasarım gerektirir. Diğerleri ise, işlerin nereye doğru gittiğini ve işe başlamadan önce hangi kararların en önemli olacağını tam olarak bilen biriyle yapılacak tek bir görüşmeyle halledilebilir.",
+        "Katha Advisory işte tam olarak bu."
+      ],
+      "scope": [
+        "Özet Geliştirme",
+        "Fizibilite",
+        "Tasarım Yönü",
+        "Karar Desteği"
+      ],
+      "imageCaption": "Çalışma · Özet ve Yönlendirme"
+    },
+    "technical-drawings": {
+      "title": "Teknik Çizimler",
+      "category": "Dokümantasyon ve Detaylar",
+      "tagline": "Bir tasarımı binaya dönüştüren çizimler.",
+      "desc": "Bir tasarımı, şantiyenin birebir inşa edebileceği bir şeye dönüştüren hassas inşaat çizimleri.",
+      "paragraphs": [
+        "Bir tasarım ancak doğru bir şekilde inşa edilebildiği takdirde bir yapıya dönüşür. Teknik çizimler, niyetin talimata dönüştüğü yerdir; her boyut, birleşim noktası ve malzeme, tahmine gerek kalmadan inşa edilebilecek kadar açık bir şekilde belirtilir.",
+        "Yüklenicilere tek ve kesin bir bilgi kaynağı sağlayan detaylı çalışma çizimleri (planlar, kesitler, cepheler ve inşaat detayları) hazırlıyoruz. Şantiyede daha az sürpriz, daha az taviz ve çizimle birebir örtüşen bitmiş bir alan."
+      ],
+      "scope": [
+        "Çalışma Çizimleri",
+        "Kesitler ve Yükseklikler",
+        "İnşaat Detayları",
+        "Site Dokümantasyonu"
+      ],
+      "imageCaption": "Çalışma · Çizgi ve Hassasiyet"
+    },
+    "residential": {
+      "title": "yerleşim",
+      "category": "Evler ve Yaşam",
+      "tagline": "Her gün geri döndüğünüz mekanlar.",
+      "desc": "Yaşam tarzınıza uygun olarak tasarlanmış evler — özel, sıcak ve uzun ömürlü.",
+      "paragraphs": [
+        "Ev, tasarladığımız en kişisel şeydir. Günlük rutinlerinizi, ailenizi ve bir günü size aitmiş gibi hissettiren küçük ritüelleri barındırır.",
+        "Konutları, sizin gerçek yaşam tarzınıza göre şekillendiriyoruz; sabahları ışığın nasıl düşmesi gerektiğine, insanların nerede toplandığına, hangi sessiz köşelere ihtiyacınız olduğuna göre. Her karar, evin yıllar sonra bile size uygun hissettirmesi için veriliyor."
+      ],
+      "scope": [
+        "Özel Konutlar",
+        "Villalar",
+        "Daireler",
+        "Çiftlik evleri"
+      ],
+      "imageCaption": "Çalışma · Ev ve Yaşam"
+    },
+    "commercial": {
+      "title": "Reklam",
+      "category": "İş ve Perakende",
+      "tagline": "İçindeki insanlar kadar çalışkan mekanlar.",
+      "desc": "İşlevselliği, markayı ve atmosferi dengeleyen ofisler, mağazalar ve ağırlama alanları.",
+      "paragraphs": [
+        "Bir ticari alan, tek bir kelime bile söylenmeden önce işletmenin karakterini yansıtır. Bir ekibin nasıl çalıştığını, müşterilerin nasıl hissettiğini ve bir markanın nasıl hatırlandığını şekillendirir.",
+        "İhtiyaç duyulan yerlerde pratik, önemli yerlerde ise ifade gücü yüksek, her gün performans gösterecek ve yoğun kullanıma dayanacak şekilde tasarlanmış ofis, perakende ve konaklama alanları üretiyoruz."
+      ],
+      "scope": [
+        "Ofisler ve Çalışma Alanları",
+        "Perakende",
+        "Konukseverlik",
+        "Sergi salonları"
+      ],
+      "imageCaption": "Eğitim · Çalışma ve Marka"
+    },
+    "high-rise": {
+      "title": "Çok katlı",
+      "category": "Kuleler ve Yoğunluk",
+      "tagline": "Yükseklerde, keyifli bir yaşam.",
+      "desc": "Işık, hava, yapı ve topluluk düşünülerek planlanan çok katlı ve yüksek binalar.",
+      "paragraphs": [
+        "Yukarı doğru inşa etmek, tasarımdan daha fazlasını gerektirir. Her kat tekrarlanır, her tesisat tüm yükseklik boyunca uzanır ve yüzlerce yaşam tek bir yapıyı paylaşır; bu nedenle detayların doğru olması gerekir, çünkü bunlar çoğalır.",
+        "Yüksek katlı ve çok katlı binalarımızı, dikey yaşamı gerçekten iyi kılan unsurlar etrafında planlıyoruz: doğal ışık ve çapraz havalandırma, dürüst yapı, verimli çekirdekler ve sadece evleri üst üste yığmak yerine topluluk duygusu oluşturan ortak alanlar."
+      ],
+      "scope": [
+        "Konut Kuleleri",
+        "Karma Kullanım",
+        "Yapısal Planlama",
+        "Ortak Kullanım Alanları"
+      ],
+      "imageCaption": "Çalışma · Yükseklik ve Yoğunluk"
+    }
+  },
+  "noteCategories": {
+    "Process": "İşlem",
+    "Culture": "Kültür",
+    "Craft": "Zanaat",
+    "Space": "Uzay"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "İlk taslak neden asla kesin cevap değildir?",
+      "excerpt": "İlk taslak bir tasarım değil, bir sorudur.",
+      "paragraphs": [
+        "Bir proje hakkında henüz anlamadığınız şeyleri öğrenmenin en hızlı yolu budur. Yanlış yöne çok erken çizilen bir çizgi, kağıt üzerinde hiçbir şeye mal olmazken, inşaatta her şeye mal olur. Bu yüzden erken ve gevşek bir şekilde çiziyoruz - taahhütte bulunmak için değil, ortaya çıkarmak için. Düşüncenin nerede geçerli olduğunu ve nerede geçerli olmadığını görmek için.",
+        "İyi sonuçlanan projeler, tasarım beğenilmeden önce, müşteri bir yerleşime bağlanmadan önce, kimse bir fikre yatırım yapmadan önce en zor soruların sorulduğu projelerdir. Her projenin başında her şeyin hala mümkün olduğu bir zaman dilimi vardır ve en önemli çalışmalar bu zaman diliminde gerçekleşir.",
+        "Ortaya çıkan sonuç her zaman herkesin beklediği gibi olmuyor. Bir yaklaşım gerektiriyor gibi görünen bir yer, taslaklar çizildikten sonra daha sakin bir şeye ihtiyaç duyduğunu ortaya koyuyor. Basit görünen bir görev, ilk çizgiler çizilip sorgulandıktan sonra daha zengin bir şeye dönüşüyor.",
+        "Projenin gerçekte ne istediğini taslak aşamasında öğreniyoruz."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "Kimsenin Görmediği Detay",
+      "excerpt": "Bir projedeki en önemli detay, iş tamamlandığında görünmez hale gelir.",
+      "paragraphs": [
+        "İki malzemenin birleşme noktasında yaşar; taş zeminin sıvalı duvarla buluşma şekli, kapı çerçevesinin temiz görünmesini sağlayan gölge çizgisi, ışığın yumuşak mı yoksa sert mi gireceğini belirleyen pencere pervazının derinliği gibi. Bu kararlar, düşünülmüş bir mekanı sadece bitmiş gibi görünen bir mekandan ayırır.",
+        "Müşteriler nadiren bu konuları sorarlar. Daha çok yerleşim planı, malzeme, yüzey işlemleri hakkında soru sorarlar. Ancak hatırladıkları mekanlar – başkalarına anlattıkları, akıllarında kalan mekanlar – neredeyse her zaman birilerinin tam da bu seviyede dikkat ettiği mekanlardır.",
+        "Kötü yapılmış bir kavşak, yanından geçen herkes tarafından fark edilir. Yerinden oynamış bir gölge çizgisi, derinliği olması gereken bir yüzeyi düzleştirir. Bu şeyler bilinçaltında kaydedilir, ancak kaydedilirler.",
+        "Mimarlığın inceliği, kimsenin görmediği detaylarda gizlidir. Görünmezlik de zaten meselenin özüdür."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "Hindistan'ın Uzay Hakkında Bildikleri ve Dünyanın Yeniden Öğrendikleri",
+      "excerpt": "Çağdaş mimarideki en gelişmiş fikirler aslında hiç yeni değildi. Unutuldular.",
+      "paragraphs": [
+        "Avlu geometrisi sayesinde pasif soğutma. Mekanik müdahale olmadan iç mekanları stabil tutan taş duvarlardaki termal kütle. Ne iç mekan ne de dış mekan olan veranda, ısıyı dengeleyerek, ışığı filtreleyerek, hiçbir klima ünitesinin yerini alamadığı bir eşik oluşturuyor. Su toplama, kamusal toplanma ve mikro iklimi tek bir yapıda çözen basamaklı kuyular.",
+        "Bunlar tesadüf değildi. Yüzyıllarca süren gözlemlerin, ellerden geçerek, ders kitaplarından değil, zanaata dönüşmesinin sonucuydu. Bilgi, işe yaramayı bıraktığı için ortadan kaybolmadı. Ortadan kaybolmasının nedeni, ithal edilen modernizmin, onu sorgulamayı düşünen kimseden daha hızlı bir şekilde gelmesiydi.",
+        "Dünya şu anda zaten bilinenleri yeniden keşfetmek için muazzam kaynaklar harcıyor. Biyofilik tasarım. Pasif havalandırma. İnsan ölçeğinde oranlar. Yerel kaynaklı malzeme. Bunlar trendler değil. Bunlar getiriler.",
+        "Bu bilgiyi bilinçli bir şekilde, nostalji amacıyla değil, kullanarak inşa ediyoruz. Çünkü bu şekilde daha iyi sonuç veriyor."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "Yirmi Yıl Sonrası İçin Tasarım Üzerine",
+      "excerpt": "Her proje, onu başlatan konuşmadan daha uzun süre varlığını sürdürecektir.",
+      "paragraphs": [
+        "Bu projeyi tasarlayan aile değişecek. Çocuklar büyüyecek ve evden ayrılacak. İşletmeler değişecek. İnsanların çalışma, bir araya gelme ve mekânda hareket etme biçimleri on yıl öncesine göre zaten farklı ve önümüzdeki on yılda da farklı olacak. Sadece bugüne göre tasarlanmış bir mekân şimdiden eskimeye başlıyor.",
+        "Cevap açık planlı daireler ve hareketli duvarlar değil. Cevap, insan davranışında kalıcı olan ve olmayan şeylerin daha derinlemesine incelenmesidir.",
+        "İnsanların her zaman yalnız kalabilecekleri ve bir araya gelebilecekleri bir yere ihtiyaçları olacaktır. Doğal ışığa her zaman tepki vereceklerdir. Doğru yükseklikteki bir tavan ile doğru yükseklikte olmayan bir tavan arasındaki farkı her zaman hissedeceklerdir. Bir malzemenin dürüst olup olmadığını ve başka bir şeymiş gibi davranıp davranmadığını her zaman anlayacaklardır.",
+        "Bu değişmez unsurları göz önünde bulundurarak tasarım yapın. Zamanla değerini koruyacak malzemelerle inşa edin. Yaşamın mimariyi bozmadan akıp gitmesine olanak sağlayacak şekilde plana yer bırakın.",
+        "İşte bu yüzden bir mekan yirmi yıl boyunca varlığını sürdürüyor ve hala doğru hissettiriyor."
+      ]
+    }
+  }
+}

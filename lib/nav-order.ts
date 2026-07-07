@@ -1,4 +1,4 @@
-import { services } from "./data";
+import { whatWeDo, sectors } from "./data";
 
 export type NavItem = {
   href: string;
@@ -6,10 +6,11 @@ export type NavItem = {
   type: "about" | "service" | "contact";
 };
 
-/** Global card order — matches the home page carousel exactly */
+/** Global page order for the detail-page prev/next chain:
+ *  Studio → disciplines → sectors → Contact. */
 export const globalNavOrder: NavItem[] = [
   { href: "/studio", label: "Studio", type: "about" },
-  ...services.map((s) => ({
+  ...[...whatWeDo, ...sectors].map((s) => ({
     href: `/services/${s.slug}`,
     label: s.title,
     type: "service" as const,

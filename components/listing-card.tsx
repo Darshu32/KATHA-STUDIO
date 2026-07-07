@@ -12,6 +12,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import type { Tone } from "@/lib/data";
+import { useLanguage } from "@/components/language-provider";
 
 /* Monochrome chrome — the photograph carries the only colour.
    All tones share a neutral light accent + near-black tile bg. */
@@ -44,6 +45,7 @@ export function ListingCard({
   children: ReactNode;
 }) {
   const router = useRouter();
+  const { t } = useLanguage();
   const [hovered, setHovered] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
   const [expanding, setExpanding] = useState(false);
@@ -217,6 +219,7 @@ export function ListingCard({
           imageAlt={imageAlt ?? topLabel}
           accent={accent}
           darkBg={darkBg}
+          enteringLabel={t.detail.entering}
         />
       )}
     </motion.div>
@@ -235,6 +238,7 @@ function FullscreenExpand({
   imageAlt,
   accent,
   darkBg,
+  enteringLabel,
 }: {
   active: boolean;
   rect: Rect | null;
@@ -242,6 +246,7 @@ function FullscreenExpand({
   imageAlt: string;
   accent: string;
   darkBg: string;
+  enteringLabel: string;
 }) {
   if (typeof document === "undefined") return null;
 
@@ -339,7 +344,7 @@ function FullscreenExpand({
               color: "rgba(255,255,255,0.82)",
             }}
           >
-            Entering · {imageAlt}
+            {enteringLabel} · {imageAlt}
           </motion.span>
         </>
       )}

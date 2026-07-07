@@ -11,12 +11,14 @@ import {
   useTransform,
   animate as animateValue,
 } from "framer-motion";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import Lenis from "lenis";
 import { MarqueeStrip } from "@/components/marquee-strip";
 import { HomeStory } from "@/components/home-story";
 import { WhyKatha } from "@/components/why-katha";
-import { services } from "@/lib/data";
+import { LanguagePicker } from "@/components/language-picker";
+import { useLanguage } from "@/components/language-provider";
+import { sectors } from "@/lib/data";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
@@ -44,7 +46,7 @@ const allCards = [
     image: "/images/home/studio.webp",
     focal: "50% 60%",
   },
-  ...services.map((s, i) => ({
+  ...sectors.map((s, i) => ({
     id: String(i + 1).padStart(2, "0"),
     label: s.title,
     tagline: s.category,
@@ -54,7 +56,7 @@ const allCards = [
     focal: s.focal ?? "50% 50%",
   })),
   {
-    id: String(services.length + 1).padStart(2, "0"),
+    id: String(sectors.length + 1).padStart(2, "0"),
     label: "Contact",
     tagline: "Start a conversation",
     href: "/contact",
@@ -63,37 +65,6 @@ const allCards = [
     image: "/images/home/contact.webp",
     focal: "50% 70%",
   },
-];
-
-/* Each service card shows its own project-type kicker rather than a
- * blanket "SERVICE". Keyed by the service slug. */
-const serviceCardLabels: Record<string, string> = {
-  architecture: "RESIDENCE",
-  interiors:    "INTERIOR",
-  renovation:   "RENOVATION",
-  advisory:     "ADVISORY",
-};
-
-/* Derive editorial category label from href */
-function getCardCategory(href: string): string {
-  if (href === "/")        return "INTRO";
-  if (href === "/studio")  return "STUDIO";
-  if (href === "/contact") return "CONTACT";
-  if (href.startsWith("/services/")) {
-    const slug = href.slice("/services/".length);
-    return serviceCardLabels[slug] ?? "SERVICE";
-  }
-  if (href.startsWith("/services")) return "SERVICE";
-  return "";
-}
-
-/* Cycling mystery phrases — rotate under the hero headline */
-const mysteryPhrases = [
-  "Spaces that hold their breath",
-  "The quieter, the more alive",
-  "What stays after the drawing ends",
-  "Light, patience, a single gesture",
-  "Architecture, in its lower voice",
 ];
 
 /* ─────────────────────── BRAND WORDMARK ───────────────────── */
@@ -107,7 +78,7 @@ export function BrandWordmark({
 }) {
   return (
     <span
-      className={`inline-flex items-end gap-2 leading-none text-[var(--text)] ${className ?? ""}`}
+      className={`inline-flex items-end gap-3 leading-none text-[var(--text)] ${className ?? ""}`}
     >
       <span
         className={`font-[var(--font-avenir-heavy)] font-extrabold uppercase tracking-[0.04em] ${compact ? "" : "text-[clamp(1.6rem,8vw,7rem)]"}`}
@@ -277,7 +248,11 @@ function IntroBrandSequence({
   onSettled: () => void;
 }) {
   const reduceMotion = useReducedMotion();
-  const [phase, setPhase] = useState<"letters" | "hold" | "settle">("letters");
+  const { language, setLanguage, t } = useLanguage();
+  /* "letters" types the wordmark · "select" holds the page still and reveals
+     the language dropdown · "settle" plays once the visitor enters, flying the
+     wordmark into the header and revealing the site. */
+  const [phase, setPhase] = useState<"letters" | "select" | "settle">("letters");
 
   /* ── Cursor-reactive parallax ── */
   const mouseX = useMotionValue(0.5);
@@ -289,28 +264,35 @@ function IntroBrandSequence({
   const tiltY = useTransform(smoothX, [0, 1], [6, -6]);
   const tiltX = useTransform(smoothY, [0, 1], [-4, 4]);
 
+  /* Letters type out, then the page holds on the "select" phase and waits —
+     indefinitely — for the visitor to choose a language and enter. The
+     visibilitychange guard makes sure the dropdown still appears even if a
+     backgrounded tab paused the typing animation's rAF. */
   useEffect(() => {
     if (!visible) return;
-    const t1 = window.setTimeout(
-      () => setPhase("hold"),
+    const toSelect = window.setTimeout(
+      () => setPhase((p) => (p === "letters" ? "select" : p)),
       reduceMotion ? 300 : 2400
     );
-    const t2 = window.setTimeout(
-      () => setPhase("settle"),
-      reduceMotion ? 500 : 2550
-    );
-    const t3 = window.setTimeout(
-      () => onSettled(),
-      reduceMotion ? 800 : 3500
-    );
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") {
+        setPhase((p) => (p === "letters" ? "select" : p));
+      }
     };
-  }, [visible, reduceMotion, onSettled]);
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      clearTimeout(toSelect);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [visible, reduceMotion]);
 
-  /* Track cursor — only during letters/hold phase */
+  /* Enter the site — play the settle animation, then reveal. */
+  const handleEnter = useCallback(() => {
+    setPhase("settle");
+    window.setTimeout(() => onSettled(), reduceMotion ? 400 : 900);
+  }, [onSettled, reduceMotion]);
+
+  /* Track cursor — only during letters/select phase */
   useEffect(() => {
     if (reduceMotion || !visible || phase === "settle") return;
     const handleMove = (e: MouseEvent) => {
@@ -344,7 +326,7 @@ function IntroBrandSequence({
               : { opacity: 1 }
           }
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
-          className="pointer-events-auto fixed inset-0 z-[65] flex items-center justify-center bg-[var(--background)] transition-colors duration-500"
+          className="pointer-events-auto fixed inset-0 z-[65] flex flex-col items-center justify-center bg-[var(--background)] transition-colors duration-500"
           style={{ perspective: "1400px" }}
         >
           {/* Cursor-reactive parallax wrapper */}
@@ -362,7 +344,7 @@ function IntroBrandSequence({
             }
             className="flex w-full items-center justify-center px-6 md:px-12 lg:px-20"
           >
-            <div className="flex flex-wrap items-end justify-center gap-x-3 gap-y-1 sm:gap-x-4">
+            <div className="flex flex-wrap items-end justify-center gap-x-6 gap-y-1 sm:gap-x-8 md:gap-x-10">
               {/* KATHA — typewriter letter by letter */}
               <div className="flex items-end">
                 {brandLetters.map((letter, index) => {
@@ -400,6 +382,56 @@ function IntroBrandSequence({
               </div>
             </div>
           </motion.div>
+
+          {/* ── Language selector — appears once the wordmark settles still ── */}
+          <AnimatePresence>
+            {phase === "select" && (
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 8, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-10 flex flex-col items-center gap-5 px-6 md:mt-12"
+              >
+                <p
+                  className="font-[var(--font-inter)] uppercase"
+                  style={{
+                    fontSize: "0.6rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.32em",
+                    color: "var(--text-dim)",
+                  }}
+                >
+                  {t.intro.chooseLanguage}
+                </p>
+
+                <LanguagePicker value={language} onChange={setLanguage} />
+
+                <button
+                  type="button"
+                  onClick={handleEnter}
+                  data-cursor="Enter"
+                  className="group mt-1 inline-flex items-center gap-2.5 transition-opacity hover:opacity-60"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    fontSize: "0.64rem",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.26em",
+                    color: "var(--text)",
+                  }}
+                >
+                  {t.intro.enter}
+                  <span
+                    className="accent-arrow transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden
+                  >
+                    →
+                  </span>
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       )}
     </AnimatePresence>
@@ -411,6 +443,7 @@ function IntroBrandSequence({
 export function SiteExperience() {
   useLenisScroll();
 
+  const { t } = useLanguage();
   const reduceMotion = useReducedMotion();
   /* Intro brand sequence — types "KATHA STUDIO" then settles into the
      header to reveal the page. Plays once per full load (introHasPlayed).
@@ -421,29 +454,6 @@ export function SiteExperience() {
     introHasPlayed = true;
     setIntroComplete(true);
   }, []);
-
-  /* Safety guard — never let the page stay hidden behind the intro.
-     framer-motion tweens pause when the tab is backgrounded (rAF stops),
-     so a fallback timeout and a visibility listener guarantee the intro
-     resolves even if the settle animation never fires. */
-  useEffect(() => {
-    if (introComplete) return;
-    const fallback = window.setTimeout(() => {
-      introHasPlayed = true;
-      setIntroComplete(true);
-    }, 5000);
-    const onVisible = () => {
-      if (document.visibilityState === "visible") {
-        introHasPlayed = true;
-        setIntroComplete(true);
-      }
-    };
-    document.addEventListener("visibilitychange", onVisible);
-    return () => {
-      window.clearTimeout(fallback);
-      document.removeEventListener("visibilitychange", onVisible);
-    };
-  }, [introComplete]);
 
   /* Lock scroll while the intro is on screen */
   useEffect(() => {
@@ -530,7 +540,7 @@ export function SiteExperience() {
   useEffect(() => {
     if (!introComplete || reduceMotion) return;
     const id = window.setInterval(() => {
-      setPhraseIndex((n) => (n + 1) % mysteryPhrases.length);
+      setPhraseIndex((n) => (n + 1) % t.home.mystery.length);
     }, 4200);
     return () => window.clearInterval(id);
   }, [introComplete, reduceMotion]);
@@ -644,10 +654,51 @@ export function SiteExperience() {
   /* Mobile: snap to initial card once intro completes */
   useEffect(() => {
     if (!introComplete || !isMobile) return;
-    const t = setTimeout(() => snapMobileTo(activeIndexRef.current, true), 160);
-    return () => clearTimeout(t);
+    const id = setTimeout(() => snapMobileTo(activeIndexRef.current, true), 160);
+    return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [introComplete, isMobile]);
+
+  /* Resolve a card's editorial category kicker from its href, translated. */
+  const cardCategory = useCallback(
+    (href: string): string => {
+      if (href === "/") return t.home.category.intro;
+      if (href === "/studio") return t.home.category.studio;
+      if (href === "/contact") return t.home.category.contact;
+      if (href.startsWith("/services/")) {
+        const slug = href.slice("/services/".length);
+        const map: Record<string, string> = {
+          residential: t.home.category.residential,
+          commercial: t.home.category.commercial,
+          "high-rise": t.home.category.highRise,
+        };
+        return map[slug] ?? t.home.category.service;
+      }
+      return "";
+    },
+    [t]
+  );
+
+  /* Cards carry structural data (image, accent, href); label + tagline are
+     resolved from the active dictionary so the carousel reads in-language. */
+  const localizedCards = useMemo(
+    () =>
+      allCards.map((card) => {
+        if (card.href === "/studio") {
+          return { ...card, label: t.home.cardStudioLabel, tagline: t.home.cardStudioTagline };
+        }
+        if (card.href === "/contact") {
+          return { ...card, label: t.home.cardContactLabel, tagline: t.home.cardContactTagline };
+        }
+        if (card.href.startsWith("/services/")) {
+          const slug = card.href.slice("/services/".length) as keyof typeof t.services;
+          const svc = t.services[slug];
+          if (svc) return { ...card, label: svc.title, tagline: svc.category };
+        }
+        return card;
+      }),
+    [t]
+  );
 
   return (
     <div className="page-shell bg-[var(--background)] text-[var(--text)] transition-colors duration-500">
@@ -656,9 +707,9 @@ export function SiteExperience() {
 
         {/* ── HERO SECTION ── */}
         <section
-          className="relative overflow-hidden px-6 pt-1 pb-2 sm:px-8 sm:pt-2 sm:pb-2 md:px-12 md:pt-2 md:pb-3 lg:px-20 lg:pt-3 lg:pb-4"
+          className="relative overflow-hidden pt-8 pb-2 sm:pt-10 sm:pb-2 md:pt-12 md:pb-3 lg:pt-16 lg:pb-4"
         >
-          <div className="relative z-[1] grid grid-cols-1 items-start gap-9 lg:grid-cols-12 lg:gap-12">
+          <div className="relative z-[1] mx-auto grid w-full max-w-[88rem] grid-cols-1 items-start gap-9 px-6 sm:px-8 md:px-12 lg:grid-cols-12 lg:gap-12 lg:px-20">
 
             {/* Headline */}
             <div className="lg:col-span-7 lg:pr-4">
@@ -677,7 +728,7 @@ export function SiteExperience() {
                 className="mb-4 font-[var(--font-avenir-book)] font-medium uppercase tracking-[0.24em] text-[var(--text-dim)]"
                 style={{ fontSize: "var(--fs-caption)" }}
               >
-                Architecture · Interiors · Renovation · Landscape
+                {t.home.eyebrow}
               </motion.p>
               <motion.h1
                 initial={false}
@@ -695,12 +746,12 @@ export function SiteExperience() {
                   textWrap: "balance",
                 }}
               >
-                Every space has a story,{" "}
+                {t.home.titleLine1}{" "}
                 {/* Break only on larger screens; on mobile the line flows
                     naturally so "waiting" continues after "story". The space
                     sits before the break so desktop has no stray indent. */}
                 <br className="hidden md:block" />
-                waiting to be built.
+                {t.home.titleLine2}
               </motion.h1>
 
               {/* Cycling mystery phrase */}
@@ -733,7 +784,7 @@ export function SiteExperience() {
                       className="block font-[var(--font-avenir-book)] font-light text-[var(--text-muted)]"
                       style={{ fontSize: "clamp(0.78rem, 1.05vw, 0.95rem)", letterSpacing: "-0.01em" }}
                     >
-                      {mysteryPhrases[phraseIndex]}
+                      {t.home.mystery[phraseIndex % t.home.mystery.length]}
                     </motion.span>
                   </AnimatePresence>
                 </div>
@@ -759,17 +810,13 @@ export function SiteExperience() {
                 className="font-[var(--font-inter)]"
                 style={{ fontSize: "var(--fs-body)", lineHeight: 1.85, color: "var(--text-muted)", letterSpacing: "-0.005em" }}
               >
-                At Katha Studio, every project begins with listening. We take the
-                time to understand people, place and purpose before shaping
-                spaces that feel personal, timeless and deeply connected to the
-                lives they support.
+                {t.home.subhead}
               </p>
               <p
                 className="mt-5 font-[var(--font-inter)] uppercase"
                 style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.2em", lineHeight: 1.7, color: "var(--text-dim)" }}
               >
-                Based in Bengaluru · Working Across India · Open to Select
-                International Collaborations
+                {t.home.location}
               </p>
               <Link
                 href="/contact"
@@ -785,7 +832,7 @@ export function SiteExperience() {
                   color: "var(--text)",
                 }}
               >
-                Start a Conversation
+                {t.home.cta}
                 <span className="accent-arrow transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                   →
                 </span>
@@ -854,7 +901,7 @@ export function SiteExperience() {
                 <motion.div
                   style={{ x: mobileSmoothX, display: "flex", gap: "3vw" }}
                 >
-                  {allCards.map((card, i) => {
+                  {localizedCards.map((card, i) => {
                     const isActive = activeIndex === i;
                     const wave = Math.abs(i - activeIndex);
                     const entranceDelay = reduceMotion ? 0 : 0.7 + wave * 0.15;
@@ -899,7 +946,7 @@ export function SiteExperience() {
                                     lineHeight: 1,
                                   }}
                                 >
-                                  {getCardCategory(card.href)}
+                                  {cardCategory(card.href)}
                                 </span>
                               </div>
                             )}
@@ -951,7 +998,7 @@ export function SiteExperience() {
 
               {/* Dot pagination — tap to jump */}
               <div className="mt-5 flex items-center justify-center gap-[5px]">
-                {allCards.map((c, i) => (
+                {localizedCards.map((c, i) => (
                   <motion.button
                     key={i}
                     onClick={() => { snapMobileTo(i); pauseInteraction(); resumeInteraction(); }}
@@ -1014,7 +1061,7 @@ export function SiteExperience() {
                 }}
                 className="flex gap-3 px-8 md:gap-4 md:px-12 cursor-grab active:cursor-grabbing select-none"
               >
-                {allCards.map((card, i) => {
+                {localizedCards.map((card, i) => {
                   const isActive = activeIndex === i;
                   /* Sequenced cascade:
                    *   1. Active card arrives first at center (scale-in from blur)
@@ -1097,7 +1144,7 @@ export function SiteExperience() {
                                 lineHeight: 1,
                               }}
                             >
-                              {getCardCategory(card.href)}
+                              {cardCategory(card.href)}
                             </span>
                           </motion.div>
                         )}

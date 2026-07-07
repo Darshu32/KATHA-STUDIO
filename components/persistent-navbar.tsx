@@ -4,32 +4,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/components/language-provider";
+import { whatWeDo, sectors } from "@/lib/data";
 
 type NavEntry = {
   href: string;
-  label: string;
+  labelKey: "studio" | "approach" | "services" | "journal" | "contact";
   num: string;
 };
 
 const mobileNavItems: NavEntry[] = [
-  { href: "/studio",   label: "Studio",   num: "01" },
-  { href: "/approach", label: "Approach", num: "02" },
-  { href: "/services", label: "Services", num: "03" },
-  { href: "/journal",  label: "Journal",  num: "04" },
-  { href: "/contact",  label: "Contact",  num: "05" },
+  { href: "/studio",   labelKey: "studio",   num: "01" },
+  { href: "/approach", labelKey: "approach", num: "02" },
+  { href: "/services", labelKey: "services", num: "03" },
+  { href: "/journal",  labelKey: "journal",  num: "04" },
+  { href: "/contact",  labelKey: "contact",  num: "05" },
 ];
-
-function getBackLink(pathname: string): { href: string; label: string } | null {
-  if (pathname === "/") return null;
-  return { href: "/", label: "Home" };
-}
 
 export function PersistentNavbar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
   const [isDark, setIsDark] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const backLink = getBackLink(pathname);
-  const isHome = pathname === "/";
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const backLink = pathname === "/" ? null : { href: "/", label: t.nav.home };
 
   useEffect(() => {
     document.documentElement.dataset.theme = isDark ? "dark" : "light";
@@ -38,6 +36,7 @@ export function PersistentNavbar() {
   /* Close overlay on route change */
   useEffect(() => {
     setIsNavOpen(false);
+    setServicesOpen(false);
   }, [pathname]);
 
   /* Lock body scroll when overlay is open */
@@ -57,7 +56,7 @@ export function PersistentNavbar() {
           {/* Brand */}
           <Link
             href="/"
-            className="inline-flex shrink-0 items-end gap-2 leading-none transition-opacity hover:opacity-60"
+            className="inline-flex shrink-0 items-end gap-3 leading-none transition-opacity hover:opacity-60"
             style={{ color: "var(--text)" }}
           >
             <span style={{ fontFamily: "var(--font-avenir-heavy)", fontWeight: 800, fontSize: "clamp(1.05rem,1.85vw,1.6rem)", textTransform: "uppercase", letterSpacing: "-0.025em" }}>
@@ -82,15 +81,13 @@ export function PersistentNavbar() {
               </Link>
             )}
 
-            {/* Dark mode toggle — visible on all screens */}
-            {isHome && (
-              <button
-                type="button"
-                onClick={() => setIsDark((p) => !p)}
-                aria-label={isDark ? "Switch to light" : "Switch to dark"}
-                className="h-[1.25rem] w-[2.6rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
-              />
-            )}
+            {/* Dark mode toggle — present in the header on every page */}
+            <button
+              type="button"
+              onClick={() => setIsDark((p) => !p)}
+              aria-label={isDark ? "Switch to light" : "Switch to dark"}
+              className="h-[1.25rem] w-[2.6rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
+            />
 
             {/* Hamburger — all screens */}
             <button
@@ -158,6 +155,104 @@ export function PersistentNavbar() {
                   minWidth: "1.8rem",
                 };
 
+                const subItemStyle = {
+                  fontFamily: "var(--font-avenir-book)",
+                  fontSize: "clamp(1rem, 4.5vw, 1.25rem)",
+                  fontWeight: 400,
+                  letterSpacing: "0.01em",
+                  color: "var(--text)",
+                  lineHeight: 1.2,
+                };
+                const groupLabelStyle = {
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.58rem",
+                  fontWeight: 600,
+                  textTransform: "uppercase" as const,
+                  letterSpacing: "0.28em",
+                  color: "var(--text-dim)",
+                };
+
+                /* Services expands in place to reveal both groups. */
+                if (item.labelKey === "services") {
+                  const groups = [
+                    { label: t.nav.whatWeDo, items: whatWeDo },
+                    { label: t.nav.whatWeBuild, items: sectors },
+                  ];
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -18 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.08 + i * 0.055, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setServicesOpen((p) => !p)}
+                        aria-expanded={servicesOpen}
+                        className="group flex w-full items-baseline gap-4 border-b border-[var(--border)] py-4 text-left"
+                        style={{ opacity: isActive || servicesOpen ? 1 : 0.55 }}
+                      >
+                        <span style={numStyle}>{item.num}</span>
+                        <span className="flex-1" style={rowStyle}>
+                          {t.nav.services}
+                        </span>
+                        <motion.span
+                          animate={{ rotate: servicesOpen ? 45 : 0 }}
+                          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                          className="inline-block"
+                          style={{ fontSize: "1.4rem", fontWeight: 300, color: "var(--text-dim)", alignSelf: "center", lineHeight: 1 }}
+                        >
+                          +
+                        </motion.span>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {servicesOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-6 py-5 pl-[2.8rem] md:gap-7">
+                              {groups.map((group) => (
+                                <div key={group.label}>
+                                  <p style={groupLabelStyle}>{group.label}</p>
+                                  <div className="mt-3 flex flex-col gap-2.5 md:gap-3">
+                                    {group.items.map((s) => {
+                                      const svc = t.services[s.slug as keyof typeof t.services];
+                                      const active = pathname === `/services/${s.slug}`;
+                                      return (
+                                        <Link
+                                          key={s.slug}
+                                          href={`/services/${s.slug}`}
+                                          className="transition-opacity hover:opacity-100"
+                                          style={{ ...subItemStyle, opacity: active ? 1 : 0.62 }}
+                                        >
+                                          {svc?.title ?? s.title}
+                                        </Link>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+                              ))}
+                              <Link
+                                href="/services"
+                                className="inline-flex items-center gap-2 transition-opacity hover:opacity-100"
+                                style={{ ...groupLabelStyle, opacity: 0.62 }}
+                              >
+                                {t.nav.allServices}
+                                <span aria-hidden>→</span>
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                }
+
                 return (
                   <motion.div
                     key={item.href}
@@ -175,7 +270,7 @@ export function PersistentNavbar() {
                         className="flex-1 transition-opacity group-hover:opacity-100"
                         style={rowStyle}
                       >
-                        {item.label}
+                        {t.nav[item.labelKey]}
                       </span>
                       {isActive && (
                         <span style={{ fontSize: "0.45rem", color: "var(--text-dim)", alignSelf: "center" }}>●</span>
@@ -194,7 +289,7 @@ export function PersistentNavbar() {
               className="border-t border-[var(--border)] px-6 py-5"
             >
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
-                KATHA Studio · Bengaluru
+                {t.nav.locationLine}
               </p>
             </motion.div>
           </motion.div>

@@ -134,6 +134,96 @@ export const services: Service[] = [
   },
 ];
 
+/* ───────────────────────── Sectors ─────────────────────────
+ * The kinds of projects we take on — read alongside the disciplines
+ * above. Same shape as a Service so each gets its own detail page and
+ * flows into the prev/next chain. Images are added later; until then
+ * the cards and detail pages fall back to a clean neutral panel. */
+export const sectors: Service[] = [
+  {
+    slug: "residential",
+    id: "01",
+    title: "Residential",
+    category: "Homes & Living",
+    tagline: "The spaces you return to every day.",
+    desc: "Homes designed around how you actually live — private, warm and made to last.",
+    paragraphs: [
+      "A home is the most personal thing we design. It holds your routines, your family, and the small rituals that quietly make a day feel like yours.",
+      "We shape residences around the way you really live — how light should fall in the morning, where people gather, what quiet corners you need. Every decision is made so the house still feels right many years from now.",
+    ],
+    scope: ["Private Homes", "Villas", "Apartments", "Farmhouses"],
+    tone: "warm",
+    image: "/images/services/residential.webp",
+    imageCaption: "Study · Home & Living",
+    focal: "50% 55%",
+  },
+  {
+    slug: "commercial",
+    id: "02",
+    title: "Commercial",
+    category: "Work & Retail",
+    tagline: "Spaces that work as hard as the people in them.",
+    desc: "Offices, stores and hospitality spaces that balance function, brand and feeling.",
+    paragraphs: [
+      "A commercial space carries a business's character before a single word is spoken. It shapes how a team works, how customers feel, and how a brand is remembered.",
+      "We design offices, retail and hospitality spaces that are practical where they need to be and expressive where it counts — built to perform every day and to age well under real, heavy use.",
+    ],
+    scope: ["Offices & Workspaces", "Retail", "Hospitality", "Showrooms"],
+    tone: "cool",
+    image: "/images/services/commercial.webp",
+    imageCaption: "Study · Work & Brand",
+    focal: "50% 50%",
+  },
+  {
+    slug: "high-rise",
+    id: "03",
+    title: "High-Rise",
+    category: "Towers & Density",
+    tagline: "Living well, at height.",
+    desc: "Multi-storey and high-rise buildings planned for light, air, structure and community.",
+    paragraphs: [
+      "Building upward asks more of a design. Every floor repeats, every service runs the full height, and hundreds of lives share a single structure — so the details have to be right, because they multiply.",
+      "We plan high-rise and multi-storey buildings around what makes vertical living genuinely good: natural light and cross-ventilation, honest structure, efficient cores, and shared spaces that build a sense of community rather than simply stacking homes.",
+    ],
+    scope: ["Residential Towers", "Mixed-Use", "Structural Planning", "Shared Amenities"],
+    tone: "default",
+    image: "/images/services/high-rise.webp",
+    imageCaption: "Study · Height & Density",
+    focal: "50% 45%",
+  },
+];
+
+/* ─── Technical Drawings ───────────────────────────────────────
+ * A "What We Do" discipline that appears in the Services menu, on the
+ * Services page and as its own detail page — but is intentionally kept
+ * OFF the home carousel/grid (those use `services`) to keep home lean. */
+export const technicalDrawings: Service = {
+  slug: "technical-drawings",
+  id: "05",
+  title: "Technical Drawings",
+  category: "Documentation & Detail",
+  tagline: "The drawings that turn a design into a building.",
+  desc: "Precise construction drawings that translate a design into something a site can build exactly.",
+  paragraphs: [
+    "A design only becomes a building if it can be built accurately. Technical drawings are where intent becomes instruction — every dimension, junction and material set down clearly enough to build without guesswork.",
+    "We prepare detailed working drawings — plans, sections, elevations and construction details — that give contractors a single, precise source of truth. Fewer surprises on site, fewer compromises, and a finished space that matches what was drawn.",
+  ],
+  scope: ["Working Drawings", "Sections & Elevations", "Construction Details", "Site Documentation"],
+  tone: "cool",
+  image: "/images/services/technical-drawings.webp",
+  imageCaption: "Study · Line & Precision",
+  focal: "50% 50%",
+};
+
+/** The full "What We Do" list — the flagship disciplines shown on home,
+ *  plus supporting disciplines (Technical Drawings) shown only under
+ *  Services. Home uses `services`; the menu and Services page use this. */
+export const whatWeDo: Service[] = [...services, technicalDrawings];
+
+/** Everything under /services — the full set of detail pages.
+ *  Used for routing (detail lookup, static params) and prev/next order. */
+export const servicesAndSectors: Service[] = [...whatWeDo, ...sectors];
+
 /* ───────────────────────── Notes ───────────────────────────── */
 
 /* The register. Published entries are written in full and read as essays;

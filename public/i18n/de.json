@@ -1,0 +1,430 @@
+{
+  "intro": {
+    "chooseLanguage": "Wählen Sie Ihre Sprache",
+    "enter": "Eingeben"
+  },
+  "nav": {
+    "studio": "Studio",
+    "approach": "Ansatz",
+    "services": "Dienstleistungen",
+    "journal": "Zeitschrift",
+    "contact": "Kontakt",
+    "home": "Heim",
+    "backToHome": "Zurück zur Startseite",
+    "next": "Nächste",
+    "previous": "Vorherige",
+    "locationLine": "KATHA Studio · Bengaluru",
+    "whatWeDo": "Was wir tun",
+    "whatWeBuild": "Was wir bauen",
+    "allServices": "Alle Dienstleistungen"
+  },
+  "home": {
+    "eyebrow": "Architektur · Innenarchitektur · Renovierung · Landschaftsgestaltung",
+    "titleLine1": "Jeder Raum hat eine Geschichte.",
+    "titleLine2": "wartet darauf, gebaut zu werden.",
+    "mystery": [
+      "Räume, die den Atem anhalten",
+      "Je ruhiger, desto lebendiger",
+      "Was bleibt, nachdem die Zeichnung beendet ist?",
+      "Licht, Geduld, eine einzige Geste",
+      "Architektur, in ihrer leiseren Stimme"
+    ],
+    "subhead": "Bei Katha Studio beginnt jedes Projekt mit Zuhören. Wir nehmen uns die Zeit, Menschen, Orte und Ziele zu verstehen, bevor wir Räume gestalten, die sich persönlich, zeitlos und eng mit dem Leben der Menschen verbunden anfühlen, die sie unterstützen.",
+    "location": "Sitz in Bengaluru · Tätig in ganz Indien · Offen für ausgewählte internationale Kooperationen",
+    "cta": "Beginnen Sie ein Gespräch",
+    "cardStudioLabel": "Studio",
+    "cardStudioTagline": "Wer wir sind",
+    "cardContactLabel": "Kontakt",
+    "cardContactTagline": "Beginnen Sie ein Gespräch",
+    "category": {
+      "intro": "Einleitung",
+      "studio": "Studio",
+      "contact": "Kontakt",
+      "residence": "Residenz",
+      "interior": "Innere",
+      "renovation": "Renovierung",
+      "advisory": "Beratung",
+      "service": "Service",
+      "residential": "Wohnen",
+      "commercial": "Kommerziell",
+      "highRise": "Hochhaus"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Warum Katha",
+    "heading": "Katha bedeutet Geschichte",
+    "para1": "Jedes Projekt birgt etwas in sich, das sich nicht beschreiben lässt – die Art und Weise, wie eine Familie tatsächlich lebt, wie sich ein Unternehmen von innen heraus anfühlen muss, wie eine Landschaft erlebt werden möchte, was ein Ort im Stillen verlangt.",
+    "para2Line1": "Unsere Aufgabe ist es, das zu lernen.",
+    "para2Line2": "Und dann bauen wir es präzise.",
+    "process": {
+      "sketchbook": "Skizzenbuch",
+      "tracingPaper": "Pauspapier",
+      "handwrittenNotes": "Handschriftliche Notizen",
+      "materialBoard": "Materialtafel"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "Unser Angebot",
+    "offerHeading": "Wie wir bauen",
+    "craftEyebrow": "Handwerk zählt",
+    "craftBody": "Architektur entsteht durch tausende von Entscheidungen. Die Qualität eines Materials, die Proportionen eines Raumes, der Lichteinfall und die Details einer Verbindung beeinflussen, wie ein Raum im Alltag erlebt wird.",
+    "closingCta": "Lass uns über dein Projekt sprechen",
+    "materials": {
+      "wood": "Holz",
+      "stone": "Stein",
+      "joinery": "Tischlerei",
+      "sketches": "Skizzen",
+      "models": "Modelle",
+      "materialBoards": "Materialtafeln",
+      "details": "Details"
+    }
+  },
+  "approach": {
+    "eyebrow": "So funktionieren",
+    "title": "Unser Ansatz",
+    "intro": "Jede Phase hat ihren Sinn. Nichts geht voran, bevor die aktuelle Phase abgeschlossen ist.",
+    "startConversation": "Beginnen Sie ein Gespräch",
+    "steps": [
+      {
+        "title": "Hören",
+        "body": "Jedes Projekt beginnt schon vor dem Briefing – in Ihrer Lebensweise, in den Abläufen Ihres Unternehmens, in dem, was die Website im Stillen verlangt."
+      },
+      {
+        "title": "Erkunden",
+        "body": "Ideen werden offen geprüft. Proportionen, Licht und Material werden untersucht, bevor man sich auf eine bestimmte Richtung festlegt."
+      },
+      {
+        "title": "Design",
+        "body": "Das Konzept ist zu einem Ganzen geformt, bei dem jede Entscheidung den Vorgaben und dem Raum selbst entspricht."
+      },
+      {
+        "title": "Verfeinern",
+        "body": "Die Details sind geklärt. Es ist diese stille Arbeit, die einen Raum, der fertig aussieht, von einem unterscheidet, der sich stimmig anfühlt."
+      },
+      {
+        "title": "Liefern",
+        "body": "Die Arbeiten wurden bis zum Abschluss durchgeführt – die ursprüngliche Intention wurde bis ins letzte Detail beibehalten."
+      }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "Unser Angebot",
+    "title": "Wie wir bauen",
+    "getInTouch": "Nehmen Sie Kontakt auf"
+  },
+  "journalPage": {
+    "eyebrow": "Aus dem Studio",
+    "title": "Zeitschrift",
+    "intro": "Überlegungen aus dem Atelier – über Raum, Material und die Details, die wirklich zählen.",
+    "inPreparation": "In Vorbereitung",
+    "stayInTouch": "Bleiben Sie in Kontakt"
+  },
+  "marquee": [
+    "Katha Studio",
+    "Stille, gestaltet",
+    "Bengaluru",
+    "Architektur als Pause",
+    "Materialruhe",
+    "Räume, die zuhören",
+    "Ausgewählte Arbeiten",
+    "Beginne leise"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Warum Katha",
+    "whyHeading": "Katha bedeutet Geschichte",
+    "whyPara1": "Jedes Projekt birgt etwas in sich, das sich nicht beschreiben lässt – die Art und Weise, wie eine Familie tatsächlich lebt, wie sich ein Unternehmen von innen heraus anfühlen muss, wie eine Landschaft erlebt werden möchte, was ein Ort im Stillen verlangt.",
+    "whyPara2Line1": "Unsere Aufgabe ist es, das zu lernen.",
+    "whyPara2Line2": "Und dann bauen wir es präzise.",
+    "nehaEyebrow": "Lernen Sie Neha kennen",
+    "nehaHeading": "Ar. Neha",
+    "nehaPortraitAlt": "Porträt von Architektin Neha, Gründerin und leitende Architektin von Katha Studio",
+    "nehaPara1": "Der Weltraum hat ein Gedächtnis.",
+    "nehaPara2": "Es vermittelt, wie es gebaut wurde, wofür es gebaut wurde und wie es die Menschen lange nach Abschluss der Arbeiten fühlen lässt.",
+    "nehaPara3": "Jahrelang habe ich gelernt, das zu lesen – im Gewicht eines Materials, das aufgrund seiner Alterungseigenschaften ausgewählt wurde, in Proportionen, die aus Traditionen stammen, die den menschlichen Maßstab schon lange kannten, bevor er zu einer Disziplin wurde, in der stillen Logik eines Raumes, der keiner Erklärung bedarf, weil alles darin genau dort ist, wo es hingehört.",
+    "nehaPara4": "Diese Detailgenauigkeit ist die Grundlage jedes Katha-Projekts.",
+    "nehaName": "Ar. Neha",
+    "nehaRole": "Gründer & leitender Architekt",
+    "perspectiveEyebrow": "Unsere Perspektive",
+    "perspective1": "Die besten Orte entstehen nie zufällig.",
+    "perspective2": "Jedes Material wird danach ausgewählt, wie es sich über Jahrzehnte bewährt.",
+    "perspective3": "Wir greifen auf Bautraditionen zurück, die Beständigkeit, Maßstab und menschliche Erfahrung in ihrer tiefsten Form verstanden haben.",
+    "perspective4": "Wir entwerfen Räume für das Leben, das sich darin abspielt – nicht nur für den Moment ihrer Fertigstellung.",
+    "valuesEyebrow": "Was wir schätzen",
+    "values": [
+      {
+        "title": "Tiefe",
+        "body": "Wir fragen uns, was ein Raum werden muss – nicht nur, wie er aussehen muss."
+      },
+      {
+        "title": "Dauerhaftigkeit",
+        "body": "Jedes Material, jede Proportion, jedes Detail ist darauf ausgelegt, lange zu halten und sich im Laufe der Zeit zu bewähren."
+      },
+      {
+        "title": "Wurzeln",
+        "body": "Wir greifen auf Bautraditionen zurück, die schon lange vor der schriftlichen Fixierung Wissen über den Weltraum in sich trugen."
+      },
+      {
+        "title": "Präzision",
+        "body": "Nichts in einem Katha-Projekt ist willkürlich. Jede Entscheidung hat einen triftigen Grund."
+      },
+      {
+        "title": "Voraussicht",
+        "body": "Wir entwerfen Räume für deren gesamte Lebensdauer – zehn Jahre, zwanzig Jahre, lange nach dem ersten Tag."
+      }
+    ],
+    "craftEyebrow": "Basteln & Materialien",
+    "craftPara1": "Jede Entscheidung beim Bauen ist auch eine materielle Entscheidung.",
+    "craftPara2": "Das Material bestimmt, wie ein Material altert, wie es sich anfühlt, wie es Licht reflektiert und wie es sich in seinem Klima verhält. Wir wählen Materialien nach ihren Eigenschaften im Laufe der Zeit – nicht nur danach, wie sie sich am Tag ihrer Installation verhalten.",
+    "craftTags": [
+      "Holz",
+      "Stein",
+      "Tischlerei",
+      "Skizzen",
+      "Modelle",
+      "Materialtafeln",
+      "Details"
+    ],
+    "clientsEyebrow": "Mit wem wir zusammenarbeiten",
+    "clientsPara1": "Wir arbeiten mit Menschen zusammen, für die ein Raum mehr ist als nur ein Projekt.",
+    "clientsPara2": "Familien, die sich ein Haus wünschen, das Generationen überdauert und sich wohlfühlt. Unternehmen, die verstehen, dass ihr Umfeld ihre Identität widerspiegelt. Bauträger, die wissen, dass die richtigen Details von Anfang an alles Weitere bestimmen.",
+    "clientsPara3": "Wir übernehmen nur Aufträge, die wir mit vollem Engagement erledigen können. Nicht weniger.",
+    "noteBody": "Jedes Projekt steht für ein wichtiges Kapitel im Leben eines Menschen. Diese Verantwortung nehmen wir sehr ernst. Vielen Dank, dass Sie Katha Studio als Teil dieser Reise in Betracht ziehen.",
+    "noteSignature": "— Ar. Neha"
+  },
+  "contactPage": {
+    "eyebrow": "Nehmen Sie Kontakt auf",
+    "titleLine1": "Beginnen Sie ein",
+    "titleLine2": "Gespräch",
+    "details": {
+      "emailLabel": "E-Mail",
+      "phoneLabel": "Telefon",
+      "studioLabel": "Studio",
+      "studioValue": "Bengaluru, Indien",
+      "portfolioLabel": "Portfolio",
+      "portfolioValue": "Auf Anfrage erhältlich – schreiben Sie uns."
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr Name",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Projekttyp",
+    "projectTypePlaceholder": "z.B. Innenräume",
+    "timelineLabel": "Zeitleiste",
+    "timelinePlaceholder": "z. B. 3 – 6 Monate",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt – was es ist, wo es sich befindet und was Sie sich davon erhoffen.",
+    "send": "Anfrage senden",
+    "sending": "Senden",
+    "sent": "Gesendet ✓",
+    "success": "— Vielen Dank. Wir melden uns innerhalb von zwei Werktagen bei Ihnen.",
+    "errors": {
+      "checkFields": "Bitte überprüfen Sie die markierten Felder.",
+      "network": "Netzwerkfehler. Bitte versuchen Sie es erneut.",
+      "nameRequired": "Bitte nennen Sie Ihren Namen.",
+      "nameShort": "Der Name sollte mindestens 2 Zeichen lang sein.",
+      "emailRequired": "Bitte teilen Sie uns Ihre E-Mail-Adresse mit.",
+      "emailInvalid": "Das sieht nicht nach einer gültigen E-Mail aus.",
+      "phoneRequired": "Bitte teilen Sie uns Ihre Telefonnummer mit.",
+      "phoneChars": "Verwenden Sie ausschließlich Ziffern, Leerzeichen, Bindestriche, Punkte oder Klammern.",
+      "phoneDigits": "Die Telefonnummer sollte 10-stellig sein (mit oder ohne +91).",
+      "messageRequired": "Bitte teilen Sie ein paar Worte mit.",
+      "messageShort": "Nur noch ein bisschen mehr – mindestens 10 Zeichen.",
+      "messageLong": "Das ist etwas lang – bitte halten Sie es unter 2000 Zeichen."
+    }
+  },
+  "detail": {
+    "scope": "Umfang",
+    "ctaLabel": "Ein Projekt starten",
+    "entering": "Eintritt"
+  },
+  "services": {
+    "architecture": {
+      "title": "Architektur",
+      "category": "Häuser und Gebäude",
+      "tagline": "Häuser und Gebäude, entworfen mit Klarheit und Zweckmäßigkeit.",
+      "desc": "Häuser und Gebäude, die mit Klarheit, Zweckmäßigkeit und einer starken Verbindung zu den Menschen, die sie nutzen, entworfen wurden.",
+      "paragraphs": [
+        "Wir entwerfen Häuser und Gebäude mit Klarheit, Zweckmäßigkeit und einer starken Verbindung zu den Menschen, die sie nutzen.",
+        "Jedes Projekt beginnt damit, dass wir verstehen, wie Sie leben oder arbeiten möchten. Darauf aufbauend gestalten wir Räume unter Berücksichtigung von Licht, Proportionen und der gewünschten Atmosphäre – sorgfältig durchdacht vom ersten Entwurf bis zum letzten Detail."
+      ],
+      "scope": [
+        "Neubauwohnungen",
+        "Gewerbeflächen",
+        "Konzeptdesign",
+        "Baustellen- und Detailplanung"
+      ],
+      "imageCaption": "Studie · Licht & Proportionen"
+    },
+    "interiors": {
+      "title": "Innenräume",
+      "category": "Räume & Details",
+      "tagline": "Jeder Innenraum vermittelt ein bestimmtes Gefühl, bevor er mit Möbeln ausgestattet wird.",
+      "desc": "Räume, die durch Materialität, Licht und durchdachte Details gestaltet werden.",
+      "paragraphs": [
+        "Die Kunst liegt in den Entscheidungen, die man selten sieht – der Beschaffenheit einer Oberfläche, den Proportionen eines Raumes, dem Lichteinfall im Laufe des Tages. Es sind diese Entscheidungen, die bestimmen, wie sich ein Raum über Jahre hinweg anfühlt.",
+        "Jedes Katha-Interieur ist danach gestaltet."
+      ],
+      "scope": [
+        "Raumplanung",
+        "Materialauswahl",
+        "Tischlerei & Einbauten",
+        "Licht & Atmosphäre"
+      ],
+      "imageCaption": "Studie · Material & Details"
+    },
+    "renovation": {
+      "title": "Renovierung",
+      "category": "Sich entwickelnde Räume",
+      "tagline": "Jeder bestehende Raum birgt etwas, das es wert ist, verstanden zu werden, bevor irgendetwas verändert wird.",
+      "desc": "Wir helfen bestehenden Räumen, sich weiterzuentwickeln und dabei ihre Stärken auszubauen.",
+      "paragraphs": [
+        "Das Alter verleiht einem Gebäude Intelligenz – in seiner Bauweise, in dem, was es aushalten musste, und in dem, was seinen Wert über die Zeit stillschweigend bewahrt hat. Unsere Aufgabe besteht darin, zu wissen, was erhalten, was weiterentwickelt werden sollte und wie wir beides zukunftsfähig gestalten können, ohne das zu verlieren, was den Ort so wertvoll gemacht hat."
+      ],
+      "scope": [
+        "Strukturelle Überarbeitung",
+        "Denkmalrestaurierung",
+        "Erweiterungen",
+        "Adaptive Wiederverwendung"
+      ],
+      "imageCaption": "Studie · Die bestehende"
+    },
+    "advisory": {
+      "title": "Beratung",
+      "category": "Leitfaden & Planung",
+      "tagline": "Wer frühzeitig die richtige Frage stellt, rettet alles, was danach kommt.",
+      "desc": "Wir bieten Unterstützung bei Planung, Entscheidungsfindung und Umsetzung.",
+      "paragraphs": [
+        "Manche Projekte erfordern eine vollständige Planung. Andere benötigen lediglich ein Gespräch mit jemandem, der bereits genug Erfahrung hat, um genau zu wissen, wohin die Reise geht – und welche Entscheidungen vor Beginn der eigentlichen Arbeit am wichtigsten sein werden.",
+        "Genau das ist Katha Advisory."
+      ],
+      "scope": [
+        "Kurzentwicklung",
+        "Durchführbarkeit",
+        "Designrichtung",
+        "Entscheidungsunterstützung"
+      ],
+      "imageCaption": "Studie · Kurzbeschreibung & Anleitung"
+    },
+    "technical-drawings": {
+      "title": "Technische Zeichnungen",
+      "category": "Dokumentation & Details",
+      "tagline": "Die Zeichnungen, die aus einem Entwurf ein Gebäude machen.",
+      "desc": "Präzise Bauzeichnungen, die einen Entwurf in etwas umsetzen, das auf der Baustelle exakt gebaut werden kann.",
+      "paragraphs": [
+        "Ein Entwurf wird erst dann zum Gebäude, wenn er präzise umgesetzt werden kann. Technische Zeichnungen sind der Ort, an dem die Absicht zur Bauanleitung wird – jedes Maß, jede Verbindung und jedes Material ist so klar dargestellt, dass der Bau ohne Rätselraten möglich ist.",
+        "Wir erstellen detaillierte Ausführungszeichnungen – Pläne, Schnitte, Ansichten und Konstruktionsdetails –, die Bauunternehmen eine einzige, präzise Informationsquelle bieten. Weniger Überraschungen auf der Baustelle, weniger Kompromisse und ein fertiges Objekt, das der Zeichnung entspricht."
+      ],
+      "scope": [
+        "Werkzeichnungen",
+        "Schnitte & Ansichten",
+        "Konstruktionsdetails",
+        "Website-Dokumentation"
+      ],
+      "imageCaption": "Studie · Linie & Präzision"
+    },
+    "residential": {
+      "title": "Wohnen",
+      "category": "Wohnen & Leben",
+      "tagline": "Die Orte, zu denen Sie jeden Tag zurückkehren.",
+      "desc": "Häuser, die auf Ihre tatsächlichen Lebensgewohnheiten zugeschnitten sind – privat, warm und auf Langlebigkeit ausgelegt.",
+      "paragraphs": [
+        "Ein Zuhause ist das persönlichste, was wir gestalten. Es beherbergt Ihre Routinen, Ihre Familie und die kleinen Rituale, die einen Tag auf unaufdringliche Weise zu Ihrem eigenen machen.",
+        "Wir gestalten Wohnräume ganz nach Ihren Bedürfnissen – wie das Morgenlicht fallen soll, wo sich Menschen treffen, welche ruhigen Ecken Sie brauchen. Jede Entscheidung wird so getroffen, dass sich das Haus auch in vielen Jahren noch richtig anfühlt."
+      ],
+      "scope": [
+        "Privathäuser",
+        "Villen",
+        "Wohnungen",
+        "Bauernhäuser"
+      ],
+      "imageCaption": "Studieren · Wohnen & Leben"
+    },
+    "commercial": {
+      "title": "Kommerziell",
+      "category": "Arbeit & Einzelhandel",
+      "tagline": "Räume, die genauso hart arbeiten wie die Menschen, die sich darin aufhalten.",
+      "desc": "Büros, Geschäfte und Gastronomieflächen, die Funktion, Marke und Atmosphäre in Einklang bringen.",
+      "paragraphs": [
+        "Ein Geschäftsraum vermittelt den Charakter eines Unternehmens, noch bevor ein einziges Wort gesprochen wird. Er prägt die Arbeitsweise eines Teams, die Gefühle der Kunden und die Erinnerung an eine Marke.",
+        "Wir entwerfen Büro-, Einzelhandels- und Gastronomieflächen, die dort praktisch sind, wo sie sein müssen, und dort ausdrucksstark, wo es darauf ankommt – gebaut, um jeden Tag zu funktionieren und auch unter starker Beanspruchung lange zu halten."
+      ],
+      "scope": [
+        "Büros & Arbeitsbereiche",
+        "Einzelhandel",
+        "Gastfreundschaft",
+        "Ausstellungsräume"
+      ],
+      "imageCaption": "Studium · Arbeit & Marke"
+    },
+    "high-rise": {
+      "title": "Hochhaus",
+      "category": "Türme & Dichte",
+      "tagline": "Gut leben, in luftiger Höhe.",
+      "desc": "Mehrgeschossige und Hochhausgebäude, geplant für Licht, Luft, Struktur und Gemeinschaft.",
+      "paragraphs": [
+        "Der Bau in die Höhe stellt höhere Anforderungen an die Planung. Jedes Stockwerk wiederholt sich, alle Versorgungsleitungen erstrecken sich über die gesamte Höhe, und Hunderte von Menschen teilen sich ein einziges Gebäude – daher müssen die Details stimmen, denn sie vervielfachen sich.",
+        "Wir planen Hochhäuser und mehrgeschossige Gebäude so, dass sie die Eigenschaften eines wirklich guten vertikalen Wohnens berücksichtigen: natürliches Licht und Querlüftung, eine solide Konstruktion, effiziente Kerne und Gemeinschaftsräume, die ein Gemeinschaftsgefühl schaffen, anstatt einfach nur Wohnungen übereinander zu stapeln."
+      ],
+      "scope": [
+        "Wohntürme",
+        "Mischnutzung",
+        "Strukturplanung",
+        "Gemeinsame Einrichtungen"
+      ],
+      "imageCaption": "Studie · Höhe & Dichte"
+    }
+  },
+  "noteCategories": {
+    "Process": "Verfahren",
+    "Culture": "Kultur",
+    "Craft": "Handwerk",
+    "Space": "Raum"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "Warum die erste Skizze nie die Antwort ist",
+      "excerpt": "Die erste Skizze ist kein Entwurf. Sie ist eine Frage.",
+      "paragraphs": [
+        "Es ist der schnellste Weg, herauszufinden, was man an einem Projekt noch nicht verstanden hat. Eine zu früh in die falsche Richtung gezogene Linie kostet auf dem Papier nichts, auf der Baustelle aber alles. Deshalb skizzieren wir frühzeitig und unverbindlich – nicht um uns festzulegen, sondern um Erkenntnisse zu gewinnen. Um zu sehen, wo die Überlegungen greifen und wo nicht.",
+        "Die Projekte, die am Ende erfolgreich sind, sind diejenigen, bei denen die schwierigsten Fragen gestellt wurden, bevor das Design überzeugte. Bevor der Kunde sich auf ein Layout festgelegt hatte. Bevor irgendjemand in eine Idee investiert hatte. In jedem Projekt gibt es zu Beginn ein Zeitfenster, in dem noch alles möglich ist – und genau in diesem Zeitfenster findet die wichtigste Arbeit statt.",
+        "Das Ergebnis entspricht nicht immer den Erwartungen. Ein Ort, der zunächst einen bestimmten Ansatz zu erfordern schien, offenbart durch erste Skizzen, dass er etwas Ruhigeres braucht. Ein anfangs unkompliziertes Briefing entwickelt sich zu etwas Reichhaltigerem, sobald die ersten Linien gezogen und hinterfragt sind.",
+        "Anhand der Skizze erfahren wir, was das Projekt eigentlich verlangt."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "Das Detail, das niemand sieht.",
+      "excerpt": "Das wichtigste Detail in jedem Projekt ist unsichtbar, wenn die Arbeit abgeschlossen ist.",
+      "paragraphs": [
+        "Es lebt vom Zusammenspiel zweier Materialien – vom Übergang zwischen Steinboden und verputzter Wand, von der Schattenlinie, die einen Türrahmen klar definiert, von der Tiefe einer Fensterlaibung, die darüber entscheidet, ob das Licht sanft oder grell einfällt. Diese Entscheidungen unterscheiden einen Raum, der durchdacht wirkt, von einem, der lediglich fertiggestellt aussieht.",
+        "Kunden fragen selten nach solchen Dingen. Sie fragen nach Grundrissen, Materialien und Oberflächen. Doch die Räume, die ihnen in Erinnerung bleiben – die sie anderen beschreiben, die ihnen im Gedächtnis bleiben – sind fast immer diejenigen, bei denen jemand genau auf diese Details geachtet hat.",
+        "Eine schlecht gestaltete Kreuzung wirkt jedes Mal spürbar, wenn sich jemand ihr nähert. Ein unpassender Schattenwurf lässt eine Fläche flach wirken, die eigentlich Tiefe haben sollte. Diese Dinge nehmen sich unbewusst ab – aber sie nehmen sich wahr.",
+        "Die Kunst der Architektur liegt in den Details, die niemand sieht. Gerade diese Unsichtbarkeit ist der Sinn."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "Was Indien über den Weltraum weiß, was die Welt gerade neu lernt",
+      "excerpt": "Die raffiniertesten Ideen der zeitgenössischen Architektur waren nie neu. Sie waren in Vergessenheit geraten.",
+      "paragraphs": [
+        "Passive Kühlung durch die Geometrie des Innenhofs. Thermische Masse in den Steinmauern, die das Raumklima ohne mechanische Eingriffe stabil hält. Die Veranda – weder innen noch außen – mildert die Hitze, filtert das Licht und schafft eine Schwelle, die keine Klimaanlage je ersetzen konnte. Stufenbrunnen, die Regenwassernutzung, öffentliche Treffpunkte und ein Mikroklima in einem einzigen Gebäude vereinen.",
+        "Das waren keine Zufälle. Es waren jahrhundertelange Beobachtungen, die in handwerkliches Können eingeflossen waren – weitergegeben durch Hände, nicht durch Lehrbücher. Das Wissen verschwand nicht, weil es nicht mehr funktionierte. Es verschwand, weil die importierte Moderne schneller Einzug hielt, als irgendjemand daran dachte, es zu hinterfragen.",
+        "Die Welt investiert derzeit enorme Ressourcen in die Wiederentdeckung dessen, was bereits bekannt war: Biophiles Design, passive Belüftung, menschengerechte Proportionen, regional gewonnene Materialien. Das sind keine Trends, sondern bewährte Praktiken.",
+        "Wir bauen bewusst mit diesem Wissen – nicht aus Nostalgie. Weil es besser funktioniert."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "Über das Designen für die Zukunft in zwanzig Jahren",
+      "excerpt": "Jedes Projekt wird die Diskussion überdauern, die es ins Leben gerufen hat.",
+      "paragraphs": [
+        "Die Familie, die den Entwurf erstellt hat, wird sich verändern. Kinder werden erwachsen und ausziehen. Unternehmen werden sich wandeln. Die Art und Weise, wie Menschen arbeiten, sich treffen und sich im Raum bewegen, hat sich in den letzten zehn Jahren bereits verändert – und wird sich in den nächsten zehn Jahren erneut verändern. Ein Raum, der nur für die Gegenwart konzipiert wurde, ist bereits jetzt überholt.",
+        "Die Antwort liegt nicht in offenen Raumkonzepten und verschiebbaren Wänden. Sie erfordert ein tieferes Verständnis dafür, was im menschlichen Verhalten beständig ist und was nicht.",
+        "Die Menschen werden immer einen Ort der Stille und einen Ort der Begegnung brauchen. Sie werden immer auf natürliches Licht reagieren. Sie werden immer den Unterschied zwischen einer Decke in der richtigen Höhe und einer zu niedrigen spüren. Sie werden immer erkennen, wann ein Material authentisch ist und wann es etwas anderes vortäuscht.",
+        "Entwerfen Sie für diese Konstanten. Bauen Sie mit Materialien, die mit Würde altern. Lassen Sie im Plan Raum für das Leben, damit es sich entfalten kann, ohne die Architektur zu zerstören.",
+        "So kann es passieren, dass ein Raum auch nach zwanzig Jahren noch stimmig wirkt."
+      ]
+    }
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "intro": {
+    "chooseLanguage": "Kies uw taal",
+    "enter": "Binnenkomen"
+  },
+  "nav": {
+    "studio": "Studio",
+    "approach": "Benadering",
+    "services": "Diensten",
+    "journal": "Tijdschrift",
+    "contact": "Contact",
+    "home": "Thuis",
+    "backToHome": "Terug naar de homepage",
+    "next": "Volgende",
+    "previous": "Vorig",
+    "locationLine": "KATHA Studio · Bengaluru",
+    "whatWeDo": "Wat wij doen",
+    "whatWeBuild": "Wat wij bouwen",
+    "allServices": "Alle diensten"
+  },
+  "home": {
+    "eyebrow": "Architectuur · Interieurs · Renovatie · Landschap",
+    "titleLine1": "Elke ruimte heeft een verhaal.",
+    "titleLine2": "wachtend om gebouwd te worden.",
+    "mystery": [
+      "Ruimtes die hun adem inhouden",
+      "Hoe stiller, hoe levendiger.",
+      "Wat blijft er over nadat de tekening is afgelopen?",
+      "Licht, geduld, een enkel gebaar.",
+      "Architectuur, in alle rust."
+    ],
+    "subhead": "Bij Katha Studio begint elk project met luisteren. We nemen de tijd om mensen, de plek en het doel te begrijpen voordat we ruimtes creëren die persoonlijk, tijdloos en diep verbonden zijn met de levens die ze ondersteunen.",
+    "location": "Gevestigd in Bengaluru · Werkzaam in heel India · Open voor geselecteerde internationale samenwerkingen",
+    "cta": "Begin een gesprek",
+    "cardStudioLabel": "Studio",
+    "cardStudioTagline": "Wie we zijn",
+    "cardContactLabel": "Contact",
+    "cardContactTagline": "Begin een gesprek",
+    "category": {
+      "intro": "Intro",
+      "studio": "Studio",
+      "contact": "Contact",
+      "residence": "Residentie",
+      "interior": "Interieur",
+      "renovation": "Vernieuwing",
+      "advisory": "Advies",
+      "service": "Dienst",
+      "residential": "Residentieel",
+      "commercial": "Commercieel",
+      "highRise": "Hoogbouw"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Waarom Katha",
+    "heading": "Katha betekent verhaal",
+    "para1": "Elk project kent aspecten die niet in een briefing te beschrijven zijn: de manier waarop een gezin daadwerkelijk leeft, hoe een bedrijf van binnenuit moet aanvoelen, hoe een landschap beleefd wil worden, wat een locatie in stilte verlangt.",
+    "para2Line1": "Onze taak is om te leren hoe we dat moeten lezen.",
+    "para2Line2": "Vervolgens bouw je het precies zoals je wilt.",
+    "process": {
+      "sketchbook": "Schetsboek",
+      "tracingPaper": "Calqueerpapier",
+      "handwrittenNotes": "Handgeschreven notities",
+      "materialBoard": "Materiaalplaat"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "Wat wij bieden",
+    "offerHeading": "Hoe wij bouwen",
+    "craftEyebrow": "Vakmanschap is belangrijk",
+    "craftBody": "Architectuur wordt gevormd door duizenden beslissingen. De kwaliteit van een materiaal, de verhoudingen van een ruimte, de manier waarop licht een ruimte binnenkomt en de details van een verbinding beïnvloeden hoe een ruimte dagelijks wordt ervaren.",
+    "closingCta": "Laten we uw project bespreken",
+    "materials": {
+      "wood": "Hout",
+      "stone": "Steen",
+      "joinery": "Timmerwerk",
+      "sketches": "Schetsen",
+      "models": "Modellen",
+      "materialBoards": "Materiaalplaten",
+      "details": "Details"
+    }
+  },
+  "approach": {
+    "eyebrow": "Hoe wij werken",
+    "title": "Onze aanpak",
+    "intro": "Elke fase heeft een doel. Niets gaat vooruit totdat de huidige fase gereed is.",
+    "startConversation": "Begin een gesprek",
+    "steps": [
+      {
+        "title": "Luisteren",
+        "body": "Elk project begint vóór de briefing – in hoe je leeft, hoe je bedrijf functioneert, wat de locatie onbewust vraagt."
+      },
+      {
+        "title": "Ontdekken",
+        "body": "Ideeën worden openlijk getest. Proporties, licht en materiaal worden bestudeerd voordat er een definitieve richting wordt gekozen."
+      },
+      {
+        "title": "Ontwerp",
+        "body": "Het concept wordt vormgegeven tot een geheel waarin elke beslissing aansluit op de opdracht en de ruimte zelf."
+      },
+      {
+        "title": "Verfijnen",
+        "body": "De details zijn uitgewerkt. Dit is het stille werk dat een ruimte die er afgewerkt uitziet onderscheidt van een ruimte die goed aanvoelt."
+      },
+      {
+        "title": "Leveren",
+        "body": "Het werk wordt tot in de puntjes afgerond — de oorspronkelijke intentie is tot in het kleinste detail behouden gebleven."
+      }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "Wat wij bieden",
+    "title": "Hoe wij bouwen",
+    "getInTouch": "Neem contact op"
+  },
+  "journalPage": {
+    "eyebrow": "Vanuit de studio",
+    "title": "Tijdschrift",
+    "intro": "Denken vanuit de studio — over ruimte, materiaal en de details die ertoe doen.",
+    "inPreparation": "Ter voorbereiding",
+    "stayInTouch": "Blijf in contact"
+  },
+  "marquee": [
+    "Katha Studio",
+    "Stilte, ontworpen",
+    "Bengaluru",
+    "Architectuur als pauze",
+    "Materiële rust",
+    "Kamers die luisteren",
+    "Geselecteerd werk",
+    "Begin rustig"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Waarom Katha",
+    "whyHeading": "Katha betekent verhaal",
+    "whyPara1": "Elk project kent aspecten die niet in een briefing te beschrijven zijn: de manier waarop een gezin daadwerkelijk leeft, hoe een bedrijf van binnenuit moet aanvoelen, hoe een landschap beleefd wil worden, wat een locatie in stilte verlangt.",
+    "whyPara2Line1": "Onze taak is om te leren hoe we dat moeten lezen.",
+    "whyPara2Line2": "Vervolgens bouw je het precies zoals je wilt.",
+    "nehaEyebrow": "Maak kennis met Neha",
+    "nehaHeading": "Ar. Neha",
+    "nehaPortraitAlt": "Portret van architect Neha, oprichtster en hoofdarchitect van Katha Studio.",
+    "nehaPara1": "De ruimte heeft een geheugen.",
+    "nehaPara2": "Het laat zien hoe het gebouwd is, waarvoor het ontworpen is en hoe het mensen laat voelen, lang nadat het werk is voltooid.",
+    "nehaPara3": "Ik heb jaren besteed aan het leren lezen daarvan — in het gewicht van een materiaal dat gekozen is vanwege de manier waarop het veroudert, in verhoudingen ontleend aan tradities die de menselijke maat al begrepen lang voordat het een discipline werd, in de stille logica van een ruimte die geen uitleg behoeft omdat alles erin precies op zijn plaats is.",
+    "nehaPara4": "Die diepgang van aandacht vormt de basis van elk Katha-project.",
+    "nehaName": "Ar. Neha",
+    "nehaRole": "Oprichter en hoofdarchitect",
+    "perspectiveEyebrow": "Ons perspectief",
+    "perspective1": "De mooiste plekken ontstaan nooit bij toeval.",
+    "perspective2": "Elk materiaal wordt gekozen op basis van hoe het tientallen jaren meegaat.",
+    "perspective3": "We putten inspiratie uit bouwtradities die duurzaamheid, schaal en de menselijke ervaring op het diepste niveau begrepen.",
+    "perspective4": "Wij ontwerpen met het oog op het leven dat zich in een ruimte afspeelt, niet alleen op het moment dat de ruimte klaar is.",
+    "valuesEyebrow": "Wat wij belangrijk vinden",
+    "values": [
+      {
+        "title": "Diepte",
+        "body": "We vragen ons af wat een ruimte moet worden, niet alleen hoe die eruit moet zien."
+      },
+      {
+        "title": "Permanentie",
+        "body": "Elk materiaal, elke verhouding, elk detail is zorgvuldig gekozen om lang mee te gaan en zijn waarde in de loop der tijd te bewijzen."
+      },
+      {
+        "title": "Wortels",
+        "body": "We putten inspiratie uit bouwtradities die al lang voordat ze werden opgeschreven, inzicht in de ruimte bezaten."
+      },
+      {
+        "title": "Precisie",
+        "body": "Niets in een Katha-project is willekeurig. Elke beslissing heeft een gegronde reden."
+      },
+      {
+        "title": "Vooruitziendheid",
+        "body": "We ontwerpen voor de gehele levensduur van een ruimte – tien jaar, twintig jaar, lang na de eerste dag."
+      }
+    ],
+    "craftEyebrow": "Ambacht en materialen",
+    "craftPara1": "Elke beslissing met betrekking tot een gebouw is tevens een materiaalbeslissing.",
+    "craftPara2": "Het materiaal waaruit iets is gemaakt, bepaalt hoe het veroudert, hoe het aanvoelt, hoe het licht reflecteert en hoe het zich gedraagt in een bepaald klimaat. We kiezen materialen op basis van hun eigenschappen op de lange termijn, niet alleen op basis van hoe ze eruitzien op de dag van installatie.",
+    "craftTags": [
+      "Hout",
+      "Steen",
+      "Timmerwerk",
+      "Schetsen",
+      "Modellen",
+      "Materiaalplaten",
+      "Details"
+    ],
+    "clientsEyebrow": "Met wie we samenwerken",
+    "clientsPara1": "Wij werken samen met mensen die een ruimte als meer dan een project zien.",
+    "clientsPara2": "Gezinnen die een huis willen dat lang meegaat en generaties lang goed aanvoelt. Bedrijven die begrijpen dat hun omgeving hun identiteit weerspiegelt. Ontwikkelaars die weten dat de juiste details aan het begin bepalend zijn voor alles wat volgt.",
+    "clientsPara3": "Wij nemen alleen werk aan dat we met volledige toewijding kunnen uitvoeren. Niets minder.",
+    "noteBody": "Elk project vertegenwoordigt een belangrijk hoofdstuk in iemands leven. Het is een verantwoordelijkheid die we zeer serieus nemen. Bedankt dat u Katha Studio overweegt als onderdeel van die reis.",
+    "noteSignature": "— Architect Neha"
+  },
+  "contactPage": {
+    "eyebrow": "Neem contact op",
+    "titleLine1": "Begin een",
+    "titleLine2": "gesprek",
+    "details": {
+      "emailLabel": "E-mail",
+      "phoneLabel": "Telefoon",
+      "studioLabel": "Studio",
+      "studioValue": "Bengaluru, India",
+      "portfolioLabel": "Portefeuille",
+      "portfolioValue": "Beschikbaar op aanvraag — neem contact met ons op."
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Naam",
+    "namePlaceholder": "Jouw naam",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "jij@example.com",
+    "phoneLabel": "Telefoon",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Projecttype",
+    "projectTypePlaceholder": "bijv. Interieurs",
+    "timelineLabel": "Tijdlijn",
+    "timelinePlaceholder": "bijv. 3 – 6 maanden",
+    "messageLabel": "Bericht",
+    "messagePlaceholder": "Vertel ons over je project: wat het is, waar het zich bevindt en wat je hoopt dat het wordt.",
+    "send": "Verzoek indienen",
+    "sending": "Verzenden",
+    "sent": "Verzonden ✓",
+    "success": "— Dank u wel. We nemen binnen twee werkdagen contact met u op.",
+    "errors": {
+      "checkFields": "Controleer de gemarkeerde velden.",
+      "network": "Netwerkfout. Probeer het opnieuw.",
+      "nameRequired": "Vermeld alstublieft uw naam.",
+      "nameShort": "De naam moet minimaal 2 tekens lang zijn.",
+      "emailRequired": "Deel alstublieft uw e-mailadres.",
+      "emailInvalid": "Dat lijkt geen geldig e-mailadres.",
+      "phoneRequired": "Geef alstublieft uw telefoonnummer door.",
+      "phoneChars": "Gebruik alleen cijfers, spaties, streepjes, puntjes of haakjes.",
+      "phoneDigits": "Het telefoonnummer moet uit 10 cijfers bestaan (met of zonder +91).",
+      "messageRequired": "Deel alstublieft een paar woorden.",
+      "messageShort": "Nog een klein beetje meer — minstens 10 tekens.",
+      "messageLong": "Dat is wat lang — houd het alsjeblieft onder de 2000 tekens."
+    }
+  },
+  "detail": {
+    "scope": "Domein",
+    "ctaLabel": "Een project starten",
+    "entering": "Invoeren"
+  },
+  "services": {
+    "architecture": {
+      "title": "Architectuur",
+      "category": "Huizen en gebouwen",
+      "tagline": "Woningen en gebouwen ontworpen met oog voor detail en een duidelijk doel.",
+      "desc": "Huizen en gebouwen ontworpen met helderheid, doelgerichtheid en een sterke verbinding met de mensen die ze gebruiken.",
+      "paragraphs": [
+        "Wij ontwerpen woningen en gebouwen met helderheid, een duidelijk doel en een sterke verbinding met de mensen die ze gebruiken.",
+        "Elk project begint met een goed begrip van hoe u wilt leven of werken. Van daaruit ontwerpen we ruimtes rondom licht, proporties en de sfeer die een plek moet uitstralen – zorgvuldig overwogen van de eerste schets tot het laatste detail."
+      ],
+      "scope": [
+        "Nieuwe woningen",
+        "Commerciële ruimtes",
+        "Conceptontwerp",
+        "Locatie en detaillering"
+      ],
+      "imageCaption": "Studie · Licht & Proportie"
+    },
+    "interiors": {
+      "title": "Interieurs",
+      "category": "Ruimtes en details",
+      "tagline": "Elk interieur ademt een bepaalde sfeer uit, nog voordat er meubels in komen.",
+      "desc": "Ruimtes vormgegeven door materiaalkeuze, licht en doordachte details.",
+      "paragraphs": [
+        "Het werk zit hem in de keuzes die zelden opvallen: de textuur van een oppervlak, de verhoudingen van een ruimte, de manier waarop het licht gedurende de dag binnenvalt. Dit zijn de beslissingen die bepalen hoe prettig een ruimte aanvoelt om in te leven, jarenlang.",
+        "Elk Katha-interieur is volgens dat principe ontworpen."
+      ],
+      "scope": [
+        "Ruimtelijke planning",
+        "Materiaalselectie",
+        "Timmerwerk en inbouw",
+        "Licht & Atmosfeer"
+      ],
+      "imageCaption": "Studie · Materiaal & Details"
+    },
+    "renovation": {
+      "title": "Vernieuwing",
+      "category": "Evoluerende ruimtes",
+      "tagline": "Elke bestaande ruimte bevat iets dat de moeite waard is om te begrijpen voordat er iets aan veranderd wordt.",
+      "desc": "Het helpen ontwikkelen van bestaande ruimtes, voortbouwend op hun sterke punten.",
+      "paragraphs": [
+        "De tand des tijds laat sporen na in een gebouw – in de manier waarop het is gebouwd, waartegen het is ontworpen, en wat in de loop der tijd onopgemerkt zijn waarde heeft behouden. Onze taak is om te bepalen wat we moeten behouden, wat we moeten ontwikkelen en hoe we beide kunnen realiseren zonder te verliezen wat de ruimte de moeite waard maakte om naar terug te keren."
+      ],
+      "scope": [
+        "Structurele herziening",
+        "Erfgoedrestauratie",
+        "Uitbreidingen",
+        "Adaptief hergebruik"
+      ],
+      "imageCaption": "Studie · Het bestaande"
+    },
+    "advisory": {
+      "title": "Advies",
+      "category": "Begeleiding en planning",
+      "tagline": "Door vroegtijdig de juiste vraag te stellen, voorkom je alles wat daarna komt.",
+      "desc": "Het bieden van begeleiding tijdens de planning, besluitvorming en uitvoering.",
+      "paragraphs": [
+        "Sommige projecten vereisen een volledig ontwerp. Voor andere is één gesprek met iemand die voldoende ervaring heeft om precies te weten waar het naartoe gaat en welke beslissingen het belangrijkst zijn voordat de werkzaamheden beginnen, voldoende.",
+        "Dat is wat Katha Advisory is."
+      ],
+      "scope": [
+        "Korte ontwikkeling",
+        "Geschiktheid",
+        "Ontwerprichting",
+        "Beslissingsondersteuning"
+      ],
+      "imageCaption": "Studie · Opdracht & Richtlijnen"
+    },
+    "technical-drawings": {
+      "title": "Technische tekeningen",
+      "category": "Documentatie en details",
+      "tagline": "De tekeningen die een ontwerp omzetten in een gebouw.",
+      "desc": "Nauwkeurige bouwtekeningen die een ontwerp vertalen naar iets dat daadwerkelijk op de bouwplaats kan worden gerealiseerd.",
+      "paragraphs": [
+        "Een ontwerp wordt pas een gebouw als het nauwkeurig kan worden gebouwd. Technische tekeningen zijn de plek waar intentie instructie wordt — elke afmeting, verbinding en elk materiaal wordt zo duidelijk vastgelegd dat er zonder giswerk gebouwd kan worden.",
+        "Wij maken gedetailleerde werktekeningen — plattegronden, doorsneden, gevels en constructiedetails — die aannemers één betrouwbare bron van informatie bieden. Minder verrassingen op de bouwplaats, minder compromissen en een eindresultaat dat overeenkomt met de tekening."
+      ],
+      "scope": [
+        "Werktekeningen",
+        "Doorsneden en gevels",
+        "Constructiedetails",
+        "Site documentatie"
+      ],
+      "imageCaption": "Studie · Lijn & Precisie"
+    },
+    "residential": {
+      "title": "Residentieel",
+      "category": "Wonen en leven",
+      "tagline": "De plekken waar je elke dag naar terugkeert.",
+      "desc": "Woningen ontworpen rondom uw werkelijke leefstijl: privé, warm en gebouwd om lang mee te gaan.",
+      "paragraphs": [
+        "Een huis is het meest persoonlijke dat we ontwerpen. Het is de plek waar je je dagelijkse routines, je gezin en de kleine rituelen vindt die ervoor zorgen dat een dag echt van jou is.",
+        "We ontwerpen woningen op basis van uw werkelijke leefstijl: hoe het licht 's ochtends binnenvalt, waar mensen samenkomen, welke rustige hoekjes u nodig heeft. Elke beslissing wordt genomen zodat het huis ook over vele jaren nog steeds goed aanvoelt."
+      ],
+      "scope": [
+        "Particuliere woningen",
+        "Villa's",
+        "Appartementen",
+        "Boerderijen"
+      ],
+      "imageCaption": "Studeren · Wonen en Leven"
+    },
+    "commercial": {
+      "title": "Commercieel",
+      "category": "Werk & Detailhandel",
+      "tagline": "Ruimtes die net zo hard werken als de mensen die erin verblijven.",
+      "desc": "Kantoren, winkels en horecagelegenheden die functionaliteit, merkbeleving en sfeer in balans brengen.",
+      "paragraphs": [
+        "Een commerciële ruimte weerspiegelt het karakter van een bedrijf nog voordat er een woord is gesproken. Het bepaalt hoe een team samenwerkt, hoe klanten zich voelen en hoe een merk in de herinnering blijft.",
+        "Wij ontwerpen kantoren, winkels en horecagelegenheden die praktisch zijn waar nodig en expressief waar het telt – gebouwd om dagelijks te presteren en goed bestand te zijn tegen intensief gebruik, zelfs op latere leeftijd."
+      ],
+      "scope": [
+        "Kantoren en werkruimtes",
+        "Detailhandel",
+        "Gastvrijheid",
+        "Showrooms"
+      ],
+      "imageCaption": "Studie · Werk & Merk"
+    },
+    "high-rise": {
+      "title": "Hoogbouw",
+      "category": "Torens en dichtheid",
+      "tagline": "Goed leven, op hoogte.",
+      "desc": "Gebouwen met meerdere verdiepingen en hoge gebouwen worden ontworpen met het oog op licht, lucht, structuur en de gemeenschap.",
+      "paragraphs": [
+        "Bouwen in de hoogte stelt hogere eisen aan het ontwerp. Elke verdieping herhaalt zich, elke leiding loopt over de volledige hoogte en honderden mensen delen één gebouw – dus de details moeten kloppen, omdat ze zich vermenigvuldigen.",
+        "We ontwerpen hoogbouw en gebouwen met meerdere verdiepingen rondom de elementen die verticaal wonen echt aantrekkelijk maken: natuurlijk licht en dwarsventilatie, een eerlijke constructie, efficiënte kernen en gedeelde ruimtes die een gevoel van gemeenschap creëren in plaats van simpelweg woningen op elkaar te stapelen."
+      ],
+      "scope": [
+        "Woontorens",
+        "Gemengd gebruik",
+        "Structurele planning",
+        "Gemeenschappelijke voorzieningen"
+      ],
+      "imageCaption": "Studie · Hoogte & Dichtheid"
+    }
+  },
+  "noteCategories": {
+    "Process": "Proces",
+    "Culture": "Cultuur",
+    "Craft": "Ambacht",
+    "Space": "Ruimte"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "Waarom de eerste schets nooit het antwoord is",
+      "excerpt": "De eerste schets is geen ontwerp. Het is een vraag.",
+      "paragraphs": [
+        "Het is de snelste manier om erachter te komen wat je nog niet begrijpt over een project. Een te vroeg getrokken lijn in de verkeerde richting kost niets op papier, maar alles tijdens de bouw. Daarom tekenen we vroeg en losjes – niet om vast te leggen, maar om te ontdekken. Om te zien waar de gedachtegang klopt en waar niet.",
+        "De projecten die goed aflopen, zijn de projecten waarbij de moeilijkste vragen werden gesteld voordat het ontwerp geliefd was. Voordat de klant zich aan een lay-out had gehecht. Voordat iemand in een idee had geïnvesteerd. Er is een periode in het begin van elk project waarin alles nog mogelijk is – en juist in die periode vindt het belangrijkste werk plaats.",
+        "Het resultaat is niet altijd wat iemand had verwacht. Een locatie die aanvankelijk om een bepaalde aanpak leek te vragen, blijkt na het schetsen juist een meer ingetogen aanpak nodig te hebben. Een ogenschijnlijk eenvoudige opdracht leidt tot iets veel rijkers zodra de eerste lijnen getrokken en kritisch bekeken worden.",
+        "Aan de hand van de schets leren we wat er nu eigenlijk van het project wordt gevraagd."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "Het detail dat niemand ziet",
+      "excerpt": "Het belangrijkste detail in elk project is onzichtbaar tegen de tijd dat het werk is afgerond.",
+      "paragraphs": [
+        "Het zit hem in de wisselwerking tussen twee materialen — de manier waarop een stenen vloer een gestucte muur ontmoet, de schaduwlijn die een deurkozijn een strakke uitstraling geeft, de diepte van een raamopening die bepaalt of het licht zacht of fel binnenvalt. Deze keuzes onderscheiden een ruimte die doordacht aanvoelt van een ruimte die er slechts afgewerkt uitziet.",
+        "Klanten vragen zelden naar dit soort dingen. Ze vragen naar indelingen, materialen en afwerkingen. Maar de ruimtes die ze zich herinneren – de ruimtes die ze aan anderen beschrijven, de ruimtes die hen bijblijven – zijn bijna altijd de ruimtes waar iemand precies op dit niveau aandacht aan heeft besteed.",
+        "Een slecht afgewerkt kruispunt spreekt boekdelen zodra iemand er in de buurt staat. Een schaduwlijn die niet op zijn plaats valt, vlakt een oppervlak af dat diepte zou moeten hebben. Deze dingen registreren zich onbewust, maar ze registreren zich wel.",
+        "De kunst van de architectuur schuilt in de details die niemand ziet. Juist die onzichtbaarheid is de essentie."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "Wat India weet over de ruimte, en wat de rest van de wereld nu opnieuw leert.",
+      "excerpt": "De meest verfijnde ideeën in de hedendaagse architectuur waren nooit nieuw. Ze waren in de vergetelheid geraakt.",
+      "paragraphs": [
+        "Passieve koeling door de geometrie van de binnenplaats. Thermische massa in stenen muren die het interieur stabiel houden zonder mechanische ingrepen. De veranda – noch binnen noch buiten – matigt de warmte, filtert het licht en creëert een drempel die geen enkele airconditioning ooit heeft kunnen vervangen. Trapputten die wateropvang, openbare ontmoetingsruimte en microklimaat in één structuur combineren.",
+        "Dit waren geen toevalligheden. Het waren eeuwenlange observaties, verwerkt in vakmanschap — doorgegeven van generatie op generatie, niet via leerboeken. De kennis verdween niet omdat het niet meer werkte. Ze verdween omdat het geïmporteerde modernisme sneller opkwam dan iemand eraan dacht het in twijfel te trekken.",
+        "De wereld investeert nu enorme middelen in het herontdekken van wat al bekend was. Biofiel ontwerp. Passieve ventilatie. Proporties op menselijke schaal. Lokaal geproduceerde materialen. Dit zijn geen trends. Dit zijn resultaten die zich herhalen.",
+        "We bouwen bewust met die kennis in gedachten – niet uit nostalgie. Omdat het beter werkt."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "Ontwerpen voor de komende twintig jaar",
+      "excerpt": "Elk project zal de discussie die eraan ten grondslag lag, overleven.",
+      "paragraphs": [
+        "De familie die de briefing gaf, zal veranderen. Kinderen zullen opgroeien en het huis verlaten. Bedrijven zullen veranderen. De manier waarop mensen werken, samenkomen en zich door de ruimte bewegen, is nu al anders dan tien jaar geleden – en zal over tien jaar weer anders zijn. Een ruimte die alleen voor vandaag is ontworpen, raakt nu al verouderd.",
+        "Het antwoord ligt niet in open plattegronden en verplaatsbare muren. Het gaat om een diepere analyse van wat permanent is in menselijk gedrag en wat niet.",
+        "Mensen zullen altijd behoefte hebben aan een plek om alleen te zijn en een plek om samen te komen. Ze zullen altijd reageren op natuurlijk licht. Ze zullen altijd het verschil voelen tussen een plafond op de juiste hoogte en een plafond op de verkeerde hoogte. Ze zullen altijd weten wanneer een materiaal authentiek is en wanneer het zich voordoet als iets anders.",
+        "Ontwerp met die constanten in gedachten. Bouw met materialen die op een waardige manier verouderen. Laat ruimte in het ontwerp zodat het leven erdoorheen kan stromen zonder de architectuur te beschadigen.",
+        "Zo blijft een ruimte twintig jaar lang goed aanvoelen."
+      ]
+    }
+  }
+}

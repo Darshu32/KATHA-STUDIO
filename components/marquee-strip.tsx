@@ -1,17 +1,10 @@
-const items = [
-  "Katha Studio",
-  "Stillness, Designed",
-  "Bengaluru",
-  "Architecture as Pause",
-  "Material Calm",
-  "Rooms That Listen",
-  "Selected Work",
-  "Begin Quietly",
-];
+"use client";
 
-const text = items.join("  ·  ") + "  ·  ";
+import { useLanguage } from "@/components/language-provider";
 
 export function MarqueeStrip() {
+  const { t } = useLanguage();
+  const text = t.marquee.join("  ·  ") + "  ·  ";
   return (
     <div
       className="overflow-hidden border-y border-[var(--border)] py-[0.85rem]"

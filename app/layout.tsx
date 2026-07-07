@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { PersistentNavbar } from "@/components/persistent-navbar";
+import { LanguageProvider } from "@/components/language-provider";
 
 export const metadata: Metadata = {
   title: "KATHA STUDIO - Architecture & Interior Design",
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <PersistentNavbar />
-        {children}
+        <LanguageProvider>
+          <PersistentNavbar />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

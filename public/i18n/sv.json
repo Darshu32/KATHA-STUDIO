@@ -1,0 +1,430 @@
+{
+  "intro": {
+    "chooseLanguage": "Välj ditt språk",
+    "enter": "Skriva in"
+  },
+  "nav": {
+    "studio": "Studio",
+    "approach": "Närma sig",
+    "services": "Tjänster",
+    "journal": "Tidning",
+    "contact": "Kontakta",
+    "home": "Hem",
+    "backToHome": "Tillbaka till startsidan",
+    "next": "Nästa",
+    "previous": "Tidigare",
+    "locationLine": "KATHA Studio · Bengaluru",
+    "whatWeDo": "Vad vi gör",
+    "whatWeBuild": "Vad vi bygger",
+    "allServices": "Alla tjänster"
+  },
+  "home": {
+    "eyebrow": "Arkitektur · Inredning · Renovering · Landskap",
+    "titleLine1": "Varje rum har en historia,",
+    "titleLine2": "väntar på att byggas.",
+    "mystery": [
+      "Utrymmen som håller andan",
+      "Ju tystare, desto mer levande",
+      "Det som återstår efter att ritningen är slut",
+      "Ljus, tålamod, en enda gest",
+      "Arkitektur, i dess lägre röst"
+    ],
+    "subhead": "På Katha Studio börjar varje projekt med att lyssna. Vi tar oss tid att förstå människor, plats och syfte innan vi formar utrymmen som känns personliga, tidlösa och djupt förknippade med de liv de stöder.",
+    "location": "Baserad i Bengaluru · Arbetar över hela Indien · Öppen för utvalda internationella samarbeten",
+    "cta": "Starta en konversation",
+    "cardStudioLabel": "Studio",
+    "cardStudioTagline": "Vilka vi är",
+    "cardContactLabel": "Kontakta",
+    "cardContactTagline": "Starta en konversation",
+    "category": {
+      "intro": "Introduktion",
+      "studio": "Studio",
+      "contact": "Kontakta",
+      "residence": "Bostad",
+      "interior": "Interiör",
+      "renovation": "Renovering",
+      "advisory": "Rådgivande",
+      "service": "Service",
+      "residential": "Bostads",
+      "commercial": "Kommersiell",
+      "highRise": "Höghus"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Varför Katha",
+    "heading": "Katha betyder berättelse",
+    "para1": "Varje projekt bär med sig något som inte kan beskrivas kortfattat – hur en familj faktiskt lever, hur ett företag behöver kännas inifrån, hur ett landskap vill upplevas, vad en plats i tysthet efterfrågar.",
+    "para2Line1": "Vårt arbete är att lära oss läsa det.",
+    "para2Line2": "Sedan bygger man den exakt.",
+    "process": {
+      "sketchbook": "Skissbok",
+      "tracingPaper": "Kalkerpapper",
+      "handwrittenNotes": "Handskrivna anteckningar",
+      "materialBoard": "Materialskiva"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "Vad vi erbjuder",
+    "offerHeading": "Hur vi bygger",
+    "craftEyebrow": "Hantverksfrågor",
+    "craftBody": "Arkitektur formas genom tusentals beslut. Materialets kvalitet, rummets proportioner, hur ljuset kommer in i ett utrymme och detaljerna i en korsning påverkar hur ett utrymme upplevs varje dag.",
+    "closingCta": "Låt oss diskutera ditt projekt",
+    "materials": {
+      "wood": "Trä",
+      "stone": "Sten",
+      "joinery": "Snickeri",
+      "sketches": "Skisser",
+      "models": "Modeller",
+      "materialBoards": "Materialbrädor",
+      "details": "Detaljer"
+    }
+  },
+  "approach": {
+    "eyebrow": "Hur vi arbetar",
+    "title": "Vårt tillvägagångssätt",
+    "intro": "Varje steg har ett syfte. Ingenting går framåt förrän det nuvarande är klart.",
+    "startConversation": "Starta en konversation",
+    "steps": [
+      {
+        "title": "Lyssna",
+        "body": "Varje projekt börjar före briefen – i hur du bor, hur ditt företag rör sig, vad webbplatsen i tysthet efterfrågar."
+      },
+      {
+        "title": "Utforska",
+        "body": "Idéer testas öppet. Proportioner, ljus och material studeras innan någon riktning bestäms."
+      },
+      {
+        "title": "Design",
+        "body": "Konceptet formas till en helhet där varje beslut svarar mot både briefen och utrymmet i sig."
+      },
+      {
+        "title": "Förfina",
+        "body": "Detaljerna är lösta. Det här är det tysta arbetet som skiljer ett utrymme som ser färdigt ut från ett som känns rätt."
+      },
+      {
+        "title": "Leverera",
+        "body": "Arbetet ses till slut – den ursprungliga avsikten hålls fast in i minsta detalj."
+      }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "Vad vi erbjuder",
+    "title": "Hur vi bygger",
+    "getInTouch": "Kontakta oss"
+  },
+  "journalPage": {
+    "eyebrow": "Från studion",
+    "title": "Tidning",
+    "intro": "Tänkande från studion — om utrymme, material och detaljer som är viktiga.",
+    "inPreparation": "Under förberedelse",
+    "stayInTouch": "Håll kontakten"
+  },
+  "marquee": [
+    "Katha Studio",
+    "Stillhet, designad",
+    "Bengaluru",
+    "Arkitektur som paus",
+    "Material lugn",
+    "Rum som lyssnar",
+    "Valt arbete",
+    "Börja tyst"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Varför Katha",
+    "whyHeading": "Katha betyder berättelse",
+    "whyPara1": "Varje projekt bär med sig något som inte kan beskrivas kortfattat – hur en familj faktiskt lever, hur ett företag behöver kännas inifrån, hur ett landskap vill upplevas, vad en plats i tysthet efterfrågar.",
+    "whyPara2Line1": "Vårt arbete är att lära oss läsa det.",
+    "whyPara2Line2": "Sedan bygger man den exakt.",
+    "nehaEyebrow": "Möt Neha",
+    "nehaHeading": "Ar. Neha",
+    "nehaPortraitAlt": "Porträtt av Ar. Neha, grundare och huvudarkitekt för Katha Studio",
+    "nehaPara1": "Rymden har minne.",
+    "nehaPara2": "Den visar hur den byggdes, vad den ska hålla och hur den får människor att må långt efter att arbetet är klart.",
+    "nehaPara3": "Jag har ägnat år åt att lära mig att läsa det – i vikten av ett material som valts ut för hur det åldras, i proportioner hämtade från traditioner som förstod mänsklig skala långt innan det blev en disciplin, i den tysta logiken i ett rum som aldrig behöver förklaras eftersom allt i det är precis där det hör hemma.",
+    "nehaPara4": "Det är den djupet av uppmärksamhet som varje Katha-projekt bygger på.",
+    "nehaName": "Ar. Neha",
+    "nehaRole": "Grundare och huvudarkitekt",
+    "perspectiveEyebrow": "Vårt perspektiv",
+    "perspective1": "De bästa platserna är aldrig en slump.",
+    "perspective2": "Varje material är valt utifrån hur det håller i årtionden.",
+    "perspective3": "Vi hämtar inspiration från byggtraditioner som förstod beständighet, skala och mänsklig erfarenhet på djupet.",
+    "perspective4": "Vi designar för det liv som utspelar sig inuti ett utrymme – inte bara i det ögonblick det är färdigställt.",
+    "valuesEyebrow": "Vad vi värdesätter",
+    "values": [
+      {
+        "title": "Djup",
+        "body": "Vi frågar oss vad ett utrymme behöver bli – inte bara hur det behöver se ut."
+      },
+      {
+        "title": "Varaktighet",
+        "body": "Varje material, varje proportion, varje detalj är utvald för att hålla och förtjäna sin plats över tid."
+      },
+      {
+        "title": "Rötter",
+        "body": "Vi hämtar inspiration från byggtraditioner som bar på intelligens om rymden långt innan den skrevs ner."
+      },
+      {
+        "title": "Precision",
+        "body": "Ingenting i ett Katha-projekt är godtyckligt. Varje beslut har en giltig anledning."
+      },
+      {
+        "title": "Framsynthet",
+        "body": "Vi designar för den livslängd ett utrymme ska bära – tio år, tjugo år, långt efter den första dagen."
+      }
+    ],
+    "craftEyebrow": "Hantverk och material",
+    "craftPara1": "Varje beslut i en byggnad är också ett väsentligt beslut.",
+    "craftPara2": "Vad något är gjort av avgör hur det åldras, hur det känns under kontroll, hur det håller ljuset, hur det står sig i sitt klimat. Vi väljer material utifrån vad de gör över tid – inte bara hur de känns den dagen de installeras.",
+    "craftTags": [
+      "Trä",
+      "Sten",
+      "Snickeri",
+      "Skisser",
+      "Modeller",
+      "Materialbrädor",
+      "Detaljer"
+    ],
+    "clientsEyebrow": "Vilka vi arbetar med",
+    "clientsPara1": "Vi arbetar med människor som ser ett utrymme som mer än ett projekt.",
+    "clientsPara2": "Familjer som vill ha ett hem byggt för att hålla och kännas rätt i generationer. Företag som förstår att deras miljö speglar vilka de är. Byggherrar som vet att rätt detaljer i början avgör allt som följer.",
+    "clientsPara3": "Vi tar oss an arbete vi kan utföra med fullt engagemang. Inget mindre.",
+    "noteBody": "Varje projekt representerar ett viktigt kapitel i någons liv. Det är ett ansvar vi värdesätter djupt. Tack för att du överväger Katha Studio som en del av den resan.",
+    "noteSignature": "— Ar. Neha"
+  },
+  "contactPage": {
+    "eyebrow": "Kontakta oss",
+    "titleLine1": "Börja en",
+    "titleLine2": "konversation",
+    "details": {
+      "emailLabel": "E-post",
+      "phoneLabel": "Telefon",
+      "studioLabel": "Studio",
+      "studioValue": "Bengaluru, Indien",
+      "portfolioLabel": "Portfölj",
+      "portfolioValue": "Tillgänglig på begäran — skriv till oss"
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Namn",
+    "namePlaceholder": "Ditt namn",
+    "emailLabel": "E-post",
+    "emailPlaceholder": "du@exampel.com",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Projekttyp",
+    "projectTypePlaceholder": "t.ex. interiörer",
+    "timelineLabel": "Tidslinje",
+    "timelinePlaceholder": "t.ex. 3–6 månader",
+    "messageLabel": "Meddelande",
+    "messagePlaceholder": "Berätta om ditt projekt – vad det är, var det ligger och vad du hoppas att det blir",
+    "send": "Skicka förfrågan",
+    "sending": "Sändning",
+    "sent": "Skickat ✓",
+    "success": "— Tack. Vi hör av oss inom två arbetsdagar.",
+    "errors": {
+      "checkFields": "Kontrollera de markerade fälten.",
+      "network": "Nätverksfel. Försök igen.",
+      "nameRequired": "Vänligen dela ditt namn.",
+      "nameShort": "Namnet ska vara minst 2 tecken långt.",
+      "emailRequired": "Vänligen dela din e-postadress.",
+      "emailInvalid": "Det ser inte ut som en giltig e-postadress.",
+      "phoneRequired": "Vänligen dela ett telefonnummer.",
+      "phoneChars": "Använd endast siffror, mellanslag, bindestreck, punkter eller parenteser.",
+      "phoneDigits": "Telefonnumret ska bestå av 10 siffror (med eller utan +91).",
+      "messageRequired": "Dela gärna några ord.",
+      "messageShort": "Bara lite mer – minst 10 tecken.",
+      "messageLong": "Det är lite långt – vänligen håll det under 2000 tecken."
+    }
+  },
+  "detail": {
+    "scope": "Omfattning",
+    "ctaLabel": "Starta ett projekt",
+    "entering": "Inträde"
+  },
+  "services": {
+    "architecture": {
+      "title": "Arkitektur",
+      "category": "Hem och byggnader",
+      "tagline": "Hem och byggnader utformade med tydlighet och syfte.",
+      "desc": "Hem och byggnader utformade med tydlighet, syfte och en stark koppling till människorna som använder dem.",
+      "paragraphs": [
+        "Vi designar hem och byggnader med tydlighet, syfte och en stark koppling till människorna som använder dem.",
+        "Varje projekt börjar med att förstå hur du vill bo eller arbeta. Därifrån formar vi utrymmen kring ljus, proportioner och hur en plats är tänkt att kännas – noggrant genomtänkta från första skissen till den sista detaljen."
+      ],
+      "scope": [
+        "Nya hem",
+        "Kommersiella utrymmen",
+        "Konceptdesign",
+        "Plats och detaljering"
+      ],
+      "imageCaption": "Studie · Ljus och proportioner"
+    },
+    "interiors": {
+      "title": "Interiörer",
+      "category": "Utrymmen och detaljer",
+      "tagline": "Varje interiör rymmer en känsla innan den rymmer möbler.",
+      "desc": "Rum formas genom materialitet, ljus och genomtänkta detaljer.",
+      "paragraphs": [
+        "Arbetet ligger i de val som sällan ses – ytans struktur, rummets proportioner, hur ljuset faller under dagen. Det är dessa beslut som avgör hur ett utrymme känns att leva inomhus i åratal.",
+        "Varje Katha-inredning är byggd för det."
+      ],
+      "scope": [
+        "fysisk planering",
+        "Materialval",
+        "Snickerier och inbyggnader",
+        "Ljus och atmosfär"
+      ],
+      "imageCaption": "Studie · Material och detaljer"
+    },
+    "renovation": {
+      "title": "Renovering",
+      "category": "Utvecklande utrymmen",
+      "tagline": "Varje befintligt utrymme bär med sig något som är värt att förstå innan något förändras.",
+      "desc": "Att hjälpa befintliga utrymmen att utvecklas samtidigt som man bygger vidare på deras styrkor.",
+      "paragraphs": [
+        "Åldern lämnar intelligens i en byggnad – i hur den konstruerades, vad den byggdes för att motstå, vad som i stillhet har behållit sitt värde över tid. Vårt arbete handlar om att veta vad man ska behålla, vad man ska utveckla och hur man ska föra båda framåt utan att förlora det som gjorde utrymmet värt att återvända till."
+      ],
+      "scope": [
+        "Strukturell omarbetning",
+        "Restaurering av kulturarv",
+        "Tillägg",
+        "Adaptiv återanvändning"
+      ],
+      "imageCaption": "Studie · Det befintliga"
+    },
+    "advisory": {
+      "title": "Rådgivande",
+      "category": "Vägledning och planering",
+      "tagline": "Rätt fråga som ställs tidigt räddar allt som kommer efteråt.",
+      "desc": "Ge vägledning genom planering, beslutsfattande och genomförande.",
+      "paragraphs": [
+        "Vissa projekt kräver en fullständig designprocess. Andra kräver ett samtal med någon som har sett tillräckligt för att veta exakt vart saker och ting är på väg – och vilka beslut som är viktigast innan arbetet påbörjas.",
+        "Det är vad Katha Advisory är."
+      ],
+      "scope": [
+        "Kortfattad utveckling",
+        "Genomförbarhet",
+        "Designriktning",
+        "Beslutsstöd"
+      ],
+      "imageCaption": "Studie · Uppgift och riktlinjer"
+    },
+    "technical-drawings": {
+      "title": "Tekniska ritningar",
+      "category": "Dokumentation och detaljer",
+      "tagline": "Ritningarna som förvandlar en design till en byggnad.",
+      "desc": "Exakta konstruktionsritningar som översätter en design till något en byggarbetsplats kan bygga exakt.",
+      "paragraphs": [
+        "En design blir bara en byggnad om den kan byggas korrekt. Tekniska ritningar är där avsikt blir instruktioner – varje dimension, koppling och material anges tillräckligt tydligt för att bygga utan gissningar.",
+        "Vi utarbetar detaljerade arbetsritningar – planer, sektioner, fasader och konstruktionsdetaljer – som ger entreprenörerna en enda, exakt källa till sanning. Färre överraskningar på plats, färre kompromisser och ett färdigt utrymme som matchar det som ritats."
+      ],
+      "scope": [
+        "Arbetsritningar",
+        "Sektioner och elevationer",
+        "Konstruktionsdetaljer",
+        "Webbplatsdokumentation"
+      ],
+      "imageCaption": "Studie · Linje och precision"
+    },
+    "residential": {
+      "title": "Bostads",
+      "category": "Hem och boende",
+      "tagline": "De platser du återvänder till varje dag.",
+      "desc": "Hem designade utifrån hur du faktiskt lever – privata, varma och gjorda för att hålla.",
+      "paragraphs": [
+        "Ett hem är det mest personliga vi designar. Det rymmer dina rutiner, din familj och de små ritualer som i stillhet får en dag att kännas som din.",
+        "Vi utformar bostäder utifrån hur du verkligen lever – hur ljuset ska falla på morgonen, var människor samlas, vilka tysta vrår du behöver. Varje beslut fattas så att huset fortfarande känns rätt många år framöver."
+      ],
+      "scope": [
+        "Privata hem",
+        "Villor",
+        "Lägenheter",
+        "Bondgårdar"
+      ],
+      "imageCaption": "Studier · Hem och boende"
+    },
+    "commercial": {
+      "title": "Kommersiell",
+      "category": "Arbete och detaljhandel",
+      "tagline": "Utrymmen som arbetar lika hårt som människorna i dem.",
+      "desc": "Kontor, butiker och hotell som balanserar funktion, varumärke och känsla.",
+      "paragraphs": [
+        "En kommersiell lokal bär på ett företags karaktär redan innan ett enda ord har sagts. Den formar hur ett team arbetar, hur kunderna känner sig och hur ett varumärke blir ihågkommet.",
+        "Vi designar kontor, butiker och hotell som är praktiska där de behöver vara och uttrycksfulla där det gäller – byggda för att prestera varje dag och åldras väl under verklig, intensiv användning."
+      ],
+      "scope": [
+        "Kontor och arbetsytor",
+        "Detaljhandel",
+        "Gästfrihet",
+        "Utställningslokaler"
+      ],
+      "imageCaption": "Studier · Arbete och varumärke"
+    },
+    "high-rise": {
+      "title": "Höghus",
+      "category": "Torn och densitet",
+      "tagline": "Att leva bra, på höjden.",
+      "desc": "Flervåningshus och höghus planerade för ljus, luft, struktur och gemenskap.",
+      "paragraphs": [
+        "Att bygga uppåt kräver mer av designen. Varje våningsplan upprepas, varje installation går i full höjd och hundratals liv delar en enda struktur – så detaljerna måste vara rätt, eftersom de mångfaldigas.",
+        "Vi planerar höghus och flervåningshus kring det som gör vertikalt boende genuint bra: naturligt ljus och korsventilation, ärlig struktur, effektiva kärnor och gemensamma utrymmen som bygger en känsla av gemenskap snarare än att bara stapla hus."
+      ],
+      "scope": [
+        "Bostadstorn",
+        "Blandad användning",
+        "Strukturell planering",
+        "Delade bekvämligheter"
+      ],
+      "imageCaption": "Studie · Höjd och densitet"
+    }
+  },
+  "noteCategories": {
+    "Process": "Behandla",
+    "Culture": "Kultur",
+    "Craft": "Hantverk",
+    "Space": "Utrymme"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "Varför den första skissen aldrig är svaret",
+      "excerpt": "Den första skissen är inte en design. Det är en fråga.",
+      "paragraphs": [
+        "Det är det snabbaste sättet att ta reda på vad du ännu inte förstår om ett projekt. En linje som dras för tidigt i fel riktning kostar ingenting på pappret och allt inom byggbranschen. Så vi ritar tidigt och löst – inte för att binda oss utan för att avslöja. För att se var tanken håller och var den inte gör det.",
+        "De projekt som slutar bra är de där de svåraste frågorna ställdes innan designen blev uppskattad. Innan kunden var fast besluten att följa en layout. Innan någon hade investerat i en idé. Det finns ett fönster tidigt i varje projekt där allt fortfarande är möjligt – och det är i det fönstret som det viktigaste arbetet sker.",
+        "Det som blir av det är inte alltid vad man förväntade sig. En webbplats som verkade kräva ett visst tillvägagångssätt avslöjar genom skisserna att den behöver något tystare. En brief som verkade rättfram öppnar sig till något fylligare när de första raderna är ritade och ifrågasatta.",
+        "Det är i skissen vi får veta vad projektet egentligen efterfrågar."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "Detaljen ingen ser",
+      "excerpt": "Den viktigaste detaljen i alla projekt är osynlig när arbetet är klart.",
+      "paragraphs": [
+        "Det finns i mötet mellan två material – hur ett stengolv möter en putsad vägg, skugglinjen som gör att en dörrkarm syns tydligt, djupet på en fönsterbåge som avgör om ljuset kommer in mjukt eller hårt. Dessa val skiljer ett utrymme som känns genomtänkt från ett som bara ser färdigt ut.",
+        "Kunder frågar sällan om dessa saker. De frågar om planlösningar, material, ytbehandlingar. Men de utrymmen de minns – de de beskriver för andra människor, de som stannar kvar hos dem – är nästan alltid de där någon uppmärksammades på just denna nivå.",
+        "En korsning som är dåligt löst talar varje gång någon står nära den. En skugglinje som inte är på plats plattar ut en yta som borde ha djup. Dessa saker registreras under medvetandet – men de registreras.",
+        "Arkitekturens hantverk lever i detaljerna som ingen ser. Den osynligheten är poängen."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "Vad Indien vet om rymden som världen lär sig om",
+      "excerpt": "De mest sofistikerade idéerna inom samtida arkitektur var aldrig nya. De glömdes bort.",
+      "paragraphs": [
+        "Passiv kylning genom gårdsplanens geometri. Termisk massa i stenmurar som håller interiören stabil utan mekaniska ingrepp. Verandan – varken inomhus eller utomhus – som modererar värme, filtrerar ljus och skapar en tröskel som ingen luftkonditioneringsenhet någonsin har ersatt. Trappbrunnar som löste vattenuppsamling, offentliga sammankomster och mikroklimat i en enda struktur.",
+        "Det här var inga slumpmässiga händelser. Det var århundraden av observationer inbyggda i hantverket – de fördes genom händer, inte genom läroböcker. Kunskapen försvann inte för att den slutade fungera. Den försvann för att importerad modernism anlände snabbare än någon trodde för att ifrågasätta den.",
+        "Världen spenderar nu enorma resurser på att återupptäcka det som redan var känt. Biofilisk design. Passiv ventilation. Mänsklig skala. Lokalt anskaffat material. Det här är inte trender. Det är återkomster.",
+        "Vi bygger medvetet med den kunskapen – inte som nostalgi. För att det fungerar bättre."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "Om design i tjugo år från nu",
+      "excerpt": "Varje projekt kommer att överleva den konversation som startade det.",
+      "paragraphs": [
+        "Familjen som informerade om det kommer att förändras. Barn kommer att växa upp och flytta. Företag kommer att förändras. Sättet människor arbetar, samlas och rör sig i rum är redan annorlunda än för ett decennium sedan – och kommer att vara annorlunda igen i nästa. Ett utrymme designat enbart för idag håller redan på att bli föråldrat.",
+        "Svaret är inte öppna planlösningar och flyttbara väggar. Det är en djupare tolkning av vad som är permanent i mänskligt beteende och vad som inte är det.",
+        "Människor kommer alltid att behöva en plats att vara ensamma och en plats att samlas på. De kommer alltid att reagera på naturligt ljus. De kommer alltid att känna skillnaden mellan ett tak på rätt höjd och ett som inte är det. De kommer alltid att veta när ett material är äkta och när det låtsas vara något annat.",
+        "Designa för dessa konstanter. Bygg med material som åldras med värdighet. Lämna utrymme i planen för att livet ska kunna röra sig utan att bryta arkitekturen.",
+        "Så håller ett utrymme i tjugo år och känns ändå rätt."
+      ]
+    }
+  }
+}

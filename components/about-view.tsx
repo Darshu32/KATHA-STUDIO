@@ -4,6 +4,9 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeUp } from "@/components/animations";
+import { useLanguage } from "@/components/language-provider";
+import { localizedNavLabel } from "@/lib/i18n/nav-label";
+import type { Dictionary } from "@/lib/i18n/dictionary";
 
 type NavItem = { href: string; label: string };
 
@@ -71,13 +74,10 @@ const VALUE_ICONS: Record<string, ReactNode> = {
   ),
 };
 
-const VALUES = [
-  { title: "Depth", body: "We ask what a space needs to become — not just what it needs to look like." },
-  { title: "Permanence", body: "Every material, every proportion, every detail is chosen to last and earn its place over time." },
-  { title: "Roots", body: "We draw from building traditions that carried intelligence about space long before it was written down." },
-  { title: "Precision", body: "Nothing in a Katha project is arbitrary. Every decision has a reason that holds." },
-  { title: "Foresight", body: "We design for the life a space will carry — ten years, twenty years, long after the first day." },
-];
+/* Icon lookup keys, in dictionary order, kept separate from display text so the
+ * SVG icons stay stable while the value labels/bodies come from the dictionary. */
+const VALUE_ICON_KEYS = ["Depth", "Permanence", "Roots", "Precision", "Foresight"];
+const CRAFT_TAG_KEYS = [0, 1, 2, 3, 4, 5, 6] as const;
 
 /* Shared type styles */
 const eyebrow = {
@@ -104,6 +104,7 @@ const body = {
 };
 
 export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem | null }) {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)]">
       <main className="mx-auto w-full max-w-[88rem] px-5 pt-[5.6rem] pb-16 sm:px-8 md:px-12 md:pt-[6rem] md:pb-24 lg:px-20">
@@ -111,11 +112,11 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
         {/* ── INTRO / WHY KATHA ── */}
         <section className="pt-4 md:pt-8">
           <FadeUp>
-            <p style={eyebrow}>— Why Katha</p>
+            <p style={eyebrow}>{t.studioPage.whyEyebrow}</p>
           </FadeUp>
           <FadeUp delay={0.08} className="mt-5 md:mt-7">
             <h1 style={{ ...sectionHeading, fontSize: "var(--fs-page-title)", lineHeight: 0.96 }}>
-              Katha Means Story
+              {t.studioPage.whyHeading}
             </h1>
           </FadeUp>
           <FadeUp delay={0.16} className="mt-7 md:mt-9">
@@ -123,15 +124,12 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
           </FadeUp>
           <FadeUp delay={0.22} className="mt-8 max-w-[62ch] md:mt-10">
             <p style={body}>
-              Every project carries something that can&apos;t be briefed — the
-              way a family actually lives, what a business needs to feel like
-              from the inside, how a landscape wants to be experienced, what a
-              site is quietly asking for.
+              {t.studioPage.whyPara1}
             </p>
             <p style={{ ...body, marginTop: "1.5rem" }}>
-              Our work is learning to read that.
+              {t.studioPage.whyPara2Line1}
               <br />
-              Then building it precisely.
+              {t.studioPage.whyPara2Line2}
             </p>
           </FadeUp>
         </section>
@@ -147,7 +145,7 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
               >
                 <Image
                   src="/images/about/neha-portrait.jpeg"
-                  alt="Portrait of Ar. Neha, Founder & Principal Architect of Katha Studio"
+                  alt={t.studioPage.nehaPortraitAlt}
                   fill
                   sizes="(min-width: 768px) 20rem, 80vw"
                   className="object-cover object-top grayscale"
@@ -159,34 +157,29 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
 
           <div className="order-1 md:order-2">
             <FadeUp>
-              <p style={eyebrow}>— Meet Neha</p>
+              <p style={eyebrow}>{t.studioPage.nehaEyebrow}</p>
             </FadeUp>
             <FadeUp delay={0.08} className="mt-5 md:mt-7">
-              <h2 style={sectionHeading}>Ar. Neha</h2>
+              <h2 style={sectionHeading}>{t.studioPage.nehaHeading}</h2>
             </FadeUp>
             <FadeUp delay={0.16} className="mt-7 max-w-[58ch] md:mt-9">
-              <p style={body}>Space has memory.</p>
+              <p style={body}>{t.studioPage.nehaPara1}</p>
               <p style={{ ...body, marginTop: "1.5rem" }}>
-                It carries how it was built, what it was built to last through,
-                and how it makes people feel long after the work is done.
+                {t.studioPage.nehaPara2}
               </p>
               <p style={{ ...body, marginTop: "1.5rem" }}>
-                I have spent years learning to read that — in the weight of a
-                material chosen for how it ages, in proportions drawn from
-                traditions that understood human scale long before it became a
-                discipline, in the quiet logic of a room that never needs
-                explaining because everything in it is exactly where it belongs.
+                {t.studioPage.nehaPara3}
               </p>
               <p style={{ ...body, marginTop: "1.5rem" }}>
-                That depth of attention is what every Katha project is built on.
+                {t.studioPage.nehaPara4}
               </p>
             </FadeUp>
             <FadeUp delay={0.24} className="mt-7 flex flex-col gap-0.5">
               <p style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 600, fontSize: "1.05rem", letterSpacing: "-0.01em", color: "var(--text)" }}>
-                Ar. Neha
+                {t.studioPage.nehaName}
               </p>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-dim)" }}>
-                Founder &amp; Principal Architect
+                {t.studioPage.nehaRole}
               </p>
             </FadeUp>
           </div>
@@ -195,22 +188,20 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
         {/* ── OUR PERSPECTIVE ── */}
         <section className="mt-24 md:mt-36">
           <FadeUp>
-            <p style={eyebrow}>— Our Perspective</p>
+            <p style={eyebrow}>{t.studioPage.perspectiveEyebrow}</p>
           </FadeUp>
           <FadeUp delay={0.08} className="mt-6 max-w-[68ch] md:mt-8">
             <p style={{ ...body, fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)" }}>
-              The best spaces are never accidental.
+              {t.studioPage.perspective1}
             </p>
             <p style={{ ...body, fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)", marginTop: "1.5rem" }}>
-              Every material is chosen for how it lives over decades.
+              {t.studioPage.perspective2}
             </p>
             <p style={{ ...body, fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)", marginTop: "1.5rem" }}>
-              We draw from building traditions that understood permanence, scale,
-              and human experience at their deepest level.
+              {t.studioPage.perspective3}
             </p>
             <p style={{ ...body, fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)", marginTop: "1.5rem" }}>
-              We design for the life that happens inside a space — not just the
-              moment it is completed.
+              {t.studioPage.perspective4}
             </p>
           </FadeUp>
         </section>
@@ -218,14 +209,14 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
         {/* ── WHAT WE VALUE ── */}
         <section className="mt-24 md:mt-36">
           <FadeUp>
-            <p style={eyebrow}>— What We Value</p>
+            <p style={eyebrow}>{t.studioPage.valuesEyebrow}</p>
           </FadeUp>
           <FadeUp delay={0.08} className="mt-8 overflow-hidden">
             <div className="-ml-px -mt-px grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-              {VALUES.map((v) => (
-                <div key={v.title} className="flex h-full flex-col gap-3 border-l border-t border-[var(--border)] bg-[var(--background)] px-1 py-8 lg:px-3">
+              {t.studioPage.values.map((v, i) => (
+                <div key={VALUE_ICON_KEYS[i]} className="flex h-full flex-col gap-3 border-l border-t border-[var(--border)] bg-[var(--background)] px-1 py-8 lg:px-3">
                   <span className="mb-1" style={{ color: "var(--text-muted)" }}>
-                    {VALUE_ICONS[v.title]}
+                    {VALUE_ICONS[VALUE_ICON_KEYS[i]]}
                   </span>
                   <h3 style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 500, fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)", letterSpacing: "-0.01em", color: "var(--text)", lineHeight: 1.2 }}>
                     {v.title}
@@ -242,26 +233,23 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
         {/* ── CRAFT & MATERIALS ── */}
         <section className="mt-24 md:mt-36">
           <FadeUp>
-            <p style={eyebrow}>— Craft &amp; Materials</p>
+            <p style={eyebrow}>{t.studioPage.craftEyebrow}</p>
           </FadeUp>
           <FadeUp delay={0.08} className="mt-6 max-w-[68ch] md:mt-8">
             <p style={{ ...body, fontSize: "clamp(1.15rem, 1.6vw, 1.5rem)", lineHeight: 1.7, color: "var(--text)" }}>
-              Every decision in a building is also a material decision.
+              {t.studioPage.craftPara1}
             </p>
             <p style={{ ...body, marginTop: "1.5rem" }}>
-              What something is made of determines how it ages, how it feels
-              underhand, how it holds light, how it sits in its climate. We
-              choose materials for what they do over time — not just how they
-              read on the day they are installed.
+              {t.studioPage.craftPara2}
             </p>
           </FadeUp>
           <FadeUp delay={0.16} className="mt-10 flex flex-wrap gap-x-8 gap-y-3 md:mt-12">
-            {["Wood", "Stone", "Joinery", "Sketches", "Models", "Material Boards", "Details"].map((m) => (
+            {CRAFT_TAG_KEYS.map((i) => (
               <span
-                key={m}
+                key={i}
                 style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.24em", color: "var(--text-muted)" }}
               >
-                {m}
+                {t.studioPage.craftTags[i]}
               </span>
             ))}
           </FadeUp>
@@ -270,20 +258,17 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
         {/* ── WHO WE WORK WITH ── */}
         <section className="mt-24 md:mt-36">
           <FadeUp>
-            <p style={eyebrow}>— Who We Work With</p>
+            <p style={eyebrow}>{t.studioPage.clientsEyebrow}</p>
           </FadeUp>
           <FadeUp delay={0.08} className="mt-6 max-w-[62ch] md:mt-8">
             <p style={body}>
-              We work with people who see a space as more than a project.
+              {t.studioPage.clientsPara1}
             </p>
             <p style={{ ...body, marginTop: "1.5rem" }}>
-              Families who want a home built to last and feel right for
-              generations. Businesses who understand that their environment
-              reflects who they are. Developers who know that the right details
-              at the beginning determine everything that follows.
+              {t.studioPage.clientsPara2}
             </p>
             <p style={{ ...body, marginTop: "1.5rem" }}>
-              We take on work we can do with full commitment. Nothing less.
+              {t.studioPage.clientsPara3}
             </p>
           </FadeUp>
         </section>
@@ -292,29 +277,27 @@ export function AboutView({ prev, next }: { prev: NavItem | null; next: NavItem 
         <section className="mt-24 border-t border-[var(--border)] pt-14 md:mt-36 md:pt-20">
           <FadeUp className="max-w-[62ch]">
             <p style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 300, fontSize: "clamp(1.35rem, 2.2vw, 2rem)", lineHeight: 1.5, letterSpacing: "-0.02em", color: "var(--text)" }}>
-              Every project represents an important chapter in someone&apos;s
-              life. It is a responsibility we value deeply. Thank you for
-              considering Katha Studio as part of that journey.
+              {t.studioPage.noteBody}
             </p>
           </FadeUp>
           <FadeUp delay={0.12} className="mt-6">
             <p style={{ fontFamily: "var(--font-avenir-book)", fontWeight: 600, fontSize: "1rem", letterSpacing: "-0.01em", color: "var(--text)" }}>
-              — Ar. Neha
+              {t.studioPage.noteSignature}
             </p>
           </FadeUp>
         </section>
 
         {/* ── NAVIGATION ── */}
         <nav className="mt-20 flex flex-col gap-4 border-t border-[var(--border)] pt-7 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:mt-28">
-          {prev ? <NavKey nav={prev} dir="prev" /> : <span />}
-          {next ? <NavKey nav={next} dir="next" /> : <span />}
+          {prev ? <NavKey nav={prev} dir="prev" t={t} /> : <span />}
+          {next ? <NavKey nav={next} dir="next" t={t} /> : <span />}
         </nav>
       </main>
     </div>
   );
 }
 
-function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
+function NavKey({ nav, dir, t }: { nav: NavItem; dir: "prev" | "next"; t: Dictionary }) {
   const isNext = dir === "next";
   return (
     <Link
@@ -333,7 +316,7 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
           letterSpacing: "0.32em",
           color: "var(--text-dim)",
         }}>
-          {isNext ? "Next" : "Previous"}
+          {isNext ? t.nav.next : t.nav.previous}
         </span>
         <span
           className="truncate transition-opacity duration-300 group-hover:opacity-70"
@@ -347,7 +330,7 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
             maxWidth: "60vw",
           }}
         >
-          {nav.label}
+          {localizedNavLabel(t, nav.href, nav.label)}
         </span>
       </span>
     </Link>

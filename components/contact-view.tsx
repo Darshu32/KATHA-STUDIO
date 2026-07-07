@@ -3,22 +3,26 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ContactForm } from "@/components/contact-form";
+import { useLanguage } from "@/components/language-provider";
+import { localizedNavLabel } from "@/lib/i18n/nav-label";
+import type { Dictionary } from "@/lib/i18n/dictionary";
 
 type NavItem = { href: string; label: string };
 
-const contactDetails = [
-  { label: "Email",  value: "neha@kathastudio.co", href: "mailto:neha@kathastudio.co" },
-  { label: "Phone",  value: "+91 70195 98600",     href: "tel:+917019598600"          },
-  { label: "Studio", value: "Bengaluru, India",    href: undefined                    },
-  {
-    label: "Portfolio",
-    value: "Available on request — write to us",
-    href: "mailto:neha@kathastudio.co?subject=Portfolio%20Request",
-  },
-];
-
 export function ContactView({ prev, next }: { prev: NavItem | null; next: NavItem | null }) {
   const reduceMotion = useReducedMotion();
+  const { t } = useLanguage();
+  const d = t.contactPage.details;
+  const contactDetails = [
+    { label: d.emailLabel,     value: "neha@kathastudio.co", href: "mailto:neha@kathastudio.co" },
+    { label: d.phoneLabel,     value: "+91 70195 98600",     href: "tel:+917019598600"          },
+    { label: d.studioLabel,    value: d.studioValue,         href: undefined                    },
+    {
+      label: d.portfolioLabel,
+      value: d.portfolioValue,
+      href: "mailto:neha@kathastudio.co?subject=Portfolio%20Request",
+    },
+  ];
 
   return (
     <div className="flex min-h-[100svh] flex-col bg-[var(--background)] text-[var(--text)] lg:h-[100svh] lg:min-h-0 lg:overflow-hidden">
@@ -39,7 +43,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
             letterSpacing: "0.32em",
             color: "var(--text-dim)",
           }}>
-            — Get in Touch
+            {t.contactPage.eyebrow}
           </p>
         </motion.div>
 
@@ -57,7 +61,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
             color: "var(--text)",
           }}
         >
-          Begin a<br />conversation
+          {t.contactPage.titleLine1}<br />{t.contactPage.titleLine2}
         </motion.h1>
 
         {/* Hairline beneath headline */}
@@ -90,7 +94,7 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
           >
             {contactDetails.map(({ label, value, href }, i) => (
               <motion.div
-                key={label}
+                key={i}
                 initial={reduceMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
@@ -139,15 +143,15 @@ export function ContactView({ prev, next }: { prev: NavItem | null; next: NavIte
           transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="flex items-center justify-between gap-6 border-t border-[var(--border)] pt-6 md:pt-7"
         >
-          {prev ? <NavKey nav={prev} dir="prev" /> : <span />}
-          {next ? <NavKey nav={next} dir="next" /> : <span />}
+          {prev ? <NavKey nav={prev} dir="prev" t={t} /> : <span />}
+          {next ? <NavKey nav={next} dir="next" t={t} /> : <span />}
         </motion.nav>
       </main>
     </div>
   );
 }
 
-function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
+function NavKey({ nav, dir, t }: { nav: NavItem; dir: "prev" | "next"; t: Dictionary }) {
   const isNext = dir === "next";
   return (
     <Link
@@ -171,7 +175,7 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
           letterSpacing: "0.32em",
           color: "var(--text-dim)",
         }}>
-          {isNext ? "Next" : "Previous"}
+          {isNext ? t.nav.next : t.nav.previous}
         </span>
         <span
           className="truncate transition-opacity duration-300 group-hover:opacity-70"
@@ -185,7 +189,7 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
             maxWidth: "60vw",
           }}
         >
-          {nav.label}
+          {localizedNavLabel(t, nav.href, nav.label)}
         </span>
       </span>
     </Link>

@@ -1,0 +1,430 @@
+{
+  "intro": {
+    "chooseLanguage": "Pilih bahasa Anda",
+    "enter": "Memasuki"
+  },
+  "nav": {
+    "studio": "Studio",
+    "approach": "Mendekati",
+    "services": "Layanan",
+    "journal": "Jurnal",
+    "contact": "Kontak",
+    "home": "Rumah",
+    "backToHome": "Kembali ke Beranda",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya",
+    "locationLine": "Studio KATHA · Bengaluru",
+    "whatWeDo": "Apa yang Kami Lakukan",
+    "whatWeBuild": "Apa yang Kami Bangun",
+    "allServices": "Semua Layanan"
+  },
+  "home": {
+    "eyebrow": "Arsitektur · Interior · Renovasi · Lanskap",
+    "titleLine1": "Setiap ruang memiliki ceritanya sendiri,",
+    "titleLine2": "menunggu untuk dibangun.",
+    "mystery": [
+      "Ruang-ruang yang menahan napas",
+      "Semakin tenang, semakin hidup.",
+      "Apa yang tersisa setelah gambar berakhir?",
+      "Cahaya, kesabaran, satu gerakan sederhana.",
+      "Arsitektur, dalam suaranya yang lebih rendah"
+    ],
+    "subhead": "Di Katha Studio, setiap proyek dimulai dengan mendengarkan. Kami meluangkan waktu untuk memahami orang, tempat, dan tujuan sebelum membentuk ruang yang terasa personal, abadi, dan sangat terhubung dengan kehidupan yang didukungnya.",
+    "location": "Berbasis di Bengaluru · Bekerja di seluruh India · Terbuka untuk kolaborasi internasional tertentu",
+    "cta": "Mulailah Percakapan",
+    "cardStudioLabel": "Studio",
+    "cardStudioTagline": "Siapa kami",
+    "cardContactLabel": "Kontak",
+    "cardContactTagline": "Mulailah percakapan",
+    "category": {
+      "intro": "Pendahuluan",
+      "studio": "Studio",
+      "contact": "Kontak",
+      "residence": "Tempat tinggal",
+      "interior": "Pedalaman",
+      "renovation": "Renovasi",
+      "advisory": "Pemberitahuan",
+      "service": "Melayani",
+      "residential": "Perumahan",
+      "commercial": "Komersial",
+      "highRise": "Gedung Tinggi"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Mengapa Katha",
+    "heading": "Katha Berarti Cerita",
+    "para1": "Setiap proyek menyimpan sesuatu yang tidak bisa dijelaskan secara singkat — bagaimana sebuah keluarga benar-benar hidup, bagaimana sebuah bisnis perlu dirasakan dari dalam, bagaimana sebuah lanskap ingin dinikmati, apa yang diam-diam diminta oleh sebuah lokasi.",
+    "para2Line1": "Tugas kita adalah belajar membaca itu.",
+    "para2Line2": "Kemudian membangunnya dengan tepat.",
+    "process": {
+      "sketchbook": "Buku skets",
+      "tracingPaper": "Kertas Jiplak",
+      "handwrittenNotes": "Catatan Tulisan Tangan",
+      "materialBoard": "Papan Material"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "Apa yang Kami Tawarkan",
+    "offerHeading": "Bagaimana Kami Membangun",
+    "craftEyebrow": "Kerajinan Itu Penting",
+    "craftBody": "Arsitektur dibentuk melalui ribuan keputusan. Kualitas material, proporsi ruangan, cara cahaya masuk ke dalam ruang, dan detail sambungan memengaruhi bagaimana ruang tersebut dialami setiap hari.",
+    "closingCta": "Mari Diskusikan Proyek Anda",
+    "materials": {
+      "wood": "Kayu",
+      "stone": "Batu",
+      "joinery": "Bengkel tukang kayu",
+      "sketches": "Sketsa",
+      "models": "Model",
+      "materialBoards": "Papan Material",
+      "details": "Detail"
+    }
+  },
+  "approach": {
+    "eyebrow": "Bagaimana Cara Kami Bekerja",
+    "title": "Pendekatan Kami",
+    "intro": "Setiap tahapan memiliki tujuan. Tidak ada yang akan bergerak maju sampai tahapan saat ini siap.",
+    "startConversation": "Mulailah Percakapan",
+    "steps": [
+      {
+        "title": "Mendengarkan",
+        "body": "Setiap proyek dimulai sebelum adanya brief — dari bagaimana Anda menjalani hidup, bagaimana bisnis Anda berjalan, dan apa yang secara tersirat diminta oleh situs tersebut."
+      },
+      {
+        "title": "Mengeksplorasi",
+        "body": "Ide-ide diuji secara terbuka. Proporsi, pencahayaan, dan material dipelajari sebelum arah mana pun ditentukan."
+      },
+      {
+        "title": "Desain",
+        "body": "Konsep tersebut dibentuk menjadi suatu keseluruhan di mana setiap keputusan menjawab arahan dan ruang itu sendiri."
+      },
+      {
+        "title": "Menyaring",
+        "body": "Detail-detailnya telah diselesaikan. Inilah pekerjaan tenang yang membedakan ruang yang terlihat selesai dari ruang yang terasa tepat."
+      },
+      {
+        "title": "Mengantarkan",
+        "body": "Pekerjaan diselesaikan hingga tuntas — maksud awal tetap dipertahankan hingga detail terakhir."
+      }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "Apa yang Kami Tawarkan",
+    "title": "Bagaimana Kami Membangun",
+    "getInTouch": "Hubungi Kami"
+  },
+  "journalPage": {
+    "eyebrow": "Dari Studio",
+    "title": "Jurnal",
+    "intro": "Berpikir dari studio — tentang ruang, material, dan detail yang penting.",
+    "inPreparation": "Dalam persiapan",
+    "stayInTouch": "Tetap Berhubungan"
+  },
+  "marquee": [
+    "Katha Studio",
+    "Keheningan, Dirancang",
+    "Bengaluru",
+    "Arsitektur sebagai Jeda",
+    "Ketenangan Material",
+    "Ruangan yang Mendengarkan",
+    "Karya Pilihan",
+    "Mulailah dengan Tenang"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Mengapa Katha",
+    "whyHeading": "Katha Berarti Cerita",
+    "whyPara1": "Setiap proyek menyimpan sesuatu yang tidak bisa dijelaskan secara singkat — bagaimana sebuah keluarga benar-benar hidup, bagaimana sebuah bisnis perlu dirasakan dari dalam, bagaimana sebuah lanskap ingin dinikmati, apa yang diam-diam diminta oleh sebuah lokasi.",
+    "whyPara2Line1": "Tugas kita adalah belajar membaca itu.",
+    "whyPara2Line2": "Kemudian membangunnya dengan tepat.",
+    "nehaEyebrow": "Mari berkenalan dengan Neha.",
+    "nehaHeading": "Ar. Neha",
+    "nehaPortraitAlt": "Potret Arsitek Neha, Pendiri & Kepala Arsitek Katha Studio",
+    "nehaPara1": "Ruang angkasa memiliki memori.",
+    "nehaPara2": "Hal itu mencerminkan bagaimana bangunan itu dibangun, apa yang dirancang agar tahan lama, dan bagaimana bangunan itu membuat orang merasa nyaman bahkan setelah pekerjaan selesai.",
+    "nehaPara3": "Saya telah menghabiskan bertahun-tahun untuk belajar membaca hal itu — dalam bobot material yang dipilih karena bagaimana material itu menua, dalam proporsi yang diambil dari tradisi yang memahami skala manusia jauh sebelum hal itu menjadi sebuah disiplin ilmu, dalam logika tenang sebuah ruangan yang tidak pernah perlu dijelaskan karena segala sesuatu di dalamnya berada tepat di tempatnya.",
+    "nehaPara4": "Kedalaman perhatian itulah yang menjadi dasar setiap proyek Katha.",
+    "nehaName": "Ar. Neha",
+    "nehaRole": "Pendiri & Arsitek Utama",
+    "perspectiveEyebrow": "Perspektif Kami",
+    "perspective1": "Ruang terbaik tidak pernah tercipta secara kebetulan.",
+    "perspective2": "Setiap material dipilih berdasarkan daya tahannya selama beberapa dekade.",
+    "perspective3": "Kami mengambil inspirasi dari tradisi bangunan yang memahami keabadian, skala, dan pengalaman manusia pada tingkat terdalamnya.",
+    "perspective4": "Kami mendesain untuk kehidupan yang terjadi di dalam suatu ruang — bukan hanya untuk saat ruang itu selesai dibangun.",
+    "valuesEyebrow": "Nilai-nilai yang Kami Junjung Tinggi",
+    "values": [
+      {
+        "title": "Kedalaman",
+        "body": "Kami bertanya apa yang perlu menjadi sebuah ruang — bukan hanya seperti apa tampilannya."
+      },
+      {
+        "title": "Keabadian",
+        "body": "Setiap material, setiap proporsi, setiap detail dipilih agar tahan lama dan layak mendapatkan tempatnya seiring waktu."
+      },
+      {
+        "title": "Akar",
+        "body": "Kami mengambil inspirasi dari tradisi bangunan yang telah menyimpan informasi tentang ruang angkasa jauh sebelum informasi itu dituliskan."
+      },
+      {
+        "title": "Ketepatan",
+        "body": "Tidak ada satu pun hal dalam proyek Katha yang bersifat sembarangan. Setiap keputusan memiliki alasan yang kuat."
+      },
+      {
+        "title": "Tinjauan ke masa depan",
+        "body": "Kami mendesain untuk jangka waktu yang akan dijalani sebuah ruang — sepuluh tahun, dua puluh tahun, jauh setelah hari pertama."
+      }
+    ],
+    "craftEyebrow": "Kerajinan & Bahan",
+    "craftPara1": "Setiap keputusan dalam sebuah bangunan juga merupakan keputusan material.",
+    "craftPara2": "Komposisi suatu benda menentukan bagaimana benda itu menua, bagaimana rasanya saat dipegang, bagaimana benda itu memantulkan cahaya, dan bagaimana posisinya di lingkungan sekitarnya. Kita memilih material berdasarkan apa yang dilakukannya seiring waktu — bukan hanya bagaimana tampilannya pada hari pemasangannya.",
+    "craftTags": [
+      "Kayu",
+      "Batu",
+      "Bengkel tukang kayu",
+      "Sketsa",
+      "Model",
+      "Papan Material",
+      "Detail"
+    ],
+    "clientsEyebrow": "Dengan Siapa Kami Bekerja",
+    "clientsPara1": "Kami bekerja dengan orang-orang yang melihat suatu ruang sebagai lebih dari sekadar proyek.",
+    "clientsPara2": "Keluarga yang menginginkan rumah yang dibangun agar tahan lama dan terasa nyaman selama beberapa generasi. Bisnis yang memahami bahwa lingkungan mereka mencerminkan jati diri mereka. Pengembang yang tahu bahwa detail yang tepat sejak awal menentukan semua hal yang akan terjadi selanjutnya.",
+    "clientsPara3": "Kami menerima pekerjaan yang dapat kami lakukan dengan komitmen penuh. Tidak kurang dari itu.",
+    "noteBody": "Setiap proyek mewakili babak penting dalam kehidupan seseorang. Ini adalah tanggung jawab yang sangat kami hargai. Terima kasih telah mempertimbangkan Katha Studio sebagai bagian dari perjalanan tersebut.",
+    "noteSignature": "— Ar. Neha"
+  },
+  "contactPage": {
+    "eyebrow": "Hubungi Kami",
+    "titleLine1": "Mulailah",
+    "titleLine2": "percakapan",
+    "details": {
+      "emailLabel": "E-mail",
+      "phoneLabel": "Telepon",
+      "studioLabel": "Studio",
+      "studioValue": "Bengaluru, India",
+      "portfolioLabel": "Portofolio",
+      "portfolioValue": "Tersedia atas permintaan — hubungi kami"
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Nama",
+    "namePlaceholder": "Nama Anda",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Anda@contoh.com",
+    "phoneLabel": "Telepon",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Jenis Proyek",
+    "projectTypePlaceholder": "misalnya Interior",
+    "timelineLabel": "Garis waktu",
+    "timelinePlaceholder": "misalnya 3 – 6 bulan",
+    "messageLabel": "Pesan",
+    "messagePlaceholder": "Ceritakan tentang proyek Anda — apa itu, di mana posisinya saat ini, dan apa yang Anda harapkan dari proyek ini nantinya.",
+    "send": "Kirim Permintaan",
+    "sending": "Mengirim",
+    "sent": "Terkirim ✓",
+    "success": "— Terima kasih. Kami akan menghubungi Anda dalam dua hari kerja.",
+    "errors": {
+      "checkFields": "Silakan periksa kolom yang disorot.",
+      "network": "Terjadi kesalahan jaringan. Silakan coba lagi.",
+      "nameRequired": "Silakan sebutkan nama Anda.",
+      "nameShort": "Nama harus terdiri minimal 2 karakter.",
+      "emailRequired": "Silakan bagikan alamat email Anda.",
+      "emailInvalid": "Itu sepertinya bukan alamat email yang valid.",
+      "phoneRequired": "Mohon berikan nomor telepon.",
+      "phoneChars": "Gunakan angka, spasi, tanda hubung, titik, atau tanda kurung saja.",
+      "phoneDigits": "Nomor telepon harus terdiri dari 10 digit (dengan atau tanpa +91).",
+      "messageRequired": "Silakan sampaikan beberapa patah kata.",
+      "messageShort": "Sedikit lagi — setidaknya 10 karakter.",
+      "messageLong": "Itu agak panjang — mohon batasi hingga kurang dari 2000 karakter."
+    }
+  },
+  "detail": {
+    "scope": "Cakupan",
+    "ctaLabel": "Memulai Proyek",
+    "entering": "Memasuki"
+  },
+  "services": {
+    "architecture": {
+      "title": "Arsitektur",
+      "category": "Rumah & Bangunan",
+      "tagline": "Rumah dan bangunan yang dirancang dengan kejelasan dan tujuan.",
+      "desc": "Rumah dan bangunan yang dirancang dengan kejelasan, tujuan, dan hubungan yang kuat dengan orang-orang yang menggunakannya.",
+      "paragraphs": [
+        "Kami mendesain rumah dan bangunan dengan kejelasan, tujuan, dan hubungan yang kuat dengan orang-orang yang menggunakannya.",
+        "Setiap proyek dimulai dengan memahami bagaimana Anda ingin tinggal atau bekerja. Dari situ, kami membentuk ruang berdasarkan pencahayaan, proporsi, dan nuansa yang ingin ditimbulkan—semuanya dipertimbangkan dengan cermat mulai dari sketsa pertama hingga detail terakhir."
+      ],
+      "scope": [
+        "Rumah Baru",
+        "Ruang Komersial",
+        "Desain Konsep",
+        "Lokasi & Detail"
+      ],
+      "imageCaption": "Studi · Cahaya & Proporsi"
+    },
+    "interiors": {
+      "title": "Interior",
+      "category": "Ruang & Detail",
+      "tagline": "Setiap interior menyimpan sebuah perasaan sebelum perabotannya dipasang.",
+      "desc": "Ruang yang dibentuk melalui materialitas, cahaya, dan detail yang dipikirkan dengan matang.",
+      "paragraphs": [
+        "Kunci keberhasilan terletak pada pilihan-pilihan yang jarang terlihat — tekstur permukaan, proporsi ruangan, cara cahaya menyinari sepanjang hari. Keputusan-keputusan inilah yang menentukan bagaimana sebuah ruang terasa nyaman untuk ditinggali selama bertahun-tahun.",
+        "Setiap interior Katha dibangun dengan mempertimbangkan hal itu."
+      ],
+      "scope": [
+        "Penataan ruang",
+        "Pemilihan Material",
+        "Pekerjaan Kayu & Perabotan Built-in",
+        "Cahaya & Suasana"
+      ],
+      "imageCaption": "Studi · Materi & Detail"
+    },
+    "renovation": {
+      "title": "Renovasi",
+      "category": "Ruang yang Berkembang",
+      "tagline": "Setiap ruang yang ada menyimpan sesuatu yang layak dipahami sebelum diubah.",
+      "desc": "Membantu ruang yang sudah ada untuk berkembang sambil membangun kekuatan yang dimilikinya.",
+      "paragraphs": [
+        "Usia meninggalkan kecerdasan dalam sebuah bangunan — dalam cara pembangunannya, apa yang dirancang untuk ditahannya, dan apa yang secara diam-diam mempertahankan nilainya dari waktu ke waktu. Tugas kita adalah mengetahui apa yang harus dipertahankan, apa yang perlu dikembangkan, dan bagaimana membawa keduanya ke depan tanpa kehilangan apa yang membuat tempat tersebut layak untuk dikunjungi kembali."
+      ],
+      "scope": [
+        "Penataan Ulang Struktural",
+        "Restorasi Warisan Budaya",
+        "Ekstensi",
+        "Pemanfaatan Kembali Adaptif"
+      ],
+      "imageCaption": "Studi · Yang Ada"
+    },
+    "advisory": {
+      "title": "Pemberitahuan",
+      "category": "Bimbingan & Perencanaan",
+      "tagline": "Pertanyaan yang tepat yang diajukan sejak awal akan menyelamatkan semua yang terjadi setelahnya.",
+      "desc": "Memberikan panduan melalui perencanaan, pengambilan keputusan, dan pelaksanaan.",
+      "paragraphs": [
+        "Beberapa proyek membutuhkan desain lengkap. Yang lain hanya membutuhkan satu percakapan dengan seseorang yang telah cukup berpengalaman untuk mengetahui persis ke mana arahnya — dan keputusan apa yang paling penting sebelum pekerjaan dimulai.",
+        "Itulah Katha Advisory."
+      ],
+      "scope": [
+        "Pengembangan Singkat",
+        "Kemungkinan",
+        "Arah Desain",
+        "Dukungan Pengambilan Keputusan"
+      ],
+      "imageCaption": "Studi · Ringkasan & Arah"
+    },
+    "technical-drawings": {
+      "title": "Gambar Teknik",
+      "category": "Dokumentasi & Detail",
+      "tagline": "Gambar-gambar yang mengubah desain menjadi bangunan.",
+      "desc": "Gambar konstruksi yang presisi yang menerjemahkan desain menjadi sesuatu yang dapat dibangun persis di lokasi tersebut.",
+      "paragraphs": [
+        "Suatu desain hanya akan menjadi bangunan jika dapat dibangun dengan akurat. Gambar teknik adalah tempat di mana maksud diubah menjadi instruksi — setiap dimensi, sambungan, dan material dijelaskan dengan cukup jelas sehingga dapat dibangun tanpa perlu menebak-nebak.",
+        "Kami menyiapkan gambar kerja terperinci — denah, potongan, tampak, dan detail konstruksi — yang memberikan kontraktor sumber informasi tunggal dan akurat. Lebih sedikit kejutan di lokasi proyek, lebih sedikit kompromi, dan ruang jadi yang sesuai dengan gambar yang telah dibuat."
+      ],
+      "scope": [
+        "Gambar Kerja",
+        "Potongan & Tampak",
+        "Detail Konstruksi",
+        "Dokumentasi Situs"
+      ],
+      "imageCaption": "Studi · Garis & Presisi"
+    },
+    "residential": {
+      "title": "Perumahan",
+      "category": "Rumah & Kehidupan",
+      "tagline": "Tempat-tempat yang Anda kunjungi setiap hari.",
+      "desc": "Rumah yang dirancang berdasarkan bagaimana Anda benar-benar hidup — pribadi, nyaman, dan tahan lama.",
+      "paragraphs": [
+        "Rumah adalah hal paling pribadi yang kita rancang. Di dalamnya terdapat rutinitas Anda, keluarga Anda, dan ritual-ritual kecil yang secara diam-diam membuat hari terasa milik Anda.",
+        "Kami merancang hunian berdasarkan cara Anda benar-benar hidup — bagaimana cahaya seharusnya jatuh di pagi hari, di mana orang berkumpul, sudut tenang apa yang Anda butuhkan. Setiap keputusan dibuat agar rumah tetap terasa tepat bertahun-tahun kemudian."
+      ],
+      "scope": [
+        "Rumah Pribadi",
+        "Vila",
+        "Apartemen",
+        "Rumah pertanian"
+      ],
+      "imageCaption": "Belajar · Rumah & Kehidupan"
+    },
+    "commercial": {
+      "title": "Komersial",
+      "category": "Pekerjaan & Ritel",
+      "tagline": "Ruang-ruang yang bekerja sekeras orang-orang di dalamnya.",
+      "desc": "Kantor, toko, dan ruang perhotelan yang menyeimbangkan fungsi, merek, dan suasana.",
+      "paragraphs": [
+        "Ruang komersial mencerminkan karakter suatu bisnis bahkan sebelum sepatah kata pun diucapkan. Ruang tersebut membentuk cara kerja tim, perasaan pelanggan, dan bagaimana suatu merek diingat.",
+        "Kami mendesain ruang kantor, ritel, dan perhotelan yang praktis di tempat yang dibutuhkan dan ekspresif di tempat yang penting — dibangun untuk berkinerja setiap hari dan tetap bagus seiring waktu dalam penggunaan nyata dan intensif."
+      ],
+      "scope": [
+        "Kantor & Ruang Kerja",
+        "Pengecer",
+        "Keramahan",
+        "Ruang pamer"
+      ],
+      "imageCaption": "Studi · Pekerjaan & Merek"
+    },
+    "high-rise": {
+      "title": "Gedung Tinggi",
+      "category": "Menara & Kepadatan",
+      "tagline": "Hidup nyaman, di ketinggian.",
+      "desc": "Bangunan bertingkat dan gedung pencakar langit yang direncanakan dengan mempertimbangkan pencahayaan, sirkulasi udara, struktur, dan komunitas.",
+      "paragraphs": [
+        "Membangun ke atas menuntut lebih banyak dari sebuah desain. Setiap lantai berulang, setiap layanan membentang sepanjang ketinggian, dan ratusan nyawa berbagi satu struktur — jadi detailnya harus tepat, karena detail tersebut akan berlipat ganda.",
+        "Kami merancang gedung-gedung tinggi dan bertingkat berdasarkan apa yang membuat hunian vertikal benar-benar baik: cahaya alami dan ventilasi silang, struktur yang jujur, inti bangunan yang efisien, dan ruang bersama yang membangun rasa komunitas, bukan sekadar menumpuk rumah."
+      ],
+      "scope": [
+        "Menara Hunian",
+        "Penggunaan Campuran",
+        "Perencanaan Struktural",
+        "Fasilitas Bersama"
+      ],
+      "imageCaption": "Studi · Tinggi & Kepadatan"
+    }
+  },
+  "noteCategories": {
+    "Process": "Proses",
+    "Culture": "Budaya",
+    "Craft": "Keahlian",
+    "Space": "Ruang angkasa"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "Mengapa Sketsa Pertama Tidak Pernah Menjadi Jawaban yang Tepat",
+      "excerpt": "Sketsa pertama bukanlah sebuah desain. Itu adalah sebuah pertanyaan.",
+      "paragraphs": [
+        "Ini adalah cara tercepat untuk mengetahui apa yang belum Anda pahami tentang suatu proyek. Garis yang ditarik terlalu dini ke arah yang salah tidak akan merugikan siapa pun di atas kertas, tetapi akan merugikan segalanya dalam konstruksi. Jadi, kita menggambar garis lebih awal dan secara longgar — bukan untuk mengikat, tetapi untuk mengungkap. Untuk melihat di mana pemikiran itu tepat dan di mana tidak.",
+        "Proyek yang berakhir dengan baik adalah proyek di mana pertanyaan-pertanyaan tersulit diajukan sebelum desainnya disukai. Sebelum klien terikat pada tata letak. Sebelum siapa pun berinvestasi pada sebuah ide. Ada jendela di awal setiap proyek di mana segala sesuatu masih mungkin — dan jendela itulah tempat pekerjaan terpenting terjadi.",
+        "Hasil yang didapatkan tidak selalu sesuai dengan harapan. Sebuah lokasi yang tampaknya membutuhkan pendekatan tertentu, melalui sketsa ternyata membutuhkan sesuatu yang lebih tenang. Sebuah arahan yang tampak sederhana berkembang menjadi sesuatu yang lebih kaya setelah garis-garis pertama digambar dan dipertanyakan.",
+        "Sketsa inilah tempat kita mempelajari apa sebenarnya yang diminta oleh proyek tersebut."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "Detail yang Tak Seorang Pun Lihat",
+      "excerpt": "Detail terpenting dalam proyek apa pun seringkali tidak terlihat saat pekerjaan selesai.",
+      "paragraphs": [
+        "Keindahan terletak pada perpaduan dua material — bagaimana lantai batu bertemu dengan dinding plester, garis bayangan yang membuat kusen pintu terlihat rapi, kedalaman bingkai jendela yang menentukan apakah cahaya masuk dengan lembut atau keras. Keputusan-keputusan ini membedakan ruang yang terasa terencana dari ruang yang hanya terlihat selesai.",
+        "Klien jarang menanyakan hal-hal ini. Mereka bertanya tentang tata letak, material, dan finishing. Tetapi ruang-ruang yang mereka ingat — ruang-ruang yang mereka gambarkan kepada orang lain, ruang-ruang yang tetap terpatri dalam ingatan mereka — hampir selalu adalah ruang-ruang di mana seseorang memberikan perhatian tepat pada tingkat ini.",
+        "Persimpangan yang dirancang dengan buruk akan selalu berbicara setiap kali seseorang berdiri di dekatnya. Garis bayangan yang tidak pada tempatnya meratakan permukaan yang seharusnya memiliki kedalaman. Hal-hal ini terekam di bawah kesadaran — tetapi tetap terekam.",
+        "Keahlian arsitektur terletak pada detail-detail yang tak terlihat oleh siapa pun. Ketidakjelasan itulah intinya."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "Apa yang India Ketahui tentang Luar Angkasa yang Sedang Dipelajari Kembali oleh Dunia",
+      "excerpt": "Gagasan-gagasan paling canggih dalam arsitektur kontemporer sebenarnya bukanlah hal baru. Gagasan-gagasan itu telah dilupakan.",
+      "paragraphs": [
+        "Pendinginan pasif melalui geometri halaman. Massa termal pada dinding batu yang menjaga interior tetap stabil tanpa intervensi mekanis. Beranda — yang tidak berada di dalam maupun di luar — memoderasi panas, menyaring cahaya, menciptakan ambang batas yang belum pernah digantikan oleh unit pendingin udara mana pun. Sumur bertingkat yang memecahkan masalah pengumpulan air, tempat berkumpul umum, dan iklim mikro dalam satu struktur.",
+        "Ini bukanlah kebetulan. Ini adalah hasil pengamatan selama berabad-abad yang tertanam dalam keahlian — diturunkan dari tangan ke tangan, bukan dari buku teks. Pengetahuan itu tidak hilang karena berhenti berfungsi. Pengetahuan itu hilang karena modernisme impor datang lebih cepat daripada yang diperkirakan siapa pun untuk mempertanyakannya.",
+        "Dunia kini menghabiskan sumber daya yang sangat besar untuk menemukan kembali apa yang sudah diketahui. Desain biofilik. Ventilasi pasif. Proporsi skala manusia. Material yang bersumber dari lokal. Ini bukan tren. Ini adalah hasil yang telah terbukti.",
+        "Kami membangun dengan pengetahuan itu secara sengaja — bukan karena nostalgia. Karena cara itu lebih efektif."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "Tentang Mendesain untuk Dua Puluh Tahun ke Depan",
+      "excerpt": "Setiap proyek akan bertahan lebih lama daripada percakapan yang memulainya.",
+      "paragraphs": [
+        "Keluarga yang merancangnya akan berubah. Anak-anak akan tumbuh dan pergi. Bisnis akan bergeser. Cara orang bekerja, berkumpul, dan bergerak di suatu ruang sudah berbeda dari satu dekade lalu — dan akan berbeda lagi di dekade berikutnya. Ruang yang dirancang hanya untuk hari ini sudah mulai usang.",
+        "Jawabannya bukanlah tata ruang terbuka dan dinding yang dapat dipindahkan. Jawabannya adalah pemahaman yang lebih mendalam tentang apa yang permanen dalam perilaku manusia dan apa yang tidak.",
+        "Manusia akan selalu membutuhkan tempat untuk menyendiri dan tempat untuk berkumpul. Mereka akan selalu merespons cahaya alami. Mereka akan selalu merasakan perbedaan antara langit-langit dengan ketinggian yang tepat dan yang tidak. Mereka akan selalu tahu kapan suatu material itu jujur dan kapan material itu berpura-pura menjadi sesuatu yang lain.",
+        "Rancanglah dengan mempertimbangkan konstanta-konstanta tersebut. Bangunlah dengan material yang menua dengan anggun. Sisakan ruang dalam rencana agar kehidupan dapat bergerak tanpa merusak arsitektur.",
+        "Begitulah cara sebuah tempat bertahan selama dua puluh tahun dan tetap terasa tepat."
+      ]
+    }
+  }
+}

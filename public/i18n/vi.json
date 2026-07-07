@@ -1,0 +1,430 @@
+{
+  "intro": {
+    "chooseLanguage": "Chọn ngôn ngữ của bạn",
+    "enter": "Đi vào"
+  },
+  "nav": {
+    "studio": "Phòng thu",
+    "approach": "Tiếp cận",
+    "services": "Dịch vụ",
+    "journal": "Tạp chí",
+    "contact": "Liên hệ",
+    "home": "Trang chủ",
+    "backToHome": "Trở về Trang chủ",
+    "next": "Kế tiếp",
+    "previous": "Trước",
+    "locationLine": "KATHA Studio · Bengaluru",
+    "whatWeDo": "Những việc chúng tôi làm",
+    "whatWeBuild": "Những gì chúng tôi xây dựng",
+    "allServices": "Tất cả các dịch vụ"
+  },
+  "home": {
+    "eyebrow": "Kiến trúc · Nội thất · Cải tạo · Cảnh quan",
+    "titleLine1": "Mỗi không gian đều có một câu chuyện riêng.",
+    "titleLine2": "đang chờ được xây dựng.",
+    "mystery": [
+      "Những không gian khiến người ta nín thở.",
+      "Càng tĩnh lặng, càng sống động.",
+      "Những gì còn lại sau khi bức vẽ kết thúc",
+      "Ánh sáng, sự kiên nhẫn, một cử chỉ duy nhất",
+      "Kiến trúc, ở giọng nói trầm hơn"
+    ],
+    "subhead": "Tại Katha Studio, mọi dự án đều bắt đầu bằng việc lắng nghe. Chúng tôi dành thời gian để hiểu con người, địa điểm và mục đích trước khi kiến tạo những không gian mang đậm dấu ấn cá nhân, vượt thời gian và gắn kết sâu sắc với cuộc sống mà chúng hỗ trợ.",
+    "location": "Đặt trụ sở tại Bengaluru · Hoạt động trên khắp Ấn Độ · Sẵn sàng hợp tác quốc tế với một số đối tác chọn lọc",
+    "cta": "Bắt đầu một cuộc trò chuyện",
+    "cardStudioLabel": "Phòng thu",
+    "cardStudioTagline": "Chúng tôi là ai",
+    "cardContactLabel": "Liên hệ",
+    "cardContactTagline": "Bắt đầu một cuộc trò chuyện",
+    "category": {
+      "intro": "Giới thiệu",
+      "studio": "Phòng thu",
+      "contact": "Liên hệ",
+      "residence": "Nơi cư trú",
+      "interior": "Nội thất",
+      "renovation": "Cải tạo",
+      "advisory": "Tư vấn",
+      "service": "Dịch vụ",
+      "residential": "Khu dân cư",
+      "commercial": "Thuộc về thương mại",
+      "highRise": "Tòa nhà cao tầng"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Tại sao lại là Katha?",
+    "heading": "Katha nghĩa là Câu chuyện",
+    "para1": "Mỗi dự án đều chứa đựng những điều không thể diễn đạt bằng lời — cách một gia đình thực sự sinh sống, cảm giác mà một doanh nghiệp cần có từ bên trong, cách mà một cảnh quan muốn được trải nghiệm, những gì mà một địa điểm đang âm thầm mong muốn.",
+    "para2Line1": "Nhiệm vụ của chúng ta là học cách đọc hiểu điều đó.",
+    "para2Line2": "Sau đó xây dựng nó một cách chính xác.",
+    "process": {
+      "sketchbook": "Sổ phác thảo",
+      "tracingPaper": "Giấy can",
+      "handwrittenNotes": "Ghi chú viết tay",
+      "materialBoard": "Tấm ván vật liệu"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "Những gì chúng tôi cung cấp",
+    "offerHeading": "Cách chúng tôi xây dựng",
+    "craftEyebrow": "Nghề thủ công rất quan trọng",
+    "craftBody": "Kiến trúc được hình thành thông qua hàng ngàn quyết định. Chất lượng vật liệu, tỷ lệ của một căn phòng, cách ánh sáng chiếu vào không gian và chi tiết của một điểm giao nhau đều ảnh hưởng đến cách chúng ta cảm nhận không gian đó mỗi ngày.",
+    "closingCta": "Hãy cùng thảo luận về dự án của bạn",
+    "materials": {
+      "wood": "Gỗ",
+      "stone": "Cục đá",
+      "joinery": "Đồ gỗ",
+      "sketches": "Bản phác thảo",
+      "models": "Mô hình",
+      "materialBoards": "Bảng vật liệu",
+      "details": "Chi tiết"
+    }
+  },
+  "approach": {
+    "eyebrow": "Cách thức làm việc của chúng tôi",
+    "title": "Phương pháp tiếp cận của chúng tôi",
+    "intro": "Mỗi giai đoạn đều có mục đích riêng. Không có gì tiến triển cho đến khi giai đoạn hiện tại hoàn tất.",
+    "startConversation": "Bắt đầu một cuộc trò chuyện",
+    "steps": [
+      {
+        "title": "Nghe",
+        "body": "Mỗi dự án đều bắt đầu trước khi có bản tóm tắt – từ cách bạn sống, cách doanh nghiệp của bạn vận hành, và những gì địa điểm đó đang ngầm yêu cầu."
+      },
+      {
+        "title": "Khám phá",
+        "body": "Các ý tưởng được thử nghiệm công khai. Tỷ lệ, ánh sáng và chất liệu được nghiên cứu kỹ lưỡng trước khi đưa ra bất kỳ hướng đi nào."
+      },
+      {
+        "title": "Thiết kế",
+        "body": "Ý tưởng được hình thành thành một tổng thể, trong đó mọi quyết định đều đáp ứng yêu cầu đặt ra và phù hợp với không gian cụ thể."
+      },
+      {
+        "title": "Tinh chỉnh",
+        "body": "Các chi tiết đã được giải quyết. Đây là công việc thầm lặng tạo nên sự khác biệt giữa một không gian trông có vẻ hoàn thiện và một không gian mang lại cảm giác đúng đắn."
+      },
+      {
+        "title": "Giao",
+        "body": "Công trình được hoàn thành trọn vẹn — ý định ban đầu được giữ vững đến từng chi tiết cuối cùng."
+      }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "Những gì chúng tôi cung cấp",
+    "title": "Cách chúng tôi xây dựng",
+    "getInTouch": "Liên hệ với chúng tôi"
+  },
+  "journalPage": {
+    "eyebrow": "Từ Studio",
+    "title": "Tạp chí",
+    "intro": "Suy nghĩ từ góc độ thiết kế studio — về không gian, vật liệu và những chi tiết quan trọng.",
+    "inPreparation": "Để chuẩn bị",
+    "stayInTouch": "Giữ liên lạc"
+  },
+  "marquee": [
+    "Studio Katha",
+    "Sự tĩnh lặng, được thiết kế",
+    "Bengaluru",
+    "Kiến trúc như một sự tạm dừng",
+    "Vật liệu yên tĩnh",
+    "Những căn phòng biết lắng nghe",
+    "Tuyển tập tác phẩm",
+    "Bắt đầu một cách lặng lẽ"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Tại sao lại là Katha?",
+    "whyHeading": "Katha nghĩa là Câu chuyện",
+    "whyPara1": "Mỗi dự án đều chứa đựng những điều không thể diễn đạt bằng lời — cách một gia đình thực sự sinh sống, cảm giác mà một doanh nghiệp cần có từ bên trong, cách mà một cảnh quan muốn được trải nghiệm, những gì mà một địa điểm đang âm thầm mong muốn.",
+    "whyPara2Line1": "Nhiệm vụ của chúng ta là học cách đọc hiểu điều đó.",
+    "whyPara2Line2": "Sau đó xây dựng nó một cách chính xác.",
+    "nehaEyebrow": "Gặp gỡ Neha",
+    "nehaHeading": "Kiến trúc sư Neha",
+    "nehaPortraitAlt": "Chân dung kiến trúc sư Neha, người sáng lập kiêm kiến trúc sư chính của Katha Studio.",
+    "nehaPara1": "Không gian có bộ nhớ.",
+    "nehaPara2": "Nó lưu giữ hình ảnh về cách nó được xây dựng, về mục đích xây dựng và về cảm nhận mà nó mang lại cho mọi người rất lâu sau khi công trình hoàn thành.",
+    "nehaPara3": "Tôi đã dành nhiều năm để học cách cảm nhận điều đó — trong trọng lượng của một chất liệu được lựa chọn dựa trên cách nó lão hóa, trong tỷ lệ được rút ra từ những truyền thống đã hiểu về quy mô con người từ rất lâu trước khi nó trở thành một ngành khoa học, trong logic tĩnh lặng của một căn phòng không bao giờ cần phải giải thích bởi vì mọi thứ trong đó đều ở đúng vị trí của nó.",
+    "nehaPara4": "Sự chú trọng sâu sắc đó chính là nền tảng của mọi dự án Katha.",
+    "nehaName": "Kiến trúc sư Neha",
+    "nehaRole": "Người sáng lập & Kiến trúc sư chính",
+    "perspectiveEyebrow": "Quan điểm của chúng tôi",
+    "perspective1": "Những không gian tuyệt vời nhất không bao giờ là ngẫu nhiên.",
+    "perspective2": "Mỗi loại vật liệu được lựa chọn dựa trên độ bền của chúng qua nhiều thập kỷ.",
+    "perspective3": "Chúng tôi kế thừa những truyền thống xây dựng thấu hiểu sự trường tồn, quy mô và trải nghiệm của con người ở mức độ sâu sắc nhất.",
+    "perspective4": "Chúng tôi thiết kế cho cuộc sống diễn ra bên trong không gian đó — chứ không chỉ là khoảnh khắc nó hoàn thành.",
+    "valuesEyebrow": "Những giá trị mà chúng tôi trân trọng",
+    "values": [
+      {
+        "title": "Độ sâu",
+        "body": "Chúng tôi đặt câu hỏi không gian đó cần trở thành gì — chứ không chỉ cần trông như thế nào."
+      },
+      {
+        "title": "Sự vĩnh cửu",
+        "body": "Mọi chất liệu, mọi tỷ lệ, mọi chi tiết đều được lựa chọn để bền lâu và khẳng định giá trị của mình theo thời gian."
+      },
+      {
+        "title": "Rễ",
+        "body": "Chúng tôi kế thừa những truyền thống xây dựng đã lưu giữ kiến thức về không gian từ rất lâu trước khi nó được ghi chép lại."
+      },
+      {
+        "title": "Độ chính xác",
+        "body": "Không có gì trong dự án của Katha là tùy tiện. Mỗi quyết định đều có lý do chính đáng."
+      },
+      {
+        "title": "Tầm nhìn xa",
+        "body": "Chúng tôi thiết kế cho một không gian có thể đồng hành cùng nó suốt vòng đời – mười năm, hai mươi năm, thậm chí lâu hơn nữa sau ngày đầu tiên."
+      }
+    ],
+    "craftEyebrow": "Thủ công & Vật liệu",
+    "craftPara1": "Mỗi quyết định trong thiết kế xây dựng đều là một quyết định liên quan đến vật liệu.",
+    "craftPara2": "Vật liệu cấu tạo nên một vật thể quyết định độ bền của nó theo thời gian, cảm giác khi chạm vào, khả năng phản chiếu ánh sáng và khả năng thích ứng với khí hậu. Chúng ta lựa chọn vật liệu dựa trên những gì chúng thể hiện theo thời gian — chứ không chỉ dựa trên vẻ bề ngoài vào ngày lắp đặt.",
+    "craftTags": [
+      "Gỗ",
+      "Cục đá",
+      "Đồ gỗ",
+      "Bản phác thảo",
+      "Mô hình",
+      "Bảng vật liệu",
+      "Chi tiết"
+    ],
+    "clientsEyebrow": "Chúng tôi hợp tác với ai?",
+    "clientsPara1": "Chúng tôi làm việc với những người coi không gian không chỉ đơn thuần là một dự án.",
+    "clientsPara2": "Những gia đình mong muốn một ngôi nhà bền vững và mang lại cảm giác thoải mái cho nhiều thế hệ. Những doanh nghiệp hiểu rằng môi trường xung quanh phản ánh chính họ. Những nhà phát triển biết rằng những chi tiết đúng đắn ngay từ đầu sẽ quyết định tất cả những gì diễn ra sau đó.",
+    "clientsPara3": "Chúng tôi chỉ nhận những công việc mà chúng tôi có thể làm với toàn bộ tâm huyết. Không hơn không kém.",
+    "noteBody": "Mỗi dự án đều đại diện cho một chương quan trọng trong cuộc đời của ai đó. Đó là một trách nhiệm mà chúng tôi trân trọng sâu sắc. Cảm ơn bạn đã xem Katha Studio như một phần trong hành trình đó.",
+    "noteSignature": "— Kiến trúc sư Neha"
+  },
+  "contactPage": {
+    "eyebrow": "Liên hệ với chúng tôi",
+    "titleLine1": "Bắt đầu một",
+    "titleLine2": "cuộc hội thoại",
+    "details": {
+      "emailLabel": "E-mail",
+      "phoneLabel": "Điện thoại",
+      "studioLabel": "Phòng thu",
+      "studioValue": "Bengaluru, Ấn Độ",
+      "portfolioLabel": "Danh mục đầu tư",
+      "portfolioValue": "Có sẵn theo yêu cầu — vui lòng liên hệ với chúng tôi."
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Tên",
+    "namePlaceholder": "Tên của bạn",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Điện thoại",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Loại dự án",
+    "projectTypePlaceholder": "Ví dụ: Nội thất",
+    "timelineLabel": "Dòng thời gian",
+    "timelinePlaceholder": "Ví dụ: 3 – 6 tháng",
+    "messageLabel": "Tin nhắn",
+    "messagePlaceholder": "Hãy cho chúng tôi biết về dự án của bạn — đó là gì, dự án đang ở giai đoạn nào và bạn hy vọng nó sẽ trở thành gì.",
+    "send": "Gửi yêu cầu",
+    "sending": "Đang gửi",
+    "sent": "Đã gửi ✓",
+    "success": "— Cảm ơn bạn. Chúng tôi sẽ liên lạc lại trong vòng hai ngày làm việc.",
+    "errors": {
+      "checkFields": "Vui lòng kiểm tra các ô được đánh dấu.",
+      "network": "Lỗi mạng. Vui lòng thử lại.",
+      "nameRequired": "Vui lòng cho biết tên của bạn.",
+      "nameShort": "Tên phải có ít nhất 2 ký tự.",
+      "emailRequired": "Vui lòng chia sẻ email của bạn.",
+      "emailInvalid": "Địa chỉ email đó trông không hợp lệ.",
+      "phoneRequired": "Vui lòng chia sẻ số điện thoại.",
+      "phoneChars": "Chỉ sử dụng chữ số, khoảng trắng, dấu gạch ngang, dấu chấm hoặc dấu ngoặc đơn.",
+      "phoneDigits": "Số điện thoại phải có 10 chữ số (có hoặc không có +91).",
+      "messageRequired": "Hãy chia sẻ vài lời.",
+      "messageShort": "Thêm một chút nữa thôi — ít nhất 10 ký tự.",
+      "messageLong": "Đoạn văn này hơi dài — vui lòng giữ cho nó dưới 2000 ký tự."
+    }
+  },
+  "detail": {
+    "scope": "Phạm vi",
+    "ctaLabel": "Bắt đầu một dự án",
+    "entering": "Vào"
+  },
+  "services": {
+    "architecture": {
+      "title": "Ngành kiến trúc",
+      "category": "Nhà ở & Tòa nhà",
+      "tagline": "Những ngôi nhà và công trình kiến trúc được thiết kế rõ ràng và có mục đích.",
+      "desc": "Những ngôi nhà và công trình kiến trúc được thiết kế rõ ràng, có mục đích và gắn kết chặt chẽ với những người sử dụng chúng.",
+      "paragraphs": [
+        "Chúng tôi thiết kế nhà ở và các công trình kiến trúc với sự rõ ràng, mục đích và mối liên hệ mật thiết với những người sử dụng chúng.",
+        "Mỗi dự án đều bắt đầu bằng việc hiểu rõ bạn muốn sống hoặc làm việc như thế nào. Từ đó, chúng tôi định hình không gian dựa trên ánh sáng, tỷ lệ và cảm giác mà nơi đó mang lại — được cân nhắc kỹ lưỡng từ bản phác thảo đầu tiên đến chi tiết cuối cùng."
+      ],
+      "scope": [
+        "Nhà mới",
+        "Không gian thương mại",
+        "Thiết kế ý tưởng",
+        "Địa điểm & Chi tiết"
+      ],
+      "imageCaption": "Nghiên cứu · Ánh sáng & Tỷ lệ"
+    },
+    "interiors": {
+      "title": "Nội thất",
+      "category": "Không gian & Chi tiết",
+      "tagline": "Mỗi không gian nội thất đều mang một cảm xúc trước khi được bài trí bằng đồ đạc.",
+      "desc": "Không gian được định hình thông qua chất liệu, ánh sáng và những chi tiết được thiết kế tỉ mỉ.",
+      "paragraphs": [
+        "Điều quan trọng nằm ở những lựa chọn hiếm khi được chú ý — kết cấu của bề mặt, tỷ lệ của căn phòng, cách ánh sáng chiếu rọi suốt cả ngày. Đó là những quyết định quyết định cảm giác khi sống trong một không gian trong nhiều năm.",
+        "Mọi không gian nội thất của Katha đều được xây dựng theo tiêu chí đó."
+      ],
+      "scope": [
+        "Quy hoạch không gian",
+        "Lựa chọn vật liệu",
+        "Đồ mộc và đồ lắp đặt sẵn",
+        "Ánh sáng & Không khí"
+      ],
+      "imageCaption": "Nghiên cứu · Tài liệu & Chi tiết"
+    },
+    "renovation": {
+      "title": "Cải tạo",
+      "category": "Không gian đang phát triển",
+      "tagline": "Mỗi không gian hiện hữu đều chứa đựng điều gì đó đáng để hiểu trước khi có bất kỳ sự thay đổi nào.",
+      "desc": "Giúp các không gian hiện có phát triển đồng thời xây dựng dựa trên những thế mạnh của chúng.",
+      "paragraphs": [
+        "Tuổi tác để lại dấu ấn trong một công trình kiến trúc — trong cách nó được xây dựng, trong khả năng chịu đựng, và trong giá trị âm thầm được gìn giữ qua thời gian. Công việc của chúng ta là biết nên giữ lại gì, nên phát triển cái gì, và làm thế nào để đưa cả hai cùng tiến lên mà không làm mất đi những gì đã làm cho không gian đó đáng để quay trở lại."
+      ],
+      "scope": [
+        "Cải tạo cấu trúc",
+        "Phục hồi di sản",
+        "Phần mở rộng",
+        "Tái sử dụng thích ứng"
+      ],
+      "imageCaption": "Nghiên cứu · Hiện trạng"
+    },
+    "advisory": {
+      "title": "Tư vấn",
+      "category": "Hướng dẫn & Lập kế hoạch",
+      "tagline": "Đặt câu hỏi đúng ngay từ đầu sẽ giúp tránh được mọi rắc rối về sau.",
+      "desc": "Cung cấp hướng dẫn thông qua việc lập kế hoạch, ra quyết định và thực thi.",
+      "paragraphs": [
+        "Một số dự án cần thiết kế hoàn chỉnh. Những dự án khác chỉ cần một cuộc trò chuyện với người đã có kinh nghiệm để biết chính xác mọi thứ sẽ đi đến đâu — và những quyết định nào là quan trọng nhất trước khi công việc bắt đầu.",
+        "Đó chính là mục tiêu của Katha Advisory."
+      ],
+      "scope": [
+        "Tóm tắt quá trình phát triển",
+        "Tính khả thi",
+        "Định hướng thiết kế",
+        "Hỗ trợ ra quyết định"
+      ],
+      "imageCaption": "Nghiên cứu · Tóm tắt & Định hướng"
+    },
+    "technical-drawings": {
+      "title": "Bản vẽ kỹ thuật",
+      "category": "Tài liệu & Chi tiết",
+      "tagline": "Những bản vẽ biến thiết kế thành công trình xây dựng.",
+      "desc": "Bản vẽ thi công chính xác, chuyển đổi thiết kế thành công trình có thể xây dựng chính xác tại công trường.",
+      "paragraphs": [
+        "Một bản thiết kế chỉ trở thành công trình xây dựng nếu nó có thể được xây dựng chính xác. Bản vẽ kỹ thuật là nơi ý tưởng được chuyển thành chỉ dẫn — mọi kích thước, mối nối và vật liệu đều được ghi rõ ràng đủ để xây dựng mà không cần phỏng đoán.",
+        "Chúng tôi lập bản vẽ thi công chi tiết — bao gồm bản vẽ mặt bằng, mặt cắt, mặt đứng và chi tiết xây dựng — cung cấp cho nhà thầu một nguồn thông tin chính xác duy nhất. Giảm thiểu những bất ngờ tại công trường, giảm bớt sự thỏa hiệp và tạo ra không gian hoàn thiện đúng như bản vẽ."
+      ],
+      "scope": [
+        "Bản vẽ thi công",
+        "Mặt cắt và mặt đứng",
+        "Chi tiết xây dựng",
+        "Tài liệu trang web"
+      ],
+      "imageCaption": "Nghiên cứu · Đường nét & Độ chính xác"
+    },
+    "residential": {
+      "title": "Khu dân cư",
+      "category": "Nhà cửa & Cuộc sống",
+      "tagline": "Những không gian bạn trở về mỗi ngày.",
+      "desc": "Những ngôi nhà được thiết kế dựa trên cách bạn thực sự sinh sống — riêng tư, ấm cúng và bền lâu.",
+      "paragraphs": [
+        "Ngôi nhà là thứ mang tính cá nhân nhất mà chúng ta thiết kế. Đó là nơi lưu giữ những thói quen thường nhật, gia đình bạn và những nghi lễ nhỏ bé lặng lẽ làm cho một ngày trở nên trọn vẹn với bạn.",
+        "Chúng tôi thiết kế những ngôi nhà dựa trên cách bạn thực sự sống – ánh sáng nên chiếu vào buổi sáng như thế nào, mọi người tụ tập ở đâu, những góc yên tĩnh nào bạn cần. Mọi quyết định đều được đưa ra để ngôi nhà vẫn mang lại cảm giác phù hợp nhiều năm sau này."
+      ],
+      "scope": [
+        "Nhà riêng",
+        "Biệt thự",
+        "Căn hộ",
+        "Nhà nông thôn"
+      ],
+      "imageCaption": "Học tập · Nhà cửa & Sinh hoạt"
+    },
+    "commercial": {
+      "title": "Thuộc về thương mại",
+      "category": "Công việc & Bán lẻ",
+      "tagline": "Những không gian hoạt động hiệu quả như chính những người sử dụng chúng.",
+      "desc": "Văn phòng, cửa hàng và không gian dịch vụ khách sạn cân bằng giữa chức năng, thương hiệu và cảm nhận.",
+      "paragraphs": [
+        "Không gian thương mại mang đậm cá tính của doanh nghiệp ngay cả trước khi những lời nói đầu tiên được thốt ra. Nó định hình cách thức làm việc của đội ngũ, cảm nhận của khách hàng và cách thương hiệu được ghi nhớ.",
+        "Chúng tôi thiết kế văn phòng, không gian bán lẻ và khách sạn sao cho đáp ứng được nhu cầu thiết thực và thể hiện cá tính riêng – được xây dựng để hoạt động hiệu quả mỗi ngày và bền bỉ theo thời gian ngay cả khi sử dụng cường độ cao."
+      ],
+      "scope": [
+        "Văn phòng & Không gian làm việc",
+        "Bán lẻ",
+        "Ngành khách sạn",
+        "Phòng trưng bày"
+      ],
+      "imageCaption": "Học tập · Công việc & Thương hiệu"
+    },
+    "high-rise": {
+      "title": "Tòa nhà cao tầng",
+      "category": "Tháp và Mật độ dân cư",
+      "tagline": "Tận hưởng cuộc sống trọn vẹn, ở độ cao.",
+      "desc": "Các tòa nhà nhiều tầng và cao tầng được quy hoạch chú trọng đến ánh sáng, không khí, cấu trúc và cộng đồng.",
+      "paragraphs": [
+        "Xây dựng theo chiều cao đòi hỏi thiết kế phức tạp hơn. Mỗi tầng đều được lặp lại, mọi hệ thống dịch vụ đều chạy dọc theo toàn bộ chiều cao, và hàng trăm sinh hoạt cùng chia sẻ một công trình duy nhất — vì vậy, các chi tiết phải thật chính xác, bởi vì chúng sẽ được nhân lên gấp bội.",
+        "Chúng tôi quy hoạch các tòa nhà cao tầng và nhiều tầng dựa trên những yếu tố làm nên một cuộc sống theo chiều dọc thực sự tốt đẹp: ánh sáng tự nhiên và thông gió chéo, kết cấu vững chắc, lõi công năng hiệu quả và không gian chung tạo nên cảm giác cộng đồng chứ không chỉ đơn thuần là xếp chồng các căn hộ lên nhau."
+      ],
+      "scope": [
+        "Tháp dân cư",
+        "Đa chức năng",
+        "Quy hoạch cấu trúc",
+        "Tiện nghi dùng chung"
+      ],
+      "imageCaption": "Nghiên cứu · Chiều cao & Mật độ"
+    }
+  },
+  "noteCategories": {
+    "Process": "Quá trình",
+    "Culture": "Văn hoá",
+    "Craft": "Thủ công",
+    "Space": "Không gian"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "Vì sao bản phác thảo đầu tiên không bao giờ là câu trả lời",
+      "excerpt": "Bản phác thảo đầu tiên không phải là một thiết kế. Nó là một câu hỏi.",
+      "paragraphs": [
+        "Đó là cách nhanh nhất để tìm ra những điều bạn chưa hiểu về một dự án. Một đường kẻ được vạch ra quá sớm theo hướng sai lầm không tốn kém gì trên giấy tờ nhưng lại gây ra thiệt hại rất lớn trong quá trình xây dựng. Vì vậy, chúng ta vạch ra sớm và một cách linh hoạt – không phải để cam kết mà để khám phá. Để xem tư duy đó đúng ở đâu và sai ở đâu.",
+        "Những dự án thành công là những dự án mà những câu hỏi khó nhất được đặt ra trước khi thiết kế được yêu thích. Trước khi khách hàng gắn bó với một bố cục nào đó. Trước khi bất kỳ ai đầu tư vào một ý tưởng. Luôn có một giai đoạn đầu của mỗi dự án mà mọi thứ vẫn còn khả thi — và đó là giai đoạn mà công việc quan trọng nhất diễn ra.",
+        "Những gì xuất hiện không phải lúc nào cũng như mọi người mong đợi. Một địa điểm tưởng chừng chỉ cần một cách tiếp cận nhất định, nhưng qua quá trình phác thảo, nó lại cho thấy cần một cách tiếp cận trầm lắng hơn. Một bản tóm tắt tưởng chừng đơn giản lại mở ra nhiều điều phong phú hơn khi những đường nét đầu tiên được vẽ ra và đặt câu hỏi.",
+        "Bản phác thảo là nơi chúng ta hiểu được dự án thực sự cần gì."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "Chi tiết mà không ai để ý đến",
+      "excerpt": "Chi tiết quan trọng nhất trong bất kỳ dự án nào lại trở nên vô hình khi công việc hoàn thành.",
+      "paragraphs": [
+        "Nó hiện hữu ở điểm giao thoa giữa hai chất liệu — cách mà sàn đá gặp bức tường trát vữa, đường bóng đổ tạo nên vẻ rõ nét cho khung cửa, độ sâu của khung cửa sổ quyết định ánh sáng chiếu vào dịu nhẹ hay gắt gao. Những quyết định này tạo nên sự khác biệt giữa một không gian được thiết kế tỉ mỉ và một không gian chỉ đơn thuần trông có vẻ hoàn thiện.",
+        "Khách hàng hiếm khi hỏi về những điều này. Họ thường hỏi về bố cục, vật liệu, hoàn thiện. Nhưng những không gian mà họ nhớ đến — những không gian mà họ mô tả cho người khác, những không gian đọng lại trong tâm trí họ — hầu như luôn là những không gian mà người ta đã chú ý đến từng chi tiết nhỏ như vậy.",
+        "Một điểm giao nhau được thiết kế tồi tệ sẽ gây chú ý mỗi khi có người đứng gần đó. Một đường bóng đổ sai vị trí làm phẳng bề mặt đáng lẽ phải có chiều sâu. Những điều này diễn ra dưới mức nhận thức – nhưng chúng vẫn diễn ra.",
+        "Nghệ thuật kiến trúc nằm ở những chi tiết mà không ai nhìn thấy. Chính sự vô hình đó mới là điểm mấu chốt."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "Những kiến thức của Ấn Độ về không gian mà thế giới đang học lại.",
+      "excerpt": "Những ý tưởng tinh tế nhất trong kiến trúc đương đại thực ra không hề mới. Chúng đã bị lãng quên.",
+      "paragraphs": [
+        "Làm mát thụ động thông qua hình dạng sân trong. Khối lượng nhiệt trong các bức tường đá giúp giữ cho không gian bên trong ổn định mà không cần can thiệp cơ học. Hiên nhà – không nằm trong cũng không nằm ngoài – điều hòa nhiệt độ, lọc ánh sáng, tạo ra một ranh giới mà không một thiết bị điều hòa nào có thể thay thế được. Giếng bậc thang giải quyết vấn đề thu gom nước mưa, tụ họp cộng đồng và vi khí hậu trong cùng một công trình.",
+        "Đây không phải là những sự trùng hợp ngẫu nhiên. Chúng là kết quả của hàng thế kỷ quan sát được tích lũy vào nghề nghiệp — được truyền lại qua từng bàn tay, chứ không phải qua sách giáo khoa. Kiến thức đó không biến mất vì nó ngừng hoạt động. Nó biến mất vì chủ nghĩa hiện đại du nhập đến nhanh hơn bất kỳ ai nghĩ đến việc đặt câu hỏi về nó.",
+        "Thế giới hiện đang chi những nguồn lực khổng lồ để khám phá lại những gì đã được biết đến từ trước. Thiết kế sinh thái. Thông gió tự nhiên. Tỷ lệ phù hợp với con người. Vật liệu có nguồn gốc địa phương. Đây không phải là xu hướng. Đây là sự trở lại.",
+        "Chúng tôi xây dựng dựa trên kiến thức đó một cách có chủ đích — không phải vì hoài niệm. Bởi vì nó hiệu quả hơn."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "Về việc thiết kế cho hai mươi năm tới",
+      "excerpt": "Mỗi dự án sẽ tồn tại lâu hơn cả cuộc trò chuyện đã khởi nguồn cho nó.",
+      "paragraphs": [
+        "Gia đình đã tạo ra nó sẽ thay đổi. Trẻ em sẽ lớn lên và rời đi. Các doanh nghiệp sẽ dịch chuyển. Cách mọi người làm việc, tụ họp và di chuyển trong không gian đã khác so với một thập kỷ trước — và sẽ lại khác trong thập kỷ tới. Một không gian được thiết kế chỉ dành cho ngày hôm nay đang trở nên lỗi thời.",
+        "Câu trả lời không phải là những không gian mở và những bức tường di động. Câu trả lời nằm ở việc thấu hiểu sâu sắc hơn những gì là bất biến trong hành vi con người.",
+        "Con người sẽ luôn cần một nơi để ở một mình và một nơi để tụ họp. Họ sẽ luôn cảm nhận được ánh sáng tự nhiên. Họ sẽ luôn cảm nhận được sự khác biệt giữa trần nhà có độ cao phù hợp và trần nhà không đạt chuẩn. Họ sẽ luôn biết khi nào một vật liệu là thật và khi nào nó chỉ giả vờ là thứ khác.",
+        "Hãy thiết kế dựa trên những yếu tố bất biến đó. Xây dựng bằng những vật liệu bền đẹp theo thời gian. Hãy chừa chỗ trong bản thiết kế để cuộc sống có thể diễn ra mà không làm phá vỡ kiến trúc.",
+        "Đó là lý do tại sao một không gian có thể tồn tại đến hai mươi năm mà vẫn mang lại cảm giác phù hợp."
+      ]
+    }
+  }
+}

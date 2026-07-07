@@ -9,10 +9,14 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import type { ReactElement } from "react";
+import { useLanguage } from "@/components/language-provider";
+import { localizedNavLabel } from "@/lib/i18n/nav-label";
+import type { Dictionary } from "@/lib/i18n/dictionary";
 
 type NavItem = { href: string; label: string };
 
 export function DetailView({
+  slug,
   title,
   paragraphs,
   image,
@@ -24,10 +28,13 @@ export function DetailView({
   scope,
   imageCaption,
   ctaHref = "/contact",
-  ctaLabel = "Begin a Project",
+  ctaLabel,
   prev,
   next,
 }: {
+  /** When set, translatable copy is sourced from t.services[slug], falling
+   *  back to the English props below if no translation key matches. */
+  slug?: string;
   title: string;
   paragraphs: string[];
   image?: string;
@@ -44,6 +51,23 @@ export function DetailView({
   next: NavItem | null;
 }): ReactElement {
   const reduceMotion = useReducedMotion();
+  const { t } = useLanguage();
+
+  const svc = slug
+    ? (t.services as Record<string, {
+        title: string; category: string; tagline: string;
+        paragraphs: string[]; scope: string[]; imageCaption: string;
+      }>)[slug]
+    : undefined;
+  if (svc) {
+    title = svc.title || title;
+    eyebrow = svc.category || eyebrow;
+    tagline = svc.tagline || tagline;
+    paragraphs = svc.paragraphs?.length ? svc.paragraphs : paragraphs;
+    scope = svc.scope?.length ? svc.scope : scope;
+    imageCaption = svc.imageCaption || imageCaption;
+  }
+  const resolvedCtaLabel = ctaLabel ?? t.detail.ctaLabel;
 
   /* ── Mouse-tracked 3D tilt on the image ── */
   const mouseX = useMotionValue(0.5);
@@ -203,7 +227,7 @@ export function DetailView({
                     color: "var(--text-dim)",
                   }}
                 >
-                  — Scope
+                  {t.detail.scope}
                 </p>
                 <ul className="grid grid-cols-2 gap-x-6 gap-y-2 lg:grid-cols-4">
                   {scope.map((item, i) => (
@@ -256,7 +280,7 @@ export function DetailView({
                   color: "var(--text)",
                 }}
               >
-                {ctaLabel}
+                {resolvedCtaLabel}
                 <span className="accent-arrow transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </motion.div>
@@ -343,8 +367,8 @@ export function DetailView({
           transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:mt-7 md:pt-7"
         >
-          {prev ? <NavKey nav={prev} dir="prev" /> : <span />}
-          {next ? <NavKey nav={next} dir="next" /> : <span />}
+          {prev ? <NavKey nav={prev} dir="prev" t={t} /> : <span />}
+          {next ? <NavKey nav={next} dir="next" t={t} /> : <span />}
         </motion.nav>
       </main>
     </div>
@@ -353,7 +377,7 @@ export function DetailView({
 
 /* ─────────────────── nav key — magnetic hover ─────────────────── */
 
-function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
+function NavKey({ nav, dir, t }: { nav: NavItem; dir: "prev" | "next"; t: Dictionary }) {
   const isNext = dir === "next";
   return (
     <Link
@@ -379,7 +403,7 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
             color: "var(--text-dim)",
           }}
         >
-          {isNext ? "Next" : "Previous"}
+          {isNext ? t.nav.next : t.nav.previous}
         </span>
         <span
           className="truncate transition-opacity duration-300 group-hover:opacity-70"
@@ -393,7 +417,7 @@ function NavKey({ nav, dir }: { nav: NavItem; dir: "prev" | "next" }) {
             maxWidth: "60vw",
           }}
         >
-          {nav.label}
+          {localizedNavLabel(t, nav.href, nav.label)}
         </span>
       </span>
     </Link>

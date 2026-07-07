@@ -2,11 +2,15 @@
 
 import { useEffect, useRef, useState, type FormEvent, type FocusEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/components/language-provider";
+import type { Dictionary } from "@/lib/i18n/dictionary";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 type FieldName = "name" | "email" | "phone" | "message";
 type FieldErrors = Partial<Record<FieldName, string>>;
+
+type ContactErrors = Dictionary["contactForm"]["errors"];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_ALLOWED = /^[+\d\s().\-]+$/;
@@ -14,20 +18,20 @@ const MIN_NAME = 2;
 const MIN_MESSAGE = 10;
 const MAX_MESSAGE = 2000;
 
-function validateField(name: FieldName, value: string): string {
+function validateField(name: FieldName, value: string, e: ContactErrors): string {
   const v = value.trim();
   switch (name) {
     case "name":
-      if (!v) return "Please share your name.";
-      if (v.length < MIN_NAME) return `Name should be at least ${MIN_NAME} characters.`;
+      if (!v) return e.nameRequired;
+      if (v.length < MIN_NAME) return e.nameShort;
       return "";
     case "email":
-      if (!v) return "Please share your email.";
-      if (!EMAIL_RE.test(v)) return "That doesn't look like a valid email.";
+      if (!v) return e.emailRequired;
+      if (!EMAIL_RE.test(v)) return e.emailInvalid;
       return "";
     case "phone":
-      if (!v) return "Please share a phone number.";
-      if (!PHONE_ALLOWED.test(v)) return "Use digits, spaces, dashes, dots or parentheses only.";
+      if (!v) return e.phoneRequired;
+      if (!PHONE_ALLOWED.test(v)) return e.phoneChars;
       {
         /* Strip everything except digits, then strip a leading 91 or 0
            that visitors often type before their 10-digit number. */
@@ -35,19 +39,22 @@ function validateField(name: FieldName, value: string): string {
         if (digits.length === 12 && digits.startsWith("91")) digits = digits.slice(2);
         if (digits.length === 11 && digits.startsWith("0"))  digits = digits.slice(1);
         if (digits.length !== 10) {
-          return "Phone should be 10 digits (with or without +91).";
+          return e.phoneDigits;
         }
       }
       return "";
     case "message":
-      if (!v) return "Please share a few words.";
-      if (v.length < MIN_MESSAGE) return `Just a little more — at least ${MIN_MESSAGE} characters.`;
-      if (v.length > MAX_MESSAGE) return `That's a bit long — please keep it under ${MAX_MESSAGE} characters.`;
+      if (!v) return e.messageRequired;
+      if (v.length < MIN_MESSAGE) return e.messageShort;
+      if (v.length > MAX_MESSAGE) return e.messageLong;
       return "";
   }
 }
 
 export function ContactForm() {
+  const { t } = useLanguage();
+  const cf = t.contactForm;
+  const errs = cf.errors;
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -65,7 +72,7 @@ export function ContactForm() {
 
   function handleBlur(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const name = e.currentTarget.name as FieldName;
-    const msg = validateField(name, e.currentTarget.value);
+    const msg = validateField(name, e.currentTarget.value, errs);
     setErrors((prev) => ({ ...prev, [name]: msg || undefined }));
   }
 
@@ -97,17 +104,17 @@ export function ContactForm() {
 
     /* Validate everything on submit and surface every issue at once. */
     const allErrors: FieldErrors = {
-      name: validateField("name", payload.name) || undefined,
-      email: validateField("email", payload.email) || undefined,
-      phone: validateField("phone", payload.phone) || undefined,
-      message: validateField("message", payload.message) || undefined,
+      name: validateField("name", payload.name, errs) || undefined,
+      email: validateField("email", payload.email, errs) || undefined,
+      phone: validateField("phone", payload.phone, errs) || undefined,
+      message: validateField("message", payload.message, errs) || undefined,
     };
     const firstBadField = (["name", "email", "phone", "message"] as FieldName[])
       .find((k) => allErrors[k]);
 
     if (firstBadField) {
       setErrors(allErrors);
-      setErrorMsg("Please check the highlighted fields.");
+      setErrorMsg(errs.checkFields);
       setStatus("error");
       /* Move focus to the first invalid input so the user lands on it. */
       const node = form.elements.namedItem(firstBadField) as
@@ -148,7 +155,7 @@ export function ContactForm() {
       setStatus("success");
     } catch (err) {
       console.error("[contact] network error", err);
-      setErrorMsg("Network error. Please try again.");
+      setErrorMsg(errs.network);
       setStatus("error");
     }
   }
@@ -199,13 +206,13 @@ export function ContactForm() {
       {/* Name + Email row */}
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="block space-y-2">
-          <span style={fieldLabelStyle}>Name</span>
+          <span style={fieldLabelStyle}>{cf.nameLabel}</span>
           <input
             type="text"
             name="name"
             required
             autoComplete="name"
-            placeholder="Your name"
+            placeholder={cf.namePlaceholder}
             disabled={status === "submitting"}
             onBlur={handleBlur}
             onInput={handleInput}
@@ -217,13 +224,13 @@ export function ContactForm() {
           <AnimatePresence>{inlineError("name")}</AnimatePresence>
         </label>
         <label className="block space-y-2">
-          <span style={fieldLabelStyle}>Email</span>
+          <span style={fieldLabelStyle}>{cf.emailLabel}</span>
           <input
             type="email"
             name="email"
             required
             autoComplete="email"
-            placeholder="you@example.com"
+            placeholder={cf.emailPlaceholder}
             disabled={status === "submitting"}
             onBlur={handleBlur}
             onInput={handleInput}
@@ -238,14 +245,14 @@ export function ContactForm() {
 
       {/* Phone */}
       <label className="block space-y-2">
-        <span style={fieldLabelStyle}>Phone</span>
+        <span style={fieldLabelStyle}>{cf.phoneLabel}</span>
         <input
           type="tel"
           name="phone"
           required
           autoComplete="tel"
           inputMode="tel"
-          placeholder="+91 98765 43210"
+          placeholder={cf.phonePlaceholder}
           disabled={status === "submitting"}
           onBlur={handleBlur}
           onInput={handleInput}
@@ -260,22 +267,22 @@ export function ContactForm() {
       {/* Project Type · Timeline — optional */}
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="block space-y-2">
-          <span style={fieldLabelStyle}>Project Type</span>
+          <span style={fieldLabelStyle}>{cf.projectTypeLabel}</span>
           <input
             type="text"
             name="projectType"
-            placeholder="e.g. Interiors"
+            placeholder={cf.projectTypePlaceholder}
             disabled={status === "submitting"}
             className={inputBaseClass}
             style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
           />
         </label>
         <label className="block space-y-2">
-          <span style={fieldLabelStyle}>Timeline</span>
+          <span style={fieldLabelStyle}>{cf.timelineLabel}</span>
           <input
             type="text"
             name="timeline"
-            placeholder="e.g. 3 – 6 months"
+            placeholder={cf.timelinePlaceholder}
             disabled={status === "submitting"}
             className={inputBaseClass}
             style={{ ...inputBaseStyle, borderColor: "var(--border-medium)" }}
@@ -286,7 +293,7 @@ export function ContactForm() {
       {/* Message */}
       <label className="block space-y-2">
         <span className="flex items-baseline justify-between gap-3">
-          <span style={fieldLabelStyle}>Message</span>
+          <span style={fieldLabelStyle}>{cf.messageLabel}</span>
           <span
             style={{
               fontFamily: "var(--font-inter)",
@@ -303,7 +310,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          placeholder="Tell us about your project — what it is, where it sits, and what you are hoping it becomes"
+          placeholder={cf.messagePlaceholder}
           disabled={status === "submitting"}
           onBlur={handleBlur}
           onInput={handleInput}
@@ -335,13 +342,13 @@ export function ContactForm() {
             {status === "submitting" ? (
               <>
                 <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-current" />
-                Sending
+                {cf.sending}
               </>
             ) : status === "success" ? (
-              "Sent ✓"
+              cf.sent
             ) : (
               <>
-                Send Enquiry
+                {cf.send}
                 <span
                   className="accent-arrow inline-block transition-transform duration-300 group-hover:translate-x-1"
                   aria-hidden
@@ -369,7 +376,7 @@ export function ContactForm() {
                   color: "var(--text-muted)",
                 }}
               >
-                — Thank you. We&apos;ll be in touch within two working days.
+                {cf.success}
               </motion.p>
             )}
             {status === "error" && errorMsg && (

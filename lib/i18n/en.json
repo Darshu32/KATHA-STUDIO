@@ -1,0 +1,352 @@
+{
+  "intro": {
+    "chooseLanguage": "Choose your language",
+    "enter": "Enter"
+  },
+  "nav": {
+    "studio": "Studio",
+    "approach": "Approach",
+    "services": "Services",
+    "journal": "Journal",
+    "contact": "Contact",
+    "home": "Home",
+    "backToHome": "Back to Home",
+    "next": "Next",
+    "previous": "Previous",
+    "locationLine": "KATHA Studio · Bengaluru",
+    "whatWeDo": "What We Do",
+    "whatWeBuild": "What We Build",
+    "allServices": "All Services"
+  },
+  "home": {
+    "eyebrow": "Architecture · Interiors · Renovation · Landscape",
+    "titleLine1": "Every space has a story,",
+    "titleLine2": "waiting to be built.",
+    "mystery": [
+      "Spaces that hold their breath",
+      "The quieter, the more alive",
+      "What stays after the drawing ends",
+      "Light, patience, a single gesture",
+      "Architecture, in its lower voice"
+    ],
+    "subhead": "At Katha Studio, every project begins with listening. We take the time to understand people, place and purpose before shaping spaces that feel personal, timeless and deeply connected to the lives they support.",
+    "location": "Based in Bengaluru · Working Across India · Open to Select International Collaborations",
+    "cta": "Start a Conversation",
+    "cardStudioLabel": "Studio",
+    "cardStudioTagline": "Who we are",
+    "cardContactLabel": "Contact",
+    "cardContactTagline": "Start a conversation",
+    "category": {
+      "intro": "Intro",
+      "studio": "Studio",
+      "contact": "Contact",
+      "residence": "Residence",
+      "interior": "Interior",
+      "renovation": "Renovation",
+      "advisory": "Advisory",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "highRise": "High-Rise",
+      "service": "Service"
+    }
+  },
+  "whyKatha": {
+    "eyebrow": "Why Katha",
+    "heading": "Katha Means Story",
+    "para1": "Every project carries something that can't be briefed — the way a family actually lives, what a business needs to feel like from the inside, how a landscape wants to be experienced, what a site is quietly asking for.",
+    "para2Line1": "Our work is learning to read that.",
+    "para2Line2": "Then building it precisely.",
+    "process": {
+      "sketchbook": "Sketchbook",
+      "tracingPaper": "Tracing Paper",
+      "handwrittenNotes": "Handwritten Notes",
+      "materialBoard": "Material Board"
+    }
+  },
+  "homeStory": {
+    "offerEyebrow": "What We Offer",
+    "offerHeading": "How We Build",
+    "craftEyebrow": "Craft Matters",
+    "craftBody": "Architecture is shaped through thousands of decisions. The quality of a material, the proportion of a room, the way light enters a space and the detail of a junction influence how a space is experienced every day.",
+    "closingCta": "Let's Discuss Your Project",
+    "materials": {
+      "wood": "Wood",
+      "stone": "Stone",
+      "joinery": "Joinery",
+      "sketches": "Sketches",
+      "models": "Models",
+      "materialBoards": "Material Boards",
+      "details": "Details"
+    }
+  },
+  "approach": {
+    "eyebrow": "How We Work",
+    "title": "Our Approach",
+    "intro": "Every stage has a purpose. Nothing moves forward until the current one is ready.",
+    "startConversation": "Start a Conversation",
+    "steps": [
+      { "title": "Listen", "body": "Every project begins before the brief — in how you live, how your business moves, what the site is quietly asking for." },
+      { "title": "Explore", "body": "Ideas are tested openly. Proportion, light and material are studied before any direction is committed to." },
+      { "title": "Design", "body": "The concept is shaped into a whole where every decision answers to the brief and to the space itself." },
+      { "title": "Refine", "body": "The details are resolved. This is the quiet work that separates a space that looks finished from one that feels right." },
+      { "title": "Deliver", "body": "The work is seen through to completion — the original intent held steady to the final detail." }
+    ]
+  },
+  "servicesPage": {
+    "eyebrow": "What We Offer",
+    "title": "How We Build",
+    "getInTouch": "Get in Touch"
+  },
+  "journalPage": {
+    "eyebrow": "From the Studio",
+    "title": "Journal",
+    "intro": "Thinking from the studio — on space, material and the details that matter.",
+    "inPreparation": "In preparation",
+    "stayInTouch": "Stay in Touch"
+  },
+  "marquee": [
+    "Katha Studio",
+    "Stillness, Designed",
+    "Bengaluru",
+    "Architecture as Pause",
+    "Material Calm",
+    "Rooms That Listen",
+    "Selected Work",
+    "Begin Quietly"
+  ],
+  "studioPage": {
+    "whyEyebrow": "Why Katha",
+    "whyHeading": "Katha Means Story",
+    "whyPara1": "Every project carries something that can't be briefed — the way a family actually lives, what a business needs to feel like from the inside, how a landscape wants to be experienced, what a site is quietly asking for.",
+    "whyPara2Line1": "Our work is learning to read that.",
+    "whyPara2Line2": "Then building it precisely.",
+    "nehaEyebrow": "Meet Neha",
+    "nehaHeading": "Ar. Neha",
+    "nehaPortraitAlt": "Portrait of Ar. Neha, Founder & Principal Architect of Katha Studio",
+    "nehaPara1": "Space has memory.",
+    "nehaPara2": "It carries how it was built, what it was built to last through, and how it makes people feel long after the work is done.",
+    "nehaPara3": "I have spent years learning to read that — in the weight of a material chosen for how it ages, in proportions drawn from traditions that understood human scale long before it became a discipline, in the quiet logic of a room that never needs explaining because everything in it is exactly where it belongs.",
+    "nehaPara4": "That depth of attention is what every Katha project is built on.",
+    "nehaName": "Ar. Neha",
+    "nehaRole": "Founder & Principal Architect",
+    "perspectiveEyebrow": "Our Perspective",
+    "perspective1": "The best spaces are never accidental.",
+    "perspective2": "Every material is chosen for how it lives over decades.",
+    "perspective3": "We draw from building traditions that understood permanence, scale, and human experience at their deepest level.",
+    "perspective4": "We design for the life that happens inside a space — not just the moment it is completed.",
+    "valuesEyebrow": "What We Value",
+    "values": [
+      { "title": "Depth", "body": "We ask what a space needs to become — not just what it needs to look like." },
+      { "title": "Permanence", "body": "Every material, every proportion, every detail is chosen to last and earn its place over time." },
+      { "title": "Roots", "body": "We draw from building traditions that carried intelligence about space long before it was written down." },
+      { "title": "Precision", "body": "Nothing in a Katha project is arbitrary. Every decision has a reason that holds." },
+      { "title": "Foresight", "body": "We design for the life a space will carry — ten years, twenty years, long after the first day." }
+    ],
+    "craftEyebrow": "Craft & Materials",
+    "craftPara1": "Every decision in a building is also a material decision.",
+    "craftPara2": "What something is made of determines how it ages, how it feels underhand, how it holds light, how it sits in its climate. We choose materials for what they do over time — not just how they read on the day they are installed.",
+    "craftTags": ["Wood", "Stone", "Joinery", "Sketches", "Models", "Material Boards", "Details"],
+    "clientsEyebrow": "Who We Work With",
+    "clientsPara1": "We work with people who see a space as more than a project.",
+    "clientsPara2": "Families who want a home built to last and feel right for generations. Businesses who understand that their environment reflects who they are. Developers who know that the right details at the beginning determine everything that follows.",
+    "clientsPara3": "We take on work we can do with full commitment. Nothing less.",
+    "noteBody": "Every project represents an important chapter in someone's life. It is a responsibility we value deeply. Thank you for considering Katha Studio as part of that journey.",
+    "noteSignature": "— Ar. Neha"
+  },
+  "contactPage": {
+    "eyebrow": "Get in Touch",
+    "titleLine1": "Begin a",
+    "titleLine2": "conversation",
+    "details": {
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "studioLabel": "Studio",
+      "studioValue": "Bengaluru, India",
+      "portfolioLabel": "Portfolio",
+      "portfolioValue": "Available on request — write to us"
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+91 98765 43210",
+    "projectTypeLabel": "Project Type",
+    "projectTypePlaceholder": "e.g. Interiors",
+    "timelineLabel": "Timeline",
+    "timelinePlaceholder": "e.g. 3 – 6 months",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project — what it is, where it sits, and what you are hoping it becomes",
+    "send": "Send Enquiry",
+    "sending": "Sending",
+    "sent": "Sent ✓",
+    "success": "— Thank you. We'll be in touch within two working days.",
+    "errors": {
+      "checkFields": "Please check the highlighted fields.",
+      "network": "Network error. Please try again.",
+      "nameRequired": "Please share your name.",
+      "nameShort": "Name should be at least 2 characters.",
+      "emailRequired": "Please share your email.",
+      "emailInvalid": "That doesn't look like a valid email.",
+      "phoneRequired": "Please share a phone number.",
+      "phoneChars": "Use digits, spaces, dashes, dots or parentheses only.",
+      "phoneDigits": "Phone should be 10 digits (with or without +91).",
+      "messageRequired": "Please share a few words.",
+      "messageShort": "Just a little more — at least 10 characters.",
+      "messageLong": "That's a bit long — please keep it under 2000 characters."
+    }
+  },
+  "detail": {
+    "scope": "Scope",
+    "ctaLabel": "Begin a Project",
+    "entering": "Entering"
+  },
+  "services": {
+    "architecture": {
+      "title": "Architecture",
+      "category": "Homes & Buildings",
+      "tagline": "Homes and buildings designed with clarity and purpose.",
+      "desc": "Homes and buildings designed with clarity, purpose and a strong connection to the people who use them.",
+      "paragraphs": [
+        "We design homes and buildings with clarity, purpose and a strong connection to the people who use them.",
+        "Every project begins by understanding how you want to live or work. From there, we shape spaces around light, proportion and the way a place is meant to feel — considered carefully from the first sketch to the final detail."
+      ],
+      "scope": ["New Homes", "Commercial Spaces", "Concept Design", "Site & Detailing"],
+      "imageCaption": "Study · Light & Proportion"
+    },
+    "interiors": {
+      "title": "Interiors",
+      "category": "Spaces & Detailing",
+      "tagline": "Every interior holds a feeling before it holds furniture.",
+      "desc": "Spaces shaped through materiality, light and thoughtful detailing.",
+      "paragraphs": [
+        "The work is in the choices that are rarely seen — the texture of a surface, the proportion of a room, the way light settles across the day. These are the decisions that determine how a space feels to live inside for years.",
+        "Every Katha interior is built to that."
+      ],
+      "scope": ["Spatial Planning", "Material Selection", "Joinery & Built-ins", "Light & Atmosphere"],
+      "imageCaption": "Study · Material & Detail"
+    },
+    "renovation": {
+      "title": "Renovation",
+      "category": "Evolving Spaces",
+      "tagline": "Every existing space carries something worth understanding before anything is changed.",
+      "desc": "Helping existing spaces evolve while building on their strengths.",
+      "paragraphs": [
+        "Age leaves intelligence in a building — in how it was constructed, what it was built to withstand, what has quietly held its value over time. Our work is knowing what to keep, what to evolve, and how to bring both forward without losing what made the space worth returning to."
+      ],
+      "scope": ["Structural Reworking", "Heritage Restoration", "Extensions", "Adaptive Reuse"],
+      "imageCaption": "Study · The Existing"
+    },
+    "advisory": {
+      "title": "Advisory",
+      "category": "Guidance & Planning",
+      "tagline": "The right question asked early saves everything that comes after.",
+      "desc": "Providing guidance through planning, decision-making and execution.",
+      "paragraphs": [
+        "Some projects need full design. Others need one conversation with someone who has seen enough to know exactly where things are headed — and what decisions will matter most before work begins.",
+        "That is what Katha Advisory is."
+      ],
+      "scope": ["Brief Development", "Feasibility", "Design Direction", "Decision Support"],
+      "imageCaption": "Study · Brief & Direction"
+    },
+    "technical-drawings": {
+      "title": "Technical Drawings",
+      "category": "Documentation & Detail",
+      "tagline": "The drawings that turn a design into a building.",
+      "desc": "Precise construction drawings that translate a design into something a site can build exactly.",
+      "paragraphs": [
+        "A design only becomes a building if it can be built accurately. Technical drawings are where intent becomes instruction — every dimension, junction and material set down clearly enough to build without guesswork.",
+        "We prepare detailed working drawings — plans, sections, elevations and construction details — that give contractors a single, precise source of truth. Fewer surprises on site, fewer compromises, and a finished space that matches what was drawn."
+      ],
+      "scope": ["Working Drawings", "Sections & Elevations", "Construction Details", "Site Documentation"],
+      "imageCaption": "Study · Line & Precision"
+    },
+    "residential": {
+      "title": "Residential",
+      "category": "Homes & Living",
+      "tagline": "The spaces you return to every day.",
+      "desc": "Homes designed around how you actually live — private, warm and made to last.",
+      "paragraphs": [
+        "A home is the most personal thing we design. It holds your routines, your family, and the small rituals that quietly make a day feel like yours.",
+        "We shape residences around the way you really live — how light should fall in the morning, where people gather, what quiet corners you need. Every decision is made so the house still feels right many years from now."
+      ],
+      "scope": ["Private Homes", "Villas", "Apartments", "Farmhouses"],
+      "imageCaption": "Study · Home & Living"
+    },
+    "commercial": {
+      "title": "Commercial",
+      "category": "Work & Retail",
+      "tagline": "Spaces that work as hard as the people in them.",
+      "desc": "Offices, stores and hospitality spaces that balance function, brand and feeling.",
+      "paragraphs": [
+        "A commercial space carries a business's character before a single word is spoken. It shapes how a team works, how customers feel, and how a brand is remembered.",
+        "We design offices, retail and hospitality spaces that are practical where they need to be and expressive where it counts — built to perform every day and to age well under real, heavy use."
+      ],
+      "scope": ["Offices & Workspaces", "Retail", "Hospitality", "Showrooms"],
+      "imageCaption": "Study · Work & Brand"
+    },
+    "high-rise": {
+      "title": "High-Rise",
+      "category": "Towers & Density",
+      "tagline": "Living well, at height.",
+      "desc": "Multi-storey and high-rise buildings planned for light, air, structure and community.",
+      "paragraphs": [
+        "Building upward asks more of a design. Every floor repeats, every service runs the full height, and hundreds of lives share a single structure — so the details have to be right, because they multiply.",
+        "We plan high-rise and multi-storey buildings around what makes vertical living genuinely good: natural light and cross-ventilation, honest structure, efficient cores, and shared spaces that build a sense of community rather than simply stacking homes."
+      ],
+      "scope": ["Residential Towers", "Mixed-Use", "Structural Planning", "Shared Amenities"],
+      "imageCaption": "Study · Height & Density"
+    }
+  },
+  "noteCategories": {
+    "Process": "Process",
+    "Culture": "Culture",
+    "Craft": "Craft",
+    "Space": "Space"
+  },
+  "notes": {
+    "why-the-first-sketch-is-never-the-answer": {
+      "title": "Why the First Sketch Is Never the Answer",
+      "excerpt": "The first sketch is not a design. It is a question.",
+      "paragraphs": [
+        "It is the fastest way to find out what you do not yet understand about a project. A line drawn too early in the wrong direction costs nothing on paper and everything in construction. So we draw early and loosely — not to commit but to reveal. To see where the thinking holds and where it does not.",
+        "The projects that end well are the ones where the hardest questions were asked before the design was loved. Before the client was attached to a layout. Before anyone had invested in an idea. There is a window early in every project where everything is still possible — and that window is where the most important work happens.",
+        "What comes out of it is not always what anyone expected. A site that seemed to demand one approach reveals through sketching that it needs something quieter. A brief that seemed straightforward opens into something richer once the first lines are drawn and questioned.",
+        "The sketch is where we learn what the project is really asking for."
+      ]
+    },
+    "the-detail-nobody-sees": {
+      "title": "The Detail Nobody Sees",
+      "excerpt": "The most important detail in any project is invisible by the time the work is done.",
+      "paragraphs": [
+        "It lives in the junction between two materials — the way a stone floor meets a plastered wall, the shadow line that makes a door frame read cleanly, the depth of a window reveal that determines whether light enters softly or harshly. These decisions separate a space that feels considered from one that merely looks finished.",
+        "Clients rarely ask about these things. They ask about layouts, materials, finishes. But the spaces they remember — the ones they describe to other people, the ones that stay with them — are almost always the ones where someone paid attention at exactly this level.",
+        "A junction resolved badly speaks every time someone stands near it. A shadow line out of place flattens a surface that should have depth. These things register below conscious awareness — but they register.",
+        "The craft of architecture lives in the details nobody sees. That invisibility is the point."
+      ]
+    },
+    "what-india-knows-about-space": {
+      "title": "What India Knows About Space That the World Is Relearning",
+      "excerpt": "The most sophisticated ideas in contemporary architecture were never new. They were forgotten.",
+      "paragraphs": [
+        "Passive cooling through courtyard geometry. Thermal mass in stone walls that keep interiors stable without mechanical intervention. The verandah — neither inside nor outside — moderating heat, filtering light, creating a threshold that no air conditioning unit has ever replaced. Step-wells that solved water harvesting, public gathering and microclimate in a single structure.",
+        "These were not accidents. They were centuries of observation built into craft — passed through hands, not textbooks. The knowledge did not disappear because it stopped working. It disappeared because imported modernism arrived faster than anyone thought to question it.",
+        "The world is now spending enormous resources rediscovering what was already known. Biophilic design. Passive ventilation. Human-scale proportion. Locally sourced material. These are not trends. They are returns.",
+        "We build with that knowledge deliberately — not as nostalgia. Because it works better."
+      ]
+    },
+    "on-designing-for-twenty-years-from-now": {
+      "title": "On Designing for Twenty Years From Now",
+      "excerpt": "Every project will outlast the conversation that started it.",
+      "paragraphs": [
+        "The family that briefed it will change. Children will grow and leave. Businesses will shift. The way people work, gather and move through space is already different from a decade ago — and will be different again in the next one. A space designed only for today is already becoming obsolete.",
+        "The answer is not open plans and moveable walls. It is a deeper reading of what is permanent in human behaviour and what is not.",
+        "People will always need a place to be alone and a place to gather. They will always respond to natural light. They will always feel the difference between a ceiling at the right height and one that is not. They will always know when a material is honest and when it is pretending to be something else.",
+        "Design for those constants. Build with materials that age with dignity. Leave room in the plan for life to move through without breaking the architecture.",
+        "That is how a space lasts twenty years and still feels right."
+      ]
+    }
+  }
+}

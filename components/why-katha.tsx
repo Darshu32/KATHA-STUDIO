@@ -2,6 +2,7 @@
 
 import { FadeUp } from "@/components/animations";
 import { NotebookPen, Layers, PenLine, SwatchBook } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 
 /* ─────────────────────────────────────────────
    WhyKatha — sits immediately after the hero.
@@ -22,13 +23,14 @@ const eyebrow = {
 };
 
 const PROCESS = [
-  { icon: NotebookPen, label: "Sketchbook" },
-  { icon: Layers, label: "Tracing Paper" },
-  { icon: PenLine, label: "Handwritten Notes" },
-  { icon: SwatchBook, label: "Material Board" },
+  { icon: NotebookPen, key: "sketchbook" as const },
+  { icon: Layers, key: "tracingPaper" as const },
+  { icon: PenLine, key: "handwrittenNotes" as const },
+  { icon: SwatchBook, key: "materialBoard" as const },
 ];
 
 export function WhyKatha() {
+  const { t } = useLanguage();
   return (
     <section className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="section-pad mx-auto w-full max-w-[88rem] px-5 sm:px-8 md:px-12 lg:px-20">
@@ -37,7 +39,7 @@ export function WhyKatha() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-start md:gap-16 lg:gap-24">
           <div>
             <FadeUp>
-              <p style={eyebrow}>— Why Katha</p>
+              <p style={eyebrow}>{t.whyKatha.eyebrow}</p>
             </FadeUp>
             <FadeUp delay={0.08} className="mt-6 md:mt-8">
               <h2
@@ -50,7 +52,7 @@ export function WhyKatha() {
                   color: "var(--text)",
                 }}
               >
-                Katha Means Story
+                {t.whyKatha.heading}
               </h2>
             </FadeUp>
           </div>
@@ -63,10 +65,7 @@ export function WhyKatha() {
                 color: "var(--text-muted)",
               }}
             >
-              Every project carries something that can&apos;t be briefed — the
-              way a family actually lives, what a business needs to feel like
-              from the inside, how a landscape wants to be experienced, what a
-              site is quietly asking for.
+              {t.whyKatha.para1}
             </p>
             <p
               style={{
@@ -77,9 +76,9 @@ export function WhyKatha() {
                 marginTop: "1.5rem",
               }}
             >
-              Our work is learning to read that.
+              {t.whyKatha.para2Line1}
               <br />
-              Then building it precisely.
+              {t.whyKatha.para2Line2}
             </p>
           </FadeUp>
         </div>
@@ -89,9 +88,9 @@ export function WhyKatha() {
           delay={0.24}
           className="mt-16 grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4 md:mt-20"
         >
-          {PROCESS.map(({ icon: Icon, label }) => (
+          {PROCESS.map(({ icon: Icon, key }) => (
             <div
-              key={label}
+              key={key}
               className="flex flex-col items-center gap-4 bg-[var(--background)] px-4 py-12 text-center"
             >
               <Icon size={26} strokeWidth={1.25} color="var(--text-muted)" aria-hidden />
@@ -105,7 +104,7 @@ export function WhyKatha() {
                   color: "var(--text-muted)",
                 }}
               >
-                {label}
+                {t.whyKatha.process[key]}
               </span>
             </div>
           ))}
