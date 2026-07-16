@@ -28,11 +28,23 @@ export function PersistentNavbar() {
   const [isDark, setIsDark] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  /* Desktop (lg, ≥1024px) enlarges the header controls; the hamburger's X-close
+     offset depends on the line gap, so we track the breakpoint in JS to keep it
+     centred. Mobile/tablet stay untouched. */
+  const [isDesktop, setIsDesktop] = useState(false);
   const backLink = pathname === "/" ? null : { href: "/", label: t.nav.home };
 
   useEffect(() => {
     document.documentElement.dataset.theme = isDark ? "dark" : "light";
   }, [isDark]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   /* Close overlay on route change */
   useEffect(() => {
@@ -90,7 +102,7 @@ export function PersistentNavbar() {
               type="button"
               onClick={() => setIsDark((p) => !p)}
               aria-label={isDark ? "Switch to light" : "Switch to dark"}
-              className="h-[0.75rem] w-[1.65rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65"
+              className="h-[0.75rem] w-[1.65rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65 lg:h-[1.35rem] lg:w-[3rem]"
             />
 
             {/* Hamburger — all screens */}
@@ -98,24 +110,24 @@ export function PersistentNavbar() {
               type="button"
               onClick={() => setIsNavOpen((p) => !p)}
               aria-label={isNavOpen ? "Close menu" : "Open menu"}
-              className="relative flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
+              className="relative flex h-8 w-8 flex-col items-center justify-center gap-[5px] lg:h-12 lg:w-12 lg:gap-[10px]"
             >
               <motion.span
-                animate={isNavOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                animate={isNavOpen ? { rotate: 45, y: isDesktop ? 12 : 6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="block h-px w-5 origin-center"
+                className="block h-px w-5 origin-center lg:h-[2px] lg:w-9"
                 style={{ backgroundColor: "var(--text)" }}
               />
               <motion.span
                 animate={isNavOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.18 }}
-                className="block h-px w-5"
+                className="block h-px w-5 lg:h-[2px] lg:w-9"
                 style={{ backgroundColor: "var(--text)" }}
               />
               <motion.span
-                animate={isNavOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                animate={isNavOpen ? { rotate: -45, y: isDesktop ? -12 : -6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="block h-px w-5 origin-center"
+                className="block h-px w-5 origin-center lg:h-[2px] lg:w-9"
                 style={{ backgroundColor: "var(--text)" }}
               />
             </button>

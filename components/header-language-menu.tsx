@@ -39,14 +39,16 @@ export function HeaderLanguageMenu() {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Change language"
-        className="flex items-center gap-[0.15rem] transition-opacity hover:opacity-60"
+        className="flex items-center gap-[0.15rem] transition-opacity hover:opacity-60 lg:gap-[0.5rem]"
         style={{ color: "var(--text)" }}
       >
-        <Globe size={15} strokeWidth={1.5} aria-hidden />
+        {/* Base size 15 keeps the mobile/tablet header untouched; on desktop the
+           glyph scales up to ~32px so it reads as large as the KATHA STUDIO wordmark. */}
+        <Globe size={15} strokeWidth={1.5} aria-hidden className="lg:h-[2rem] lg:w-[2rem]" />
         <span
+          className="text-[0.56rem] lg:text-[1.2rem]"
           style={{
             fontFamily: "var(--font-inter)",
-            fontSize: "0.56rem",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.01em",
@@ -67,10 +69,11 @@ export function HeaderLanguageMenu() {
             /* data-lenis-prevent lets the list scroll natively rather than being
                captured by the page's Lenis smooth-scroll. */
             data-lenis-prevent
-            className="absolute right-0 top-full z-[60] mt-3 max-h-[20rem] w-[15rem] overflow-y-auto overscroll-contain rounded-2xl border py-2 backdrop-blur-md"
+            className="absolute right-0 top-full z-[60] mt-3 max-h-[20rem] w-[15rem] overflow-y-auto overscroll-contain rounded-2xl border py-2"
             style={{
               borderColor: "var(--border-medium)",
-              backgroundColor: "var(--navbar-bg)",
+              backgroundColor: "var(--background)",
+              boxShadow: "0 12px 32px rgba(0, 0, 0, 0.12)",
               WebkitOverflowScrolling: "touch",
             }}
           >
