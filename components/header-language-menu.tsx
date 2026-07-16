@@ -39,14 +39,14 @@ export function HeaderLanguageMenu() {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Change language"
-        className="flex items-center gap-[0.15rem] transition-opacity hover:opacity-60 lg:gap-[0.5rem]"
+        className="flex items-center gap-[0.15rem] transition-opacity hover:opacity-60 lg:gap-[0.25rem]"
         style={{ color: "var(--text)" }}
       >
         {/* Base size 15 keeps the mobile/tablet header untouched; on desktop the
-           glyph scales up to ~32px so it reads as large as the KATHA STUDIO wordmark. */}
-        <Globe size={15} strokeWidth={1.5} aria-hidden className="lg:h-[2rem] lg:w-[2rem]" />
+           glyph scales up modestly (~21px) — a gentle bump, not wordmark-sized. */}
+        <Globe size={15} strokeWidth={1.5} aria-hidden className="lg:h-[1.3rem] lg:w-[1.3rem]" />
         <span
-          className="text-[0.56rem] lg:text-[1.2rem]"
+          className="text-[0.56rem] lg:text-[0.7rem]"
           style={{
             fontFamily: "var(--font-inter)",
             fontWeight: 600,

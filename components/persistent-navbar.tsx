@@ -102,7 +102,7 @@ export function PersistentNavbar() {
               type="button"
               onClick={() => setIsDark((p) => !p)}
               aria-label={isDark ? "Switch to light" : "Switch to dark"}
-              className="h-[0.75rem] w-[1.65rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65 lg:h-[1.35rem] lg:w-[3rem]"
+              className="h-[0.75rem] w-[1.65rem] rounded-full bg-[var(--text)] transition-colors duration-500 hover:opacity-65 lg:h-[0.85rem] lg:w-[1.9rem]"
             />
 
             {/* Hamburger — all screens */}
@@ -110,24 +110,24 @@ export function PersistentNavbar() {
               type="button"
               onClick={() => setIsNavOpen((p) => !p)}
               aria-label={isNavOpen ? "Close menu" : "Open menu"}
-              className="relative flex h-8 w-8 flex-col items-center justify-center gap-[5px] lg:h-12 lg:w-12 lg:gap-[10px]"
+              className="relative flex h-8 w-8 flex-col items-center justify-center gap-[5px] lg:h-9 lg:w-9 lg:gap-[6px]"
             >
               <motion.span
-                animate={isNavOpen ? { rotate: 45, y: isDesktop ? 12 : 6 } : { rotate: 0, y: 0 }}
+                animate={isNavOpen ? { rotate: 45, y: isDesktop ? 7 : 6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="block h-px w-5 origin-center lg:h-[2px] lg:w-9"
+                className="block h-px w-5 origin-center lg:w-6"
                 style={{ backgroundColor: "var(--text)" }}
               />
               <motion.span
                 animate={isNavOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.18 }}
-                className="block h-px w-5 lg:h-[2px] lg:w-9"
+                className="block h-px w-5 lg:w-6"
                 style={{ backgroundColor: "var(--text)" }}
               />
               <motion.span
-                animate={isNavOpen ? { rotate: -45, y: isDesktop ? -12 : -6 } : { rotate: 0, y: 0 }}
+                animate={isNavOpen ? { rotate: -45, y: isDesktop ? -7 : -6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="block h-px w-5 origin-center lg:h-[2px] lg:w-9"
+                className="block h-px w-5 origin-center lg:w-6"
                 style={{ backgroundColor: "var(--text)" }}
               />
             </button>
