@@ -1,15 +1,15 @@
 {
   "intro": {
     "chooseLanguage": "Wybierz swój język",
-    "enter": "Wchodzić"
+    "enter": "Wejdź"
   },
   "nav": {
     "studio": "Studio",
-    "approach": "Zbliżać się",
+    "approach": "Podejście",
     "services": "Usługi",
     "journal": "Dziennik",
     "contact": "Kontakt",
-    "home": "Dom",
+    "home": "Strona główna",
     "backToHome": "Powrót do strony głównej",
     "next": "Następny",
     "previous": "Poprzedni",
@@ -21,7 +21,7 @@
   "home": {
     "eyebrow": "Architektura · Wnętrza · Renowacja · Krajobraz",
     "titleLine1": "Każda przestrzeń ma swoją historię,",
-    "titleLine2": "czekające na wybudowanie.",
+    "titleLine2": "czekającą na wybudowanie.",
     "mystery": [
       "Przestrzenie, które wstrzymują oddech",
       "Im ciszej, tym bardziej żywo",
@@ -44,7 +44,7 @@
       "interior": "Wnętrze",
       "renovation": "Renowacja",
       "advisory": "Doradczy",
-      "service": "Praca",
+      "service": "Usługa",
       "residential": "Mieszkaniowy",
       "commercial": "Handlowy",
       "highRise": "Wysoki budynek"
@@ -57,15 +57,14 @@
     "para2Line1": "Naszym zadaniem jest nauczyć się to odczytywać.",
     "para2Line2": "A następnie zbudowanie go precyzyjnie.",
     "process": {
-      "sketchbook": "Album",
+      "sketchbook": "Szkicownik",
       "tracingPaper": "Papier kalkowy",
       "handwrittenNotes": "Notatki odręczne",
-      "materialBoard": "Płyta materiałowa"
+      "materialBoard": "Tablica materiałowa"
     }
   },
   "homeStory": {
     "offerEyebrow": "Co oferujemy",
-    "offerHeading": "Jak budujemy",
     "craftEyebrow": "Rzemiosło ma znaczenie",
     "craftBody": "Architektura kształtowana jest przez tysiące decyzji. Jakość materiałów, proporcje pomieszczenia, sposób wpadania światła do wnętrza i detale skrzyżowań wpływają na to, jak przestrzeń jest odbierana każdego dnia.",
     "closingCta": "Omówmy Twój projekt",
@@ -75,9 +74,10 @@
       "joinery": "Stolarka",
       "sketches": "Szkice",
       "models": "Modele",
-      "materialBoards": "Płyty materiałowe",
+      "materialBoards": "Tablice materiałowe",
       "details": "Bliższe dane"
-    }
+    },
+    "offerHeading": "Nasze usługi"
   },
   "approach": {
     "eyebrow": "Jak pracujemy",
@@ -87,7 +87,7 @@
     "steps": [
       {
         "title": "Słuchać",
-        "body": "Każdy projekt zaczyna się jeszcze przed przygotowaniem briefu — od tego, jak żyjesz, jak rozwija się Twoja firma, o co dyskretnie prosi strona internetowa."
+        "body": "Każdy projekt zaczyna się jeszcze przed przygotowaniem briefu — od tego, jak żyjesz, jak rozwija się Twoja firma, o co dyskretnie prosi miejsce budowy."
       },
       {
         "title": "Badać",
@@ -98,7 +98,7 @@
         "body": "Koncepcja ta kształtowana jest jako całość, w której każda decyzja odpowiada zarówno wytycznym, jak i przestrzeni."
       },
       {
-        "title": "Oczyścić",
+        "title": "Dopracować",
         "body": "Szczegóły są dopracowane. To cicha praca, która oddziela przestrzeń, która wygląda na skończoną, od tej, która wydaje się być właściwa."
       },
       {
@@ -120,7 +120,7 @@
     "stayInTouch": "Kontaktować się"
   },
   "marquee": [
-    "Studio Katha",
+    "Katha Studio",
     "Spokój, zaprojektowany",
     "Bengaluru",
     "Architektura jako pauza",
@@ -130,20 +130,15 @@
     "Zacznij cicho"
   ],
   "studioPage": {
-    "whyEyebrow": "Dlaczego Katha",
-    "whyHeading": "Katha oznacza historię",
-    "whyPara1": "Każdy projekt niesie ze sobą coś, czego nie da się opisać w pigułce — jak naprawdę żyje rodzina, jakie odczucia musi budzić firma od wewnątrz, jak krajobraz powinien być odbierany, o co dyskretnie prosi miejsce budowy.",
-    "whyPara2Line1": "Naszym zadaniem jest nauczyć się to odczytywać.",
-    "whyPara2Line2": "A następnie zbudowanie go precyzyjnie.",
     "nehaEyebrow": "Poznaj Nehę",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Portret Ar. Nehy, założycielki i głównej architektki Katha Studio",
-    "nehaPara1": "Kosmos ma pamięć.",
+    "nehaPara1": "Przestrzeń ma pamięć.",
     "nehaPara2": "Zawiera w sobie elementy, które świadczą o tym, jak budynek został zbudowany, jakie przetrwanie miał zapewnić i jakie uczucia wywołuje w ludziach na długo po jego zakończeniu.",
     "nehaPara3": "Latami uczyłem się to odczytywać — w ciężarze materiału wybranego ze względu na sposób starzenia, w proporcjach zaczerpniętych z tradycji, które rozumiały ludzką skalę na długo zanim stała się ona dyscypliną, w cichej logice pomieszczenia, którego nie trzeba nigdy wyjaśniać, bo wszystko w nim znajduje się dokładnie na swoim miejscu.",
     "nehaPara4": "Każdy projekt Katha opiera się na tej głębokiej uwadze.",
     "nehaName": "Ar. Neha",
-    "nehaRole": "Założyciel i główny architekt",
+    "nehaRole": "Założycielka i główna architektka",
     "perspectiveEyebrow": "Nasza perspektywa",
     "perspective1": "Najlepsze przestrzenie nigdy nie powstają przypadkowo.",
     "perspective2": "Każdy materiał jest wybierany ze względu na jego trwałość po upływie dziesięcioleci.",
@@ -161,7 +156,7 @@
       },
       {
         "title": "Korzenie",
-        "body": "Czerpiemy z tradycji budowlanych, które przekazywały wiedzę o kosmosie na długo przed tym, zanim została ona spisana."
+        "body": "Czerpiemy z tradycji budowlanych, które przekazywały wiedzę o przestrzeni na długo przed tym, zanim została ona spisana."
       },
       {
         "title": "Precyzja",
@@ -181,7 +176,7 @@
       "Stolarka",
       "Szkice",
       "Modele",
-      "Płyty materiałowe",
+      "Tablice materiałowe",
       "Bliższe dane"
     ],
     "clientsEyebrow": "Z kim współpracujemy",
@@ -189,12 +184,17 @@
     "clientsPara2": "Rodziny, które chcą, aby dom był trwały i cieszył pokolenia. Firmy, które rozumieją, że otoczenie odzwierciedla ich osobowość. Deweloperzy, którzy wiedzą, że odpowiednie detale na początku determinują wszystko, co nastąpi.",
     "clientsPara3": "Podejmujemy się zadań, które możemy wykonać z pełnym zaangażowaniem. Nic mniej.",
     "noteBody": "Każdy projekt reprezentuje ważny rozdział w czyimś życiu. To odpowiedzialność, którą głęboko cenimy. Dziękujemy, że rozważasz Katha Studio jako część tej podróży.",
-    "noteSignature": "— Ar. Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "Studio",
+    "whyHeading": "Praktyka za pracą",
+    "whyPara1": "Katha Studio to pracownia architektoniczno-wnętrzarska, której fundamentem jest jedno przekonanie — najlepsze przestrzenie powstają w wyniku prawdziwego zrozumienia ludzi i miejsc, dla których są projektowane.",
+    "whyPara2Line1": "Oto, kim jesteśmy —",
+    "whyPara2Line2": "perspektywa i rzemiosło stojące za każdym projektem Katha."
   },
   "contactPage": {
     "eyebrow": "Skontaktuj się z nami",
     "titleLine1": "Rozpocznij",
-    "titleLine2": "rozmowa",
+    "titleLine2": "rozmowę",
     "details": {
       "emailLabel": "E-mail",
       "phoneLabel": "Telefon",
@@ -205,10 +205,10 @@
     }
   },
   "contactForm": {
-    "nameLabel": "Nazwa",
+    "nameLabel": "Imię",
     "namePlaceholder": "Twoje imię",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "ty@example.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Telefon",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Typ projektu",
@@ -218,14 +218,14 @@
     "messageLabel": "Wiadomość",
     "messagePlaceholder": "Opowiedz nam o swoim projekcie – czym jest, na jakim etapie się znajduje i czym chciałbyś, żeby się stał",
     "send": "Wyślij zapytanie",
-    "sending": "Przesyłka",
+    "sending": "Wysyłanie",
     "sent": "Wysłano ✓",
     "success": "— Dziękujemy. Skontaktujemy się z Tobą w ciągu dwóch dni roboczych.",
     "errors": {
       "checkFields": "Proszę sprawdzić zaznaczone pola.",
       "network": "Błąd sieci. Spróbuj ponownie.",
       "nameRequired": "Podaj proszę swoje imię.",
-      "nameShort": "Nazwa powinna mieć co najmniej 2 znaki.",
+      "nameShort": "Imię powinno mieć co najmniej 2 znaki.",
       "emailRequired": "Podaj proszę swój adres e-mail.",
       "emailInvalid": "To nie wygląda na prawidłowy adres e-mail.",
       "phoneRequired": "Proszę podać numer telefonu.",
@@ -322,7 +322,7 @@
         "Rysunki robocze",
         "Przekroje i elewacje",
         "Szczegóły konstrukcyjne",
-        "Dokumentacja witryny"
+        "Dokumentacja budowy"
       ],
       "imageCaption": "Studium · Linia i precyzja"
     },
@@ -406,7 +406,7 @@
       ]
     },
     "what-india-knows-about-space": {
-      "title": "Co Indie wiedzą o kosmosie, a co świat odkrywa na nowo",
+      "title": "Co Indie wiedzą o przestrzeni, a co świat odkrywa na nowo",
       "excerpt": "Najbardziej wyrafinowane idee współczesnej architektury nigdy nie były nowe. Zostały zapomniane.",
       "paragraphs": [
         "Pasywne chłodzenie poprzez geometrię dziedzińca. Masa termiczna w kamiennych ścianach, która utrzymuje wnętrza w stabilności bez ingerencji mechanicznej. Weranda – ani wewnątrz, ani na zewnątrz – łagodzi ciepło, filtruje światło, tworząc próg, którego nie zastąpiła żadna klimatyzacja. Studnie schodkowe rozwiązały problem gromadzenia wody, spotkań publicznych i mikroklimatu w jednym budynku.",

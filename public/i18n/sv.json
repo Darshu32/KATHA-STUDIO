@@ -1,18 +1,18 @@
 {
   "intro": {
     "chooseLanguage": "Välj ditt språk",
-    "enter": "Skriva in"
+    "enter": "Gå in"
   },
   "nav": {
     "studio": "Studio",
-    "approach": "Närma sig",
+    "approach": "Tillvägagångssätt",
     "services": "Tjänster",
-    "journal": "Tidning",
-    "contact": "Kontakta",
+    "journal": "Journal",
+    "contact": "Kontakt",
     "home": "Hem",
     "backToHome": "Tillbaka till startsidan",
     "next": "Nästa",
-    "previous": "Tidigare",
+    "previous": "Föregående",
     "locationLine": "KATHA Studio · Bengaluru",
     "whatWeDo": "Vad vi gör",
     "whatWeBuild": "Vad vi bygger",
@@ -34,18 +34,18 @@
     "cta": "Starta en konversation",
     "cardStudioLabel": "Studio",
     "cardStudioTagline": "Vilka vi är",
-    "cardContactLabel": "Kontakta",
+    "cardContactLabel": "Kontakt",
     "cardContactTagline": "Starta en konversation",
     "category": {
       "intro": "Introduktion",
       "studio": "Studio",
-      "contact": "Kontakta",
+      "contact": "Kontakt",
       "residence": "Bostad",
       "interior": "Interiör",
       "renovation": "Renovering",
       "advisory": "Rådgivande",
       "service": "Service",
-      "residential": "Bostads",
+      "residential": "Bostäder",
       "commercial": "Kommersiell",
       "highRise": "Höghus"
     }
@@ -65,9 +65,8 @@
   },
   "homeStory": {
     "offerEyebrow": "Vad vi erbjuder",
-    "offerHeading": "Hur vi bygger",
-    "craftEyebrow": "Hantverksfrågor",
-    "craftBody": "Arkitektur formas genom tusentals beslut. Materialets kvalitet, rummets proportioner, hur ljuset kommer in i ett utrymme och detaljerna i en korsning påverkar hur ett utrymme upplevs varje dag.",
+    "craftEyebrow": "Hantverket räknas",
+    "craftBody": "Arkitektur formas genom tusentals beslut. Materialets kvalitet, rummets proportioner, hur ljuset kommer in i ett utrymme och detaljerna i en anslutning påverkar hur ett utrymme upplevs varje dag.",
     "closingCta": "Låt oss diskutera ditt projekt",
     "materials": {
       "wood": "Trä",
@@ -77,7 +76,8 @@
       "models": "Modeller",
       "materialBoards": "Materialbrädor",
       "details": "Detaljer"
-    }
+    },
+    "offerHeading": "Våra tjänster"
   },
   "approach": {
     "eyebrow": "Hur vi arbetar",
@@ -87,7 +87,7 @@
     "steps": [
       {
         "title": "Lyssna",
-        "body": "Varje projekt börjar före briefen – i hur du bor, hur ditt företag rör sig, vad webbplatsen i tysthet efterfrågar."
+        "body": "Varje projekt börjar före briefen – i hur du bor, hur ditt företag rör sig, vad platsen i tysthet efterfrågar."
       },
       {
         "title": "Utforska",
@@ -114,7 +114,7 @@
   },
   "journalPage": {
     "eyebrow": "Från studion",
-    "title": "Tidning",
+    "title": "Journal",
     "intro": "Tänkande från studion — om utrymme, material och detaljer som är viktiga.",
     "inPreparation": "Under förberedelse",
     "stayInTouch": "Håll kontakten"
@@ -124,21 +124,16 @@
     "Stillhet, designad",
     "Bengaluru",
     "Arkitektur som paus",
-    "Material lugn",
+    "Materiellt lugn",
     "Rum som lyssnar",
     "Valt arbete",
     "Börja tyst"
   ],
   "studioPage": {
-    "whyEyebrow": "Varför Katha",
-    "whyHeading": "Katha betyder berättelse",
-    "whyPara1": "Varje projekt bär med sig något som inte kan beskrivas kortfattat – hur en familj faktiskt lever, hur ett företag behöver kännas inifrån, hur ett landskap vill upplevas, vad en plats i tysthet efterfrågar.",
-    "whyPara2Line1": "Vårt arbete är att lära oss läsa det.",
-    "whyPara2Line2": "Sedan bygger man den exakt.",
     "nehaEyebrow": "Möt Neha",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Porträtt av Ar. Neha, grundare och huvudarkitekt för Katha Studio",
-    "nehaPara1": "Rymden har minne.",
+    "nehaPara1": "Rummet har minne.",
     "nehaPara2": "Den visar hur den byggdes, vad den ska hålla och hur den får människor att må långt efter att arbetet är klart.",
     "nehaPara3": "Jag har ägnat år åt att lära mig att läsa det – i vikten av ett material som valts ut för hur det åldras, i proportioner hämtade från traditioner som förstod mänsklig skala långt innan det blev en disciplin, i den tysta logiken i ett rum som aldrig behöver förklaras eftersom allt i det är precis där det hör hemma.",
     "nehaPara4": "Det är den djupet av uppmärksamhet som varje Katha-projekt bygger på.",
@@ -161,7 +156,7 @@
       },
       {
         "title": "Rötter",
-        "body": "Vi hämtar inspiration från byggtraditioner som bar på intelligens om rymden långt innan den skrevs ner."
+        "body": "Vi hämtar inspiration från byggtraditioner som bar på intelligens om rummet långt innan den skrevs ner."
       },
       {
         "title": "Precision",
@@ -173,8 +168,8 @@
       }
     ],
     "craftEyebrow": "Hantverk och material",
-    "craftPara1": "Varje beslut i en byggnad är också ett väsentligt beslut.",
-    "craftPara2": "Vad något är gjort av avgör hur det åldras, hur det känns under kontroll, hur det håller ljuset, hur det står sig i sitt klimat. Vi väljer material utifrån vad de gör över tid – inte bara hur de känns den dagen de installeras.",
+    "craftPara1": "Varje beslut i en byggnad är också ett materialbeslut.",
+    "craftPara2": "Vad något är gjort av avgör hur det åldras, hur det känns under handen, hur det håller ljuset, hur det står sig i sitt klimat. Vi väljer material utifrån vad de gör över tid – inte bara hur de känns den dagen de installeras.",
     "craftTags": [
       "Trä",
       "Sten",
@@ -189,7 +184,12 @@
     "clientsPara2": "Familjer som vill ha ett hem byggt för att hålla och kännas rätt i generationer. Företag som förstår att deras miljö speglar vilka de är. Byggherrar som vet att rätt detaljer i början avgör allt som följer.",
     "clientsPara3": "Vi tar oss an arbete vi kan utföra med fullt engagemang. Inget mindre.",
     "noteBody": "Varje projekt representerar ett viktigt kapitel i någons liv. Det är ett ansvar vi värdesätter djupt. Tack för att du överväger Katha Studio som en del av den resan.",
-    "noteSignature": "— Ar. Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "Studion",
+    "whyHeading": "Praktiken bakom arbetet",
+    "whyPara1": "Katha Studio är en arkitektur- och inredningspraktik som bygger på en enda övertygelse – att de bästa utrymmena kommer från att verkligen förstå de människor och platser de är gjorda för.",
+    "whyPara2Line1": "Det som följer är vilka vi är —",
+    "whyPara2Line2": "perspektivet och hantverket bakom varje Katha-projekt."
   },
   "contactPage": {
     "eyebrow": "Kontakta oss",
@@ -208,7 +208,7 @@
     "nameLabel": "Namn",
     "namePlaceholder": "Ditt namn",
     "emailLabel": "E-post",
-    "emailPlaceholder": "du@exampel.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Telefon",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Projekttyp",
@@ -218,7 +218,7 @@
     "messageLabel": "Meddelande",
     "messagePlaceholder": "Berätta om ditt projekt – vad det är, var det ligger och vad du hoppas att det blir",
     "send": "Skicka förfrågan",
-    "sending": "Sändning",
+    "sending": "Skickar",
     "sent": "Skickat ✓",
     "success": "— Tack. Vi hör av oss inom två arbetsdagar.",
     "errors": {
@@ -269,7 +269,7 @@
         "Varje Katha-inredning är byggd för det."
       ],
       "scope": [
-        "fysisk planering",
+        "Rumslig planering",
         "Materialval",
         "Snickerier och inbyggnader",
         "Ljus och atmosfär"
@@ -302,7 +302,7 @@
         "Det är vad Katha Advisory är."
       ],
       "scope": [
-        "Kortfattad utveckling",
+        "Briefutveckling",
         "Genomförbarhet",
         "Designriktning",
         "Beslutsstöd"
@@ -322,12 +322,12 @@
         "Arbetsritningar",
         "Sektioner och elevationer",
         "Konstruktionsdetaljer",
-        "Webbplatsdokumentation"
+        "Byggplatsdokumentation"
       ],
       "imageCaption": "Studie · Linje och precision"
     },
     "residential": {
-      "title": "Bostads",
+      "title": "Bostäder",
       "category": "Hem och boende",
       "tagline": "De platser du återvänder till varje dag.",
       "desc": "Hem designade utifrån hur du faktiskt lever – privata, varma och gjorda för att hålla.",
@@ -391,7 +391,7 @@
       "paragraphs": [
         "Det är det snabbaste sättet att ta reda på vad du ännu inte förstår om ett projekt. En linje som dras för tidigt i fel riktning kostar ingenting på pappret och allt inom byggbranschen. Så vi ritar tidigt och löst – inte för att binda oss utan för att avslöja. För att se var tanken håller och var den inte gör det.",
         "De projekt som slutar bra är de där de svåraste frågorna ställdes innan designen blev uppskattad. Innan kunden var fast besluten att följa en layout. Innan någon hade investerat i en idé. Det finns ett fönster tidigt i varje projekt där allt fortfarande är möjligt – och det är i det fönstret som det viktigaste arbetet sker.",
-        "Det som blir av det är inte alltid vad man förväntade sig. En webbplats som verkade kräva ett visst tillvägagångssätt avslöjar genom skisserna att den behöver något tystare. En brief som verkade rättfram öppnar sig till något fylligare när de första raderna är ritade och ifrågasatta.",
+        "Det som blir av det är inte alltid vad man förväntade sig. En plats som verkade kräva ett visst tillvägagångssätt avslöjar genom skisserna att den behöver något tystare. En brief som verkade rättfram öppnar sig till något fylligare när de första raderna är ritade och ifrågasatta.",
         "Det är i skissen vi får veta vad projektet egentligen efterfrågar."
       ]
     },
@@ -401,12 +401,12 @@
       "paragraphs": [
         "Det finns i mötet mellan två material – hur ett stengolv möter en putsad vägg, skugglinjen som gör att en dörrkarm syns tydligt, djupet på en fönsterbåge som avgör om ljuset kommer in mjukt eller hårt. Dessa val skiljer ett utrymme som känns genomtänkt från ett som bara ser färdigt ut.",
         "Kunder frågar sällan om dessa saker. De frågar om planlösningar, material, ytbehandlingar. Men de utrymmen de minns – de de beskriver för andra människor, de som stannar kvar hos dem – är nästan alltid de där någon uppmärksammades på just denna nivå.",
-        "En korsning som är dåligt löst talar varje gång någon står nära den. En skugglinje som inte är på plats plattar ut en yta som borde ha djup. Dessa saker registreras under medvetandet – men de registreras.",
+        "En anslutning som är dåligt löst talar varje gång någon står nära den. En skugglinje som inte är på plats plattar ut en yta som borde ha djup. Dessa saker registreras under medvetandet – men de registreras.",
         "Arkitekturens hantverk lever i detaljerna som ingen ser. Den osynligheten är poängen."
       ]
     },
     "what-india-knows-about-space": {
-      "title": "Vad Indien vet om rymden som världen lär sig om",
+      "title": "Vad Indien vet om rummet som världen lär sig om",
       "excerpt": "De mest sofistikerade idéerna inom samtida arkitektur var aldrig nya. De glömdes bort.",
       "paragraphs": [
         "Passiv kylning genom gårdsplanens geometri. Termisk massa i stenmurar som håller interiören stabil utan mekaniska ingrepp. Verandan – varken inomhus eller utomhus – som modererar värme, filtrerar ljus och skapar en tröskel som ingen luftkonditioneringsenhet någonsin har ersatt. Trappbrunnar som löste vattenuppsamling, offentliga sammankomster och mikroklimat i en enda struktur.",

@@ -1,15 +1,15 @@
 {
   "intro": {
     "chooseLanguage": "Escolha seu idioma",
-    "enter": "Digitar"
+    "enter": "Entrar"
   },
   "nav": {
     "studio": "Estúdio",
     "approach": "Abordagem",
     "services": "Serviços",
-    "journal": "Jornal",
+    "journal": "Diário",
     "contact": "Contato",
-    "home": "Lar",
+    "home": "Início",
     "backToHome": "Voltar para a página inicial",
     "next": "Próximo",
     "previous": "Anterior",
@@ -20,8 +20,8 @@
   },
   "home": {
     "eyebrow": "Arquitetura · Interiores · Reforma · Paisagismo",
-    "titleLine1": "Cada espaço tem uma história.",
-    "titleLine2": "Aguardando construção.",
+    "titleLine1": "Cada espaço tem uma história,",
+    "titleLine2": "esperando para ser construído.",
     "mystery": [
       "Espaços que prendem a respiração",
       "Quanto mais silencioso, mais vivo.",
@@ -45,7 +45,7 @@
       "renovation": "Renovação",
       "advisory": "Consultivo",
       "service": "Serviço",
-      "residential": "residencial",
+      "residential": "Residencial",
       "commercial": "Comercial",
       "highRise": "Arranha-céu"
     }
@@ -55,7 +55,7 @@
     "heading": "Katha significa história",
     "para1": "Cada projeto carrega algo que não pode ser descrito em um briefing — a maneira como uma família realmente vive, como uma empresa precisa se sentir por dentro, como uma paisagem deseja ser vivenciada, o que um local está silenciosamente pedindo.",
     "para2Line1": "Nosso trabalho é aprender a ler isso.",
-    "para2Line2": "Em seguida, construa-o com precisão.",
+    "para2Line2": "Em seguida, construí-lo com precisão.",
     "process": {
       "sketchbook": "Caderno de esboços",
       "tracingPaper": "Papel vegetal",
@@ -65,7 +65,6 @@
   },
   "homeStory": {
     "offerEyebrow": "O que oferecemos",
-    "offerHeading": "Como Construímos",
     "craftEyebrow": "A habilidade importa",
     "craftBody": "A arquitetura é moldada por milhares de decisões. A qualidade de um material, a proporção de um cômodo, a forma como a luz entra em um espaço e o detalhe de uma junção influenciam a maneira como um espaço é vivenciado no dia a dia.",
     "closingCta": "Vamos conversar sobre o seu projeto.",
@@ -77,7 +76,8 @@
       "models": "Modelos",
       "materialBoards": "Placas de material",
       "details": "Detalhes"
-    }
+    },
+    "offerHeading": "Nossos serviços"
   },
   "approach": {
     "eyebrow": "Como Trabalhamos",
@@ -94,7 +94,7 @@
         "body": "As ideias são testadas abertamente. Proporção, luz e material são estudados antes de qualquer decisão ser tomada."
       },
       {
-        "title": "Projeto",
+        "title": "Projetar",
         "body": "O conceito é moldado em um todo onde cada decisão responde ao briefing e ao próprio espaço."
       },
       {
@@ -114,13 +114,13 @@
   },
   "journalPage": {
     "eyebrow": "Do estúdio",
-    "title": "Jornal",
+    "title": "Diário",
     "intro": "Pensando a partir do estúdio — no espaço, no material e nos detalhes que importam.",
     "inPreparation": "Em preparação",
     "stayInTouch": "Mantenha contato"
   },
   "marquee": [
-    "Estúdio Katha",
+    "Katha Studio",
     "Calma, projetada.",
     "Bengaluru",
     "A arquitetura como pausa",
@@ -130,11 +130,6 @@
     "Comece em silêncio"
   ],
   "studioPage": {
-    "whyEyebrow": "Por que Katha",
-    "whyHeading": "Katha significa história",
-    "whyPara1": "Cada projeto carrega algo que não pode ser descrito em um briefing — a maneira como uma família realmente vive, como uma empresa precisa se sentir por dentro, como uma paisagem deseja ser vivenciada, o que um local está silenciosamente pedindo.",
-    "whyPara2Line1": "Nosso trabalho é aprender a ler isso.",
-    "whyPara2Line2": "Em seguida, construa-o com precisão.",
     "nehaEyebrow": "Conheça Neha",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Retrato da Arquiteta Neha, Fundadora e Arquiteta Principal do Katha Studio.",
@@ -143,7 +138,7 @@
     "nehaPara3": "Passei anos aprendendo a ler isso — no peso de um material escolhido pela forma como envelhece, em proporções extraídas de tradições que compreendiam a escala humana muito antes de ela se tornar uma disciplina, na lógica silenciosa de uma sala que nunca precisa de explicação porque tudo nela está exatamente onde deveria estar.",
     "nehaPara4": "Essa profundidade de atenção é o alicerce de todos os projetos da Katha.",
     "nehaName": "Ar. Neha",
-    "nehaRole": "Fundador e Arquiteto Principal",
+    "nehaRole": "Fundadora e Arquiteta Principal",
     "perspectiveEyebrow": "Nossa Perspectiva",
     "perspective1": "Os melhores espaços nunca são acidentais.",
     "perspective2": "Cada material é escolhido pela sua durabilidade ao longo de décadas.",
@@ -189,11 +184,16 @@
     "clientsPara2": "Famílias que desejam uma casa construída para durar e que seja aconchegante por gerações. Empresas que entendem que o ambiente ao seu redor reflete sua identidade. Incorporadoras que sabem que os detalhes certos desde o início determinam todo o resto.",
     "clientsPara3": "Aceitamos trabalhos que podemos realizar com total empenho. Nada menos que isso.",
     "noteBody": "Cada projeto representa um capítulo importante na vida de alguém. É uma responsabilidade que valorizamos profundamente. Agradecemos por considerar o Katha Studio como parte dessa jornada.",
-    "noteSignature": "— Arquiteta Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "O Estúdio",
+    "whyHeading": "A prática por trás do trabalho",
+    "whyPara1": "O Katha Studio é um escritório de arquitetura e design de interiores construído sobre uma crença: a de que os melhores espaços surgem da compreensão genuína das pessoas e dos lugares para os quais são criados.",
+    "whyPara2Line1": "O que se segue é quem somos —",
+    "whyPara2Line2": "A perspectiva e a habilidade por trás de cada projeto da Katha."
   },
   "contactPage": {
     "eyebrow": "Entre em contato",
-    "titleLine1": "Comece um",
+    "titleLine1": "Comece uma",
     "titleLine2": "conversa",
     "details": {
       "emailLabel": "E-mail",
@@ -208,7 +208,7 @@
     "nameLabel": "Nome",
     "namePlaceholder": "Seu nome",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "você@exemplo.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Telefone",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Tipo de projeto",
@@ -302,7 +302,7 @@
         "É isso que a Katha Advisory faz."
       ],
       "scope": [
-        "Breve desenvolvimento",
+        "Desenvolvimento do briefing",
         "Viabilidade",
         "Direção de Design",
         "Apoio à decisão"
@@ -327,7 +327,7 @@
       "imageCaption": "Estudo · Linha e Precisão"
     },
     "residential": {
-      "title": "residencial",
+      "title": "Residencial",
       "category": "Casas e Moradia",
       "tagline": "Os espaços aos quais você retorna todos os dias.",
       "desc": "Casas projetadas de acordo com a sua forma de viver — privadas, aconchegantes e feitas para durar.",
@@ -381,7 +381,7 @@
   "noteCategories": {
     "Process": "Processo",
     "Culture": "Cultura",
-    "Craft": "Arte",
+    "Craft": "Artesanato",
     "Space": "Espaço"
   },
   "notes": {

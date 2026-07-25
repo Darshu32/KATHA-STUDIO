@@ -9,7 +9,7 @@
     "services": "Services",
     "journal": "Journal",
     "contact": "Contact",
-    "home": "Maison",
+    "home": "Accueil",
     "backToHome": "Retour à l'accueil",
     "next": "Suivant",
     "previous": "Précédent",
@@ -47,7 +47,7 @@
       "service": "Service",
       "residential": "Résidentiel",
       "commercial": "Commercial",
-      "highRise": "gratte-ciel"
+      "highRise": "Gratte-ciel"
     }
   },
   "whyKatha": {
@@ -65,7 +65,6 @@
   },
   "homeStory": {
     "offerEyebrow": "Ce que nous proposons",
-    "offerHeading": "Comment nous construisons",
     "craftEyebrow": "L'artisanat compte",
     "craftBody": "L'architecture se façonne à travers des milliers de décisions. La qualité d'un matériau, les proportions d'une pièce, la manière dont la lumière pénètre dans un espace et le détail d'une jonction influencent la façon dont on perçoit un espace au quotidien.",
     "closingCta": "Parlons de votre projet",
@@ -77,7 +76,8 @@
       "models": "Modèles",
       "materialBoards": "Panneaux de matériaux",
       "details": "Détails"
-    }
+    },
+    "offerHeading": "Nos services"
   },
   "approach": {
     "eyebrow": "Notre façon de travailler",
@@ -94,7 +94,7 @@
         "body": "Les idées sont testées ouvertement. Les proportions, la lumière et les matériaux sont étudiés avant de s'engager dans une direction quelconque."
       },
       {
-        "title": "Conception",
+        "title": "Concevoir",
         "body": "Le concept est structuré en un tout où chaque décision répond au cahier des charges et à l'espace lui-même."
       },
       {
@@ -120,7 +120,7 @@
     "stayInTouch": "Rester en contact"
   },
   "marquee": [
-    "Studio Katha",
+    "Katha Studio",
     "Calme, conçu",
     "Bengaluru",
     "L'architecture comme pause",
@@ -130,11 +130,6 @@
     "Commencez doucement"
   ],
   "studioPage": {
-    "whyEyebrow": "Pourquoi Katha",
-    "whyHeading": "Katha signifie histoire",
-    "whyPara1": "Chaque projet comporte quelque chose d'imprévisible — la façon dont une famille vit réellement, l'atmosphère qu'une entreprise souhaite créer de l'intérieur, la manière dont un paysage aspire à être vécu, ce qu'un site réclame en silence.",
-    "whyPara2Line1": "Notre travail consiste à apprendre à lire cela.",
-    "whyPara2Line2": "Puis, le construire avec précision.",
     "nehaEyebrow": "Voici Neha",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Portrait de l'architecte Neha, fondatrice et architecte principale du cabinet Katha Studio",
@@ -143,7 +138,7 @@
     "nehaPara3": "J'ai passé des années à apprendre à lire cela — dans le poids d'un matériau choisi pour sa façon de vieillir, dans les proportions tirées de traditions qui comprenaient l'échelle humaine bien avant qu'elle ne devienne une discipline, dans la logique tranquille d'une pièce qui n'a jamais besoin d'explication car tout y est exactement à sa place.",
     "nehaPara4": "C’est sur ce niveau d’attention que repose chaque projet Katha.",
     "nehaName": "Ar. Neha",
-    "nehaRole": "Fondateur et architecte principal",
+    "nehaRole": "Fondatrice et architecte principale",
     "perspectiveEyebrow": "Notre perspective",
     "perspective1": "Les meilleurs espaces ne sont jamais le fruit du hasard.",
     "perspective2": "Chaque matériau est choisi pour sa durabilité sur plusieurs décennies.",
@@ -189,18 +184,23 @@
     "clientsPara2": "Des familles qui souhaitent une maison construite pour durer et qui convienne à des générations. Des entreprises conscientes que leur environnement reflète leur identité. Des promoteurs immobiliers qui savent que le soin apporté aux détails dès le départ détermine tout le reste.",
     "clientsPara3": "Nous n'acceptons que les projets que nous pouvons réaliser avec un engagement total. Rien de moins.",
     "noteBody": "Chaque projet représente une étape importante dans la vie d'une personne. C'est une responsabilité que nous prenons très au sérieux. Merci d'avoir envisagé Katha Studio pour vous accompagner dans cette aventure.",
-    "noteSignature": "— Ar. Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "Le Studio",
+    "whyHeading": "La pratique derrière le travail",
+    "whyPara1": "Katha Studio est un cabinet d'architecture et de design d'intérieur fondé sur une conviction : les meilleurs espaces naissent d'une véritable compréhension des personnes et des lieux pour lesquels ils sont conçus.",
+    "whyPara2Line1": "Voici qui nous sommes —",
+    "whyPara2Line2": "la vision et le savoir-faire qui sous-tendent chaque projet Katha."
   },
   "contactPage": {
     "eyebrow": "Entrer en contact",
-    "titleLine1": "Commencez un",
+    "titleLine1": "Commencez une",
     "titleLine2": "conversation",
     "details": {
       "emailLabel": "E-mail",
       "phoneLabel": "Téléphone",
       "studioLabel": "Studio",
       "studioValue": "Bengaluru, Inde",
-      "portfolioLabel": "Portefeuille",
+      "portfolioLabel": "Portfolio",
       "portfolioValue": "Disponible sur demande — écrivez-nous"
     }
   },
@@ -208,7 +208,7 @@
     "nameLabel": "Nom",
     "namePlaceholder": "Votre nom",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "vous@exemple.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Téléphone",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Type de projet",
@@ -218,7 +218,7 @@
     "messageLabel": "Message",
     "messagePlaceholder": "Parlez-nous de votre projet : de quoi s’agit-il, où il se situe et quel est votre objectif pour l’avenir ?",
     "send": "Envoyer une demande",
-    "sending": "Envoi",
+    "sending": "Envoi en cours",
     "sent": "Envoyé ✓",
     "success": "— Merci. Nous vous contacterons d'ici deux jours ouvrables.",
     "errors": {
@@ -269,7 +269,7 @@
         "Chaque intérieur Katha est conçu dans cet esprit."
       ],
       "scope": [
-        "Aménagement du territoire",
+        "Aménagement de l'espace",
         "Sélection des matériaux",
         "Menuiserie et éléments intégrés",
         "Lumière et atmosphère"
@@ -302,7 +302,7 @@
         "Voilà ce qu'est Katha Advisory."
       ],
       "scope": [
-        "Développement bref",
+        "Développement du cahier des charges",
         "Faisabilité",
         "Direction artistique",
         "Aide à la décision"
@@ -361,7 +361,7 @@
       "imageCaption": "Études · Travail et Marque"
     },
     "high-rise": {
-      "title": "gratte-ciel",
+      "title": "Gratte-ciel",
       "category": "Tours et densité",
       "tagline": "Bien vivre, en altitude.",
       "desc": "Des immeubles de plusieurs étages et de grande hauteur conçus pour optimiser la lumière, l'air, la structure et la vie communautaire.",

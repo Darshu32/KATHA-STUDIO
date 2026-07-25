@@ -5,11 +5,11 @@
   },
   "nav": {
     "studio": "Estudio",
-    "approach": "Acercarse",
+    "approach": "Enfoque",
     "services": "Servicios",
     "journal": "Diario",
     "contact": "Contacto",
-    "home": "Hogar",
+    "home": "Inicio",
     "backToHome": "Volver a la página principal",
     "next": "Próximo",
     "previous": "Anterior",
@@ -52,7 +52,7 @@
   },
   "whyKatha": {
     "eyebrow": "¿Por qué Katha?",
-    "heading": "Historia de Katha Means",
+    "heading": "Katha significa historia",
     "para1": "Cada proyecto conlleva algo que no se puede explicar: la forma en que una familia vive realmente, cómo necesita sentirse un negocio desde dentro, cómo se desea experimentar un paisaje, qué pide un lugar en silencio.",
     "para2Line1": "Nuestro trabajo consiste en aprender a leer eso.",
     "para2Line2": "Luego, construirlo con precisión.",
@@ -65,7 +65,6 @@
   },
   "homeStory": {
     "offerEyebrow": "Lo que ofrecemos",
-    "offerHeading": "Cómo construimos",
     "craftEyebrow": "La artesanía importa",
     "craftBody": "La arquitectura se moldea a través de miles de decisiones. La calidad de un material, las proporciones de una habitación, la forma en que la luz entra en un espacio y los detalles de una unión influyen en cómo se experimenta un espacio a diario.",
     "closingCta": "Hablemos de tu proyecto.",
@@ -77,7 +76,8 @@
       "models": "Modelos",
       "materialBoards": "Tableros de materiales",
       "details": "Detalles"
-    }
+    },
+    "offerHeading": "Nuestros servicios"
   },
   "approach": {
     "eyebrow": "Cómo trabajamos",
@@ -94,7 +94,7 @@
         "body": "Las ideas se prueban abiertamente. Se estudian las proporciones, la luz y los materiales antes de tomar cualquier decisión."
       },
       {
-        "title": "Diseño",
+        "title": "Diseñar",
         "body": "El concepto se configura como un todo donde cada decisión responde al encargo y al espacio en sí."
       },
       {
@@ -120,7 +120,7 @@
     "stayInTouch": "Mantente en contacto"
   },
   "marquee": [
-    "Estudio Katha",
+    "Katha Studio",
     "Quietud, diseñada",
     "Bengaluru",
     "La arquitectura como pausa",
@@ -130,11 +130,6 @@
     "Comienza en silencio"
   ],
   "studioPage": {
-    "whyEyebrow": "¿Por qué Katha?",
-    "whyHeading": "Historia de Katha Means",
-    "whyPara1": "Cada proyecto conlleva algo que no se puede explicar: la forma en que una familia vive realmente, cómo necesita sentirse un negocio desde dentro, cómo se desea experimentar un paisaje, qué pide un lugar en silencio.",
-    "whyPara2Line1": "Nuestro trabajo consiste en aprender a leer eso.",
-    "whyPara2Line2": "Luego, construirlo con precisión.",
     "nehaEyebrow": "Conoce a Neha",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Retrato de la arquitecta Neha, fundadora y arquitecta principal de Katha Studio.",
@@ -143,7 +138,7 @@
     "nehaPara3": "He dedicado años a aprender a interpretar eso: en el peso de un material elegido por cómo envejece, en proporciones extraídas de tradiciones que comprendían la escala humana mucho antes de que se convirtiera en una disciplina, en la lógica silenciosa de una habitación que nunca necesita explicación porque todo en ella está exactamente donde debe estar.",
     "nehaPara4": "Esa minuciosidad en la atención al detalle es la base de cada proyecto de Katha.",
     "nehaName": "Ar. Neha",
-    "nehaRole": "Fundador y arquitecto principal",
+    "nehaRole": "Fundadora y arquitecta principal",
     "perspectiveEyebrow": "Nuestra perspectiva",
     "perspective1": "Los mejores espacios nunca surgen por casualidad.",
     "perspective2": "Cada material se elige por cómo se comporta a lo largo de las décadas.",
@@ -172,7 +167,7 @@
         "body": "Diseñamos pensando en la vida que un espacio tendrá: diez años, veinte años, mucho después del primer día."
       }
     ],
-    "craftEyebrow": "Manualidades y materiales",
+    "craftEyebrow": "Artesanía y materiales",
     "craftPara1": "Cada decisión que se toma en un edificio es también una decisión material.",
     "craftPara2": "El material del que está hecho determina cómo envejece, cómo se siente al tacto, cómo refleja la luz y cómo se comporta en su entorno. Elegimos los materiales por su efecto a lo largo del tiempo, no solo por su apariencia el día de su instalación.",
     "craftTags": [
@@ -189,18 +184,23 @@
     "clientsPara2": "Familias que desean un hogar construido para perdurar y que les resulte acogedor por generaciones. Empresas que entienden que su entorno refleja su identidad. Desarrolladores que saben que los detalles correctos desde el principio determinan todo lo que viene después.",
     "clientsPara3": "Aceptamos trabajos que podemos realizar con total compromiso. Nada menos.",
     "noteBody": "Cada proyecto representa un capítulo importante en la vida de alguien. Es una responsabilidad que asumimos con gran compromiso. Gracias por considerar a Katha Studio como parte de ese camino.",
-    "noteSignature": "— Arq. Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "El estudio",
+    "whyHeading": "La práctica que hay detrás del trabajo",
+    "whyPara1": "Katha Studio es un estudio de arquitectura e interiorismo que se basa en una convicción: que los mejores espacios surgen de una comprensión profunda de las personas y los lugares para los que están diseñados.",
+    "whyPara2Line1": "Lo que sigue es quiénes somos —",
+    "whyPara2Line2": "La perspectiva y la artesanía que hay detrás de cada proyecto de Katha."
   },
   "contactPage": {
     "eyebrow": "Ponte en contacto",
-    "titleLine1": "Comience un",
+    "titleLine1": "Comience una",
     "titleLine2": "conversación",
     "details": {
       "emailLabel": "Correo electrónico",
       "phoneLabel": "Teléfono",
       "studioLabel": "Estudio",
       "studioValue": "Bengaluru, India",
-      "portfolioLabel": "Cartera",
+      "portfolioLabel": "Portafolio",
       "portfolioValue": "Disponible bajo petición; escríbanos."
     }
   },
@@ -208,7 +208,7 @@
     "nameLabel": "Nombre",
     "namePlaceholder": "Su nombre",
     "emailLabel": "Correo electrónico",
-    "emailPlaceholder": "tú@ejemplo.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Teléfono",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Tipo de proyecto",
@@ -218,7 +218,7 @@
     "messageLabel": "Mensaje",
     "messagePlaceholder": "Cuéntanos sobre tu proyecto: qué es, dónde se encuentra y qué esperas que llegue a ser.",
     "send": "Enviar consulta",
-    "sending": "Envío",
+    "sending": "Enviando",
     "sent": "Enviado ✓",
     "success": "— Gracias. Nos pondremos en contacto con usted en un plazo de dos días laborables.",
     "errors": {
@@ -302,7 +302,7 @@
         "Eso es lo que es Katha Advisory."
       ],
       "scope": [
-        "Desarrollo breve",
+        "Desarrollo del briefing",
         "Factibilidad",
         "Dirección de diseño",
         "Soporte para la toma de decisiones"

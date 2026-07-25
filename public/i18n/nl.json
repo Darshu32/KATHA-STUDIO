@@ -7,12 +7,12 @@
     "studio": "Studio",
     "approach": "Benadering",
     "services": "Diensten",
-    "journal": "Tijdschrift",
+    "journal": "Journal",
     "contact": "Contact",
-    "home": "Thuis",
+    "home": "Home",
     "backToHome": "Terug naar de homepage",
     "next": "Volgende",
-    "previous": "Vorig",
+    "previous": "Vorige",
     "locationLine": "KATHA Studio · Bengaluru",
     "whatWeDo": "Wat wij doen",
     "whatWeBuild": "Wat wij bouwen",
@@ -20,7 +20,7 @@
   },
   "home": {
     "eyebrow": "Architectuur · Interieurs · Renovatie · Landschap",
-    "titleLine1": "Elke ruimte heeft een verhaal.",
+    "titleLine1": "Elke ruimte heeft een verhaal,",
     "titleLine2": "wachtend om gebouwd te worden.",
     "mystery": [
       "Ruimtes die hun adem inhouden",
@@ -42,7 +42,7 @@
       "contact": "Contact",
       "residence": "Residentie",
       "interior": "Interieur",
-      "renovation": "Vernieuwing",
+      "renovation": "Renovatie",
       "advisory": "Advies",
       "service": "Dienst",
       "residential": "Residentieel",
@@ -65,7 +65,6 @@
   },
   "homeStory": {
     "offerEyebrow": "Wat wij bieden",
-    "offerHeading": "Hoe wij bouwen",
     "craftEyebrow": "Vakmanschap is belangrijk",
     "craftBody": "Architectuur wordt gevormd door duizenden beslissingen. De kwaliteit van een materiaal, de verhoudingen van een ruimte, de manier waarop licht een ruimte binnenkomt en de details van een verbinding beïnvloeden hoe een ruimte dagelijks wordt ervaren.",
     "closingCta": "Laten we uw project bespreken",
@@ -77,7 +76,8 @@
       "models": "Modellen",
       "materialBoards": "Materiaalplaten",
       "details": "Details"
-    }
+    },
+    "offerHeading": "Onze diensten"
   },
   "approach": {
     "eyebrow": "Hoe wij werken",
@@ -114,7 +114,7 @@
   },
   "journalPage": {
     "eyebrow": "Vanuit de studio",
-    "title": "Tijdschrift",
+    "title": "Journal",
     "intro": "Denken vanuit de studio — over ruimte, materiaal en de details die ertoe doen.",
     "inPreparation": "Ter voorbereiding",
     "stayInTouch": "Blijf in contact"
@@ -130,11 +130,6 @@
     "Begin rustig"
   ],
   "studioPage": {
-    "whyEyebrow": "Waarom Katha",
-    "whyHeading": "Katha betekent verhaal",
-    "whyPara1": "Elk project kent aspecten die niet in een briefing te beschrijven zijn: de manier waarop een gezin daadwerkelijk leeft, hoe een bedrijf van binnenuit moet aanvoelen, hoe een landschap beleefd wil worden, wat een locatie in stilte verlangt.",
-    "whyPara2Line1": "Onze taak is om te leren hoe we dat moeten lezen.",
-    "whyPara2Line2": "Vervolgens bouw je het precies zoals je wilt.",
     "nehaEyebrow": "Maak kennis met Neha",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Portret van architect Neha, oprichtster en hoofdarchitect van Katha Studio.",
@@ -189,7 +184,12 @@
     "clientsPara2": "Gezinnen die een huis willen dat lang meegaat en generaties lang goed aanvoelt. Bedrijven die begrijpen dat hun omgeving hun identiteit weerspiegelt. Ontwikkelaars die weten dat de juiste details aan het begin bepalend zijn voor alles wat volgt.",
     "clientsPara3": "Wij nemen alleen werk aan dat we met volledige toewijding kunnen uitvoeren. Niets minder.",
     "noteBody": "Elk project vertegenwoordigt een belangrijk hoofdstuk in iemands leven. Het is een verantwoordelijkheid die we zeer serieus nemen. Bedankt dat u Katha Studio overweegt als onderdeel van die reis.",
-    "noteSignature": "— Architect Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "De studio",
+    "whyHeading": "De praktijk achter het werk",
+    "whyPara1": "Katha Studio is een architectuur- en interieurbureau dat is gebouwd op één overtuiging: dat de beste ruimtes ontstaan door een diepgaand begrip van de mensen en de omgeving waarvoor ze bedoeld zijn.",
+    "whyPara2Line1": "Wat volgt, beschrijft wie we zijn.",
+    "whyPara2Line2": "Het perspectief en het vakmanschap achter elk Katha-project."
   },
   "contactPage": {
     "eyebrow": "Neem contact op",
@@ -208,7 +208,7 @@
     "nameLabel": "Naam",
     "namePlaceholder": "Jouw naam",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "jij@example.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Telefoon",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Projecttype",
@@ -237,9 +237,9 @@
     }
   },
   "detail": {
-    "scope": "Domein",
+    "scope": "Omvang",
     "ctaLabel": "Een project starten",
-    "entering": "Invoeren"
+    "entering": "Binnengaan"
   },
   "services": {
     "architecture": {
@@ -277,7 +277,7 @@
       "imageCaption": "Studie · Materiaal & Details"
     },
     "renovation": {
-      "title": "Vernieuwing",
+      "title": "Renovatie",
       "category": "Evoluerende ruimtes",
       "tagline": "Elke bestaande ruimte bevat iets dat de moeite waard is om te begrijpen voordat er iets aan veranderd wordt.",
       "desc": "Het helpen ontwikkelen van bestaande ruimtes, voortbouwend op hun sterke punten.",
@@ -302,8 +302,8 @@
         "Dat is wat Katha Advisory is."
       ],
       "scope": [
-        "Korte ontwikkeling",
-        "Geschiktheid",
+        "Briefingontwikkeling",
+        "Haalbaarheid",
         "Ontwerprichting",
         "Beslissingsondersteuning"
       ],
@@ -322,7 +322,7 @@
         "Werktekeningen",
         "Doorsneden en gevels",
         "Constructiedetails",
-        "Site documentatie"
+        "Bouwplaatsdocumentatie"
       ],
       "imageCaption": "Studie · Lijn & Precisie"
     },
@@ -401,7 +401,7 @@
       "paragraphs": [
         "Het zit hem in de wisselwerking tussen twee materialen — de manier waarop een stenen vloer een gestucte muur ontmoet, de schaduwlijn die een deurkozijn een strakke uitstraling geeft, de diepte van een raamopening die bepaalt of het licht zacht of fel binnenvalt. Deze keuzes onderscheiden een ruimte die doordacht aanvoelt van een ruimte die er slechts afgewerkt uitziet.",
         "Klanten vragen zelden naar dit soort dingen. Ze vragen naar indelingen, materialen en afwerkingen. Maar de ruimtes die ze zich herinneren – de ruimtes die ze aan anderen beschrijven, de ruimtes die hen bijblijven – zijn bijna altijd de ruimtes waar iemand precies op dit niveau aandacht aan heeft besteed.",
-        "Een slecht afgewerkt kruispunt spreekt boekdelen zodra iemand er in de buurt staat. Een schaduwlijn die niet op zijn plaats valt, vlakt een oppervlak af dat diepte zou moeten hebben. Deze dingen registreren zich onbewust, maar ze registreren zich wel.",
+        "Een slecht afgewerkte aansluiting spreekt boekdelen zodra iemand er in de buurt staat. Een schaduwlijn die niet op zijn plaats valt, vlakt een oppervlak af dat diepte zou moeten hebben. Deze dingen registreren zich onbewust, maar ze registreren zich wel.",
         "De kunst van de architectuur schuilt in de details die niemand ziet. Juist die onzichtbaarheid is de essentie."
       ]
     },

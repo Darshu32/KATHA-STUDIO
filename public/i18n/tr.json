@@ -1,18 +1,18 @@
 {
   "intro": {
     "chooseLanguage": "Dilinizi seçin",
-    "enter": "Girmek"
+    "enter": "Giriş"
   },
   "nav": {
     "studio": "Stüdyo",
-    "approach": "Yaklaşmak",
+    "approach": "Yaklaşım",
     "services": "Hizmetler",
     "journal": "Dergi",
-    "contact": "Temas etmek",
-    "home": "Ev",
+    "contact": "İletişim",
+    "home": "Ana Sayfa",
     "backToHome": "Ana sayfaya geri dön",
     "next": "Sonraki",
-    "previous": "Öncesi",
+    "previous": "Önceki",
     "locationLine": "KATHA Stüdyosu · Bengaluru",
     "whatWeDo": "Ne Yapıyoruz",
     "whatWeBuild": "Ne İnşa Ediyoruz",
@@ -34,25 +34,25 @@
     "cta": "Bir Sohbet Başlatın",
     "cardStudioLabel": "Stüdyo",
     "cardStudioTagline": "Biz kimiz",
-    "cardContactLabel": "Temas etmek",
+    "cardContactLabel": "İletişim",
     "cardContactTagline": "Bir konuşma başlatın",
     "category": {
       "intro": "Giriş",
       "studio": "Stüdyo",
-      "contact": "Temas etmek",
+      "contact": "İletişim",
       "residence": "İkametgah",
       "interior": "İç mekan",
       "renovation": "Yenileme",
       "advisory": "Danışmanlık",
       "service": "Hizmet",
-      "residential": "yerleşim",
-      "commercial": "Reklam",
+      "residential": "Konut",
+      "commercial": "Ticari",
       "highRise": "Çok katlı"
     }
   },
   "whyKatha": {
-    "eyebrow": "Katha neden?",
-    "heading": "Katha, Hikaye Anlamına Gelir.",
+    "eyebrow": "Neden Katha",
+    "heading": "Katha Hikaye Anlamına Gelir",
     "para1": "Her proje, özetlenemeyecek bir şeyler barındırır; bir ailenin gerçekte nasıl yaşadığı, bir işletmenin içeriden nasıl bir his uyandırması gerektiği, bir peyzajın nasıl deneyimlenmek istediği, bir alanın sessizce ne istediği gibi.",
     "para2Line1": "Bizim işimiz bunu okumayı öğrenmek.",
     "para2Line2": "Sonra da onu tam olarak inşa etmek.",
@@ -65,19 +65,19 @@
   },
   "homeStory": {
     "offerEyebrow": "Sunduklarımız",
-    "offerHeading": "Nasıl İnşa Ediyoruz",
     "craftEyebrow": "El Sanatları Önemlidir",
     "craftBody": "Mimari, binlerce kararla şekillenir. Bir malzemenin kalitesi, bir odanın oranları, ışığın mekana giriş şekli ve birleşim yerinin detayı, bir mekanın her gün nasıl deneyimlendiğini etkiler.",
     "closingCta": "Projenizi Konuşalım",
     "materials": {
-      "wood": "Odun",
+      "wood": "Ahşap",
       "stone": "Taş",
       "joinery": "Marangozluk",
       "sketches": "Çizimler",
       "models": "Modeller",
       "materialBoards": "Malzeme Panoları",
       "details": "Detaylar"
-    }
+    },
+    "offerHeading": "Hizmetlerimiz"
   },
   "approach": {
     "eyebrow": "Çalışma Şeklimiz",
@@ -120,7 +120,7 @@
     "stayInTouch": "İletişimde Kalalım"
   },
   "marquee": [
-    "Katha Stüdyosu",
+    "Katha Studio",
     "Sessizlik, Tasarlanmış",
     "Bengaluru",
     "Mimari Bir Duraklama Noktası Olarak",
@@ -130,19 +130,14 @@
     "Sessizce Başlayın"
   ],
   "studioPage": {
-    "whyEyebrow": "Katha neden?",
-    "whyHeading": "Katha, Hikaye Anlamına Gelir.",
-    "whyPara1": "Her proje, özetlenemeyecek bir şeyler barındırır; bir ailenin gerçekte nasıl yaşadığı, bir işletmenin içeriden nasıl bir his uyandırması gerektiği, bir peyzajın nasıl deneyimlenmek istediği, bir alanın sessizce ne istediği gibi.",
-    "whyPara2Line1": "Bizim işimiz bunu okumayı öğrenmek.",
-    "whyPara2Line2": "Sonra da onu tam olarak inşa etmek.",
     "nehaEyebrow": "Neha ile tanışın",
-    "nehaHeading": "Mimar Neha",
+    "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Katha Studio'nun Kurucusu ve Baş Mimarı Ar. Neha'nın Portresi",
-    "nehaPara1": "Uzayın hafızası vardır.",
+    "nehaPara1": "Mekanın hafızası vardır.",
     "nehaPara2": "Yapının nasıl inşa edildiğini, neye dayanacak şekilde tasarlandığını ve iş bittikten çok sonra bile insanlarda nasıl bir his uyandırdığını yansıtır.",
     "nehaPara3": "Yıllarımı bunu okumayı öğrenmekle geçirdim: zamanla nasıl eskiyeceğine göre seçilmiş bir malzemenin ağırlığında, insan ölçeğini bir disiplin haline gelmeden çok önce anlamış geleneklerden alınan oranlarda, her şeyin tam olarak olması gereken yerde olduğu için asla açıklamaya ihtiyaç duymayan bir odanın sessiz mantığında.",
     "nehaPara4": "Katha projelerinin temelinde bu derinlikteki özen yatmaktadır.",
-    "nehaName": "Mimar Neha",
+    "nehaName": "Ar. Neha",
     "nehaRole": "Kurucu ve Baş Mimar",
     "perspectiveEyebrow": "Bizim Bakış Açımız",
     "perspective1": "En iyi mekanlar asla tesadüfen oluşmaz.",
@@ -161,7 +156,7 @@
       },
       {
         "title": "Kökler",
-        "body": "Uzay hakkındaki bilgileri yazılı hale getirilmeden çok önce bünyesinde barındıran yapı geleneklerinden yararlanıyoruz."
+        "body": "Mekan hakkındaki bilgileri yazılı hale getirilmeden çok önce bünyesinde barındıran yapı geleneklerinden yararlanıyoruz."
       },
       {
         "title": "Kesinlik",
@@ -176,7 +171,7 @@
     "craftPara1": "Bir binayla ilgili her karar aynı zamanda malzeme ile ilgili bir karardır.",
     "craftPara2": "Bir şeyin neyden yapıldığı, nasıl yaşlanacağını, altta nasıl hissettireceğini, ışığı nasıl tutacağını, iklimde nasıl duracağını belirler. Malzemeleri sadece monte edildikleri gün nasıl göründüklerine göre değil, zaman içinde ne yaptıklarına göre seçeriz.",
     "craftTags": [
-      "Odun",
+      "Ahşap",
       "Taş",
       "Marangozluk",
       "Çizimler",
@@ -189,12 +184,17 @@
     "clientsPara2": "Nesiller boyu dayanacak ve doğru hissettirecek bir ev isteyen aileler. Çevrelerinin kim olduklarını yansıttığını anlayan işletmeler. Başlangıçtaki doğru detayların sonrasında her şeyi belirlediğini bilen geliştiriciler.",
     "clientsPara3": "Yapabileceğimiz işleri tam bir özveriyle üstleniyoruz. Daha azıyla yetinmiyoruz.",
     "noteBody": "Her proje, birinin hayatındaki önemli bir bölümü temsil eder. Bu, çok değer verdiğimiz bir sorumluluktur. Katha Studio'yu bu yolculuğun bir parçası olarak değerlendirdiğiniz için teşekkür ederiz.",
-    "noteSignature": "— Mimar Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "Stüdyo",
+    "whyHeading": "Çalışmanın Arkasındaki Uygulama",
+    "whyPara1": "Katha Studio, en iyi mekanların, tasarlandıkları insanları ve yerleri gerçekten anlamaktan doğduğuna dair tek bir inanç üzerine kurulmuş bir mimarlık ve iç tasarım firmasıdır.",
+    "whyPara2Line1": "Aşağıda kim olduğumuz anlatılmaktadır —",
+    "whyPara2Line2": "Her Katha projesinin ardındaki bakış açısı ve ustalık."
   },
   "contactPage": {
     "eyebrow": "İletişime Geçin",
-    "titleLine1": "Başlayın",
-    "titleLine2": "konuşma",
+    "titleLine1": "Bir sohbete",
+    "titleLine2": "başlayın",
     "details": {
       "emailLabel": "E-posta",
       "phoneLabel": "Telefon",
@@ -218,7 +218,7 @@
     "messageLabel": "Mesaj",
     "messagePlaceholder": "Bize projenizden bahsedin — nedir, şu anki aşamasında ve neye dönüşmesini umuyorsunuz?",
     "send": "Sorgu Gönder",
-    "sending": "Gönderme",
+    "sending": "Gönderiliyor",
     "sent": "Gönderildi ✓",
     "success": "— Teşekkür ederiz. İki iş günü içinde sizinle iletişime geçeceğiz.",
     "errors": {
@@ -322,12 +322,12 @@
         "Çalışma Çizimleri",
         "Kesitler ve Yükseklikler",
         "İnşaat Detayları",
-        "Site Dokümantasyonu"
+        "Şantiye Dokümantasyonu"
       ],
       "imageCaption": "Çalışma · Çizgi ve Hassasiyet"
     },
     "residential": {
-      "title": "yerleşim",
+      "title": "Konut",
       "category": "Evler ve Yaşam",
       "tagline": "Her gün geri döndüğünüz mekanlar.",
       "desc": "Yaşam tarzınıza uygun olarak tasarlanmış evler — özel, sıcak ve uzun ömürlü.",
@@ -344,7 +344,7 @@
       "imageCaption": "Çalışma · Ev ve Yaşam"
     },
     "commercial": {
-      "title": "Reklam",
+      "title": "Ticari",
       "category": "İş ve Perakende",
       "tagline": "İçindeki insanlar kadar çalışkan mekanlar.",
       "desc": "İşlevselliği, markayı ve atmosferi dengeleyen ofisler, mağazalar ve ağırlama alanları.",
@@ -358,7 +358,7 @@
         "Konukseverlik",
         "Sergi salonları"
       ],
-      "imageCaption": "Eğitim · Çalışma ve Marka"
+      "imageCaption": "Çalışma · İş ve Marka"
     },
     "high-rise": {
       "title": "Çok katlı",
@@ -379,10 +379,10 @@
     }
   },
   "noteCategories": {
-    "Process": "İşlem",
+    "Process": "Süreç",
     "Culture": "Kültür",
     "Craft": "Zanaat",
-    "Space": "Uzay"
+    "Space": "Mekan"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -406,7 +406,7 @@
       ]
     },
     "what-india-knows-about-space": {
-      "title": "Hindistan'ın Uzay Hakkında Bildikleri ve Dünyanın Yeniden Öğrendikleri",
+      "title": "Hindistan'ın Mekan Hakkında Bildikleri ve Dünyanın Yeniden Öğrendikleri",
       "excerpt": "Çağdaş mimarideki en gelişmiş fikirler aslında hiç yeni değildi. Unutuldular.",
       "paragraphs": [
         "Avlu geometrisi sayesinde pasif soğutma. Mekanik müdahale olmadan iç mekanları stabil tutan taş duvarlardaki termal kütle. Ne iç mekan ne de dış mekan olan veranda, ısıyı dengeleyerek, ışığı filtreleyerek, hiçbir klima ünitesinin yerini alamadığı bir eşik oluşturuyor. Su toplama, kamusal toplanma ve mikro iklimi tek bir yapıda çözen basamaklı kuyular.",
