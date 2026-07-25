@@ -66,7 +66,7 @@
   "homeStory": {
     "offerEyebrow": "Co oferujemy",
     "craftEyebrow": "Rzemiosło ma znaczenie",
-    "craftBody": "Architektura kształtowana jest przez tysiące decyzji. Jakość materiałów, proporcje pomieszczenia, sposób wpadania światła do wnętrza i detale skrzyżowań wpływają na to, jak przestrzeń jest odbierana każdego dnia.",
+    "craftBody": "Architektura kształtowana jest przez tysiące decyzji. Jakość materiałów, proporcje pomieszczenia, sposób wpadania światła do wnętrza i detal złącza wpływają na to, jak przestrzeń jest odbierana każdego dnia.",
     "closingCta": "Omówmy Twój projekt",
     "materials": {
       "wood": "Drewno",
@@ -135,7 +135,7 @@
     "nehaPortraitAlt": "Portret Ar. Nehy, założycielki i głównej architektki Katha Studio",
     "nehaPara1": "Przestrzeń ma pamięć.",
     "nehaPara2": "Zawiera w sobie elementy, które świadczą o tym, jak budynek został zbudowany, jakie przetrwanie miał zapewnić i jakie uczucia wywołuje w ludziach na długo po jego zakończeniu.",
-    "nehaPara3": "Latami uczyłem się to odczytywać — w ciężarze materiału wybranego ze względu na sposób starzenia, w proporcjach zaczerpniętych z tradycji, które rozumiały ludzką skalę na długo zanim stała się ona dyscypliną, w cichej logice pomieszczenia, którego nie trzeba nigdy wyjaśniać, bo wszystko w nim znajduje się dokładnie na swoim miejscu.",
+    "nehaPara3": "Latami uczyłam się to odczytywać — w ciężarze materiału wybranego ze względu na sposób starzenia, w proporcjach zaczerpniętych z tradycji, które rozumiały ludzką skalę na długo zanim stała się ona dyscypliną, w cichej logice pomieszczenia, którego nie trzeba nigdy wyjaśniać, bo wszystko w nim znajduje się dokładnie na swoim miejscu.",
     "nehaPara4": "Każdy projekt Katha opiera się na tej głębokiej uwadze.",
     "nehaName": "Ar. Neha",
     "nehaRole": "Założycielka i główna architektka",
@@ -265,7 +265,7 @@
       "tagline": "Każde wnętrze ma w sobie jakiś nastrój, zanim jeszcze znajdzie się w nim mebel.",
       "desc": "Przestrzenie ukształtowane poprzez materiały, światło i przemyślane detale.",
       "paragraphs": [
-        "Praca polega na rzadko spotykanych wyborach – fakturze powierzchni, proporcjach pomieszczenia, sposobie, w jaki światło pada na powierzchnię w ciągu dnia. To właśnie te decyzje decydują o tym, jak dana przestrzeń będzie się w niej czuć przez lata.",
+        "Praca polega na rzadko spotykanych wyborach – fakturze powierzchni, proporcjach pomieszczenia, sposobie, w jaki światło pada na powierzchnię w ciągu dnia. To właśnie te decyzje decydują o tym, jak będzie się mieszkać w danej przestrzeni przez lata.",
         "Każde wnętrze Katha jest zbudowane właśnie w tym celu."
       ],
       "scope": [
@@ -315,7 +315,7 @@
       "tagline": "Rysunki, które zamieniają projekt w budynek.",
       "desc": "Dokładne rysunki konstrukcyjne, które pozwalają przekształcić projekt w coś, co można dokładnie wybudować na placu budowy.",
       "paragraphs": [
-        "Projekt staje się budynkiem tylko wtedy, gdy można go precyzyjnie zbudować. Rysunki techniczne to miejsce, gdzie intencja staje się instrukcją – każdy wymiar, skrzyżowanie i materiał są wystarczająco jasno określone, aby umożliwić budowę bez domysłów.",
+        "Projekt staje się budynkiem tylko wtedy, gdy można go precyzyjnie zbudować. Rysunki techniczne to miejsce, gdzie intencja staje się instrukcją – każdy wymiar, złącze i materiał są wystarczająco jasno określone, aby umożliwić budowę bez domysłów.",
         "Przygotowujemy szczegółowe rysunki robocze — plany, przekroje, elewacje i detale konstrukcyjne — które dają wykonawcom jedno, precyzyjne źródło informacji. Mniej niespodzianek na placu budowy, mniej kompromisów i gotowa przestrzeń zgodna z tym, co zostało narysowane."
       ],
       "scope": [
@@ -391,7 +391,7 @@
       "paragraphs": [
         "To najszybszy sposób, aby dowiedzieć się, czego jeszcze nie rozumiesz w projekcie. Linia narysowana zbyt wcześnie w złym kierunku nic nie kosztuje na papierze, a wszystko w realizacji. Dlatego kreślimy wcześnie i luźno – nie po to, by się zobowiązać, ale by ujawnić. Aby zobaczyć, gdzie myślenie się sprawdza, a gdzie nie.",
         "Projekty, które kończą się sukcesem, to te, w których najtrudniejsze pytania zadawano, zanim projekt został pokochany. Zanim klient był zaangażowany w projekt. Zanim ktokolwiek zainwestował w pomysł. Na początku każdego projektu pojawia się okno, w którym wszystko jest jeszcze możliwe — i to właśnie w tym oknie odbywa się najważniejsza praca.",
-        "To, co z tego wychodzi, nie zawsze jest tym, czego ktokolwiek się spodziewał. Strona, która zdawała się wymagać jednego podejścia, ujawnia po szkicach, że potrzebuje czegoś spokojniejszego. Zlecenie, które wydawało się proste, otwiera się na coś bogatszego, gdy pierwsze linie zostaną nakreślone i poddane w wątpliwość.",
+        "To, co z tego wychodzi, nie zawsze jest tym, czego ktokolwiek się spodziewał. Działka, która zdawała się wymagać jednego podejścia, ujawnia po szkicach, że potrzebuje czegoś spokojniejszego. Zlecenie, które wydawało się proste, otwiera się na coś bogatszego, gdy pierwsze linie zostaną nakreślone i poddane w wątpliwość.",
         "Ze szkicu dowiadujemy się, czego tak naprawdę wymaga projekt."
       ]
     },
@@ -401,7 +401,7 @@
       "paragraphs": [
         "Znajduje się na styku dwóch materiałów – w sposobie, w jaki kamienna podłoga styka się z otynkowaną ścianą, w linii cienia, która sprawia, że framuga drzwi jest czytelna, w głębi wnęki okiennej, która decyduje, czy światło wpada łagodnie, czy ostro. Te decyzje oddzielają przestrzeń, która wydaje się przemyślana, od tej, która wygląda na jedynie wykończoną.",
         "Klienci rzadko pytają o takie rzeczy. Pytają o układ, materiały, wykończenie. Ale przestrzenie, które zapamiętują – te, które opisują innym, te, które zostają w ich pamięci – to prawie zawsze te, na które ktoś zwrócił uwagę dokładnie na tym poziomie.",
-        "Źle rozwiązane skrzyżowanie mówi samo za siebie za każdym razem, gdy ktoś stanie w jego pobliżu. Linia cienia, która nie pasuje do miejsca, spłaszcza powierzchnię, która powinna mieć głębię. Te rzeczy rejestrują się poniżej poziomu świadomości — ale rejestrują.",
+        "Źle rozwiązane złącze mówi samo za siebie za każdym razem, gdy ktoś stanie w jego pobliżu. Linia cienia, która nie pasuje do miejsca, spłaszcza powierzchnię, która powinna mieć głębię. Te rzeczy rejestrują się poniżej poziomu świadomości — ale rejestrują.",
         "Sztuka architektury tkwi w szczegółach, których nikt nie dostrzega. Ta niewidzialność jest sednem sprawy."
       ]
     },
@@ -411,7 +411,7 @@
       "paragraphs": [
         "Pasywne chłodzenie poprzez geometrię dziedzińca. Masa termiczna w kamiennych ścianach, która utrzymuje wnętrza w stabilności bez ingerencji mechanicznej. Weranda – ani wewnątrz, ani na zewnątrz – łagodzi ciepło, filtruje światło, tworząc próg, którego nie zastąpiła żadna klimatyzacja. Studnie schodkowe rozwiązały problem gromadzenia wody, spotkań publicznych i mikroklimatu w jednym budynku.",
         "To nie były przypadki. To były wieki obserwacji wplecione w rzemiosło – przekazywane z rąk do rąk, a nie z podręczników. Wiedza nie zniknęła, bo przestała działać. Zniknęła, bo importowany modernizm pojawił się szybciej, niż ktokolwiek mógłby przypuszczać, że go zakwestionuje.",
-        "Świat wydaje teraz ogromne środki na ponowne odkrycie tego, co już było znane. Projektowanie biofilne. Pasywna wentylacja. Skala ludzka. Materiały pozyskiwane lokalnie. To nie są trendy. To zyski.",
+        "Świat wydaje teraz ogromne środki na ponowne odkrycie tego, co już było znane. Projektowanie biofilne. Pasywna wentylacja. Skala ludzka. Materiały pozyskiwane lokalnie. To nie są trendy. To powroty.",
         "Budujemy z tą wiedzą świadomie – nie z nostalgii. Bo to działa lepiej."
       ]
     },
@@ -419,7 +419,7 @@
       "title": "O projektowaniu za dwadzieścia lat",
       "excerpt": "Każdy projekt przetrwa rozmowę, która go zapoczątkowała.",
       "paragraphs": [
-        "Rodzina, która to informowała, się zmieni. Dzieci dorosną i odejdą. Firmy się zmienią. Sposób, w jaki ludzie pracują, gromadzą się i poruszają w przestrzeni, już różni się od tego sprzed dekady – i będzie się zmieniał ponownie w kolejnej. Przestrzeń zaprojektowana wyłącznie na dziś staje się już przestarzała.",
+        "Rodzina, która zleciła projekt, się zmieni. Dzieci dorosną i odejdą. Firmy się zmienią. Sposób, w jaki ludzie pracują, gromadzą się i poruszają w przestrzeni, już różni się od tego sprzed dekady – i będzie się zmieniał ponownie w kolejnej. Przestrzeń zaprojektowana wyłącznie na dziś staje się już przestarzała.",
         "Odpowiedzią nie są otwarte przestrzenie i ruchome ściany. Chodzi o głębszą analizę tego, co jest trwałe w ludzkim zachowaniu, a co nie.",
         "Ludzie zawsze będą potrzebować miejsca, by być sami i gdzie mogą się spotkać. Zawsze będą reagować na naturalne światło. Zawsze poczują różnicę między sufitem na odpowiedniej wysokości a takim, który jej nie ma. Zawsze będą wiedzieć, kiedy materiał jest uczciwy, a kiedy udaje coś innego.",
         "Projektuj z uwzględnieniem tych stałych. Buduj z materiałów, które starzeją się z godnością. Zostaw w planie miejsce na to, by życie mogło się rozwijać, nie niszcząc architektury.",
