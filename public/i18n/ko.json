@@ -1,18 +1,18 @@
 {
   "intro": {
     "chooseLanguage": "언어를 선택하세요",
-    "enter": "입력하다"
+    "enter": "들어가기"
   },
   "nav": {
-    "studio": "사진관",
-    "approach": "접근하다",
+    "studio": "스튜디오",
+    "approach": "접근 방식",
     "services": "서비스",
-    "journal": "신문",
-    "contact": "연락하다",
-    "home": "집",
+    "journal": "저널",
+    "contact": "문의",
+    "home": "홈",
     "backToHome": "홈으로 돌아가기",
     "next": "다음",
-    "previous": "이전의",
+    "previous": "이전",
     "locationLine": "KATHA 스튜디오 · 벵갈루루",
     "whatWeDo": "우리가 하는 일",
     "whatWeBuild": "우리가 만드는 것",
@@ -25,39 +25,39 @@
     "mystery": [
       "숨을 멈추게 하는 공간들",
       "조용할수록 더욱 생동감 넘친다.",
-      "추첨이 끝난 후 남는 것은 무엇일까요?",
+      "그림이 끝난 뒤에 남는 것",
       "빛, 인내, 단 하나의 몸짓",
       "건축은 낮은 목소리로"
     ],
     "subhead": "카타 스튜디오에서는 모든 프로젝트가 경청에서 시작됩니다. 우리는 시간을 들여 사람, 장소, 그리고 목적을 이해한 후, 개인적이고 시대를 초월하며 그 공간의 삶과 깊이 연결된 느낌을 주는 공간을 만들어냅니다.",
     "location": "벵갈루루에 본사를 두고 인도 전역에서 활동하며, 일부 해외 협력 프로젝트에도 열려 있습니다.",
     "cta": "대화를 시작하세요",
-    "cardStudioLabel": "사진관",
+    "cardStudioLabel": "스튜디오",
     "cardStudioTagline": "우리는 누구인가",
-    "cardContactLabel": "연락하다",
+    "cardContactLabel": "문의",
     "cardContactTagline": "대화를 시작하세요",
     "category": {
       "intro": "소개",
-      "studio": "사진관",
-      "contact": "연락하다",
+      "studio": "스튜디오",
+      "contact": "문의",
       "residence": "거주",
-      "interior": "내부",
-      "renovation": "혁신",
+      "interior": "인테리어",
+      "renovation": "리모델링",
       "advisory": "자문",
       "service": "서비스",
       "residential": "주거용",
-      "commercial": "광고",
+      "commercial": "상업",
       "highRise": "고층 건물"
     }
   },
   "whyKatha": {
-    "eyebrow": "카타는 왜",
-    "heading": "카타 민스 스토리",
+    "eyebrow": "왜 Katha인가",
+    "heading": "Katha는 이야기를 뜻합니다",
     "para1": "모든 프로젝트에는 브리핑으로는 설명할 수 없는 무언가가 담겨 있습니다. 가족의 실제 생활 방식, 기업이 내부에서 어떤 느낌을 주어야 하는지, 풍경이 어떤 모습으로 경험되기를 원하는지, 부지가 조용히 무엇을 요구하는지 등 말입니다.",
     "para2Line1": "우리의 임무는 그것을 읽어내는 법을 배우는 것입니다.",
     "para2Line2": "그다음에는 정확하게 만들어냅니다.",
     "process": {
-      "sketchbook": "수필집",
+      "sketchbook": "스케치북",
       "tracingPaper": "투사지",
       "handwrittenNotes": "손으로 쓴 메모",
       "materialBoard": "재료 보드"
@@ -65,19 +65,19 @@
   },
   "homeStory": {
     "offerEyebrow": "저희가 제공하는 것",
-    "offerHeading": "우리는 어떻게 건설하는가",
     "craftEyebrow": "공예가 중요합니다",
     "craftBody": "건축은 수많은 결정들을 통해 완성됩니다. 재료의 질, 공간의 비율, 빛이 들어오는 방식, 그리고 연결 부위의 세부적인 부분까지 모두 일상생활에서 공간을 경험하는 방식에 영향을 미칩니다.",
     "closingCta": "프로젝트에 대해 이야기해 봅시다",
     "materials": {
       "wood": "목재",
-      "stone": "결석",
+      "stone": "석재",
       "joinery": "가구 만드는 일",
       "sketches": "스케치",
       "models": "모델들",
       "materialBoards": "재료 보드",
       "details": "세부"
-    }
+    },
+    "offerHeading": "저희 서비스"
   },
   "approach": {
     "eyebrow": "우리의 업무 방식",
@@ -114,13 +114,13 @@
   },
   "journalPage": {
     "eyebrow": "스튜디오에서",
-    "title": "신문",
+    "title": "저널",
     "intro": "스튜디오의 관점에서 공간, 재료, 그리고 중요한 디테일에 대해 생각해 봅니다.",
     "inPreparation": "준비 중",
     "stayInTouch": "계속 연락해요"
   },
   "marquee": [
-    "카타 스튜디오",
+    "Katha Studio",
     "고요함, 디자인됨",
     "벵갈루루",
     "건축은 멈춤이다",
@@ -130,19 +130,14 @@
     "조용히 시작하세요"
   ],
   "studioPage": {
-    "whyEyebrow": "카타는 왜",
-    "whyHeading": "카타 민스 스토리",
-    "whyPara1": "모든 프로젝트에는 브리핑으로는 설명할 수 없는 무언가가 담겨 있습니다. 가족의 실제 생활 방식, 기업이 내부에서 어떤 느낌을 주어야 하는지, 풍경이 어떤 모습으로 경험되기를 원하는지, 부지가 조용히 무엇을 요구하는지 등 말입니다.",
-    "whyPara2Line1": "우리의 임무는 그것을 읽어내는 법을 배우는 것입니다.",
-    "whyPara2Line2": "그다음에는 정확하게 만들어냅니다.",
     "nehaEyebrow": "네하를 만나보세요",
-    "nehaHeading": "아르. 네하",
+    "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "카타 스튜디오 설립자 겸 대표 건축가 네하(Neha)의 초상",
-    "nehaPara1": "우주에는 기억이 있다.",
+    "nehaPara1": "공간에는 기억이 있다.",
     "nehaPara2": "그것은 어떻게 지어졌는지, 무엇을 견뎌낼 수 있도록 지어졌는지, 그리고 완공 후에도 사람들에게 어떤 느낌을 주는지를 담고 있습니다.",
     "nehaPara3": "저는 수년간 그런 것들을 읽어내는 법을 배우는 데 시간을 보냈습니다. 세월이 흐르면서 변해가는 재료를 고를 때 느껴지는 무게감, 인간적인 규모를 학문으로 정립하기 훨씬 전부터 인간적인 규모를 이해해 온 전통에서 비롯된 비율, 그리고 모든 것이 제자리에 정확히 놓여 있어 설명이 필요 없는 공간의 조용한 논리까지 말입니다.",
     "nehaPara4": "그러한 깊이 있는 관심이야말로 모든 카타 프로젝트의 기반입니다.",
-    "nehaName": "아르. 네하",
+    "nehaName": "Ar. Neha",
     "nehaRole": "창립자 겸 수석 건축가",
     "perspectiveEyebrow": "우리의 관점",
     "perspective1": "최고의 공간은 결코 우연히 만들어지는 것이 아닙니다.",
@@ -161,7 +156,7 @@
       },
       {
         "title": "뿌리",
-        "body": "우리는 우주에 대한 정보를 기록으로 남기기 훨씬 이전부터 전해 내려온 건축 전통에서 영감을 얻습니다."
+        "body": "우리는 공간에 대한 정보를 기록으로 남기기 훨씬 이전부터 전해 내려온 건축 전통에서 영감을 얻습니다."
       },
       {
         "title": "정도",
@@ -177,7 +172,7 @@
     "craftPara2": "어떤 물건이 어떤 재료로 만들어졌는지는 시간이 지남에 따라 어떻게 변하는지, 촉감이 어떤지, 빛을 어떻게 반사하는지, 주변 환경에 어떻게 적응하는지를 결정합니다. 우리는 재료를 선택할 때 설치 당일의 모습뿐만 아니라 시간이 흐르면서 어떻게 변하는지를 고려합니다.",
     "craftTags": [
       "목재",
-      "결석",
+      "석재",
       "가구 만드는 일",
       "스케치",
       "모델들",
@@ -189,7 +184,12 @@
     "clientsPara2": "대대로 물려줄 수 있는 견고하고 편안한 집을 원하는 가족. 주변 환경이 회사의 정체성을 반영한다는 것을 이해하는 기업. 그리고 초기 단계의 세심한 계획이 모든 것을 좌우한다는 것을 아는 개발업자.",
     "clientsPara3": "우리는 온전히 헌신할 수 있는 일만 맡습니다. 그 이하로는 절대 안 됩니다.",
     "noteBody": "모든 프로젝트는 누군가의 삶에서 중요한 한 장을 의미합니다. 저희는 이러한 책임감을 매우 소중하게 생각합니다. 그 여정에 카타 스튜디오를 함께할 파트너로 고려해 주셔서 감사합니다.",
-    "noteSignature": "— 건축가 네하"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "스튜디오",
+    "whyHeading": "작업 이면에 숨겨진 실천",
+    "whyPara1": "카타 스튜디오는 최고의 공간은 그 공간이 만들어지는 대상과 장소를 진정으로 이해하는 데서 비롯된다는 신념을 바탕으로 설립된 건축 및 인테리어 회사입니다.",
+    "whyPara2Line1": "다음은 저희에 대한 소개입니다.",
+    "whyPara2Line2": "Katha의 모든 프로젝트에 담긴 관점과 기술."
   },
   "contactPage": {
     "eyebrow": "연락 주세요",
@@ -198,7 +198,7 @@
     "details": {
       "emailLabel": "이메일",
       "phoneLabel": "핸드폰",
-      "studioLabel": "사진관",
+      "studioLabel": "스튜디오",
       "studioValue": "벵갈루루, 인도",
       "portfolioLabel": "포트폴리오",
       "portfolioValue": "요청 시 제공 가능합니다. 문의 사항은 저희에게 연락주세요."
@@ -218,7 +218,7 @@
     "messageLabel": "메시지",
     "messagePlaceholder": "프로젝트에 대해 설명해 주세요. 프로젝트가 무엇인지, 현재 어떤 위치에 있는지, 그리고 앞으로 어떻게 발전시키고 싶은지 알려주세요.",
     "send": "문의하기",
-    "sending": "배상",
+    "sending": "전송 중",
     "sent": "보냈습니다 ✓",
     "success": "— 감사합니다. 영업일 기준 이틀 이내에 연락드리겠습니다.",
     "errors": {
@@ -277,7 +277,7 @@
       "imageCaption": "연구 · 자료 및 세부 사항"
     },
     "renovation": {
-      "title": "혁신",
+      "title": "리모델링",
       "category": "진화하는 공간",
       "tagline": "모든 기존 공간은 변화를 주기 전에 이해할 가치가 있는 무언가를 지니고 있다.",
       "desc": "기존 공간의 강점을 더욱 발전시키면서 공간의 진화를 돕습니다.",
@@ -344,7 +344,7 @@
       "imageCaption": "학습 · 홈 & 리빙"
     },
     "commercial": {
-      "title": "광고",
+      "title": "상업",
       "category": "업무 및 소매업",
       "tagline": "그 안에 있는 사람들만큼이나 제 역할을 다하는 공간.",
       "desc": "기능, 브랜드, 그리고 감성의 균형을 이룬 사무실, 매장, 그리고 접객 공간.",
@@ -381,7 +381,7 @@
   "noteCategories": {
     "Process": "프로세스",
     "Culture": "문화",
-    "Craft": "선박",
+    "Craft": "공예",
     "Space": "공간"
   },
   "notes": {

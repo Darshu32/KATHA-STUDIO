@@ -1,15 +1,15 @@
 {
   "intro": {
     "chooseLanguage": "Pilih bahasa Anda",
-    "enter": "Memasuki"
+    "enter": "Masuk"
   },
   "nav": {
     "studio": "Studio",
-    "approach": "Mendekati",
+    "approach": "Pendekatan",
     "services": "Layanan",
     "journal": "Jurnal",
     "contact": "Kontak",
-    "home": "Rumah",
+    "home": "Beranda",
     "backToHome": "Kembali ke Beranda",
     "next": "Berikutnya",
     "previous": "Sebelumnya",
@@ -41,10 +41,10 @@
       "studio": "Studio",
       "contact": "Kontak",
       "residence": "Tempat tinggal",
-      "interior": "Pedalaman",
+      "interior": "Interior",
       "renovation": "Renovasi",
-      "advisory": "Pemberitahuan",
-      "service": "Melayani",
+      "advisory": "Konsultasi",
+      "service": "Layanan",
       "residential": "Perumahan",
       "commercial": "Komersial",
       "highRise": "Gedung Tinggi"
@@ -65,19 +65,19 @@
   },
   "homeStory": {
     "offerEyebrow": "Apa yang Kami Tawarkan",
-    "offerHeading": "Bagaimana Kami Membangun",
     "craftEyebrow": "Kerajinan Itu Penting",
     "craftBody": "Arsitektur dibentuk melalui ribuan keputusan. Kualitas material, proporsi ruangan, cara cahaya masuk ke dalam ruang, dan detail sambungan memengaruhi bagaimana ruang tersebut dialami setiap hari.",
     "closingCta": "Mari Diskusikan Proyek Anda",
     "materials": {
       "wood": "Kayu",
       "stone": "Batu",
-      "joinery": "Bengkel tukang kayu",
+      "joinery": "Pekerjaan Kayu",
       "sketches": "Sketsa",
       "models": "Model",
       "materialBoards": "Papan Material",
       "details": "Detail"
-    }
+    },
+    "offerHeading": "Layanan Kami"
   },
   "approach": {
     "eyebrow": "Bagaimana Cara Kami Bekerja",
@@ -130,15 +130,10 @@
     "Mulailah dengan Tenang"
   ],
   "studioPage": {
-    "whyEyebrow": "Mengapa Katha",
-    "whyHeading": "Katha Berarti Cerita",
-    "whyPara1": "Setiap proyek menyimpan sesuatu yang tidak bisa dijelaskan secara singkat — bagaimana sebuah keluarga benar-benar hidup, bagaimana sebuah bisnis perlu dirasakan dari dalam, bagaimana sebuah lanskap ingin dinikmati, apa yang diam-diam diminta oleh sebuah lokasi.",
-    "whyPara2Line1": "Tugas kita adalah belajar membaca itu.",
-    "whyPara2Line2": "Kemudian membangunnya dengan tepat.",
     "nehaEyebrow": "Mari berkenalan dengan Neha.",
     "nehaHeading": "Ar. Neha",
     "nehaPortraitAlt": "Potret Arsitek Neha, Pendiri & Kepala Arsitek Katha Studio",
-    "nehaPara1": "Ruang angkasa memiliki memori.",
+    "nehaPara1": "Ruang memiliki memori.",
     "nehaPara2": "Hal itu mencerminkan bagaimana bangunan itu dibangun, apa yang dirancang agar tahan lama, dan bagaimana bangunan itu membuat orang merasa nyaman bahkan setelah pekerjaan selesai.",
     "nehaPara3": "Saya telah menghabiskan bertahun-tahun untuk belajar membaca hal itu — dalam bobot material yang dipilih karena bagaimana material itu menua, dalam proporsi yang diambil dari tradisi yang memahami skala manusia jauh sebelum hal itu menjadi sebuah disiplin ilmu, dalam logika tenang sebuah ruangan yang tidak pernah perlu dijelaskan karena segala sesuatu di dalamnya berada tepat di tempatnya.",
     "nehaPara4": "Kedalaman perhatian itulah yang menjadi dasar setiap proyek Katha.",
@@ -161,7 +156,7 @@
       },
       {
         "title": "Akar",
-        "body": "Kami mengambil inspirasi dari tradisi bangunan yang telah menyimpan informasi tentang ruang angkasa jauh sebelum informasi itu dituliskan."
+        "body": "Kami mengambil inspirasi dari tradisi bangunan yang telah menyimpan informasi tentang ruang jauh sebelum informasi itu dituliskan."
       },
       {
         "title": "Ketepatan",
@@ -178,7 +173,7 @@
     "craftTags": [
       "Kayu",
       "Batu",
-      "Bengkel tukang kayu",
+      "Pekerjaan Kayu",
       "Sketsa",
       "Model",
       "Papan Material",
@@ -189,7 +184,12 @@
     "clientsPara2": "Keluarga yang menginginkan rumah yang dibangun agar tahan lama dan terasa nyaman selama beberapa generasi. Bisnis yang memahami bahwa lingkungan mereka mencerminkan jati diri mereka. Pengembang yang tahu bahwa detail yang tepat sejak awal menentukan semua hal yang akan terjadi selanjutnya.",
     "clientsPara3": "Kami menerima pekerjaan yang dapat kami lakukan dengan komitmen penuh. Tidak kurang dari itu.",
     "noteBody": "Setiap proyek mewakili babak penting dalam kehidupan seseorang. Ini adalah tanggung jawab yang sangat kami hargai. Terima kasih telah mempertimbangkan Katha Studio sebagai bagian dari perjalanan tersebut.",
-    "noteSignature": "— Ar. Neha"
+    "noteSignature": "— Ar. Neha",
+    "whyEyebrow": "Studio",
+    "whyHeading": "Praktik di Balik Karya",
+    "whyPara1": "Katha Studio adalah sebuah perusahaan arsitektur dan desain interior yang dibangun di atas satu keyakinan — bahwa ruang terbaik tercipta dari pemahaman yang mendalam tentang orang-orang dan tempat-tempat di mana ruang tersebut dibuat.",
+    "whyPara2Line1": "Berikut adalah siapa kami —",
+    "whyPara2Line2": "Perspektif dan keahlian di balik setiap proyek Katha."
   },
   "contactPage": {
     "eyebrow": "Hubungi Kami",
@@ -208,7 +208,7 @@
     "nameLabel": "Nama",
     "namePlaceholder": "Nama Anda",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "Anda@contoh.com",
+    "emailPlaceholder": "you@example.com",
     "phoneLabel": "Telepon",
     "phonePlaceholder": "+91 98765 43210",
     "projectTypeLabel": "Jenis Proyek",
@@ -293,7 +293,7 @@
       "imageCaption": "Studi · Yang Ada"
     },
     "advisory": {
-      "title": "Pemberitahuan",
+      "title": "Konsultasi",
       "category": "Bimbingan & Perencanaan",
       "tagline": "Pertanyaan yang tepat yang diajukan sejak awal akan menyelamatkan semua yang terjadi setelahnya.",
       "desc": "Memberikan panduan melalui perencanaan, pengambilan keputusan, dan pelaksanaan.",
@@ -382,7 +382,7 @@
     "Process": "Proses",
     "Culture": "Budaya",
     "Craft": "Keahlian",
-    "Space": "Ruang angkasa"
+    "Space": "Ruang"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {

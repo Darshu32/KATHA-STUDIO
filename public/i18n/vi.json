@@ -4,7 +4,7 @@
     "enter": "Đi vào"
   },
   "nav": {
-    "studio": "Phòng thu",
+    "studio": "Studio",
     "approach": "Tiếp cận",
     "services": "Dịch vụ",
     "journal": "Tạp chí",
@@ -32,13 +32,13 @@
     "subhead": "Tại Katha Studio, mọi dự án đều bắt đầu bằng việc lắng nghe. Chúng tôi dành thời gian để hiểu con người, địa điểm và mục đích trước khi kiến tạo những không gian mang đậm dấu ấn cá nhân, vượt thời gian và gắn kết sâu sắc với cuộc sống mà chúng hỗ trợ.",
     "location": "Đặt trụ sở tại Bengaluru · Hoạt động trên khắp Ấn Độ · Sẵn sàng hợp tác quốc tế với một số đối tác chọn lọc",
     "cta": "Bắt đầu một cuộc trò chuyện",
-    "cardStudioLabel": "Phòng thu",
+    "cardStudioLabel": "Studio",
     "cardStudioTagline": "Chúng tôi là ai",
     "cardContactLabel": "Liên hệ",
     "cardContactTagline": "Bắt đầu một cuộc trò chuyện",
     "category": {
       "intro": "Giới thiệu",
-      "studio": "Phòng thu",
+      "studio": "Studio",
       "contact": "Liên hệ",
       "residence": "Nơi cư trú",
       "interior": "Nội thất",
@@ -46,7 +46,7 @@
       "advisory": "Tư vấn",
       "service": "Dịch vụ",
       "residential": "Khu dân cư",
-      "commercial": "Thuộc về thương mại",
+      "commercial": "Thương mại",
       "highRise": "Tòa nhà cao tầng"
     }
   },
@@ -65,19 +65,19 @@
   },
   "homeStory": {
     "offerEyebrow": "Những gì chúng tôi cung cấp",
-    "offerHeading": "Cách chúng tôi xây dựng",
     "craftEyebrow": "Nghề thủ công rất quan trọng",
     "craftBody": "Kiến trúc được hình thành thông qua hàng ngàn quyết định. Chất lượng vật liệu, tỷ lệ của một căn phòng, cách ánh sáng chiếu vào không gian và chi tiết của một điểm giao nhau đều ảnh hưởng đến cách chúng ta cảm nhận không gian đó mỗi ngày.",
     "closingCta": "Hãy cùng thảo luận về dự án của bạn",
     "materials": {
       "wood": "Gỗ",
-      "stone": "Cục đá",
+      "stone": "Đá",
       "joinery": "Đồ gỗ",
       "sketches": "Bản phác thảo",
       "models": "Mô hình",
       "materialBoards": "Bảng vật liệu",
       "details": "Chi tiết"
-    }
+    },
+    "offerHeading": "Dịch vụ của chúng tôi"
   },
   "approach": {
     "eyebrow": "Cách thức làm việc của chúng tôi",
@@ -116,11 +116,11 @@
     "eyebrow": "Từ Studio",
     "title": "Tạp chí",
     "intro": "Suy nghĩ từ góc độ thiết kế studio — về không gian, vật liệu và những chi tiết quan trọng.",
-    "inPreparation": "Để chuẩn bị",
+    "inPreparation": "Đang chuẩn bị",
     "stayInTouch": "Giữ liên lạc"
   },
   "marquee": [
-    "Studio Katha",
+    "Katha Studio",
     "Sự tĩnh lặng, được thiết kế",
     "Bengaluru",
     "Kiến trúc như một sự tạm dừng",
@@ -130,15 +130,10 @@
     "Bắt đầu một cách lặng lẽ"
   ],
   "studioPage": {
-    "whyEyebrow": "Tại sao lại là Katha?",
-    "whyHeading": "Katha nghĩa là Câu chuyện",
-    "whyPara1": "Mỗi dự án đều chứa đựng những điều không thể diễn đạt bằng lời — cách một gia đình thực sự sinh sống, cảm giác mà một doanh nghiệp cần có từ bên trong, cách mà một cảnh quan muốn được trải nghiệm, những gì mà một địa điểm đang âm thầm mong muốn.",
-    "whyPara2Line1": "Nhiệm vụ của chúng ta là học cách đọc hiểu điều đó.",
-    "whyPara2Line2": "Sau đó xây dựng nó một cách chính xác.",
     "nehaEyebrow": "Gặp gỡ Neha",
     "nehaHeading": "Kiến trúc sư Neha",
     "nehaPortraitAlt": "Chân dung kiến trúc sư Neha, người sáng lập kiêm kiến trúc sư chính của Katha Studio.",
-    "nehaPara1": "Không gian có bộ nhớ.",
+    "nehaPara1": "Không gian có ký ức.",
     "nehaPara2": "Nó lưu giữ hình ảnh về cách nó được xây dựng, về mục đích xây dựng và về cảm nhận mà nó mang lại cho mọi người rất lâu sau khi công trình hoàn thành.",
     "nehaPara3": "Tôi đã dành nhiều năm để học cách cảm nhận điều đó — trong trọng lượng của một chất liệu được lựa chọn dựa trên cách nó lão hóa, trong tỷ lệ được rút ra từ những truyền thống đã hiểu về quy mô con người từ rất lâu trước khi nó trở thành một ngành khoa học, trong logic tĩnh lặng của một căn phòng không bao giờ cần phải giải thích bởi vì mọi thứ trong đó đều ở đúng vị trí của nó.",
     "nehaPara4": "Sự chú trọng sâu sắc đó chính là nền tảng của mọi dự án Katha.",
@@ -177,7 +172,7 @@
     "craftPara2": "Vật liệu cấu tạo nên một vật thể quyết định độ bền của nó theo thời gian, cảm giác khi chạm vào, khả năng phản chiếu ánh sáng và khả năng thích ứng với khí hậu. Chúng ta lựa chọn vật liệu dựa trên những gì chúng thể hiện theo thời gian — chứ không chỉ dựa trên vẻ bề ngoài vào ngày lắp đặt.",
     "craftTags": [
       "Gỗ",
-      "Cục đá",
+      "Đá",
       "Đồ gỗ",
       "Bản phác thảo",
       "Mô hình",
@@ -189,7 +184,12 @@
     "clientsPara2": "Những gia đình mong muốn một ngôi nhà bền vững và mang lại cảm giác thoải mái cho nhiều thế hệ. Những doanh nghiệp hiểu rằng môi trường xung quanh phản ánh chính họ. Những nhà phát triển biết rằng những chi tiết đúng đắn ngay từ đầu sẽ quyết định tất cả những gì diễn ra sau đó.",
     "clientsPara3": "Chúng tôi chỉ nhận những công việc mà chúng tôi có thể làm với toàn bộ tâm huyết. Không hơn không kém.",
     "noteBody": "Mỗi dự án đều đại diện cho một chương quan trọng trong cuộc đời của ai đó. Đó là một trách nhiệm mà chúng tôi trân trọng sâu sắc. Cảm ơn bạn đã xem Katha Studio như một phần trong hành trình đó.",
-    "noteSignature": "— Kiến trúc sư Neha"
+    "noteSignature": "— Kiến trúc sư Neha",
+    "whyEyebrow": "Studio",
+    "whyHeading": "Thực tiễn đằng sau công việc",
+    "whyPara1": "Katha Studio là một công ty kiến trúc và thiết kế nội thất được xây dựng dựa trên một niềm tin duy nhất: những không gian tốt nhất đến từ sự thấu hiểu thực sự về con người và địa điểm mà chúng được tạo ra.",
+    "whyPara2Line1": "Sau đây là con người của chúng tôi —",
+    "whyPara2Line2": "Góc nhìn và kỹ thuật đằng sau mỗi dự án của Katha."
   },
   "contactPage": {
     "eyebrow": "Liên hệ với chúng tôi",
@@ -198,7 +198,7 @@
     "details": {
       "emailLabel": "E-mail",
       "phoneLabel": "Điện thoại",
-      "studioLabel": "Phòng thu",
+      "studioLabel": "Studio",
       "studioValue": "Bengaluru, Ấn Độ",
       "portfolioLabel": "Danh mục đầu tư",
       "portfolioValue": "Có sẵn theo yêu cầu — vui lòng liên hệ với chúng tôi."
@@ -243,7 +243,7 @@
   },
   "services": {
     "architecture": {
-      "title": "Ngành kiến trúc",
+      "title": "Kiến trúc",
       "category": "Nhà ở & Tòa nhà",
       "tagline": "Những ngôi nhà và công trình kiến trúc được thiết kế rõ ràng và có mục đích.",
       "desc": "Những ngôi nhà và công trình kiến trúc được thiết kế rõ ràng, có mục đích và gắn kết chặt chẽ với những người sử dụng chúng.",
@@ -322,7 +322,7 @@
         "Bản vẽ thi công",
         "Mặt cắt và mặt đứng",
         "Chi tiết xây dựng",
-        "Tài liệu trang web"
+        "Tài liệu công trường"
       ],
       "imageCaption": "Nghiên cứu · Đường nét & Độ chính xác"
     },
@@ -344,7 +344,7 @@
       "imageCaption": "Học tập · Nhà cửa & Sinh hoạt"
     },
     "commercial": {
-      "title": "Thuộc về thương mại",
+      "title": "Thương mại",
       "category": "Công việc & Bán lẻ",
       "tagline": "Những không gian hoạt động hiệu quả như chính những người sử dụng chúng.",
       "desc": "Văn phòng, cửa hàng và không gian dịch vụ khách sạn cân bằng giữa chức năng, thương hiệu và cảm nhận.",
