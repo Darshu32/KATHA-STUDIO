@@ -376,13 +376,31 @@
         "Gemeinsame Einrichtungen"
       ],
       "imageCaption": "Studie · Höhe & Dichte"
+    },
+    "styling": {
+      "title": "Styling",
+      "category": "Ausstattung & Oberflächen",
+      "tagline": "Die letzte Schicht – diejenige, die die Menschen zuerst spüren.",
+      "desc": "Die Zusammenstellung von Möbeln, Materialien, Textilien und Objekten – aus einer breiten Materialauswahl – die einen fertigen Raum in einen wirklich bewohnten verwandeln.",
+      "paragraphs": [
+        "Die Gestaltung ist der letzte Schliff eines Raumes – die Möbel, Textilien, Beleuchtung, Kunst und Objekte, die aus einem fertigen Zimmer einen wirklich bewohnten Raum machen. Sie ist der subtile Unterschied zwischen einem Raum, der fertig aussieht, und einem, der sich wie Ihr eigenes anfühlt.",
+        "Wir wählen jedes Stück passend zur Architektur aus und arbeiten mit einer breiten Materialauswahl – Holz, Stein, Metall, Keramik, Leinen und mehr –, sodass jede Textur und jeder Farbton zum Gesamtbild passt. Nichts wird einfach nur platziert, um Platz zu füllen; jede Wahl hat ihren Platz."
+      ],
+      "scope": [
+        "Möbelauswahl",
+        "Materialauswahl",
+        "Textilien & Beleuchtung",
+        "Kunst & Objekte"
+      ],
+      "imageCaption": "Studie · Textur & Objekt"
     }
   },
   "noteCategories": {
     "Process": "Verfahren",
     "Culture": "Kultur",
     "Craft": "Handwerk",
-    "Space": "Raum"
+    "Space": "Raum",
+    "Material": "Material"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Die Menschen werden immer einen Ort der Stille und einen Ort der Begegnung brauchen. Sie werden immer auf natürliches Licht reagieren. Sie werden immer den Unterschied zwischen einer Decke in der richtigen Höhe und einer zu niedrigen spüren. Sie werden immer erkennen, wann ein Material authentisch ist und wann es etwas anderes vortäuscht.",
         "Entwerfen Sie für diese Konstanten. Bauen Sie mit Materialien, die mit Würde altern. Lassen Sie im Plan Raum für das Leben, damit es sich entfalten kann, ohne die Architektur zu zerstören.",
         "So kann es passieren, dass ein Raum auch nach zwanzig Jahren noch stimmig wirkt."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Die Materialien werden zweimal ausgewählt",
+      "excerpt": "Die erste Entscheidung fällt in einem Ausstellungsraum. Die zweite erstreckt sich über zehn Jahre.",
+      "paragraphs": [
+        "Eine Musterplatte ist der denkbar schlechteste Ort, um ein Material zu beurteilen. Sie ist klein, flach, wird falsch beleuchtet und nur drei Sekunden lang betrachtet. Nichts an diesem Moment ähnelt den Bedingungen, denen das Material später tatsächlich ausgesetzt sein wird – eine ganze Wand damit, im Nachmittagslicht, neben den drei anderen Materialien, mit denen es ein Jahrzehnt lang zusammenleben muss.",
+        "Deshalb stellen wir eine andere Frage. Nicht wie das aussieht, sondern was daraus wird.",
+        "Stein dunkelt an den Stellen nach, wo er berührt wird. Kalkputz wird weich. Messing verliert seinen Glanz und trägt Gebrauchsspuren. Holz bewegt sich mit den Jahreszeiten und bleibt in Bewegung. Das sind keine Mängel, die man technisch beseitigen könnte. Das ist das natürliche Verhalten des Materials.",
+        "Diejenigen, die scheitern, sind diejenigen, die ihren Höhepunkt am Tag der Übergabe erreichen. Eine Hochglanzoberfläche ist im Moment der Installation optimal und danach nie wieder. Alles, was imitieren soll – Furnier, das Massivholz vortäuscht, Druck, der Stein imitiert – verliert von Anfang an an Wert. Die Kluft zwischen Anspruch und Wirklichkeit vergrößert sich stetig.",
+        "Die Kosten spielen in dieser Diskussion eine Rolle, aber nicht an der üblichen Stelle. Billigeres Material zahlt man oft doppelt. Die eigentliche Frage ist nicht, was die Installation kostet, sondern was die Instandhaltung kostet.",
+        "Entscheide dich für das zehnte Jahr, nicht für das erste. Dann verbessert sich das Gebäude unauffällig, während alle darin wohnen."
       ]
     }
   }

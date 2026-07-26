@@ -376,13 +376,31 @@
         "Servicios compartidos"
       ],
       "imageCaption": "Estudio · Altura y densidad"
+    },
+    "styling": {
+      "title": "Estilo",
+      "category": "Mobiliario y acabados",
+      "tagline": "La capa final: la que la gente siente primero.",
+      "desc": "Seleccionar cuidadosamente los muebles, materiales, textiles y objetos —procedentes de una amplia gama de materiales— que transforman un espacio terminado en un lugar verdaderamente habitado.",
+      "paragraphs": [
+        "El estilismo es la última capa de un espacio: los muebles, los textiles, la iluminación, el arte y los objetos que transforman una habitación terminada en un lugar que se siente realmente vivido. Es la sutil diferencia entre un espacio que parece terminado y uno que se siente como tuyo.",
+        "Seleccionamos cuidadosamente cada pieza en función de la arquitectura, trabajando con una amplia gama de materiales —madera, piedra, metal, cerámica, lino y más— para que cada textura y tonalidad se integre armoniosamente en el conjunto. Nada se coloca simplemente para llenar un espacio; cada elección tiene su razón de ser."
+      ],
+      "scope": [
+        "Selección de muebles",
+        "Selección de materiales",
+        "Textiles e iluminación",
+        "Arte y objetos"
+      ],
+      "imageCaption": "Estudio · Textura y objeto"
     }
   },
   "noteCategories": {
     "Process": "Proceso",
     "Culture": "Cultura",
     "Craft": "Artesanía",
-    "Space": "Espacio"
+    "Space": "Espacio",
+    "Material": "Material"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "La gente siempre necesitará un lugar para estar a solas y otro para reunirse. Siempre responderán a la luz natural. Siempre notarán la diferencia entre un techo a la altura adecuada y uno que no lo esté. Siempre sabrán cuándo un material es auténtico y cuándo pretende ser otra cosa.",
         "Diseña pensando en lo constante. Construye con materiales que envejezcan con dignidad. Deja espacio en el diseño para que la vida fluya sin alterar la arquitectura.",
         "Así es como un espacio perdura veinte años y sigue resultando adecuado."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Los materiales se eligen dos veces.",
+      "excerpt": "La primera decisión se toma en una sala de exposición. La segunda se toma a lo largo de diez años.",
+      "paragraphs": [
+        "Una muestra es el peor lugar posible para evaluar un material. Es pequeña, plana, está iluminada con una luz inadecuada y solo se sostiene durante tres segundos. Nada en ese instante se asemeja a las condiciones reales en las que se encontrará el material: una pared completa cubierta con él, a la luz de la tarde, junto a los otros tres materiales con los que tendrá que convivir durante una década.",
+        "Así que nos hacemos una pregunta diferente. No cómo se ve esto, sino en qué se convierte.",
+        "La piedra se oscurece al contacto con las manos. El enlucido de cal se ablanda con el tiempo. El latón pierde su brillo y adquiere un registro del uso. La madera se transforma con las estaciones y continúa transformándose. Estos no son defectos que puedan eliminarse mediante ingeniería. Es simplemente el comportamiento natural del material.",
+        "Los que fracasan son aquellos que alcanzan su máximo esplendor el día de la entrega. Una superficie de alto brillo está en su mejor momento justo después de su instalación y nunca más. Todo lo que pretende imitar —un revestimiento que simula ser sólido, una impresión que simula ser piedra— empieza a perder calidad desde el primer día. La diferencia entre lo que promete y lo que realmente es no hace más que aumentar.",
+        "El costo es un factor importante en esta conversación, pero no ocupa el lugar que suele tener. El material más barato suele ser el que se paga dos veces. La verdadera pregunta no es cuánto cuesta instalarlo, sino cuánto cuesta mantenerlo.",
+        "Elija por décimo año, no por primero. Así, el edificio mejorará discretamente mientras todos están ocupados viviendo en él."
       ]
     }
   }

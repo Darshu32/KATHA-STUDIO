@@ -376,13 +376,31 @@
         "Servizi in comune"
       ],
       "imageCaption": "Studio · Altezza e densità"
+    },
+    "styling": {
+      "title": "Stile",
+      "category": "Arredamento e finiture",
+      "tagline": "Lo strato finale: quello che le persone percepiscono per primo.",
+      "desc": "Selezionare con cura mobili, materiali, tessuti e oggetti – scegliendo tra un'ampia gamma di opzioni – che trasformino uno spazio finito in un ambiente realmente vissuto.",
+      "paragraphs": [
+        "Lo styling è l'ultimo strato di uno spazio: mobili, tessuti, illuminazione, opere d'arte e oggetti che trasformano una stanza già completata in uno spazio che si sente davvero vissuto. È la sottile differenza tra uno spazio che sembra finito e uno che senti davvero tuo.",
+        "Selezioniamo con cura ogni elemento in relazione all'architettura, partendo da un'ampia gamma di materiali – legno, pietra, metallo, ceramica, lino e altro ancora – affinché ogni texture e tonalità si integri perfettamente con l'insieme. Nulla è collocato semplicemente per riempire lo spazio; ogni scelta è dettata da una precisa ricercatezza."
+      ],
+      "scope": [
+        "Selezione di mobili",
+        "Selezione dei materiali",
+        "Tessuti e illuminazione",
+        "Arte e oggetti"
+      ],
+      "imageCaption": "Studio · Texture e Oggetto"
     }
   },
   "noteCategories": {
     "Process": "Processo",
     "Culture": "Cultura",
     "Craft": "Mestiere",
-    "Space": "Spazio"
+    "Space": "Spazio",
+    "Material": "Materiale"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Le persone avranno sempre bisogno di un luogo dove stare da sole e di un luogo dove riunirsi. Saranno sempre sensibili alla luce naturale. Sentiranno sempre la differenza tra un soffitto all'altezza giusta e uno che non lo è. Sapranno sempre riconoscere quando un materiale è autentico e quando finge di essere qualcos'altro.",
         "Progettare tenendo conto di queste costanti. Costruire con materiali che invecchiano con dignità. Lasciare spazio nella planimetria affinché la vita possa fluire senza compromettere l'architettura.",
         "È così che uno spazio può durare vent'anni e risultare ancora perfetto."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "I materiali vengono scelti due volte",
+      "excerpt": "La prima scelta avviene in uno showroom. La seconda si concretizza nell'arco di dieci anni.",
+      "paragraphs": [
+        "Un campione di materiale è il peggior posto possibile per valutarlo. È piccolo, piatto, illuminato da una luce inadatta e tenuto in mano per soli tre secondi. Nulla in quel momento rispecchia le condizioni in cui il materiale si troverà effettivamente a vivere: un'intera parete ricoperta da quel materiale, alla luce del pomeriggio, accanto agli altri tre materiali con cui dovrà convivere per un decennio.",
+        "Quindi ci poniamo una domanda diversa. Non come appare, ma cosa diventa.",
+        "La pietra si scurisce dove la si tocca. L'intonaco di calce si ammorbidisce con il tempo. L'ottone perde la sua lucentezza e porta con sé la testimonianza dell'uso. Il legno si muove con le stagioni e continua a muoversi. Questi non sono difetti da eliminare con l'ingegneria. È la materia che si comporta in modo autentico.",
+        "Quelle che falliscono sono quelle che raggiungono il loro apice il giorno della consegna. Una superficie lucida è al suo meglio nel momento in cui viene installata e mai più. Qualsiasi cosa costruita per imitare – un'impiallacciatura che finge di essere massello, una stampa che finge di essere pietra – è destinata a scomparire fin dal primo giorno. La distanza tra ciò che promette di essere e ciò che è non fa che aumentare.",
+        "Il costo è un elemento da considerare in questa discussione, ma non nella posizione in cui viene solitamente posto. Il materiale più economico è spesso quello che si paga due volte. La vera domanda non è quanto costa l'installazione, ma quanto costa la manutenzione.",
+        "Scegliete per il decimo anno, non per il primo. In questo modo l'edificio migliorerà silenziosamente mentre tutti saranno impegnati a viverci."
       ]
     }
   }

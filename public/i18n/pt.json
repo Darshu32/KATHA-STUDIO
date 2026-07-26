@@ -376,13 +376,31 @@
         "Comodidades compartilhadas"
       ],
       "imageCaption": "Estudo · Altura e Densidade"
+    },
+    "styling": {
+      "title": "Estilização",
+      "category": "Mobiliário e Acabamentos",
+      "tagline": "A camada final — aquela que as pessoas sentem primeiro.",
+      "desc": "Selecionar cuidadosamente os móveis, materiais, têxteis e objetos — provenientes de uma ampla variedade de materiais — que transformam um espaço finalizado em um ambiente verdadeiramente vivido.",
+      "paragraphs": [
+        "A decoração é a camada final de um espaço — os móveis, os tecidos, a iluminação, a arte e os objetos que transformam um cômodo finalizado em um ambiente que realmente parece habitado. É a sutil diferença entre um espaço que parece acabado e um que você sente como seu.",
+        "Selecionamos cada peça levando em consideração a arquitetura, trabalhando com uma ampla variedade de materiais — madeira, pedra, metal, cerâmica, linho e muito mais — para que cada textura e tonalidade se harmonize com o conjunto. Nada é colocado ali simplesmente para preencher espaço; cada escolha justifica seu lugar."
+      ],
+      "scope": [
+        "Curadoria de Mobiliário",
+        "Seleção de Materiais",
+        "Têxteis e Iluminação",
+        "Arte e Objetos"
+      ],
+      "imageCaption": "Estudo · Textura e Objeto"
     }
   },
   "noteCategories": {
     "Process": "Processo",
     "Culture": "Cultura",
     "Craft": "Artesanato",
-    "Space": "Espaço"
+    "Space": "Espaço",
+    "Material": "Material"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "As pessoas sempre precisarão de um lugar para ficar sozinhas e um lugar para se reunir. Elas sempre reagirão à luz natural. Sempre sentirão a diferença entre um teto na altura certa e um que não está. Sempre saberão quando um material é autêntico e quando está fingindo ser outra coisa.",
         "Projete pensando nessas constantes. Construa com materiais que envelheçam com dignidade. Deixe espaço no projeto para que a vida flua sem comprometer a arquitetura.",
         "É assim que um espaço dura vinte anos e ainda parece certo."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Os materiais são escolhidos duas vezes.",
+      "excerpt": "A primeira escolha acontece em um showroom. A segunda acontece ao longo de dez anos.",
+      "paragraphs": [
+        "Uma placa de amostra é o pior lugar possível para avaliar um material. É pequena, plana, iluminada por uma luz inadequada e a amostra é exibida por apenas três segundos. Nada naquele momento se assemelha às condições reais em que o material será utilizado — uma parede inteira coberta por ele, sob a luz da tarde, ao lado de outros três materiais com os quais terá que conviver por uma década.",
+        "Então fazemos uma pergunta diferente. Não como isso se parece, mas em que isso se transforma.",
+        "A pedra escurece onde as mãos a tocam. O reboco de cal amolece com o tempo. O latão perde o brilho e adquire marcas de uso. A madeira se move com as estações do ano e continua se movendo. Esses não são defeitos que podem ser corrigidos por engenharia. É o material se comportando de forma natural.",
+        "Os produtos que falham são aqueles que atingem o seu auge no dia da entrega. Uma superfície de alto brilho está no seu melhor no momento da instalação e nunca mais. Qualquer coisa construída para imitar — folheado fingindo ser sólido, impressão fingindo ser pedra — está em declínio desde o primeiro dia. A distância entre o que promete e o que realmente é só aumenta.",
+        "O custo deve ser levado em consideração nesta discussão, mas não no lugar de costume. O material mais barato costuma ser aquele que acaba sendo pago duas vezes. A verdadeira questão não é o custo da instalação, mas sim o custo da manutenção.",
+        "Escolha o décimo ano, não o primeiro. Assim, o prédio vai melhorando silenciosamente enquanto todos estão ocupados morando nele."
       ]
     }
   }

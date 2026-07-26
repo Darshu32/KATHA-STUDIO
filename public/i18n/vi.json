@@ -376,13 +376,31 @@
         "Tiện nghi dùng chung"
       ],
       "imageCaption": "Nghiên cứu · Chiều cao & Mật độ"
+    },
+    "styling": {
+      "title": "Tạo kiểu tóc",
+      "category": "Trang bị nội thất và hoàn thiện",
+      "tagline": "Lớp cuối cùng — lớp mà mọi người cảm nhận đầu tiên.",
+      "desc": "Tuyển chọn đồ nội thất, vật liệu, vải vóc và đồ vật trang trí — từ nhiều nguồn vật liệu khác nhau — để biến một không gian hoàn thiện thành một không gian thực sự đáng sống.",
+      "paragraphs": [
+        "Trang trí nội thất là lớp hoàn thiện cuối cùng cho một không gian — đồ đạc, vải vóc, ánh sáng, tranh ảnh và vật dụng trang trí biến một căn phòng đã hoàn thiện thành một không gian thực sự ấm cúng. Đó chính là sự khác biệt tinh tế giữa một không gian trông có vẻ hoàn thiện và một không gian mang đậm dấu ấn cá nhân.",
+        "Chúng tôi lựa chọn tỉ mỉ từng chi tiết sao cho phù hợp với kiến trúc tổng thể, sử dụng nhiều chất liệu khác nhau — gỗ, đá, kim loại, gốm sứ, vải lanh và nhiều hơn nữa — để mỗi kết cấu và sắc thái đều hòa hợp với toàn bộ không gian. Không có gì được đặt vào chỉ để lấp đầy khoảng trống; mỗi sự lựa chọn đều có lý do riêng."
+      ],
+      "scope": [
+        "Tuyển chọn đồ nội thất",
+        "Lựa chọn vật liệu",
+        "Dệt may & Chiếu sáng",
+        "Nghệ thuật & Đồ vật"
+      ],
+      "imageCaption": "Nghiên cứu · Kết cấu & Đối tượng"
     }
   },
   "noteCategories": {
     "Process": "Quá trình",
     "Culture": "Văn hoá",
     "Craft": "Thủ công",
-    "Space": "Không gian"
+    "Space": "Không gian",
+    "Material": "Vật liệu"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Con người sẽ luôn cần một nơi để ở một mình và một nơi để tụ họp. Họ sẽ luôn cảm nhận được ánh sáng tự nhiên. Họ sẽ luôn cảm nhận được sự khác biệt giữa trần nhà có độ cao phù hợp và trần nhà không đạt chuẩn. Họ sẽ luôn biết khi nào một vật liệu là thật và khi nào nó chỉ giả vờ là thứ khác.",
         "Hãy thiết kế dựa trên những yếu tố bất biến đó. Xây dựng bằng những vật liệu bền đẹp theo thời gian. Hãy chừa chỗ trong bản thiết kế để cuộc sống có thể diễn ra mà không làm phá vỡ kiến trúc.",
         "Đó là lý do tại sao một không gian có thể tồn tại đến hai mươi năm mà vẫn mang lại cảm giác phù hợp."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Vật liệu được lựa chọn hai lần",
+      "excerpt": "Lựa chọn đầu tiên diễn ra tại phòng trưng bày. Lựa chọn thứ hai diễn ra trong suốt mười năm.",
+      "paragraphs": [
+        "Tấm mẫu là nơi tồi tệ nhất để đánh giá vật liệu. Nó nhỏ, phẳng, được chiếu sáng bằng ánh sáng không phù hợp và chỉ được giữ trong ba giây. Không có gì trong khoảnh khắc đó giống với điều kiện thực tế mà vật liệu sẽ phải chịu đựng — một bức tường đầy đủ vật liệu đó, dưới ánh sáng buổi chiều, bên cạnh ba vật liệu khác mà nó phải đặt cạnh trong suốt một thập kỷ.",
+        "Vậy nên chúng ta đặt ra một câu hỏi khác. Không phải là nó trông như thế nào, mà là nó sẽ trở thành cái gì.",
+        "Đá sẫm màu ở những chỗ tay chạm vào. Vữa vôi trở nên mềm hơn. Đồng thau mất đi độ sáng bóng và in dấu vết của sự sử dụng. Gỗ co giãn theo mùa và tiếp tục co giãn. Đây không phải là những khuyết điểm cần loại bỏ bằng kỹ thuật. Đây là cách vật liệu thể hiện tính chất tự nhiên của mình.",
+        "Những sản phẩm thất bại là những sản phẩm đạt đỉnh điểm vào ngày bàn giao. Một bề mặt bóng loáng chỉ đẹp nhất vào thời điểm lắp đặt và không bao giờ đẹp hơn nữa. Bất cứ thứ gì được chế tạo để bắt chước — lớp phủ giả làm vật liệu rắn, hình in giả làm đá — đều đang dần xuống cấp ngay từ ngày đầu tiên. Khoảng cách giữa những gì nó tuyên bố và những gì nó thực sự là chỉ ngày càng rộng ra.",
+        "Chi phí là một yếu tố cần được đề cập trong cuộc thảo luận này, nhưng không phải ở vị trí thường thấy. Vật liệu rẻ tiền thường là vật liệu phải trả tiền hai lần. Câu hỏi thực sự không phải là chi phí lắp đặt là bao nhiêu, mà là chi phí bảo trì là bao nhiêu.",
+        "Hãy chọn năm thứ mười, chứ không phải năm đầu tiên. Như vậy, tòa nhà sẽ âm thầm được cải thiện trong khi mọi người bận rộn sinh sống trong đó."
       ]
     }
   }

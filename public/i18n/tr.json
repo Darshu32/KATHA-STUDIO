@@ -376,13 +376,31 @@
         "Ortak Kullanım Alanları"
       ],
       "imageCaption": "Çalışma · Yükseklik ve Yoğunluk"
+    },
+    "styling": {
+      "title": "Stil",
+      "category": "Mobilya ve Kaplama",
+      "tagline": "Son katman — insanların ilk hissettiği katman.",
+      "desc": "Geniş bir malzeme yelpazesinden seçilen mobilyaları, malzemeleri, tekstil ürünlerini ve objeleri özenle seçerek, tamamlanmış bir mekanı gerçekten yaşanabilir bir mekana dönüştürüyoruz.",
+      "paragraphs": [
+        "Dekorasyon, bir mekanın son katmanıdır; mobilyalar, tekstil ürünleri, aydınlatma, sanat eserleri ve objeler, tamamlanmış bir odayı gerçekten yaşanmışlık hissi veren bir mekana dönüştürür. Bu, mekanın bitmiş görünmesiyle size aitmiş gibi hissettirmesi arasındaki sessiz farktır.",
+        "Mimariye uygun olarak her bir parçayı özenle seçiyoruz; ahşap, taş, metal, seramik, keten ve daha birçok geniş malzeme yelpazesinden yararlanarak her dokunun ve tonun bütüne uyum sağlamasını sağlıyoruz. Hiçbir şey sadece boşluğu doldurmak için yerleştirilmiyor; her seçim yerini hak ediyor."
+      ],
+      "scope": [
+        "Mobilya Seçimi",
+        "Malzeme Seçimi",
+        "Tekstil ve Aydınlatma",
+        "Sanat ve Nesneler"
+      ],
+      "imageCaption": "Çalışma · Doku ve Nesne"
     }
   },
   "noteCategories": {
     "Process": "Süreç",
     "Culture": "Kültür",
     "Craft": "Zanaat",
-    "Space": "Mekan"
+    "Space": "Mekan",
+    "Material": "Malzeme"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "İnsanların her zaman yalnız kalabilecekleri ve bir araya gelebilecekleri bir yere ihtiyaçları olacaktır. Doğal ışığa her zaman tepki vereceklerdir. Doğru yükseklikteki bir tavan ile doğru yükseklikte olmayan bir tavan arasındaki farkı her zaman hissedeceklerdir. Bir malzemenin dürüst olup olmadığını ve başka bir şeymiş gibi davranıp davranmadığını her zaman anlayacaklardır.",
         "Bu değişmez unsurları göz önünde bulundurarak tasarım yapın. Zamanla değerini koruyacak malzemelerle inşa edin. Yaşamın mimariyi bozmadan akıp gitmesine olanak sağlayacak şekilde plana yer bırakın.",
         "İşte bu yüzden bir mekan yirmi yıl boyunca varlığını sürdürüyor ve hala doğru hissettiriyor."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Malzemeler İki Kez Seçiliyor",
+      "excerpt": "İlk tercih bir teşhir salonunda yapılır. İkinci tercih ise on yıldan uzun bir süre içinde gerçekleşir.",
+      "paragraphs": [
+        "Bir malzemeyi değerlendirmek için en kötü yer örnek tahtasıdır. Küçük, düz, yanlış ışıkla aydınlatılmış ve sadece üç saniyeliğine tutuluyor. O anın hiçbir yanı, malzemenin gerçekte yaşayacağı koşulları yansıtmıyor; yani, on yıl boyunca yanında durmak zorunda kalacağı diğer üç malzemenin yanında, öğleden sonra ışığında, tüm duvarı kaplayacak şekilde sergilenecek.",
+        "Bu yüzden farklı bir soru soruyoruz. Nasıl görünüyor değil, neye dönüşüyor?",
+        "Taş, ellerin dokunduğu yerlerde kararır. Kireç sıvası yumuşar. Pirinç parlaklığını kaybeder ve kullanım izleri taşır. Ahşap mevsimle birlikte hareket eder ve hareket etmeye devam eder. Bunlar mühendislikle ortadan kaldırılacak kusurlar değildir. Bu, malzemenin dürüstçe davranmasıdır.",
+        "Başarısız olanlar, teslimat gününde en iyi performanslarını sergileyenlerdir. Parlak bir yüzey, monte edildiği anda en iyi halindedir ve bir daha asla öyle olmaz. Taklit etmek için üretilen her şey – masif gibi görünen kaplama, taş gibi görünen baskı – ilk günden itibaren başarısızlığa mahkumdur. İddia ettiği ile gerçekte olduğu arasındaki mesafe giderek açılır.",
+        "Maliyet bu konuşmada yer almalı, ancak genellikle bulunduğu yerde değil. Daha ucuz malzeme genellikle iki kez ödenen malzemedir. Asıl soru kurulum maliyeti değil, bakım maliyetidir.",
+        "Birinci yılı değil, onuncu yılı seçin. Böylece herkes içinde yaşamaya devam ederken bina sessizce gelişir."
       ]
     }
   }

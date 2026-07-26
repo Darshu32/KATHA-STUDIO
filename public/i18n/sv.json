@@ -376,13 +376,31 @@
         "Delade bekvämligheter"
       ],
       "imageCaption": "Studie · Höjd och densitet"
+    },
+    "styling": {
+      "title": "Styling",
+      "category": "Möblering och finish",
+      "tagline": "Det sista lagret – det som folk känner först.",
+      "desc": "Att kurera möbler, material, textilier och föremål – hämtade från ett brett materialurval – som förvandlar ett färdigt utrymme till ett som verkligen bebos.",
+      "paragraphs": [
+        "Styling är det sista lagret i ett utrymme – möblerna, textilierna, belysningen, konsten och föremålen som förvandlar ett färdigt rum till ett som känns genuint bebott. Det är den tysta skillnaden mellan ett utrymme som ser färdigt ut och ett som känns som ditt.",
+        "Vi kuraterar varje möbel mot arkitekturen och arbetar utifrån ett brett materialval – trä, sten, metall, keramik, linne med mera – så att varje textur och ton hör till helheten. Ingenting placeras bara för att fylla utrymme; varje val förtjänar sin plats."
+      ],
+      "scope": [
+        "Möbelkurering",
+        "Materialval",
+        "Textilier och belysning",
+        "Konst och föremål"
+      ],
+      "imageCaption": "Studie · Textur och objekt"
     }
   },
   "noteCategories": {
     "Process": "Behandla",
     "Culture": "Kultur",
     "Craft": "Hantverk",
-    "Space": "Utrymme"
+    "Space": "Utrymme",
+    "Material": "Material"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Människor kommer alltid att behöva en plats att vara ensamma och en plats att samlas på. De kommer alltid att reagera på naturligt ljus. De kommer alltid att känna skillnaden mellan ett tak på rätt höjd och ett som inte är det. De kommer alltid att veta när ett material är äkta och när det låtsas vara något annat.",
         "Designa för dessa konstanter. Bygg med material som åldras med värdighet. Lämna utrymme i planen för att livet ska kunna röra sig utan att bryta arkitekturen.",
         "Så håller ett utrymme i tjugo år och känns ändå rätt."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Materialen väljs två gånger",
+      "excerpt": "Det första valet sker i en utställningslokal. Det andra sker under tio år.",
+      "paragraphs": [
+        "En provtavla är den sämsta tänkbara platsen att bedöma ett material på. Den är liten, platt, upplyst av fel ljus och hålls i tre sekunder. Ingenting med det ögonblicket liknar det tillstånd materialet faktiskt kommer att leva i – en hel vägg av det, i eftermiddagsljus, bredvid de tre andra materialen det måste stå bredvid i ett decennium.",
+        "Så vi ställer en annan fråga. Inte hur detta ser ut, utan vad detta blir.",
+        "Sten mörknar där händerna rör vid den. Kalkputs mjuknar. Mässing förlorar sin glans och får en meritlista. Trä rör sig med årstiden och fortsätter att röra sig. Det här är inte defekter som ska åtgärdas tekniskt. Det här är material som beter sig ärligt.",
+        "De som misslyckas är de som når sin topp på överlämningsdagen. En högblank yta är som bäst i det ögonblick den installeras och aldrig igen. Allt som är byggt för att imitera – faner som låtsas vara massivt, tryck som låtsas vara sten – räknas ner från dag ett. Avståndet mellan vad det påstår sig vara och vad det är vidgas bara.",
+        "Kostnaden hör hemma i den här diskussionen, men inte där den vanligtvis ligger. Det billigare materialet är ofta det man betalar för två gånger. Den verkliga frågan är inte vad det kostar att installera. Det är vad det kostar att underhålla.",
+        "Välj för det tionde året, inte det första. Sedan förbättras byggnaden i tysthet medan alla är upptagna med att bo i den."
       ]
     }
   }

@@ -376,13 +376,31 @@
         "Wspólne udogodnienia"
       ],
       "imageCaption": "Studium · Wysokość i gęstość"
+    },
+    "styling": {
+      "title": "Stylizacja",
+      "category": "Wyposażenie i wykończenie",
+      "tagline": "Ostatnia warstwa — ta, którą ludzie odczuwają jako pierwszą.",
+      "desc": "Wybór mebli, materiałów, tekstyliów i przedmiotów — pochodzących z szerokiej gamy materiałów — które przekształcają wykończoną przestrzeń w przestrzeń, w której naprawdę się mieszka.",
+      "paragraphs": [
+        "Stylizacja to ostatnia warstwa przestrzeni — meble, tkaniny, oświetlenie, dzieła sztuki i przedmioty, które zamieniają wykończone pomieszczenie w takie, w którym naprawdę czuć, że się w nim mieszka. To cicha różnica między przestrzenią, która wygląda na wykończoną, a taką, która wydaje się być Twoja.",
+        "Dobieramy każdy element w kontekście architektury, wykorzystując szeroki wybór materiałów – drewna, kamienia, metalu, ceramiki, lnu i innych – tak aby każda faktura i odcień pasowały do całości. Nic nie jest umieszczane tylko po to, by wypełnić przestrzeń; każdy wybór zasługuje na swoje miejsce."
+      ],
+      "scope": [
+        "Kuratorstwo mebli",
+        "Wybór materiałów",
+        "Tekstylia i oświetlenie",
+        "Sztuka i przedmioty"
+      ],
+      "imageCaption": "Studium · Tekstura i obiekt"
     }
   },
   "noteCategories": {
     "Process": "Proces",
     "Culture": "Kultura",
     "Craft": "Rzemiosło",
-    "Space": "Przestrzeń"
+    "Space": "Przestrzeń",
+    "Material": "Tworzywo"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Ludzie zawsze będą potrzebować miejsca, by być sami i gdzie mogą się spotkać. Zawsze będą reagować na naturalne światło. Zawsze poczują różnicę między sufitem na odpowiedniej wysokości a takim, który jej nie ma. Zawsze będą wiedzieć, kiedy materiał jest uczciwy, a kiedy udaje coś innego.",
         "Projektuj z uwzględnieniem tych stałych. Buduj z materiałów, które starzeją się z godnością. Zostaw w planie miejsce na to, by życie mogło się rozwijać, nie niszcząc architektury.",
         "Dzięki temu przestrzeń przetrwa dwadzieścia lat i nadal będzie sprawiać wrażenie właściwej."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Materiały są wybierane dwukrotnie",
+      "excerpt": "Pierwszy wybór ma miejsce w salonie. Drugi ma miejsce po dziesięciu latach.",
+      "paragraphs": [
+        "Próbka materiału to najgorsze możliwe miejsce do oceny. Jest mała, płaska, oświetlona niewłaściwym światłem i trzymana przez trzy sekundy. Nic w tym momencie nie przypomina warunków, w jakich materiał będzie faktycznie żył – cała ściana, w popołudniowym świetle, obok trzech innych materiałów, obok których będzie musiał leżeć przez dekadę.",
+        "Zadajemy więc inne pytanie. Nie jak to wygląda, ale czym się to stanie.",
+        "Kamień ciemnieje tam, gdzie dotykają go dłonie. Tynk wapienny mięknie. Mosiądz traci połysk i nabiera śladów użytkowania. Drewno zmienia się wraz z porami roku i wciąż się zmienia. To nie są wady, które można usunąć inżynieryjnie. To materiał zachowujący się uczciwie.",
+        "Te, które zawodzą, to te, które osiągają szczyt w dniu odbioru. Powierzchnia o wysokim połysku jest najlepsza w momencie montażu i nigdy więcej. Wszystko, co ma imitować – fornir udający lity materiał, druk udający kamień – odlicza czas od pierwszego dnia. Dystans między tym, co obiecuje, a tym, czym jest, tylko się poszerza.",
+        "Koszt jest w tej dyskusji ważny, ale nie tam, gdzie zazwyczaj. Tańszy materiał to często ten, za który płaci się dwa razy. Prawdziwe pytanie nie brzmi, ile kosztuje instalacja, ale ile kosztuje utrzymanie.",
+        "Wybierz na dziesiąty rok, a nie pierwszy. Wtedy budynek będzie się cicho rozwijał, podczas gdy wszyscy będą w nim zajęci."
       ]
     }
   }

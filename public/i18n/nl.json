@@ -376,13 +376,31 @@
         "Gemeenschappelijke voorzieningen"
       ],
       "imageCaption": "Studie · Hoogte & Dichtheid"
+    },
+    "styling": {
+      "title": "Styling",
+      "category": "Meubilering en afwerking",
+      "tagline": "De onderste laag — de laag die mensen als eerste voelen.",
+      "desc": "Het selecteren van meubels, materialen, textiel en objecten – afkomstig uit een breed scala aan materialen – die een afgewerkte ruimte omtoveren tot een plek waar echt geleefd wordt.",
+      "paragraphs": [
+        "Styling is de laatste laag van een ruimte: de meubels, textiel, verlichting, kunst en objecten die van een afgewerkte kamer een ruimte maken die echt bewoond aanvoelt. Het is het subtiele verschil tussen een ruimte die er afgewerkt uitziet en een ruimte die als de jouwe aanvoelt.",
+        "We stemmen elk element zorgvuldig af op de architectuur en werken met een breed scala aan materialen – hout, steen, metaal, keramiek, linnen en meer – zodat elke textuur en tint bij het geheel past. Niets is zomaar geplaatst om de ruimte op te vullen; elke keuze is weloverwogen."
+      ],
+      "scope": [
+        "Meubelcuratie",
+        "Materiaalselectie",
+        "Textiel en verlichting",
+        "Kunst en objecten"
+      ],
+      "imageCaption": "Studie · Textuur & Object"
     }
   },
   "noteCategories": {
     "Process": "Proces",
     "Culture": "Cultuur",
     "Craft": "Ambacht",
-    "Space": "Ruimte"
+    "Space": "Ruimte",
+    "Material": "Materiaal"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Mensen zullen altijd behoefte hebben aan een plek om alleen te zijn en een plek om samen te komen. Ze zullen altijd reageren op natuurlijk licht. Ze zullen altijd het verschil voelen tussen een plafond op de juiste hoogte en een plafond op de verkeerde hoogte. Ze zullen altijd weten wanneer een materiaal authentiek is en wanneer het zich voordoet als iets anders.",
         "Ontwerp met die constanten in gedachten. Bouw met materialen die op een waardige manier verouderen. Laat ruimte in het ontwerp zodat het leven erdoorheen kan stromen zonder de architectuur te beschadigen.",
         "Zo blijft een ruimte twintig jaar lang goed aanvoelen."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Materialen worden tweemaal gekozen.",
+      "excerpt": "De eerste keuze wordt gemaakt in een showroom. De tweede keuze wordt in tien jaar tijd gemaakt.",
+      "paragraphs": [
+        "Een proefbordje is de slechtst denkbare plek om een materiaal te beoordelen. Het is klein, plat, wordt door het verkeerde licht belicht en wordt slechts drie seconden vastgehouden. Niets aan dat moment doet denken aan de omstandigheden waarin het materiaal zich daadwerkelijk zal bevinden: een volledige wand ermee, in het middaglicht, naast de drie andere materialen waarmee het tien jaar lang moet samenwerken.",
+        "Daarom stellen we een andere vraag. Niet hoe dit eruitziet, maar wat wordt dit?",
+        "Steen wordt donkerder op de plekken waar handen hem aanraken. Kalkpleister wordt zachter. Messing verliest zijn glans en vertoont gebruikssporen. Hout zet uit en krimpt met de seizoenen en blijft bewegen. Dit zijn geen gebreken die verholpen kunnen worden. Dit is materiaal dat zich op een eerlijke manier gedraagt.",
+        "De projecten die mislukken, zijn de projecten die op de opleveringsdag hun hoogtepunt bereiken. Een hoogglanzend oppervlak is op zijn best op het moment van installatie en daarna nooit meer. Alles wat probeert te imiteren – fineer dat zich voordoet als massief, print die zich voordoet als steen – is vanaf dag één gedoemd te mislukken. De kloof tussen wat het belooft en wat het is, wordt alleen maar groter.",
+        "Kosten horen zeker thuis in dit gesprek, maar niet op de gebruikelijke plek. Het goedkoopste materiaal is vaak het materiaal waar je dubbel voor betaalt. De echte vraag is niet wat de installatie kost, maar wat het onderhoud kost.",
+        "Kies voor het tiende jaar, niet voor het eerste. Dan wordt het gebouw stilletjes verbeterd terwijl iedereen erin woont."
       ]
     }
   }

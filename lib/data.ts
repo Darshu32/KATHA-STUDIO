@@ -29,6 +29,7 @@ export const noteTopics = [
   "Culture",
   "Craft",
   "Space",
+  "Material",
 ] as const;
 export type NoteTopic = (typeof noteTopics)[number];
 
@@ -116,8 +117,25 @@ export const services: Service[] = [
     focal: "50% 50%",
   },
   {
-    slug: "advisory",
+    slug: "styling",
     id: "04",
+    title: "Styling",
+    category: "Furnishing & Finish",
+    tagline: "The final layer — the one people feel first.",
+    desc: "Curating the furniture, materials, textiles and objects — drawn from a broad material selection — that turn a finished space into one that is truly lived in.",
+    paragraphs: [
+      "Styling is the last layer of a space — the furniture, textiles, lighting, art and objects that turn a completed room into one that feels genuinely lived in. It is the quiet difference between a space that looks finished and one that feels like yours.",
+      "We curate every piece against the architecture, working from a broad material selection — timber, stone, metal, ceramic, linen and more — so each texture and tone belongs to the whole. Nothing is placed simply to fill space; every choice earns its place.",
+    ],
+    scope: ["Furniture Curation", "Material Selection", "Textiles & Lighting", "Art & Objects"],
+    tone: "cool",
+    image: "/images/services/styling.webp",
+    imageCaption: "Study · Texture & Object",
+    focal: "50% 45%",
+  },
+  {
+    slug: "advisory",
+    id: "05",
     title: "Advisory",
     category: "Guidance & Planning",
     tagline: "The right question asked early saves everything that comes after.",
@@ -199,7 +217,7 @@ export const sectors: Service[] = [
  * OFF the home carousel/grid (those use `services`) to keep home lean. */
 export const technicalDrawings: Service = {
   slug: "technical-drawings",
-  id: "05",
+  id: "06",
   title: "Technical Drawings",
   category: "Documentation & Detail",
   tagline: "The drawings that turn a design into a building.",
@@ -297,6 +315,24 @@ export const notes: Note[] = [
       "That is how a space lasts twenty years and still feels right.",
     ],
     tone: "default",
+  },
+  {
+    slug: "materials-are-chosen-twice",
+    id: "05",
+    title: "Materials Are Chosen Twice",
+    category: "Material",
+    date: "August 2026",
+    readTime: "3 min",
+    excerpt: "The first choice happens in a showroom. The second happens over ten years.",
+    paragraphs: [
+      "A sample board is the worst possible place to judge a material. It is small, flat, lit by the wrong light, and held for three seconds. Nothing about that moment resembles the condition the material will actually live in — a full wall of it, in afternoon light, beside the three other materials it has to sit next to for a decade.",
+      "So we ask a different question. Not how does this look, but what does this become.",
+      "Stone darkens where hands touch it. Lime plaster settles into softness. Brass loses its shine and gains a record of use. Timber moves with the season and keeps moving. These are not defects to be engineered out. This is material behaving honestly.",
+      "The ones that fail are the ones that peak on the day of handover. A high-gloss surface is at its best the moment it is installed and never again. Anything built to imitate — veneer pretending to be solid, print pretending to be stone — is counting down from day one. The distance between what it claims and what it is only widens.",
+      "Cost belongs in this conversation, but not where it usually sits. The cheaper material is often the one paid for twice. The real question is not what it costs to install. It is what it costs to keep.",
+      "Choose for the tenth year, not the first. Then the building quietly improves while everyone is busy living in it.",
+    ],
+    tone: "warm",
   },
 ];
 

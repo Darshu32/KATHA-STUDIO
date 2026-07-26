@@ -376,13 +376,31 @@
         "Fasilitas Bersama"
       ],
       "imageCaption": "Studi · Tinggi & Kepadatan"
+    },
+    "styling": {
+      "title": "Penataan gaya",
+      "category": "Perlengkapan & Finishing",
+      "tagline": "Lapisan terakhir — yang pertama kali dirasakan orang.",
+      "desc": "Mengkurasi furnitur, material, tekstil, dan objek — yang diambil dari beragam pilihan material — yang mengubah ruang yang sudah jadi menjadi ruang yang benar-benar nyaman untuk ditinggali.",
+      "paragraphs": [
+        "Penataan ruang adalah lapisan terakhir — furnitur, tekstil, pencahayaan, seni, dan benda-benda yang mengubah ruangan yang sudah selesai menjadi ruangan yang terasa benar-benar dihuni. Ini adalah perbedaan halus antara ruang yang terlihat selesai dan ruang yang terasa seperti milik Anda.",
+        "Kami menyusun setiap elemen sesuai dengan arsitektur, menggunakan beragam pilihan material — kayu, batu, logam, keramik, linen, dan lainnya — sehingga setiap tekstur dan warna menyatu dengan keseluruhan. Tidak ada yang diletakkan hanya untuk mengisi ruang; setiap pilihan memiliki tempatnya masing-masing."
+      ],
+      "scope": [
+        "Kurasi Furnitur",
+        "Pemilihan Material",
+        "Tekstil & Pencahayaan",
+        "Seni & Benda"
+      ],
+      "imageCaption": "Studi · Tekstur & Objek"
     }
   },
   "noteCategories": {
     "Process": "Proses",
     "Culture": "Budaya",
     "Craft": "Keahlian",
-    "Space": "Ruang"
+    "Space": "Ruang",
+    "Material": "Bahan"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Manusia akan selalu membutuhkan tempat untuk menyendiri dan tempat untuk berkumpul. Mereka akan selalu merespons cahaya alami. Mereka akan selalu merasakan perbedaan antara langit-langit dengan ketinggian yang tepat dan yang tidak. Mereka akan selalu tahu kapan suatu material itu jujur dan kapan material itu berpura-pura menjadi sesuatu yang lain.",
         "Rancanglah dengan mempertimbangkan konstanta-konstanta tersebut. Bangunlah dengan material yang menua dengan anggun. Sisakan ruang dalam rencana agar kehidupan dapat bergerak tanpa merusak arsitektur.",
         "Begitulah cara sebuah tempat bertahan selama dua puluh tahun dan tetap terasa tepat."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Bahan-bahan Dipilih Dua Kali",
+      "excerpt": "Pilihan pertama terjadi di ruang pamer. Pilihan kedua terjadi selama sepuluh tahun.",
+      "paragraphs": [
+        "Papan sampel adalah tempat terburuk untuk menilai suatu material. Ukurannya kecil, datar, diterangi oleh cahaya yang salah, dan hanya dipegang selama tiga detik. Tidak ada satu pun hal dalam momen itu yang menyerupai kondisi material tersebut sebenarnya—sebuah dinding penuh yang terbuat dari material itu, di bawah cahaya sore hari, di samping tiga material lain yang harus berada di sebelahnya selama satu dekade.",
+        "Jadi, kami mengajukan pertanyaan yang berbeda. Bukan bagaimana tampilannya, tetapi akan menjadi apa ini nantinya.",
+        "Batu menjadi gelap di tempat yang disentuh tangan. Plester kapur menjadi lunak. Kuningan kehilangan kilaunya dan menunjukkan bekas pemakaian. Kayu berubah bentuk mengikuti musim dan terus berubah. Ini bukanlah cacat yang harus dihilangkan melalui rekayasa. Ini adalah sifat alami material.",
+        "Yang gagal adalah yang mencapai puncak kesempurnaan pada hari penyerahan. Permukaan yang sangat mengkilap berada pada kondisi terbaiknya saat dipasang dan tidak pernah lagi setelah itu. Apa pun yang dibangun untuk meniru—lapisan tipis yang berpura-pura menjadi padat, cetakan yang berpura-pura menjadi batu—sudah mulai menurun kualitasnya sejak hari pertama. Jarak antara apa yang diklaim dan apa adanya hanya semakin melebar.",
+        "Biaya memang perlu dibahas, tetapi bukan di posisi yang biasanya. Material yang lebih murah seringkali justru dibayar dua kali lipat. Pertanyaan sebenarnya bukanlah berapa biaya pemasangannya, melainkan berapa biaya perawatannya.",
+        "Pilihlah untuk tahun kesepuluh, bukan tahun pertama. Kemudian bangunan itu akan membaik secara perlahan sementara semua orang sibuk tinggal di dalamnya."
       ]
     }
   }

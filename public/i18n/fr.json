@@ -376,13 +376,31 @@
         "Équipements partagés"
       ],
       "imageCaption": "Étude · Hauteur et densité"
+    },
+    "styling": {
+      "title": "stylisme",
+      "category": "Aménagement et finitions",
+      "tagline": "La dernière couche — celle que l'on ressent en premier.",
+      "desc": "Sélectionner avec soin le mobilier, les matériaux, les textiles et les objets — issus d'une vaste gamme de matériaux — qui transforment un espace fini en un lieu véritablement habité.",
+      "paragraphs": [
+        "La décoration est la touche finale d'un espace : le mobilier, les textiles, l'éclairage, les œuvres d'art et les objets qui transforment une pièce finie en un lieu véritablement habité. C'est ce qui fait la différence, même subtile, entre un espace qui paraît terminé et un espace qui vous ressemble.",
+        "Nous sélectionnons chaque élément en fonction de l'architecture, en puisant dans un vaste choix de matériaux — bois, pierre, métal, céramique, lin et bien d'autres — afin que chaque texture et chaque nuance s'harmonisent avec l'ensemble. Rien n'est placé là par simple superflu ; chaque choix est mûrement réfléchi."
+      ],
+      "scope": [
+        "Sélection de meubles",
+        "Sélection des matériaux",
+        "Textiles et éclairage",
+        "Art et objets"
+      ],
+      "imageCaption": "Étude · Texture et objet"
     }
   },
   "noteCategories": {
     "Process": "Processus",
     "Culture": "Culture",
     "Craft": "Artisanat",
-    "Space": "Espace"
+    "Space": "Espace",
+    "Material": "Matériel"
   },
   "notes": {
     "why-the-first-sketch-is-never-the-answer": {
@@ -424,6 +442,18 @@
         "Les gens auront toujours besoin d'un lieu pour se retrouver seuls et d'un lieu pour se réunir. Ils seront toujours sensibles à la lumière naturelle. Ils ressentiront toujours la différence entre un plafond à la bonne hauteur et un plafond qui ne l'est pas. Ils sauront toujours reconnaître un matériau authentique et un matériau trompeur.",
         "Concevez en tenant compte des constantes. Utilisez des matériaux qui vieillissent avec élégance. Prévoyez dans les plans un espace permettant à la vie de s'y dérouler sans altérer l'architecture.",
         "C’est ainsi qu’un espace peut perdurer vingt ans et rester parfaitement adapté."
+      ]
+    },
+    "materials-are-chosen-twice": {
+      "title": "Les matériaux sont choisis deux fois.",
+      "excerpt": "Le premier choix se fait dans une salle d'exposition. Le second se déroule sur une période de dix ans.",
+      "paragraphs": [
+        "Un échantillon est le pire endroit pour juger un matériau. Petit, plat, mal éclairé, et manipulé pendant trois secondes, il ne reflète en rien les conditions réelles auxquelles il sera exposé : un mur entier, baigné par la lumière de l’après-midi, à côté de trois autres matériaux avec lesquels il devra côtoyer pendant une décennie.",
+        "Nous posons donc une question différente. Non pas « à quoi cela ressemble-t-il ? », mais « que va-t-il devenir ? »",
+        "La pierre s'assombrit au contact des mains. Le plâtre à la chaux se patine. Le laiton perd de son éclat et porte les marques du temps. Le bois se modifie au fil des saisons et continue d'évoluer. Ce ne sont pas des défauts à corriger techniquement. C'est le comportement naturel des matériaux.",
+        "Les produits qui échouent sont ceux qui atteignent leur apogée le jour de la livraison. Une surface ultra-brillante est à son meilleur au moment de son installation et ne le sera plus jamais. Tout ce qui est conçu pour imiter – placage se faisant passer pour du massif, impression se faisant passer pour de la pierre – est voué à l'échec dès le premier jour. L'écart entre ce qu'il prétend être et ce qu'il est réellement ne fait que se creuser.",
+        "Le coût a sa place dans cette discussion, mais pas au premier plan. On finit souvent par payer deux fois pour un matériau bon marché. La vraie question n'est pas le coût d'installation, mais le coût d'entretien.",
+        "Choisissez la dixième année, pas la première. Ainsi, le bâtiment s'améliorera discrètement pendant que tous ses occupants y vivent."
       ]
     }
   }
