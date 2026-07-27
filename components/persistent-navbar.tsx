@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/components/language-provider";
 import { HeaderLanguageMenu } from "@/components/header-language-menu";
 import { whatWeDo, sectors } from "@/lib/data";
+import { markIntroSeen } from "@/lib/intro-state";
 
 type NavEntry = {
   href: string;
@@ -50,6 +51,13 @@ export function PersistentNavbar() {
   useEffect(() => {
     setIsNavOpen(false);
     setServicesOpen(false);
+  }, [pathname]);
+
+  /* Being on any interior page means the visitor is already inside the site,
+     so navigating back to "/" should land on the carousel, not replay the
+     homepage intro "door". */
+  useEffect(() => {
+    if (pathname !== "/") markIntroSeen();
   }, [pathname]);
 
   /* Lock body scroll when overlay is open */

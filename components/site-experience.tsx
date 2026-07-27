@@ -19,13 +19,12 @@ import { WhyKatha } from "@/components/why-katha";
 import { LanguagePicker } from "@/components/language-picker";
 import { useLanguage } from "@/components/language-provider";
 import { sectors } from "@/lib/data";
+import { markIntroSeen, hasIntroBeenSeen } from "@/lib/intro-state";
 
 /* ─────────────────────────── CONSTANTS ────────────────────── */
 
-/* Intro plays once per full page load. The flag survives client-side
-   navigation (so returning to "/" doesn't replay it) but resets on a
-   hard reload. */
-let introHasPlayed = false;
+/* The intro "door" state now lives in lib/intro-state so interior pages can
+   mark it seen — returning to "/" from inside the site skips the door. */
 const brandLetters = ["K", "A", "T", "H", "A"];
 const studioLetters = ["S", "T", "U", "D", "I", "O"];
 
@@ -463,10 +462,10 @@ export function SiteExperience() {
   /* Intro brand sequence — types "KATHA STUDIO" then settles into the
      header to reveal the page. Plays once per full load (introHasPlayed).
      `introComplete` gates the hero + carousel enter animations. */
-  const [introComplete, setIntroComplete] = useState(introHasPlayed);
+  const [introComplete, setIntroComplete] = useState(hasIntroBeenSeen());
 
   const handleIntroSettled = useCallback(() => {
-    introHasPlayed = true;
+    markIntroSeen();
     setIntroComplete(true);
   }, []);
 
