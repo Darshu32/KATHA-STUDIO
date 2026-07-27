@@ -7,6 +7,8 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const { prev, next } = getAdjacentNav("/contact");
-  return <ContactView prev={prev} next={next} />;
+  // Contact is the last page in the global chain, so its natural "previous"
+  // would be the last service (High-Rise). Point it Home instead.
+  const { next } = getAdjacentNav("/contact");
+  return <ContactView prev={{ href: "/", label: "Home" }} next={next} />;
 }

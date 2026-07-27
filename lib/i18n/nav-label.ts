@@ -3,6 +3,7 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 /** Translate a global-nav href to its display label using the active dictionary.
  *  Falls back to the supplied English label when no translation key applies. */
 export function localizedNavLabel(t: Dictionary, href: string, fallback: string): string {
+  if (href === "/") return t.nav.home;
   if (href === "/studio") return t.nav.studio;
   if (href === "/contact") return t.nav.contact;
   if (href === "/approach") return t.nav.approach;
